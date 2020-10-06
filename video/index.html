@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 视频播放器 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="n.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <video src="https://www.17sucai.com/preview/501914/2017-08-04/%E9%A1%B5%E9%9D%A2/media/mov_bbb.mp4"></video>
+        <div class="control">
+            <div class="buttons">
+                <span class="start"></span>
+                <span class="end"></span>
+            </div>
+            <div class="progress">
+                <div class="wrap">
+                    <div class="inner"></div>
+                </div>
+                <div class="deeppink"></div>
+            </div>
+            <div class="others">
+                <div class="time">
+                    <span class="now">00:00:00</span>/<span class="all">00:00:00</span>
+                </div>
+                <div class="sound">
+                    <div class="switch">
+                        <span class="fa fa-volume-up"></span>
+                        <span class="fa fa-volume-down"></span>
+                    </div>
+                    <div class="progress">
+                        <div class="wrap">
+                            <div class="inner"></div>
+                        </div>
+                        <div class="deeppink"></div>
+                    </div>
+                </div>
+                <div class="full-screen">
+                    <span class="fa fa-compress"></span>
+                    <span class="fa fa-arrows-alt"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        var control = document.querySelector("#wrap>.control")
+        var video = document.querySelector("#wrap>video")
+            // 进度条
+        var progress = document.querySelector("#wrap>.control>.progress")
+        var inner = document.querySelector("#wrap>.control>.progress>.wrap>.inner")
+        var deeppink = document.querySelector("#wrap>.control>.progress>.deeppink")
+            // 开始停止
+        var start = document.querySelector("#wrap .buttons>.start")
+        var stop = document.querySelector("#wrap .buttons>.end")
+            // 时间
+        var all = document.querySelector("#wrap>.control>.others .all")
+        var now = document.querySelector("#wrap>.control>.others .now")
+        var switchNode = document.querySelector("#wrap>.control>.others>.sound>.switch")
+        var switchNode_Span = document.querySelector("#wrap>.control>.others>.sound>.switch>span")
+            // 音量
+        var progress2 = document.querySelector("#wrap>.control>.others .progress")
+        var inner2 = document.querySelector("#wrap>.control>.others .progress>.wrap>.inner")
+        var deeppink2 = document.querySelector("#wrap>.control>.others .progress>.deeppink")
+            // 全屏显示
+        var full_screen = document.querySelector("#wrap>.control>.others>.full-screen")
+        var full_screenspan = document.querySelector("#wrap>.control>.others>.full-screen>span")
+
+        video.width = document.documentElement.clientWidth
+        video.height = document.documentElement.clientHeight - control.offsetHeight
+            // 重新计算当前视口的宽高， 达到自适应
+        window.onresize = function() {
+                if (document.documentElement.clientWidth >= 500) {
+                    video.width = document.documentElement.clientWidth
+                    video.height = document.documentElement.clientHeight - control.offsetHeight
+                }
+            }
+            // 记录滑动后音量坐标
+        var flag = 0
+        var timer = 0
+            // 全屏标志
+        var isFullScreen = false
+        player()
+
+        function player() {
+            //视频第一帧加载完毕后确定总时长
+            video.addEventListener("loadeddata", function() {
+                    all.innerHTML = changeTime(video.duration)
+                })
+                // 进度条功能
+            progress.onclick = function(ev) {
+                ev = ev || event
+                addclass(start, "active")
+                video.play()
+                timer = setInterval(move, 100)
+                video.currentTime = video.duration * ((ev.clientX - this.offsetLeft) / (progress.clientWidth - inner.offsetWidth))
+            }
+            stop.onclick = function() {
+                removeclass(start, "active")
+                video.pause()
+                clearInterval(timer)
+                inner.style.left = deeppink.style.width = video.currentTime = 0
+            }
+            start.onclick = function() {
+                    if (video.paused) {
+                        addclass(this, "active")
+                        video.play()
+                        timer = setInterval(move, 100)
+                    } else {
+                        removeclass(this, "active")
+                        video.pause()
+                        clearInterval(timer)
+                    }
+                }
+                // 音量控制
+            inner2.style.left = deeppink2.style.width = progress2.clientWidth - inner2.offsetWidth + "px"
+            switchNode.onclick = function() {
+                if (video.muted) {
+                    video.muted = false
+                    video.volume = 1
+                    removeclass(switchNode_Span, "active")
+                        // 判断一开始就点击音量图标， 导致无法重置
+                    flag = flag == 0 ? 1 : flag
+                    inner2.style.left = deeppink2.style.width = (progress2.clientWidth - inner2.offsetWidth) * flag + "px"
+                } else {
+                    video.muted = true
+                    video.volume = 0
+                    addclass(switchNode_Span, "active")
+                    inner2.style.left = deeppink2.style.width = 0 + "px"
+                }
+            }
+            full_screen.onclick = function() {
+                changeclass(full_screenspan, "active")
+                    // 全屏点击事件
+                if (isFullScreen) {
+                    isFullScreen = false
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen()
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen()
+                    } else if (document.webkitCancelFullScreen) {
+                        document.webkitCancelFullScreen()
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen()
+                    }
+                } else {
+                    isFullScreen = true
+                    var docElm = document.documentElement
+                    if (docElm.requestFullscreen) {
+                        docElm.requestFullscreen()
+                    } else if (document.mozRequestFullScreen) {
+                        document.mozRequestFullScreen()
+                    } else if (document.webkitRequestFullScreen) {
+                        document.webkitRequestFullScreen()
+                    } else if (document.msRequestFullscreen) {
+                        document.msRequestFullscreen()
+                    }
+                }
+            }
+        }
+
+        function move() {
+            inner.style.left = deeppink.style.width = (video.currentTime / video.duration) * (progress.clientWidth - inner.offsetWidth) + "px"
+            now.innerHTML = changeTime(video.currentTime)
+        }
+
+        // 滑块拖动进度条更新
+        var callback = {
+                move: function() {
+                    deeppink.style.width = this.offsetLeft + "px"
+                        // 在拖动的时刻视频进度不断更新
+                    var scale = this.offsetLeft / (progress.clientWidth - inner.offsetWidth)
+                    video.currentTime = video.duration * scale
+                    now.innerHTML = changeTime(video.currentTime)
+                }
+            }
+            // 音量滑动
+        var callback2 = {
+            move: function() {
+                deeppink2.style.width = this.offsetLeft + "px"
+                var scale = (this.offsetLeft / (progress2.clientWidth - inner2.offsetWidth)).toFixed(1)
+                flag = scale
+                video.volume = scale
+                if (video.volume == 0) {
+                    addclass(switchNode_Span, "active")
+                    video.muted = true
+                } else {
+                    removeclass(switchNode_Span, "active")
+                    video.muted = false
+                }
+            }
+        }
+        drag(inner, callback)
+        drag(inner2, callback2)
+
+        function drag(obj, callback) {
+            obj.onmousedown = function(event) {
+                //解决IE中选中后会作为搜索信息搜索
+                if (obj.setCapature) {
+                    obj.setCapature();
+                };
+                event = event || window.event;
+                //解决点击后鼠标位于左上角
+                var ol = event.clientX - obj.offsetLeft;
+                var ot = event.clientY - obj.offsetTop;
+                var st = document.body.scrollTop || document.documentElement.scrollTop;
+                var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+                //此处使用document而不是box1为了避免元素被遮盖后无法移动
+                document.onmousemove = function(event) {
+                    event = event || window.event;
+                    var left = event.clientX - ol;
+                    var top = event.clientY - ot;
+                    if (left < 0) {
+                        left = 0
+                    } else if (left > (obj.parentNode.clientWidth - obj.offsetWidth)) {
+                        left = obj.parentNode.clientWidth - obj.offsetWidth
+                    }
+                    obj.style.left = left + sl + "px";
+                    if (callback && callback["move"] && typeof callback["move"] == "function") {
+                        callback["move"].call(obj)
+                    }
+                };
+                document.onmouseup = function() {
+                    //取消onmousemove即可
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                    obj.releaseCapture && obj.releaseCapture();
+                };
+                //防止拖拽网页中内容去自动搜索
+                return false;
+            };
+        }
+        // 工具类
+        // 1）addclass
+        function addclass(obj, cn) {
+            if (!hasclass(obj, cn)) {
+                obj.className += " " + cn;
+            }
+        };
+        //检查是否含有cn
+        function hasclass(obj, cn) {
+            // var reg = /\bb2\b/;
+            var reg = new RegExp("\\b" + cn + "\\b");
+            return reg.test(obj.className);
+        };
+
+        function removeclass(obj, cn) {
+            var reg = new RegExp("\\b" + cn + "\\b");
+            obj.className = obj.className.replace(reg, "");
+        };
+        //元素中含有则删除，没有添加
+        function changeclass(obj, cn) {
+            if (hasclass(obj, cn)) {
+                removeclass(obj, cn);
+            } else {
+                addclass(obj, cn);
+            }
+        }
+        // 2)转换时间格式
+        function changeTime(time) {
+            time = parseInt(time)
+            var h = toZero(Math.floor(time / 3600))
+            var m = toZero(Math.floor(time % 3600 / 60))
+            var s = toZero(Math.round(time % 3600))
+            return h + ":" + m + ":" + s
+        }
+
+        function toZero(num) {
+            var val = ""
+            if (num < 10) {
+                val = "0" + num
+            } else {
+                val = val + num
+            }
+            return val
+        }
+    }
+</script>
+
+</html>

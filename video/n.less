@@ -1,0 +1,161 @@
+@import "reset.css";
+@import "font/css/all.css";
+@import "font/css/font-awesome.css";
+.progress1(){
+    position: relative;
+    .wrap{
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        margin-top: 11px;
+        background-color: #737373;
+        .inner{
+            position: absolute;
+            width: 9px;
+            height: 7px;
+            background-color: white;
+            border-radius: 2px;
+            margin-top: -2px;
+        }
+    }
+    .deeppink{
+        margin-top: 11px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 3px;
+        background: deeppink;
+    }
+}
+html,body{
+   height: 100%;
+   overflow: auto; 
+}
+#wrap{
+    height: 100%;
+    overflow: hidden;
+    background: #383838;
+    .control{
+        min-width: 800px;
+        position: relative;
+        height: 25px;
+        background-color: #2A2A2A;
+        .buttons{
+            left: 0;
+            position: absolute;
+            width: 55px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            color: white;
+            &>span{
+                display: inline-block;
+                width: 9px;
+                height: 11px;
+                font-size: 14px;
+                margin-right: 8px;
+                &:nth-child(1){
+                    &::before{
+                        content: '\f144';
+                        font-family: 'Font Awesome 5 Free'
+                    }
+                    &.active{
+                        &::before{
+                            content: '\f28b';
+                            font-family: 'Font Awesome 5 Free'
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    &::before{
+                        content: '\f28b';
+                        font-family: 'Font Awesome 5 Free'
+                    } 
+                }
+            }
+        }
+        &>.progress{
+            position: relative;
+            margin: 0 230px 0 55px;
+            height: 25px;
+            .progress1()
+        }
+        .others{
+            z-index: 2;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 230px;
+            height: 25px;
+            &>div{
+                height: 25px;
+                float: left;
+            }
+            .time{
+                width: 120px;
+                font-size: 12px;
+                color: white;
+                line-height: 25px;
+                text-align: center;
+            }
+            .sound{
+                width: 80px;
+                &>div{
+                    height: 25px;
+                    float: left;
+                }
+                .switch{
+                    text-align: center;
+                    width: 20px;
+                    &:nth-child(2){
+                        display: none;
+                    }
+                    &>span{
+                        display: inline-block;
+                        width: 12px;
+                        height: 12px;
+                        margin: 7px auto;
+                        &.active{
+                            &:nth-child(1){
+                                display: none;
+                            }
+                            &:nth-child(2){
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+                .progress{
+                    width: 60px;
+                    .progress1()
+                }
+            }
+            .full-screen{
+                width: 30px;
+                height: 25px;
+                text-align: center;
+                &>span{
+                    display: inline-block;
+                    margin: 7px auto;
+                    width: 11px;
+                    height: 11px;
+                    &:nth-child(1){
+                        display: none;
+                    }
+                    &:nth-child(2){
+                        display: block;
+                    }
+                    &.active{
+                        &:nth-child(2){
+                            display: none;
+                        }
+                        &:nth-child(1){
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
