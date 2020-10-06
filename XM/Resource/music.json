@@ -1,0 +1,17 @@
+[{
+    "name": "可惜不是你",
+    "singer": "曹轩宾",
+    "album": "梁静茹",
+    "time": "05:01",
+    "link_rul": "./KXBSN.mp3",
+    "cover": "./KXBSN.jpeg",
+    "link_lrc": "./KXBSN.txt"
+}, {
+    "name": "一无所有",
+    "singer": "金　丹",
+    "album": "金　丹",
+    "time": "04:43",
+    "link_rul": "./YWSY.mp3",
+    "cover": "./YWSY.jpeg",
+    "link_lrc": "./YWSY.txt"
+}]

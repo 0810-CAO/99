@@ -1,0 +1,1 @@
+      // removeclass(d[3], "active")
