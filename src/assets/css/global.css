@@ -29,3 +29,7 @@ body,
     display: flex;
     align-items: center;
 }
+
+.el-cascader {
+    width: 100%;
+}
