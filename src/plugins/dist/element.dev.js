@@ -76,7 +76,11 @@ _vue["default"].use(_elementUi.CheckboxGroup);
 
 _vue["default"].use(_elementUi.Checkbox);
 
-_vue["default"].use(_elementUi.Upload); //这样挂载后可以在vue中使用this访问
+_vue["default"].use(_elementUi.Upload);
+
+_vue["default"].use(_elementUi.Timeline);
+
+_vue["default"].use(_elementUi.TimelineItem); //这样挂载后可以在vue中使用this访问
 
 
 _vue["default"].prototype.$message = _elementUi.Message;

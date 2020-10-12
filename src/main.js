@@ -25,7 +25,7 @@ axios.interceptors.request.use(config => {
     // 注册为全局可用组件
 Vue.component('tree-table', TreeTable)
     // 全局定义格式化时间日期函数
-Vue.filter('dateFormat', function(origin) {
+Vue.filter('dateFormate', function(origin) {
         const dt = new Date(origin)
         const y = dt.getFullYear()
         const m = (dt.getMonth() + 1 + '').padStart(2, '0')

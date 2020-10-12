@@ -44,7 +44,7 @@ _axios["default"].interceptors.request.use(function (config) {
 _vue["default"].component('tree-table', _vueTableWithTreeGrid["default"]); // 全局定义格式化时间日期函数
 
 
-_vue["default"].filter('dateFormat', function (origin) {
+_vue["default"].filter('dateFormate', function (origin) {
   var dt = new Date(origin);
   var y = dt.getFullYear();
   var m = (dt.getMonth() + 1 + '').padStart(2, '0');
