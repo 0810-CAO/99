@@ -20,6 +20,7 @@
     "less": "^3.12.2",
     "less-loader": "^4.1.0",
     "lodash": "^4.17.20",
+    "nprogress": "^0.2.0",
     "vue": "^2.5.2",
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.0.1",
