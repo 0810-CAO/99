@@ -31,6 +31,8 @@ var _Add = _interopRequireDefault(require("../components/goods/Add.vue"));
 
 var _Order = _interopRequireDefault(require("../components/order/Order.vue"));
 
+var _Report = _interopRequireDefault(require("../components/report/Report.vue"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 _vue["default"].use(_vueRouter["default"]);
@@ -72,8 +74,11 @@ var router = new _vueRouter["default"]({
       path: '/goods/add',
       component: _Add["default"]
     }, {
-      path: '/orders/',
+      path: '/orders',
       component: _Order["default"]
+    }, {
+      path: '/reports',
+      component: _Report["default"]
     }]
   }]
 }); //拦截路由导航守卫，防止直接通过url访问到页面,轻质跳转到登录页面
