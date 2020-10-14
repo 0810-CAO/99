@@ -23,8 +23,8 @@
                 <el-tag type="warning" size="mini" v-else>三级</el-tag>
             </template>
             <template slot="opt" slot-scope="scope">
-                <el-button size="mini" type="primary" icon="el-icon-edit">编辑</el-button>
-                <el-button size="mini" type="danger" icon="el-icon-delete">删除</el-button>
+                <el-button size="mini" type="primary" icon="el-icon-edit" @click="showCateEditDialog(scope.row.cat_id)">编辑</el-button>
+                <el-button size="mini" type="danger" icon="el-icon-delete" @click="removeCateById(scope.row.cat_id)">删除</el-button>
             </template>
         </tree-table>
         <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="queryInfo.pagenum" :page-sizes="[3,5,10,15]" :page-size="queryInfo.pagesize" layout="total, sizes, prev, pager, next, jumper" :total="total">
@@ -42,12 +42,24 @@
                 <!--selectdKeys选中分类的id-->
                 <!--指定级联选择器的配置对象:props-->
                 <!--checkStrictly: true 可以选择任意一级选项-->
-                <el-cascader v-model="selectdKeys" :options="parentCateList" :props="{expandTrigger:'hover',value: 'cat_id',label: 'cat_name', children: 'children'}" @change="parentCateChange" clearable></el-cascader>
+                <el-cascader v-model="selectdKeys" :options="parentCateList" :props="{expandTrigger:'hover',value: 'cat_id',label: 'cat_name', children: 'children',checkStrictly:'false'}" @change="parentCateChange" clearable></el-cascader>
             </el-form-item>
         </el-form>
         <span slot="footer" class="dialog-footer">
             <el-button @click="addCateDialogVisible = false">取 消</el-button>
             <el-button type="primary" @click="addCate">确 定</el-button>
+        </span>
+    </el-dialog>
+    <!--修改分类对话框-->
+    <el-dialog title="修改分类" :visible.sync="editCateDialogVisible" width="50%">
+        <el-form :model="editCateForm" :rules="editCateFormRules" ref="editCateFormRef" label-width="100px">
+            <el-form-item label="分类名" prop="cat_name">
+                <el-input v-model="editCateForm.cat_name"></el-input>
+            </el-form-item>
+        </el-form>
+        <span slot="footer" class="dialog-footer">
+            <el-button @click="editCateDialogVisible = false">取 消</el-button>
+            <el-button type="primary" @click="editCateInfo">确 定</el-button>
         </span>
     </el-dialog>
 </div>
@@ -111,7 +123,16 @@ export default {
             //父级分类列表
             parentCateList: [],
             // 选中的父级分类数组
-            selectdKeys: []
+            selectdKeys: [],
+            editCateDialogVisible: false,
+            editCateForm: {},
+            editCateFormRules: {
+                cat_name: [{
+                    required: true,
+                    message: "请输入分类名",
+                    trigger: "blur"
+                }]
+            }
         };
     },
     created() {
@@ -178,9 +199,9 @@ export default {
                     data: res
                 } = await this.$http.post('categories', this.addCateForm)
                 if (res.meta.status !== 201) {
-                    return this.$message.error("添加分类失败");
+                    return this.$message.error("添加商品分类失败");
                 }
-                this.$message.success('添加分类成功')
+                this.$message.success('添加商品分类成功')
                 this.getCateList()
                 this.addCateDialogVisible = false
             })
@@ -191,7 +212,56 @@ export default {
             this.selectdKeys = []
             this.addCateForm.cat_pid = 0;
             this.addCateForm.cat_level = 0
-        }
+        },
+        async removeCateById(id) {
+            const confirmResult = await this.$confirm(
+                "此操作将永久删除该分类, 是否继续?",
+                "提示", {
+                    confirmButtonText: "确定",
+                    cancelButtonText: "取消",
+                    type: "warning"
+                }
+            ).catch(err => err);
+            if (confirmResult !== "confirm") {
+                return this.$message.info("已经取消删除");
+            }
+            const {
+                data: res
+            } = await this.$http.delete("/categories/" + id);
+            if (res.meta.status !== 200) {
+                return this.$message.error("删除商品分类失败");
+            }
+            this.$message.success("删除商品分类成功");
+            this.getCateList()
+        },
+        async showCateEditDialog(id) {
+            const {
+                data: res
+            } = await this.$http.get("categories/" + id);
+            if (res.meta.status !== 200) {
+                return this.$message.error("查询商品分类信息失败");
+            }
+            this.editCateForm = res.data;
+            this.editCateDialogVisible = true;
+        },
+        editCateInfo() {
+            this.$refs.editCateFormRef.validate(async valid => {
+                if (!valid) return;
+                const {
+                    data: res
+                } = await this.$http.put(
+                    "categories/" + this.editCateForm.cat_id, {
+                        cat_name: this.editCateForm.cat_name,
+                    }
+                );
+                if (res.meta.status !== 200) {
+                    return this.$message.error("更新商品分类信息失败");
+                }
+                this.editCateDialogVisible = false;
+                this.getCateList()
+                this.$message.success("更新商品分类信息成功");
+            });
+        },
     }
 };
 </script>
