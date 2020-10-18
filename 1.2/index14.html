@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuexgetters</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/vuex.js"></script>
+</head>
+
+<body>
+    <div id="demo3">
+        <grandfather></grandfather>
+    </div>
+    <template id="grandfather">
+        <div>
+            {{this.$store.getters.formate}}
+            {{this.$store.getters.formate}}
+            {{this.$store.getters.formate}}
+    </div>
+    </template>
+
+    <script>
+        const store = new Vuex.Store({
+            // 相当于data 保存共享数据
+            state: {
+                msg: "河岸"
+            },
+            // 用于修改共享数据 
+            mutations: {
+
+            },
+            // 相当于computed
+            getters: {
+                formate(state) {
+                    console.log("执行getters");
+                    return state.msg + 'www.baidu.com'
+                }
+            }
+        })
+        Vue.component('grandfather', {
+            template: '#grandfather',
+            store: store,
+        })
+        new Vue({
+            el: '#demo3',
+        })
+    </script>
+</body>
+
+</html>

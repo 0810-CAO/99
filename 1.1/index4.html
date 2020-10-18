@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件构造器</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="demo">
+        <my-component1></my-component1>
+    </div>
+    <div id="demo2">
+        <my-component1></my-component1>
+    </div>
+    <template id="info">
+        <div>
+            <img :src="img">
+            <p>{{firstName}} {{lastName}} aka {{alias}}</p>
+        </div>
+    </template>
+    <script>
+        // Vue.component('my-component', Profile)
+        // Vue.component('my-component', obj)
+        // 1)注册组件，传入一个扩展过的构造器
+        // let Profile = Vue.extend({
+        //         // 注意 创建组件指定组件的模板的时候，模板只能有一个根元素
+        //         template: '<div><img :src="img"><p>{{firstName}} {{lastName}} aka {{alias}}</p></div>',
+        //         data: function() {
+        //             return {
+        //                 img: 'https://cn.vuejs.org/images/logo.png',
+        //                 firstName: 'Walter',
+        //                 lastName: 'White',
+        //                 alias: 'Heisenberg'
+        //             }
+        //         }
+        //     })
+        // 2)注册组件，传入一个选项对象 (自动调用 Vue.extend)
+        // let obj = {
+        //     template: '<div><img :src="img"><p>{{firstName}} {{lastName}} aka {{alias}}</p></div>',
+        //     data: function() {
+        //         return {
+        //             img: 'https://cn.vuejs.org/images/logo.png',
+        //             firstName: 'Walter',
+        //             lastName: 'White',
+        //             alias: 'Heisenberg'
+        //         }
+        //     }
+        // }
+        // 3)获取注册的组件 (始终返回构造器)
+        // Vue.component('my-component', {
+        //     template: '<div><img :src="img"><p>{{firstName}} {{lastName}} aka {{alias}}</p></div>',
+        //     data: function() {
+        //         return {
+        //             img: 'https://cn.vuejs.org/images/logo.png',
+        //             firstName: 'Walter',
+        //             lastName: 'White',
+        //             alias: 'Heisenberg'
+        //         }
+        //     }
+        // })
+        //自定义组件
+        Vue.component('my-component', {
+            template: '#info',
+            data: function() {
+                return {
+                    img: 'https://cn.vuejs.org/images/logo.png',
+                    firstName: 'Walter',
+                    lastName: 'White',
+                    alias: 'Heisenberg'
+                }
+            }
+        })
+        new Vue({
+            el: '#demo',
+            data: {},
+            methods: {},
+        })
+        new Vue({
+            el: '#demo2',
+            data: {},
+            methods: {},
+            // 局部组件
+            components: {
+                'my-component1': {
+                    template: '#info',
+                    data: function() {
+                        return {
+                            img: 'https://cn.vuejs.org/images/logo.png',
+                            firstName: 'Walter',
+                            lastName: 'White',
+                            alias: 'Heisenberg'
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

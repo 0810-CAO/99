@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表渲染需注意&列表动画</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <style>
+        .v-enter {
+            opacity: 0;
+        }
+        
+        .v-enter-active {
+            transition: all 2s;
+        }
+        
+        .v-enter-to {
+            opacity: 1;
+        }
+        
+        .v-leave {
+            opacity: 1;
+        }
+        
+        .v-leave-active {
+            transition: all 3s;
+        }
+        
+        .v-leave-to {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        <form>
+            <input type="text" v-model="name">
+            <input type="submit" value="添加" @click.prevent="add">
+        </form>
+        <ul>
+            <!-- 会产生复用，如果在前面插入选中的框数据不会跟着改变 添加一个key，如果相同则复用，不同则重新创建，不能使用index作为key，当列表的内容新增或者删除时index都会发生变化 -->
+            <transition-group appear tag="ul">
+                <li v-for="(person,index) in persons" :key="person.id" @click="del(index)">
+                    <input type="checkbox">
+                    <span>{{index}}----{{person.name}}</span>
+                </li>
+            </transition-group>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: '#demo',
+            data: {
+                persons: [{
+                    id: 1,
+                    name: "ss"
+                }, {
+                    id: 2,
+                    name: "sww"
+                }, {
+                    id: 3,
+                    name: "gg"
+                }],
+                name: '',
+                id: 3
+            },
+            methods: {
+                add() {
+                    this.id++
+                        let newPerson = {
+                            name: this.name,
+                            id: this.id
+                        }
+                    this.persons.unshift(newPerson)
+                    this.name = ''
+                },
+                del(index) {
+                    this.persons.splice(index, 1)
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

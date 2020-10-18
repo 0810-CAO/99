@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多级传递数据</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/vuex.js"></script>
+</head>
+
+<body>
+    <div id="demo3">
+        <grandfather></grandfather>
+    </div>
+    <template id="grandfather">
+        <div>
+            <button @click="say">点击grandfather</button>
+            <span>{{name}}</span>
+            <father :gfname="name" @gfsay="say"></father>
+        </div>
+    </template>
+    <template id="father">
+        <div>
+            <button @click="fatherFn">点击father</button>
+            <span>{{gfname}}</span>
+            <son :fname="gfname" @fsay="fatherFn"></son>
+        </div>
+    </template>
+    <template id="son">
+        <div>
+            <button @click="sonFn">点击father</button>
+            <span>{{fname}}</span>
+        </div>
+    </template>
+    <script>
+        const store = new Vuex.Store({
+            state: {
+                count: 0
+            }
+        })
+        Vue.component('grandfather', {
+            template: '#grandfather',
+            data: function() {
+                return {
+                    name: 'https://cn.vuejs.org/images/logo.png'
+                }
+            },
+            methods: {
+                say() {
+                    console.log("grandfather")
+                }
+            },
+            components: {
+                'father': {
+                    template: '#father',
+                    props: ['gfname'],
+                    methods: {
+                        fatherFn() {
+                            this.$emit("gfsay")
+                        }
+                    },
+                    components: {
+                        'son': {
+                            template: '#son',
+                            props: ['fname'],
+                            methods: {
+                                sonFn() {
+                                    this.$emit("fsay")
+                                }
+                            },
+                        }
+                    }
+                }
+            }
+        })
+        new Vue({
+            el: '#demo3',
+        })
+    </script>
+</body>
+
+</html>

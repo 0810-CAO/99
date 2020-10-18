@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>过渡&动画</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        /*         
+        .v-enter {
+            opacity: 0;
+        }
+        
+        .v-enter-active {
+            transition: all 2s;
+        }
+        
+        .v-enter-to {
+            opacity: 1;
+            margin-left: 100px;
+        } */
+    </style>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <link href="https://cdn.staticfile.org/animate.css/3.5.1/animate.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="demo3">
+        <button @click="show = !show">Toggle3</button>
+        <transition appear enter-class="" enter-active-class="animated bounceInDown" enter-to-class="">
+            <div class="box" v-show="show">hello</div>
+        </transition>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: '#demo3',
+            data: {
+                show: true
+            },
+            methods: {}
+        })
+    </script>
+</body>
+
+</html>

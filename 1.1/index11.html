@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuex</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/vuex.js"></script>
+</head>
+<!-- 作用域插槽应用场景，子组件提供数据，父组件决定如何渲染 -->
+
+<body>
+    <div id="demo3">
+        <grandfather></grandfather>
+    </div>
+    <template id="grandfather">
+        <div>
+            <father @parentchange="change">
+            </father>
+            <father2 :parentnum="num">
+            </father2>
+    </div>
+    </template>
+
+    <template id="father">
+        <div>
+            <button @click="add">增加</button>
+            <button @click="del">减少</button>
+<input type="text" :value="count">
+        </div>
+    </template>
+
+    <template id="father2">
+        <div>
+            <div>{{parentnum}}</div>
+        </div>
+    </template>
+    <script>
+        const store = new Vuex.Store({
+            state: {
+                count: 0
+            }
+        })
+        Vue.component('grandfather', {
+            template: '#grandfather',
+            data: function() {
+                return {
+                    msg: '河南城建'
+                }
+            },
+            methods: {
+                change(newcount) {
+                    this.num = newcount
+                }
+            },
+            components: {
+                'father': {
+                    template: '#father',
+                    data: function() {
+                        return {
+                            count: 0
+                        }
+                    },
+                    methods: {
+                        add() {
+                            this.count = this.count + 1
+                            this.$emit("parentchange", this.count)
+                        },
+                        del() {
+                            this.count = this.count - 1
+                            this.$emit("parentchange", this.count)
+                        }
+                    },
+                },
+                'father2': {
+                    template: '#father2',
+                    props: ["parentnum"],
+                    data: function() {
+                        return {
+
+                        }
+                    }
+                }
+            }
+        })
+        new Vue({
+            el: '#demo3',
+        })
+    </script>
+</body>
+
+</html>

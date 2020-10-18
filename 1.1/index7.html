@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>父子组件&数据传递&方法传递</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="demo3">
+        <father></father>
+    </div>
+    <template id="father">
+        <div>
+            <img :src="img">
+            <p>{{age}}</p>
+            <button @click="hello">father</button>
+            <son :parentage="age" @parentsay="hello"></son>
+        </div>
+    </template>
+    <template id="son">
+        <div>
+            <span>son</span>
+            <span>{{parentage}}</span>
+            <button @click="sonFn">son</button>
+        </div>
+    </template>
+    <script>
+        // Vue.component('father', {
+        //     template: '#father',
+        //     data: function() {
+        //         return {
+        //             img: 'https://cn.vuejs.org/images/logo.png'
+        //         }
+        //     },
+        //     components: {
+        //         "son": {
+        //             template: "#son"
+        //         }
+        //     }
+        // })
+        new Vue({
+            el: '#demo3',
+            data: {},
+            methods: {},
+            components: {
+                "father": {
+                    template: '#father',
+                    data: function() {
+                        return {
+                            img: 'https://cn.vuejs.org/images/logo.png',
+                            age: 33
+                        }
+                    },
+                    methods: {
+                        hello(data) {
+                            alert("hello father")
+                            console.log(data)
+                        }
+                    },
+                    components: {
+                        "son": {
+                            template: "#son",
+                            props: ["parentage"],
+                            methods: {
+                                // 传递方法在子组件中直接使用 给父组件传参加,
+                                sonFn() {
+                                    this.$emit("parentsay", "aaa")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义动态组件切换&动画</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <style>
+        .v-enter {
+            opacity: 0;
+            margin-left: 500px;
+        }
+        
+        .v-enter-active {
+            transition: all 2s;
+        }
+        
+        .v-enter-to {
+            opacity: 1;
+        }
+        
+        .v-leave {
+            opacity: 1;
+        }
+        
+        .v-leave-active {
+            transition: all 3s;
+            margin-left: 500px;
+        }
+        
+        .v-leave-to {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo2">
+        <button @click="toggle">切换</button>
+        <!-- 动态组件 过渡动画进入和离开是同时进行的mode="out-in"先进后出-->
+        <transition mode="out-in">
+            <component v-bind:is="name"></component>
+        </transition>
+    </div>
+    <template id="info1">
+        <div>
+            <img :src="img">
+        </div>
+    </template>
+    <template id="info2">
+        <div>
+            <img :src="img2">
+        </div>
+    </template>
+    <script>
+        Vue.component('first', {
+            template: '#info1',
+            data: function() {
+                return {
+                    img: 'https://cn.vuejs.org/images/logo.png'
+                }
+            }
+        })
+        Vue.component('second', {
+            template: '#info2',
+            data: function() {
+                return {
+                    img2: 'http://www.staticfile.org/assets/images/qiniu.png'
+                }
+            }
+        })
+        new Vue({
+            el: '#demo2',
+            data: {
+                name: 'first',
+                isShow: false,
+            },
+            methods: {
+                toggle() {
+                    this.isShow = !this.isShow
+                    this.name = this.name === "first" ? "second" : "first"
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

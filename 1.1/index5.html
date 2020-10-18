@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义组件使用data&method</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="demo2">
+        <!-- 需要在vue的实例中实现对应的方法 -->
+        <my-component></my-component>
+        <button @click="appFun">点击1</button>
+    </div>
+    <template id="info">
+        <div>
+            <img :src="img">
+            <button @click="xxxFun">点击2</button>
+            <p>{{firstName}} {{lastName}} aka {{alias}}</p>
+        </div>
+    </template>
+    <script>
+        //自定义组件
+        Vue.component('my-component', {
+            template: '#info',
+            data: function() {
+                return {
+                    img: 'https://cn.vuejs.org/images/logo.png',
+                    firstName: 'Walter',
+                    lastName: 'White',
+                    alias: 'Heisenberg'
+                }
+            },
+            methods: {
+                xxxFun() {
+                    alert("xxxFun")
+                }
+            }
+        })
+        new Vue({
+            el: '#demo2',
+            data: {},
+            methods: {
+                appFun() {
+                    alert("appFun")
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

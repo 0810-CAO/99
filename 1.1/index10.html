@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域插槽</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+</head>
+<!-- 作用域插槽应用场景，子组件提供数据，父组件决定如何渲染 -->
+
+<body>
+    <div id="demo3">
+        <grandfather></grandfather>
+    </div>
+    <template id="grandfather">
+        <div>
+            <father>
+                <!-- 接收子组件插槽暴露数据 -->
+                <!-- <template slot-scope="get">填充内容{{get.names}}
+                    <li v-for="(name,index) in get.names">{{name}}</li>
+                </template> -->
+    <!-- 使用v-slot替换 v-slot:default="get"(#:default="get" 若是具名插槽替换default即可)-->
+    <template #one="get">
+        <li v-for="(name,index) in get.names">{{name}}</li>
+    </template>
+    </father>
+    </div>
+    </template>
+    <template id="father">
+        <div>
+            <div>111{{names}}</div>
+<!-- 将当前子组件names暴露给父组件 -->
+            <slot name="one" v-bind:names="names">
+                默认内容{{names}}
+            </slot>
+        </div>
+    </template>
+    <script>
+        Vue.component('grandfather', {
+            template: '#grandfather',
+            components: {
+                'father': {
+                    template: '#father',
+                    data: function() {
+                        return {
+                            names: ['11', 'cc', 'ww']
+                        }
+                    }
+                }
+            }
+        })
+        new Vue({
+            el: '#demo3',
+        })
+    </script>
+</body>
+
+</html>

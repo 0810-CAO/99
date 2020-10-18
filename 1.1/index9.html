@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>插槽</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="demo3">
+        <grandfather></grandfather>
+    </div>
+    <template id="grandfather">
+        <div>
+            <span>{{name}}</span>
+            <!-- 给子组件动态添加内容需要使用插槽 -->
+            <father>
+                <!-- <div>填坑的内容1</div>
+                <div>填坑的内容2</div>
+                <div slot="one">填坑的内容5</div> -->
+                <!-- 使用v-slot:one(#one)替换，但是只能作用在template -->
+                <template #one>
+                    <div>填坑的内容5</div>
+                    <div>填坑的内容6</div>
+                </template>
+    <template #two>
+                    <div>填坑的内容88</div>
+                    <div>填坑的内容99</div>
+                </template>
+    </father>
+    </div>
+    </template>
+    <template id="father">
+        <div>
+            <span>子组件</span>
+            <!-- slot就类似一个坑若没有填则使用默认数据，否则采用填坑的内容 -->
+            <!-- 可以指定插槽名称，没指定则是匿名插槽 -->
+            <!-- 匿名插槽会填充多份填充内容，推荐使用一次匿名 -->
+            <slot>默认数据1</slot>
+            <!-- 具名插槽 -->
+            <slot name="one">默认数据2</slot>
+            <slot name="two">默认数据3</slot>
+        </div>
+    </template>
+    <script>
+        Vue.component('grandfather', {
+            template: '#grandfather',
+            data: function() {
+                return {
+                    name: 'https://cn.vuejs.org/images/logo.png'
+                }
+            },
+            components: {
+                'father': {
+                    template: '#father',
+                }
+            }
+        })
+        new Vue({
+            el: '#demo3',
+        })
+    </script>
+</body>
+
+</html>

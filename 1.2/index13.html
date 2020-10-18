@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuex共享数据</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/vuex.js"></script>
+</head>
+
+<body>
+    <div id="demo3">
+        <grandfather></grandfather>
+    </div>
+    <template id="grandfather">
+        <div>
+            <father>
+            </father>
+            <father2>
+            </father2>
+    </div>
+    </template>
+
+    <template id="father">
+        <div>
+            <button @click="add">增加</button>
+            <button @click="del">减少</button>
+<input type="text" :value="this.$store.state.count">
+        </div>
+    </template>
+
+    <template id="father2">
+        <div>
+            <button @click="add">增加</button>
+            <button @click="del">减少</button>
+<input type="text" :value="this.$store.state.count">
+        </div>
+    </template>
+    <script>
+        const store = new Vuex.Store({
+            // 相当于data 保存共享数据
+            state: {
+                count: 0
+            },
+            // 用于修改共享数据 
+            mutations: {
+                madd(state) {
+                    state.count = state.count + 1
+                },
+                msub(state) {
+                    state.count = state.count - 1
+                }
+            }
+        })
+        Vue.component('grandfather', {
+            template: '#grandfather',
+            store: store,
+            components: {
+                'father': {
+                    template: '#father',
+                    methods: {
+                        add() {
+                            // 尽量不要修改共享数据不便于排错
+                            // this.$store.state.count = this.$store.state.count + 1
+                            this.$store.commit("madd")
+                        },
+                        del() {
+                            // this.$store.state.count = this.$store.state.count - 1
+                            this.$store.commit("msub")
+                        }
+                    },
+                },
+                'father2': {
+                    template: '#father2',
+                    methods: {
+                        add() {
+                            this.$store.commit("madd")
+                        },
+                        del() {
+                            this.$store.commit("msub")
+                        }
+                    },
+                }
+            }
+        })
+        new Vue({
+            el: '#demo3',
+        })
+    </script>
+</body>
+
+</html>

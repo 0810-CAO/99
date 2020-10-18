@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>过渡&动画</title>
+    <style>
+        /*v-enter v-enter-to v-enter-active 写transition时不用加name*/
+        /*v-leav v-leav-to v-leav-active*/
+        /*指定过渡样式*/
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        
+        .xxx-enter-active,
+        .xxx-leave-active {
+            transition: opacity 1s
+        }
+        /*指定隐藏时的样式*/
+        
+        .xxx-enter,
+        .xxx-leave-to {
+            opacity: 0;
+        }
+        
+        .move-enter-active {
+            transition: all 1s
+        }
+        
+        .move-leave-active {
+            transition: all 3s
+        }
+        
+        .move-enter,
+        .move-leave-to {
+            opacity: 0;
+            transform: translateX(20px)
+        }
+        
+        .bounce-enter-active {
+            animation: bounce-in .5s;
+        }
+        
+        .bounce-leave-active {
+            animation: bounce-in .5s reverse;
+        }
+        
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        /* .v-enter {
+            opacity: 0;
+        }
+        
+        .v-enter-active {
+            transition: all 2s;
+        }
+        
+        .v-enter-to {
+            opacity: 1;
+            margin-left: 100px;
+        } */
+    </style>
+    <link href="https://cdn.staticfile.org/animate.css/3.5.2/animate.min.css" ref="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!--
+1. vue动画的理解
+  操作css的trasition或animation
+  vue会给目标元素添加/移除特定的class
+2. 基本过渡动画的编码
+  1). 在目标元素外包裹<transition name="xxx">
+  2). 定义class样式
+    1>. 指定过渡样式: transition
+    2>. 指定隐藏时的样式: opacity/其它
+3. 过渡的类名
+  xxx-enter-active: 指定显示的transition
+  xxx-leave-active: 指定隐藏的transition
+  xxx-enter-to:转换为的样式
+  xxx-enter: 指定隐藏时的样式  -->
+    <div id="demo">
+        <button @click="show = !show">Toggle</button>
+        <transition name="xxx" appear>
+            <p v-show="show">hello</p>
+        </transition>
+    </div>
+    <hr>
+    <div id="demo2">
+        <button @click="show = !show">Toggle2</button>
+        <transition name="move">
+            <p v-show="show">hello</p>
+        </transition>
+    </div>
+    <div id="demo3">
+        <button @click="show = !show">Toggle3</button>
+        <!-- 保存动画完成效果  -->
+        <transition appear v-bind:css="false" v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:after-enter="afterEnter">
+            <div class="box" v-show="show">hello</div>
+        </transition>
+        <!-- 自定义类名 -->
+        <transition appear enter-class="A" enter-active-class="B" enter-to-class="C">
+            <div class="box" v-show="show">hello</div>
+        </transition>
+    </div>
+    <div id="example-2">
+        <button @click="show = !show">Toggle show</button>
+        <br>
+        <transition name="bounce">
+            <p v-if="show" style="display: inline-block">Lorem</p>
+        </transition>
+    </div>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script src="https://cdn.staticfile.org/velocity/1.2.3/velocity.min.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: '#demo',
+            data: {
+                show: true
+            }
+        })
+        new Vue({
+            el: '#demo2',
+            data: {
+                show: true
+            }
+        })
+        new Vue({
+            el: '#demo3',
+            data: {
+                show: true
+            },
+            methods: {
+                // beforeEnter(el) {
+                //     el.style.opacity = "0"
+                //     console.log("beforeEnter")
+                // },
+                // enter(el, done) {
+                //     // 如果通过js钩子函数来执行过渡动画，必须在动画执行过程中的回调函数中写上el.offsetWidth/el.offsetheight
+                //     el.style.transition = "all 3s"
+                //     el.offsetWidth
+                //     console.log("Enter")
+                //         // 如果使用钩子函数在一进来就调用就需要延迟调用一下
+                //     setTimeout(() => {
+                //         done()
+                //     }, 0.5)
+                // },
+                // afterEnter(el) {
+                //     el.style.opacity = "1"
+                //     el.style.marginLeft = "500px"
+                //     console.log("afterEnter")
+                // }
+                //可以使用Velocity库来实现动画效果，只需要指定动画和时间即可
+                beforeEnter(el) {
+
+                },
+                enter(el, done) {
+                    Velocity(el, {
+                        opacity: 1,
+                        marginLeft: '500px'
+                    }, 3000)
+                    done()
+                },
+                afterEnter(el) {
+
+                }
+            },
+        })
+        new Vue({
+            el: '#example-2',
+            data: {
+                show: true
+            }
+        })
+    </script>
+</body>
+
+</html>
