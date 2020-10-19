@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuewatch</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/vue-router.js"></script>
+    <style>
+        .active {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        <router-link to="/one" tag="button">one</router-link>
+        <router-link to="/two" tag="button">two</router-link>
+        <router-view></router-view>
+    </div>
+    <template id="one">
+        <div class="onepage">
+            <p>第一个页面</p>
+    </div>
+    </template>
+    <template id="two">
+        <div class="twopage">
+            <p>第二个页面</p>
+    </div>
+    </template>
+
+    <script>
+        const one = {
+            template: "#one"
+        }
+        const two = {
+            template: "#two"
+        }
+        const routes = [{
+            path: '/',
+            redirect: '/one'
+        }, {
+            path: '/one',
+            component: one
+        }, {
+            path: '/two',
+            component: two
+        }]
+        const router = new VueRouter({
+            routes: routes,
+            linkActiveClass: 'active'
+        })
+        new Vue({
+            el: '#demo',
+            //4）将创建好的路由对象绑定到实例上
+            router: router,
+            watch: {
+                "$route.path": function(newvalue, oldvalue) {
+                    console.log(newvalue, oldvalue)
+                }
+            },
+            components: {
+                one: one,
+                two: two
+            }
+        })
+    </script>
+</body>
+
+</html>

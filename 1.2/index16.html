@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌套路由</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/vue-router.js"></script>
+    <style>
+        .onepage {
+            width: 300px;
+            height: 300px;
+            background-color: palegreen;
+        }
+        
+        .twopage {
+            width: 300px;
+            height: 300px;
+            background-color: wheat;
+        }
+        
+        .one1_1 {
+            background-color: black;
+        }
+        
+        .one1_2 {
+            background-color: blue;
+        }
+        
+        .active {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        <router-link to="/one" tag="button">one</router-link>
+        <router-link to="/two" tag="button">two</router-link>
+        <router-view></router-view>
+    </div>
+    <template id="one">
+        <div class="onepage">
+            <p>第一个页面</p>
+            <router-link to="/one/one1_1" tag="button">one1_1</router-link>
+            <router-link to="/one/one1_2" tag="button">one1_2</router-link>
+            <router-view></router-view>
+    </div>
+    </template>
+    <template id="one1_1">
+        <div class="one1_1">
+            <p>1.1页面</p>
+        </div>    
+    </div>
+    </template>
+    <template id="one1_2">
+        <div class="one1_2">
+            <p>1.2页面</p>
+    </div>
+    </template>
+    <template id="two">
+        <div class="twopage">
+            <p>第二个页面</p>
+    </div>
+    </template>
+
+    <script>
+        //1）定义组件
+        const one1_1 = {
+            template: "#one1_1",
+        }
+        const one1_2 = {
+            template: "#one1_2",
+        }
+        const one = {
+            template: "#one",
+            components: {
+                one1_1: one1_1,
+                one1_2: one1_2
+            }
+        }
+        const two = {
+                template: "#two",
+            }
+            //2)定义路由
+        const routes = [{
+                path: '/',
+                redirect: '/one'
+            }, {
+                path: '/one',
+                component: one,
+                children: [{
+                    // 嵌套路由子路由不需要写一级路由
+                    path: 'one1_1',
+                    component: one1_1
+                }, {
+                    path: 'one1_2',
+                    component: one1_2
+                }]
+            }, {
+                path: '/two',
+                component: two
+            }]
+            //3）创建router实例
+        const router = new VueRouter({
+            routes: routes,
+            // 设置触发后按钮状态
+            linkActiveClass: 'active'
+        })
+        new Vue({
+            el: '#demo',
+            //4）将创建好的路由对象绑定到实例上
+            router: router,
+            components: {
+                one: one,
+                two: two
+            }
+        })
+    </script>
+</body>
+
+</html>

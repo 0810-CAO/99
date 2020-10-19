@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueRouter&router-link&传参</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/vue-router.js"></script>
+    <style>
+        .onepage {
+            width: 300px;
+            height: 300px;
+            background-color: palegreen;
+        }
+        
+        .twopage {
+            width: 300px;
+            height: 300px;
+            background-color: wheat;
+        }
+        
+        .active {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        <!-- <a href="#/one">one</a>
+        <a href="#/two">two</a> -->
+        <!-- 通过router-link设置url哈希值不需要#，用to代替（其本质就是<a>标签）使用tag告诉vue通过什么来渲染-->
+
+        <!-- 传递参数方法一 ?name=cao&age=21通过this.$route.query取值
+        传递参数方法二 定义路由规则使用类似:name/:age this.$route.params去出-->
+        <router-link to="/one?name=cao&age=21" tag="button">one</router-link>
+        <router-link to="/two/cheng/22" tag="button">two</router-link>
+        <!-- 将匹配到的组件渲染到此处 -->
+        <router-view></router-view>
+    </div>
+    <template id="one">
+        <div class="onepage">
+            <p>第一个页面</p>
+    </div>
+    </template>
+    <template id="two">
+        <div class="twopage">
+            <p>第二个页面</p>
+    </div>
+    </template>
+
+    <script>
+        //1）定义组件
+        const one = {
+            template: "#one",
+            created: function() {
+                console.log(this.$route.query.name)
+            }
+        }
+        const two = {
+                template: "#two",
+                created: function() {
+                    console.log(this.$route.params.name)
+                }
+            }
+            //2)定义路由
+        const routes = [{
+                path: '/',
+                redirect: '/one'
+            }, {
+                path: '/one',
+                component: one
+            }, {
+                path: '/two/:name/:age',
+                component: two
+            }]
+            //3）创建router实例
+        const router = new VueRouter({
+            routes: routes,
+            // 设置触发后按钮状态
+            linkActiveClass: 'active'
+        })
+        new Vue({
+            el: '#demo',
+            //4）将创建好的路由对象绑定到实例上
+            router: router,
+            components: {
+                one: one,
+                two: two
+            }
+        })
+    </script>
+</body>
+
+</html>

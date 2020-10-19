@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue生命周期</title>
+</head>
+
+<body>
+    <!--
+常用的生命周期方法
+  created()/mounted(): 发送ajax请求, 启动定时器等异步任务
+  beforeDestory(): 做收尾工作, 如: 清除定时器
+-->
+    <div id="test">
+        <p>{{msg}}</p>
+        <button @click="destroyVue">destory vue</button>
+        <p v-if="isShow">河南城建学院</p>
+    </div>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: '#test',
+            data: {
+                isShow: true,
+                msg: 'aaa'
+            },
+            //初始化阶段,此时vue实例刚被创建出来，不能访问数据和方法
+            beforeCreate() {
+                console.log('beforeCreate')
+            },
+            // 调用该方法是 数据和方法已经初始化，模板还未编译
+            created() {
+                console.log('created')
+                console.log(this.msg)
+            },
+            // 调用该方法时表示已经编译好模板但是还未渲染到页面
+            beforeMount() {
+                console.log('beforeMount')
+                console.log(document.querySelector("p").innerHTML)
+                console.log(document.querySelector("p").innerText)
+            },
+            // 调用该方法时表示已经完成模板渲染可以拿到界面渲染数据
+            mounted() {
+                // 执行异步任务
+                console.log('mounted')
+                console.log(document.querySelector("p").innerHTML)
+                console.log(document.querySelector("p").innerText)
+                this.intervalId = setInterval(() => {
+                    console.log('-----')
+                    this.isShow = !this.isShow
+                }, 1000)
+            },
+            //vue实例中数据被修改才调用 数据被修改但是页面还未同步
+            beforeUpdate() {
+                console.log('beforeUpdate')
+            },
+            // vue实例中保存数据被修改并且界面页同步
+            updated() {
+                console.log('updated')
+            },
+            //销毁阶段 最后能够访问组件数据和方法的函数
+            beforeDestroy() {
+                console.log('beforeDestroy')
+                    // 执行收尾的工作
+                clearInterval(this.intervalId)
+            },
+            destroyed() {
+                console.log('destroyed')
+            },
+            methods: {
+                //销毁vue实例: vm.$destory()
+                destroyVue() {
+                    this.$destroy()
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
