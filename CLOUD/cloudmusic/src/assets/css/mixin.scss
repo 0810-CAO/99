@@ -17,5 +17,91 @@
 }
 // 限制行数
 @mixin clamp($row) {
-    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $row;
+}
+// 顶部背景色
+@mixin  bg_color() {
+  background: $background-color-theme;
+  [data-theme=theme1] & {
+    background: $background-color-theme1;
+  }
+  [data-theme=theme2] & {
+    background: $background-color-theme2;
+  }
+}
+// tobbar背景色
+@mixin  bg_sub_color() {
+  background: $background-color-sub-theme;
+  [data-theme=theme1] & {
+    background: $background-color-sub-theme1;
+  }
+  [data-theme=theme2] & {
+    background: $background-color-sub-theme2;
+  }
+}
+// tobbar字体未被激活的颜色
+@mixin  font_color() {
+  color: $font-color-theme;
+  [data-theme=theme1] & {
+    color: $font-color-theme1;
+  }
+  [data-theme=theme2] & {
+    color: $font-color-theme2;
+  }
+}
+// tobbar字体被激活的颜色
+@mixin  font_active_color() {
+  color: $font-active-color-theme;
+  [data-theme=theme1] & {
+    color: $font-active-color-theme1;
+  }
+  [data-theme=theme2] & {
+    color: $font-active-color-theme2;
+  }
+}
+// tobbar文字底部边框颜色
+@mixin  border_color() {
+  border-color: $border-color-theme;
+  [data-theme=theme1] & {
+    border-color: $border-color-theme1;
+  }
+  [data-theme=theme2] & {
+    border-color: $border-color-theme2;
+  }
+}
+// 顶部左侧logo（可根据屏幕大小选择不同尺寸图片）
+@mixin bg_img($url) {
+  [data-theme=theme] & {
+    background-image: url($url+'_163.png');
+  }
+  [data-theme=theme1] & {
+    background-image: url($url+'_qq.png');
+  }
+  [data-theme=theme2] & {
+    background-image: url($url+'_it666.png');
+  }
+  background-size: cover;
+  background-repeat: no-repeat;
+  [data-theme=theme][date-dpr='2'] & {
+    background-image: url($url+'_163.png');
+  }
+  [data-theme=theme][date-dpr='3'] & {
+    background-image: url($url+'_163.png');
+  }
+  [data-theme=theme1][date-dpr='2'] & {
+    background-image: url($url+'_qq.png');
+  }
+  [data-theme=theme1][date-dpr='3'] & {
+    background-image: url($url+'_qq.png');
+  }
+  [data-theme=theme2][date-dpr='2'] & {
+    background-image: url($url+'_it666.png');
+  }
+  [data-theme=theme2][date-dpr='3'] & {
+    background-image: url($url+'_it666.png');
+  }
 }

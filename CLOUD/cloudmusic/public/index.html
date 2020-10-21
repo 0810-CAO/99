@@ -24,12 +24,13 @@
     document.write(text);
     document.documentElement.style.fontSize = window.innerWidth / 7.5 + "px";
     document.documentElement.setAttribute('data-dpr', window.devicePixelRatio + '');
-    // document.documentElement.setAttribute('data-theme', 'theme');
+    // 使用data-theme在全局设置点击头部可以切换背景和tobbar等颜色
+    document.documentElement.setAttribute('data-theme', 'theme');
     // 2如果在HTML文件中用到了字符串模板, 字符串模板中用到了变量, 那么html-plugin是无法处理的, 所以会报错。如果想解决这个问题, 那么我们需要再借助一个loader, html-loader   vue.config.js
     // 3借助postcss-pxtorem实现自动将px转换成rem  postcss.config.js 
     // 4指定兼容哪些浏览器，可以在项目目录下的 .browserslistrc 文件中配置
     // 5借助fastclick解决移动端100~300ms的点击事件延迟问题 main.js初始化
-    //6在移动端开发中, 一般情况下我们不需要让字体大小随着屏幕尺寸的变化而变化
+    // 6在移动端开发中, 一般情况下我们不需要让字体大小随着屏幕尺寸的变化而变化
 // 由于我们是通过视口缩放来适配移动端的, 所以我们不能直接设置字体大小, 否则字体大小就会随着屏幕尺寸的变化而变化
   </script>
 </head>
