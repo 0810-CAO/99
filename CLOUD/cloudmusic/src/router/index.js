@@ -11,6 +11,11 @@ const Recommend = (resolve) => {
     resolve(module)
   })
 }
+const Detail = (resolve) => {
+  import('../components/Detail').then((module) => {
+    resolve(module)
+  })
+}
 const Singer = (resolve) => {
   import('../views/Singer').then((module) => {
     resolve(module)
@@ -33,7 +38,11 @@ const routes = [{
   redirect: '/recommend'
 }, {
   path: '/recommend',
-  component: Recommend
+  component: Recommend,
+  children: [{
+    path: 'detail/:id/:type',
+    component: Detail
+  }]
 }, {
   path: '/singer',
   component: Singer

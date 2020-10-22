@@ -1,15 +1,16 @@
 <!--eslint-disable-->
 <template>
   <div class="header" @click="changeTheme">
-    <div class="header-left"></div>
-    <p class="header-title">cloud音乐</p>
+    <!-- 阻止时间冒泡，避免顶部背景色改变-->
+    <div class="header-left" @click.stop="back"></div>
+    <p class="header-title">{{ title }}</p>
     <div class="header-right"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header",
+  name: "SubHeader",
   data() {
     return {
       themes: ["theme", "theme1", "theme2"],
@@ -26,6 +27,16 @@ export default {
         "data-theme",
         this.themes[this.index]
       );
+    },
+    back() {
+      window.history.back();
+    }
+  },
+  props: {
+    title: {
+      type: String,
+      default: "",
+      required: true
     }
   }
 };
@@ -41,8 +52,6 @@ export default {
   display: flex;
   @include bg_color();
   justify-content: space-between;
-  // position: relative;
-  // z-index: 100;
   .header-left,
   .header-right {
     width: 84px;
@@ -50,10 +59,10 @@ export default {
     margin-top: 8px;
   }
   .header-left {
-    @include bg_img("../assets/images/logo");
+    @include bg_img("../assets/images/back");
   }
   .header-right {
-    @include bg_img("../assets/images/account");
+    @include bg_img("../assets/images/more");
   }
   .header-title {
     text-align: center;
@@ -61,6 +70,7 @@ export default {
     color: #fff;
     font-weight: bold;
     @include font_size($font_medium);
+    @include no-wrap();
   }
 }
 </style>

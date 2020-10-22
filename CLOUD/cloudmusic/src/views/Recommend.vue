@@ -1,16 +1,28 @@
 <template>
   <div class="recommend">
-    <ScrollView>
-      <div>
-        <Banner :banners="banners"></Banner>
-        <Personalized
-          :personalized="personalized"
-          :title="'推荐歌单'"
-        ></Personalized>
-        <Personalized :personalized="albums" :title="'最新专辑'"></Personalized>
-        <SongList :songs="songs"></SongList>
-      </div>
-    </ScrollView>
+    <div class="recommend-wrapper">
+      <ScrollView>
+        <div>
+          <Banner :banners="banners"></Banner>
+          <Personalized
+            :personalized="personalized"
+            :title="'推荐歌单'"
+            @select="fatherSelectItem"
+            :type="'personalized'"
+          ></Personalized>
+          <Personalized
+            :personalized="albums"
+            :title="'最新专辑'"
+            @select="fatherSelectItem"
+            :type="'album'"
+          ></Personalized>
+          <SongList :songs="songs"></SongList>
+        </div>
+      </ScrollView>
+    </div>
+    <transition>
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 <script>
@@ -26,6 +38,13 @@ export default {
     Personalized,
     SongList,
     ScrollView
+  },
+  methods: {
+    fatherSelectItem(id, type) {
+      this.$router.push({
+        path: `/recommend/detail/${id}/${type}`
+      });
+    }
   },
   data() {
     return {
@@ -78,5 +97,29 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
+  // overflow: hidden;
+}
+.recommend-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.v-enter {
+  transform: translateX(100%);
+}
+.v-enter-active {
+  transition: transform 1s;
+}
+.v-enter-to {
+  transform: translateX(0%);
+}
+.v-leave {
+  transform: translateX(0%);
+}
+.v-leave-active {
+  transition: transform 1s;
+}
+.v-leave-to {
+  transform: translateX(100%);
 }
 </style>
