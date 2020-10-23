@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <SubHeader :title="playlist.name"></SubHeader>
+    <DetailHeader :title="playlist.name"></DetailHeader>
     <DetailTop :path="playlist.coverImgUrl" ref="top"></DetailTop>
     <div class="bottom">
       <ScrollView ref="scrollview">
@@ -10,15 +10,15 @@
   </div>
 </template>
 <script>
-import SubHeader from "../components/SubHeader";
-import DetailTop from "../components/DetailTop";
-import DetailBottom from "../components/DetailBottom";
+import DetailHeader from "../components/Detail/DetailHeader";
+import DetailTop from "../components/Detail/DetailTop";
+import DetailBottom from "../components/Detail/DetailBottom";
 import ScrollView from "../components/ScrollView";
 import { getPlayList, getAlbumSong } from "../api/index";
 export default {
   name: "Detail",
   components: {
-    SubHeader,
+    DetailHeader,
     DetailTop,
     DetailBottom,
     ScrollView

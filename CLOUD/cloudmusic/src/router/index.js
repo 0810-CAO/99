@@ -12,7 +12,7 @@ const Recommend = (resolve) => {
   })
 }
 const Detail = (resolve) => {
-  import('../components/Detail').then((module) => {
+  import('../views/Detail').then((module) => {
     resolve(module)
   })
 }

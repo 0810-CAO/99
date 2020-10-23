@@ -23,8 +23,8 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "../assets/css/mixin";
-@import "../assets/css/variable";
+@import "../../assets/css/mixin";
+@import "../../assets/css/variable";
 .detail-bottom {
   width: 100%;
   li {
@@ -44,7 +44,7 @@ export default {
       width: 60px;
       height: 60px;
       margin-right: 20px;
-      @include bg_img("../assets/images/small_play");
+      @include bg_img("../../assets/images/small_play");
     }
     .bottom-title {
       @include font_color();
