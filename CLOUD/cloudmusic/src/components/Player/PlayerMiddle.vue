@@ -1,67 +1,22 @@
 <template>
   <swiper :options="swiperOption" class="banner">
     <swiper-slide class="cd">
-      <div class="cd-wrapper">
-        <img
-          src="http://p1.music.126.net/6F5lJnwBJL_LT9t_V_YBZg==/109951165403300035.jpg?imageView&quality=89"
-          alt=""
-        />
+      <div class="cd-warpper" ref="cdWarpper">
+        <img :src="currentSong.picUrl" alt="" />
       </div>
-      <p>11111111</p>
+      <p>{{ getFirstLyric() }}</p>
     </swiper-slide>
-    <swiper-slide class="lyric">
-      <ScrollView>
+    <swiper-slide class="lyric" ref="lyric">
+      <ScrollView ref="scrollView">
         <ul>
-          <li>我是第1个li</li>
-          <li>我是第2个li</li>
-          <li>我是第3个li</li>
-          <li>我是第4个li</li>
-          <li>我是第5个li</li>
-          <li>我是第6个li</li>
-          <li>我是第7个li</li>
-          <li>我是第8个li</li>
-          <li>我是第9个li</li>
-          <li>我是第10个li</li>
-          <li>我是第11个li</li>
-          <li>我是第12个li</li>
-          <li>我是第13个li</li>
-          <li>我是第14个li</li>
-          <li>我是第15个li</li>
-          <li>我是第16个li</li>
-          <li>我是第17个li</li>
-          <li>我是第18个li</li>
-          <li>我是第19个li</li>
-          <li>我是第20个li</li>
-          <li>我是第21个li</li>
-          <li>我是第22个li</li>
-          <li>我是第23个li</li>
-          <li>我是第24个li</li>
-          <li>我是第25个li</li>
-          <li>我是第26个li</li>
-          <li>我是第27个li</li>
-          <li>我是第28个li</li>
-          <li>我是第29个li</li>
-          <li>我是第30个li</li>
-          <li>我是第31个li</li>
-          <li>我是第32个li</li>
-          <li>我是第33个li</li>
-          <li>我是第34个li</li>
-          <li>我是第35个li</li>
-          <li>我是第36个li</li>
-          <li>我是第37个li</li>
-          <li>我是第38个li</li>
-          <li>我是第39个li</li>
-          <li>我是第40个li</li>
-          <li>我是第41个li</li>
-          <li>我是第42个li</li>
-          <li>我是第43个li</li>
-          <li>我是第44个li</li>
-          <li>我是第45个li</li>
-          <li>我是第46个li</li>
-          <li>我是第47个li</li>
-          <li>我是第48个li</li>
-          <li>我是第49个li</li>
-          <li>我是第50个li</li>
+          <!--根据当前播放时间来确定高亮的歌词位置 注意是字符串-->
+          <li
+            v-for="(value, key) in currentLyric"
+            :key="key"
+            :class="{ active: currentLineNum === key }"
+          >
+            {{ value }}
+          </li>
         </ul>
       </ScrollView>
     </swiper-slide>
@@ -74,6 +29,7 @@ Swiper2.use([Navigation, Pagination]);
 import "swiper/swiper-bundle.css";
 import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
 import ScrollView from "../ScrollView";
+import { mapGetters } from "vuex";
 export default {
   name: "PlayerMiddle",
   data() {
@@ -91,13 +47,98 @@ export default {
         observer: true,
         observeParents: true,
         observeSlideChildren: true
-      }
+      },
+      currentLineNum: "0"
     };
   },
   components: {
     Swiper,
     SwiperSlide,
     ScrollView
+  },
+  computed: {
+    ...mapGetters(["isPlaying", "currentSong", "currentLyric"])
+  },
+  // 监听播放按钮状态来控制旋转
+  watch: {
+    isPlaying(newValue, oldValue) {
+      if (newValue) {
+        this.$refs.cdWarpper.classList.add("active");
+      } else {
+        this.$refs.cdWarpper.classList.remove("active");
+      }
+    },
+    currentTime(newValue, oldValue) {
+      // // 同步高亮歌词
+      // let lineNum = Math.floor(newValue) + "";
+      // // 根据在某一秒没有歌词来判断高亮是否需要修改
+      // let result = this.currentLyric[lineNum];
+      // if (result !== undefined && result !== "") {
+      //   this.currentLineNum = lineNum;
+      //   // 歌词滚动同步 只需要在高亮变化时判断
+      //   let currentLyricTop = document.querySelector("li.active").offsetTop;
+      //   // console.log(currentLyricTop);拿到原生的高度
+      //   let lyricHeight = this.$refs.lyric.$el.offsetHeight;
+      //   if (currentLyricTop > lyricHeight / 2) {
+      //     this.$refs.scrollView.scrollTo(
+      //       0,
+      //       lyricHeight / 2 - currentLyricTop,
+      //       100
+      //     );
+      //   }
+      // }
+      let lineNum = Math.floor(newValue);
+      this.currentLineNum = this.getActiveLineNum(lineNum);
+      // 歌词滚动同步 只需要在高亮变化时判断
+      let currentLyricTop = document.querySelector(".lyric .active").offsetTop;
+      // console.log(currentLyricTop);拿到原生的高度当前歌词大于页面一半则向上，否则滚动至初始
+      let lyricHeight = this.$refs.lyric.$el.offsetHeight;
+      if (currentLyricTop > lyricHeight / 2) {
+        this.$refs.scrollView.scrollTo(
+          0,
+          lyricHeight / 2 - currentLyricTop,
+          200
+        );
+      } else {
+        this.$refs.scrollView.scrollTo(0, 0, 200);
+      }
+    },
+    // 解决第一句歌词不在第0秒
+    currentLyric(newValue, oldValue) {
+      for (let key in newValue) {
+        this.currentLineNum = key;
+        return;
+      }
+    }
+  },
+  methods: {
+    // 获取第一句歌词
+    getFirstLyric() {
+      for (let key in this.currentLyric) {
+        return this.currentLyric[key];
+      }
+    },
+    // 避免因为快进播放后歌词出现缓慢（如果找不到当前点击时间直接找上一行歌词）
+    getActiveLineNum(lineNum) {
+      // 解决第一句歌词不在第0秒
+      if (lineNum < 0) {
+        return this.currentLineNum;
+      }
+      let result = this.currentLyric[lineNum + ""];
+      if (result === undefined || result === "") {
+        lineNum--;
+        return this.getActiveLineNum(lineNum);
+      } else {
+        return lineNum + "";
+      }
+    }
+  },
+  props: {
+    currentTime: {
+      type: Number,
+      default: 0,
+      required: true
+    }
   }
 };
 </script>
@@ -111,14 +152,20 @@ export default {
   left: 0;
   right: 0;
   .cd {
-    .cd-wrapper {
+    .cd-warpper {
       display: block;
       margin: 0 auto;
       width: 500px;
       height: 500px;
       border-radius: 50%;
-      border: 15px solid #fff;
+      border: 20px solid #fff;
       overflow: hidden;
+      animation: circle 4s linear infinite;
+      // 设置旋转的状态
+      animation-play-state: paused;
+      &.active {
+        animation-play-state: running;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -138,9 +185,20 @@ export default {
       @include font_color();
       margin: 10px 0;
       &:last-of-type {
-        padding-bottom: 100px;
+        padding-bottom: 50%;
+      }
+      &.active {
+        color: #fff;
       }
     }
+  }
+}
+@keyframes circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 </style>

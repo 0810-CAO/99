@@ -53,11 +53,13 @@ export default {
         fn(this.y);
       });
     },
+    // 避免在点击播放全部收歌曲列表无法滚动
     refresh() {
       setTimeout(() => {
         this.iscroll.refresh();
       }, 100);
     },
+    // 歌词滚动方法
     scrollTo(x, y, time) {
       this.iscroll.scrollTo(x, y, time);
     }

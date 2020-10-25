@@ -1,6 +1,6 @@
 <template>
   <ul class="detail-bottom">
-    <li class="bottom-top">
+    <li class="bottom-top" @click="selectAllMusic">
       <div class="bottom-icon"></div>
       <div class="bottom-title">播放全部</div>
     </li>
@@ -8,7 +8,7 @@
       v-for="value in playlist"
       :key="value.id"
       class="item"
-      @click="selectMusic"
+      @click="selectMusic(value.id)"
     >
       <h3>{{ value.name }}</h3>
       <p>{{ value.al.name }}-{{ value.ar[0].name }}</p>
@@ -16,7 +16,7 @@
   </ul>
 </template>
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 export default {
   name: "DetailBottom",
   props: {
@@ -27,11 +27,22 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["setFullScreen"]),
+    ...mapActions(["setFullScreen", "setMiniPlayer", "setSongDetail"]),
     // 通过该方法触发dispatch，然后在actions中使用commit来调用mutations修改state全局中的变量来控制页面
-    selectMusic() {
+    selectMusic(id) {
       // this.$store.dispatch("setFullScreen", true);
       this.setFullScreen(true);
+      // 获取歌曲详细信息
+      this.setSongDetail([id]);
+    },
+    selectAllMusic() {
+      this.setFullScreen(true);
+      // 获取所有歌曲id
+      let ids = this.playlist.map(function(item) {
+        return item.id;
+      });
+      console.log(ids);
+      this.setSongDetail([ids]);
     }
   }
 };

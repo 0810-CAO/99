@@ -1,39 +1,60 @@
 <template>
-  <div class="list-player" v-show="isShow">
-    <div class="player-wrapper">
-      <div class="player-top">
-        <div class="top-left">
-          <div class="mode"></div>
-          <p>顺序播放</p>
+  <transition :css="false" @enter="enter" @leave="leave">
+    <div class="list-player" v-show="isShowListPlayer">
+      <div class="player-warpper">
+        <div class="player-top">
+          <div class="top-left">
+            <div class="mode loop" @click="mode" ref="mode"></div>
+            <p v-if="this.modeType === 0">顺序播放</p>
+            <p v-else-if="this.modeType === 1">单曲播放</p>
+            <p v-else>随机播放</p>
+          </div>
+          <div class="top-right">
+            <div class="del" @click="delAll"></div>
+          </div>
         </div>
-        <div class="top-right">
-          <div class="del"></div>
+        <div class="player-middle">
+          <ScrollView ref="scrollView">
+            <ul ref="play">
+              <li
+                class="item"
+                v-for="(value, index) in songs"
+                :key="value.id"
+                @click="selectMusic(index)"
+              >
+                <div class="item-left">
+                  <div
+                    class="item-play"
+                    @click.stop="play"
+                    v-show="currentIndex == index"
+                  ></div>
+                  <p>{{ value.name }}</p>
+                </div>
+                <div class="item-right">
+                  <div
+                    class="item-favorite"
+                    @click.stop="favorite(value)"
+                    :class="{ active: isFavorite(value) }"
+                  ></div>
+                  <div class="item-del" @click.stop="del(index)"></div>
+                </div>
+              </li>
+            </ul>
+          </ScrollView>
         </div>
-      </div>
-      <div class="player-middle">
-        <ScrollView>
-          <ul>
-            <li class="item">
-              <div class="item-left">
-                <div class="item-play"></div>
-                <p>演员</p>
-              </div>
-              <div class="item-right">
-                <div class="item-favorite"></div>
-                <div class="item-close"></div>
-              </div>
-            </li>
-          </ul>
-        </ScrollView>
-      </div>
-      <div class="player-bottom">
-        <p @click.stop="hidden">关闭</p>
+        <div class="player-bottom">
+          <p @click.stop="hidden">关闭</p>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 <script>
+import { mapActions, mapGetters } from "vuex";
 import ScrollView from "../ScrollView";
+import Velocity from "velocity-animate";
+import "velocity-animate/velocity.ui";
+import modeType from "../../store/modeType";
 export default {
   name: "ListPlayer",
   components: {
@@ -44,12 +65,109 @@ export default {
       isShow: false
     };
   },
+  computed: {
+    ...mapGetters([
+      "isPlaying",
+      "modeType",
+      "isShowListPlayer",
+      "songs",
+      "currentIndex",
+      "favoriteList"
+    ])
+  },
   methods: {
-    show() {
-      this.isShow = true;
-    },
+    ...mapActions([
+      "setIsPlaying",
+      "setModeType",
+      "setListPlayer",
+      "setDelSong",
+      "setCurrentIndex",
+      "setfavoriteSong"
+    ]),
     hidden() {
-      this.isShow = false;
+      this.setListPlayer(false);
+    },
+    enter(el, done) {
+      Velocity(
+        el,
+        "transition.slideDownIn",
+        {
+          duraction: 2000
+        },
+        function() {
+          done();
+        }
+      );
+    },
+    leave(el, done) {
+      Velocity(
+        el,
+        "transition.slideDownOut",
+        {
+          duraction: 2000
+        },
+        function() {
+          done();
+        }
+      );
+    },
+    play() {
+      this.setIsPlaying(!this.isPlaying);
+    },
+    mode() {
+      // 切换播放模式
+      if (this.modeType === modeType.loop) {
+        this.setModeType(modeType.one);
+      } else if (this.modeType === modeType.one) {
+        this.setModeType(modeType.random);
+      } else if (this.modeType === modeType.random) {
+        this.setModeType(modeType.loop);
+      }
+    },
+    del(index) {
+      this.setDelSong(index);
+    },
+    delAll() {
+      this.setDelSong();
+    },
+    selectMusic(index) {
+      this.setCurrentIndex(index);
+    },
+    favorite(value) {
+      this.setfavoriteSong(value);
+    },
+    isFavorite(song) {
+      let result = this.favoriteList.find(function(currentValue) {
+        return currentValue.id === song.id;
+      });
+      return result !== undefined;
+    }
+  },
+  watch: {
+    isPlaying(newvalue, oldvalue) {
+      if (newvalue) {
+        this.$refs.play.classList.add("active");
+      } else {
+        this.$refs.play.classList.remove("active");
+      }
+    },
+    modeType(newvalue, oldvalue) {
+      if (newvalue === modeType.loop) {
+        this.$refs.mode.classList.remove("random");
+        this.$refs.mode.classList.add("loop");
+      } else if (newvalue === modeType.one) {
+        this.$refs.mode.classList.remove("loop");
+        this.$refs.mode.classList.add("one");
+      } else if (newvalue === modeType.random) {
+        this.$refs.mode.classList.remove("one");
+        this.$refs.mode.classList.add("random");
+      }
+    },
+    // 监听点击播放全部收歌曲列表高度 避免无法滚动
+    isShowListPlayer(newvalue, oldvalue) {
+      if (newvalue) {
+        this.$refs.scrollView.refresh();
+      }
     }
   }
 };
@@ -63,7 +181,7 @@ export default {
   bottom: 0;
   width: 100%;
   @include bg_sub_color();
-  .player-wrapper {
+  .player-warpper {
     .player-top {
       width: 100%;
       height: 100px;
@@ -78,6 +196,15 @@ export default {
           width: 56px;
           height: 56px;
           margin-right: 20px;
+          &.loop {
+            @include bg_img("../../assets/images/small_loop");
+          }
+          &.one {
+            @include bg_img("../../assets/images/small_one");
+          }
+          &.random {
+            @include bg_img("../../assets/images/small_shuffle");
+          }
           @include bg_img("../../assets/images/small_loop");
         }
         p {
@@ -94,6 +221,17 @@ export default {
       }
     }
     .player-middle {
+      height: 700px;
+      overflow: hidden;
+      ul {
+        &.active {
+          .item {
+            .item-play {
+              @include bg_img("../../assets/images/small_pause");
+            }
+          }
+        }
+      }
       .item {
         border-top: 1px solid #ccc;
         height: 100px;
@@ -122,9 +260,12 @@ export default {
           .item-favorite {
             width: 56px;
             height: 56px;
-            @include bg_img("../../assets/images/small_favorite");
+            @include bg_img("../../assets/images/small_un_favorite");
+            &.active {
+              @include bg_img("../../assets/images/small_favorite");
+            }
           }
-          .item-close {
+          .item-del {
             width: 52px;
             height: 52px;
             margin-left: 20px;

@@ -1,23 +1,32 @@
 <!--eslint-disable-->
 <template>
   <div class="header">
-    <div class="header-left"></div>
+    <div class="header-left" @click="hiddenNormalPlayer"></div>
     <div class="header-title">
-      <h3>1</h3>
-      <p>2</p>
+      <h3>{{currentSong.name}}</h3>
+      <p>{{currentSong.singer}}</p>
     </div>
     <div class="header-right"></div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
 export default {
   name: "PlayerHeader",
   data() {
     return {};
   },
-  methods: {},
-  props: {}
+  methods: {
+    ...mapActions(["setFullScreen", "setMiniPlayer"]),
+    hiddenNormalPlayer() {
+      this.setFullScreen(false);
+      this.setMiniPlayer(true);
+    }
+  },
+  computed: {
+    ...mapGetters(["currentSong"])
+  }
 };
 </script>
 
