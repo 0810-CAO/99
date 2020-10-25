@@ -3,7 +3,7 @@
   <div class="header" @click="changeTheme">
     <div class="header-left"></div>
     <p class="header-title">cloud音乐</p>
-    <div class="header-right"></div>
+    <div class="header-right" @click.stop="accountClick"></div>
   </div>
 </template>
 
@@ -26,6 +26,9 @@ export default {
         "data-theme",
         this.themes[this.index]
       );
+    },
+    accountClick() {
+      this.$router.push("/account");
     }
   }
 };
@@ -34,6 +37,7 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/css/variable";
 @import "../assets/css/mixin";
+
 .header {
   width: 100%;
   height: 100px;
@@ -41,6 +45,7 @@ export default {
   display: flex;
   @include bg_color();
   justify-content: space-between;
+
   // position: relative;
   // z-index: 100;
   .header-left,
@@ -49,12 +54,15 @@ export default {
     height: 84px;
     margin-top: 8px;
   }
+
   .header-left {
     @include bg_img("../assets/images/logo");
   }
+
   .header-right {
     @include bg_img("../assets/images/account");
   }
+
   .header-title {
     text-align: center;
     line-height: 100px;
