@@ -1,28 +1,100 @@
 <template>
+<<<<<<< Updated upstream
   <div class="normal-player">
     <div class="player-wrapper">
       <PlayerHeader></PlayerHeader>
       <PlayerMiddle></PlayerMiddle>
       <PlayerBottom></PlayerBottom>
+=======
+  <!--this.$store.getters.isFullScreen-->
+  <transition :css="false" @enter="enter" @leave="leave">
+    <div class="normal-player" v-show="this.isFullScreen">
+      <div class="player-wrapper">
+        <PlayerHeader></PlayerHeader>
+        <PlayerMiddle :currentTime="currentTime"></PlayerMiddle>
+        <PlayerBottom
+          :totalTime="totalTime"
+          :currentTime="currentTime"
+        ></PlayerBottom>
+      </div>
+      <div class="play_bg">
+        <img :src="currentSong.picUrl" alt="" />
+      </div>
+>>>>>>> Stashed changes
     </div>
-    <div class="play_bg">
-      <img
-        src="http://p1.music.126.net/6F5lJnwBJL_LT9t_V_YBZg==/109951165403300035.jpg?imageView&quality=89"
-        alt=""
-      />
-    </div>
-  </div>
+  </transition>
 </template>
 <script>
 import PlayerHeader from "./PlayerHeader";
 import PlayerMiddle from "./PlayerMiddle";
 import PlayerBottom from "./PlayerBottom";
+<<<<<<< Updated upstream
+=======
+import { mapGetters, mapActions } from "vuex";
+import Velocity from "velocity-animate";
+import "velocity-animate/velocity.ui";
+>>>>>>> Stashed changes
 export default {
   name: "NormalPlayer",
   components: {
     PlayerHeader,
     PlayerMiddle,
     PlayerBottom
+<<<<<<< Updated upstream
+=======
+  },
+  computed: {
+    ...mapGetters(["isFullScreen", "currentSong"])
+  },
+  methods: {
+    ...mapActions(["getSongLyric"]),
+    enter(el, done) {
+      Velocity(
+        el,
+        "transition.shrinkIn",
+        {
+          duraction: 2000
+        },
+        function() {
+          done();
+        }
+      );
+    },
+    leave(el, done) {
+      Velocity(
+        el,
+        "transition.shrinkOut",
+        {
+          duraction: 2000
+        },
+        function() {
+          done();
+        }
+      );
+    }
+  },
+  // 监听currentSong变化则歌词改变传递歌曲id
+  watch: {
+    currentSong(newvalue, oldvalue) {
+      // 防止在删除全部歌曲后找不到歌词的情况
+      if (newvalue.id == undefined) {
+        return;
+      }
+      this.getSongLyric(newvalue.id);
+    }
+  },
+  props: {
+    totalTime: {
+      type: Number,
+      default: 0,
+      required: true
+    },
+    currentTime: {
+      type: Number,
+      default: 0,
+      required: true
+    }
+>>>>>>> Stashed changes
   }
 };
 </script>

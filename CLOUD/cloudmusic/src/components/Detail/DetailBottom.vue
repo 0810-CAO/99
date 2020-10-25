@@ -1,16 +1,29 @@
 <template>
   <ul class="detail-bottom">
-    <li class="bottom-top">
+    <li class="bottom-top" @click="selectAllMusic">
       <div class="bottom-icon"></div>
       <div class="bottom-title">播放全部</div>
     </li>
+<<<<<<< Updated upstream
     <li v-for="value in playlist" :key="value.id" class="item">
+=======
+    <li
+      v-for="value in playlist"
+      :key="value.id"
+      class="item"
+      @click="selectMusic(value.id)"
+    >
+>>>>>>> Stashed changes
       <h3>{{ value.name }}</h3>
       <p>{{ value.al.name }}-{{ value.ar[0].name }}</p>
     </li>
   </ul>
 </template>
 <script>
+<<<<<<< Updated upstream
+=======
+import { mapActions, mapGetters } from "vuex";
+>>>>>>> Stashed changes
 export default {
   name: "DetailBottom",
   props: {
@@ -19,6 +32,28 @@ export default {
       default: () => [],
       required: true
     }
+<<<<<<< Updated upstream
+=======
+  },
+  methods: {
+    ...mapActions(["setFullScreen", "setMiniPlayer", "setSongDetail"]),
+    // 通过该方法触发dispatch，然后在actions中使用commit来调用mutations修改state全局中的变量来控制页面
+    selectMusic(id) {
+      // this.$store.dispatch("setFullScreen", true);
+      this.setFullScreen(true);
+      // 获取歌曲详细信息
+      this.setSongDetail([id]);
+    },
+    selectAllMusic() {
+      this.setFullScreen(true);
+      // 获取所有歌曲id
+      let ids = this.playlist.map(function(item) {
+        return item.id;
+      });
+      console.log(ids);
+      this.setSongDetail([ids]);
+    }
+>>>>>>> Stashed changes
   }
 };
 </script>

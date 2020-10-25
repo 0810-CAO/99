@@ -1,23 +1,96 @@
 <template>
-  <div class="mini-player">
-    <div class="player-wrapper">
-      <div class="player-left">
-        <img src="../../../public/apple-touch-icon.png" alt="" />
-        <div class="player-title">
-          <h3>陈奕迅</h3>
-          <p>不再说话</p>
+  <!--使用js结合velocity来控制过渡效果-->
+  <transition :css="false" @enter="enter" @leave="leave">
+    <div class="mini-player" v-show="this.isShowMiniPlayer">
+      <div class="player-wrapper">
+        <div class="player-left" @click="showNormalPlayer">
+          <img :src="currentSong.picUrl" alt="" ref="circleImg" />
+          <div class="player-title">
+            <h3>{{ currentSong.name }}</h3>
+            <p>{{ currentSong.singer }}</p>
+          </div>
         </div>
+        <div class="player-right">
+          <div class="play" @click="play" ref="play"></div>
+          <div class="list" @click.stop="showList"></div>
+        </div>
+<<<<<<< Updated upstream
       </div>
       <div class="player-right">
         <div class="play"></div>
         <div class="list"></div>
+=======
+>>>>>>> Stashed changes
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 <script>
+import { mapActions, mapGetters } from "vuex";
+import Velocity from "velocity-animate";
+import "velocity-animate/velocity.ui";
 export default {
+<<<<<<< Updated upstream
   name: "MiniPlayer"
+=======
+  name: "MiniPlayer",
+  methods: {
+    showList() {
+      this.setListPlayer(true);
+    },
+    ...mapActions([
+      "setFullScreen",
+      "setMiniPlayer",
+      "setListPlayer",
+      "setIsPlaying"
+    ]),
+    showNormalPlayer() {
+      this.setFullScreen(true);
+      this.setMiniPlayer(false);
+    },
+    enter(el, done) {
+      Velocity(
+        el,
+        "transition.bounceUpIn",
+        {
+          duraction: 2000
+        },
+        function() {
+          done();
+        }
+      );
+    },
+    leave(el, done) {
+      Velocity(
+        el,
+        "transition.bounceDownOut",
+        {
+          duraction: 2000
+        },
+        function() {
+          done();
+        }
+      );
+    },
+    play() {
+      this.setIsPlaying(!this.isPlaying);
+    }
+  },
+  computed: {
+    ...mapGetters(["isShowMiniPlayer", "isPlaying", "currentSong"])
+  },
+  watch: {
+    isPlaying(newvalue, oldvalue) {
+      if (newvalue) {
+        this.$refs.play.classList.add("active");
+        this.$refs.circleImg.classList.add("active");
+      } else {
+        this.$refs.play.classList.remove("active");
+        this.$refs.circleImg.classList.remove("active");
+      }
+    }
+  }
+>>>>>>> Stashed changes
 };
 </script>
 <style scoped lang="scss">
@@ -45,6 +118,11 @@ export default {
         height: 100px;
         border-radius: 50%;
         margin-right: 20px;
+        animation: circle 4s linear infinite;
+        animation-play-state: paused;
+        &.active {
+          animation-play-state: running;
+        }
       }
       .player-title {
         display: flex;
@@ -79,6 +157,14 @@ export default {
         @include bg_img("../../assets/images/list");
       }
     }
+  }
+}
+@keyframes circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 </style>
