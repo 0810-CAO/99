@@ -6,15 +6,15 @@ import store from "./store";
 import fastclick from "fastclick";
 import "./assets/css/base.scss";
 import VueLazyload from "vue-lazyload";
-import VConsole from "vconsole";
+// import VConsole from "vconsole";
 Vue.use(VueLazyload, {
   // 可以通过配置loading配置图片还未加载好之前的占位图片  v-lazy
   loading: "./assets/images/loading.png"
 });
 fastclick.attach(document.body);
 Vue.config.productionTip = false;
-const vconsole = new VConsole();
-Vue.use(vconsole);
+// const vconsole = new VConsole();
+// Vue.use(vconsole);
 new Vue({
   router,
   store,

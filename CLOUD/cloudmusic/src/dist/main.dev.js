@@ -14,11 +14,10 @@ require("./assets/css/base.scss");
 
 var _vueLazyload = _interopRequireDefault(require("vue-lazyload"));
 
-var _vconsole = _interopRequireDefault(require("vconsole"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /* eslint-disable */
+// import VConsole from "vconsole";
 _vue["default"].use(_vueLazyload["default"], {
   // 可以通过配置loading配置图片还未加载好之前的占位图片  v-lazy
   loading: "./assets/images/loading.png"
@@ -26,10 +25,8 @@ _vue["default"].use(_vueLazyload["default"], {
 
 _fastclick["default"].attach(document.body);
 
-_vue["default"].config.productionTip = false;
-var vconsole = new _vconsole["default"]();
-
-_vue["default"].use(vconsole);
+_vue["default"].config.productionTip = false; // const vconsole = new VConsole();
+// Vue.use(vconsole);
 
 new _vue["default"]({
   router: _router["default"],

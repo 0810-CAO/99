@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getAllArtists = exports.getLetterArtists = exports.getHotArtists = exports.getTopListDetail = exports.getArtistsSongs = exports.getSongUrl = exports.getSongLyric = exports.getSongDetail = exports.getAlbumSong = exports.getPlayList = exports.getNewSong = exports.getAlbum = exports.getPersonalized = exports.getBanner = void 0;
+exports.getAllArtists = exports.getLetterArtists = exports.getHotArtists = exports.getTopListDetail = exports.getSearchHot = exports.getSearchList = exports.getArtistsSongs = exports.getSongUrl = exports.getSongLyric = exports.getSongDetail = exports.getAlbumSong = exports.getPlayList = exports.getNewSong = exports.getAlbum = exports.getPersonalized = exports.getBanner = void 0;
 
 var _network = _interopRequireDefault(require("./network"));
 
@@ -83,10 +83,24 @@ exports.getSongUrl = getSongUrl;
 
 var getArtistsSongs = function getArtistsSongs(data) {
   return _network["default"].get("artists", data);
-}; // 榜单信息
+}; // 搜索
 
 
 exports.getArtistsSongs = getArtistsSongs;
+
+var getSearchList = function getSearchList(data) {
+  return _network["default"].get("search?type=1", data);
+}; // 热搜
+
+
+exports.getSearchList = getSearchList;
+
+var getSearchHot = function getSearchHot(data) {
+  return _network["default"].get("search/hot", data);
+}; // 榜单信息
+
+
+exports.getSearchHot = getSearchHot;
 
 var getTopListDetail = function getTopListDetail() {
   return new Promise(function (resolve, reject) {

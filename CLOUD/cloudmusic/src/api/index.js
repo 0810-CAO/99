@@ -21,6 +21,10 @@ export const getSongLyric = data => Network.get("lyric", data);
 export const getSongUrl = data => Network.get("song/url", data);
 // 获取歌手单曲
 export const getArtistsSongs = data => Network.get("artists", data);
+// 搜索
+export const getSearchList = data => Network.get("search?type=1", data);
+// 热搜
+export const getSearchHot = data => Network.get("search/hot", data);
 // 榜单信息
 export const getTopListDetail = () => {
   return new Promise(function(resolve, reject) {
