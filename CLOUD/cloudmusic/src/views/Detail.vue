@@ -66,6 +66,15 @@ export default {
         .catch(err => {
           console.log(err);
         });
+    } else if (this.$route.params.type === "rank") {
+      getPlayList({ id: this.$route.params.id })
+        .then(data => {
+          console.log(data);
+          this.playlist = data.playlist;
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   },
   mounted() {

@@ -84,10 +84,18 @@ var routes = [{
   }]
 }, {
   path: "/singer",
-  component: Singer
+  component: Singer,
+  children: [{
+    path: "detail/:id/:type",
+    component: Detail
+  }]
 }, {
   path: "/rank",
-  component: Rank
+  component: Rank,
+  children: [{
+    path: "detail/:id/:type",
+    component: Detail
+  }]
 }, {
   path: "/search",
   component: Search
