@@ -66,12 +66,14 @@
   </div>
 </template>
 <script>
+import MetaInfo from "../../vue-meta-info";
 import ScrollView from "../components/ScrollView";
 import { mapActions } from "vuex";
 import { setLocalStorage, getLocalStorage } from "../tools/tools";
 import { getSearchList, getSearchHot } from "../api/index";
 export default {
   name: "Search",
+  metaInfo: MetaInfo.search,
   data() {
     return {
       keywords: "",

@@ -56,10 +56,12 @@
 <script>
 // import { getHotArtists } from "../api/index";
 // import { getLetterArtists } from "../api/index";
+import MetaInfo from "../../vue-meta-info";
 import { getAllArtists } from "../api/index";
 import ScrollView from "../components/ScrollView";
 export default {
   name: "Singer",
+  metaInfo: MetaInfo.singer,
   components: {
     ScrollView
   },

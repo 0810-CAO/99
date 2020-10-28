@@ -26,6 +26,7 @@
   </div>
 </template>
 <script>
+import MetaInfo from "../../vue-meta-info";
 import { getBanner, getPersonalized, getAlbum, getNewSong } from "../api/index";
 import Banner from "../components/Recommend/Banner";
 import Personalized from "../components/Recommend/Personalized";
@@ -33,6 +34,7 @@ import SongList from "../components/Recommend/SongList";
 import ScrollView from "../components/ScrollView";
 export default {
   name: "Recommend",
+  metaInfo: MetaInfo.recommend,
   components: {
     Banner,
     Personalized,

@@ -12,7 +12,7 @@ var _vue = _interopRequireDefault(require("vue"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /* eslint-disable */
-_axios["default"].defaults.baseURL = "http://localhost:3000/";
+_axios["default"].defaults.baseURL = 'http://localhost:3000/';
 _axios["default"].defaults.timeout = 8000;
 var count = 0; // 添加请求拦截器
 
@@ -49,7 +49,7 @@ _axios["default"].interceptors.response.use(function (response) {
 
 var _default = {
   get: function get() {
-    var path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+    var path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
     var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     return new Promise(function (resolve, reject) {
       _axios["default"].get(path, {
@@ -62,7 +62,7 @@ var _default = {
     });
   },
   post: function post() {
-    var path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+    var path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
     var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     return new Promise(function (resolve, reject) {
       _axios["default"].post(path, data).then(function (response) {

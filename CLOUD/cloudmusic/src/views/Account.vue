@@ -8,10 +8,12 @@
 </template>
 
 <script>
+import MetaInfo from "../../vue-meta-info";
 import AccountHeader from "../components/Account/AccountHeader";
 import AccountBottom from "../components/Account/AccountBottom";
 export default {
   name: "Account",
+  metaInfo: MetaInfo.account,
   components: {
     AccountHeader,
     AccountBottom

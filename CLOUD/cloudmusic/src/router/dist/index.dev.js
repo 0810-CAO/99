@@ -24,7 +24,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 // import Search from '../views/Search'
 var Recommend = function Recommend(resolve) {
   Promise.resolve().then(function () {
-    return _interopRequireWildcard(require("../views/Recommend"));
+    return _interopRequireWildcard(require('../views/Recommend'));
   }).then(function (module) {
     resolve(module);
   });
@@ -32,7 +32,7 @@ var Recommend = function Recommend(resolve) {
 
 var Detail = function Detail(resolve) {
   Promise.resolve().then(function () {
-    return _interopRequireWildcard(require("../views/Detail"));
+    return _interopRequireWildcard(require('../views/Detail'));
   }).then(function (module) {
     resolve(module);
   });
@@ -40,7 +40,7 @@ var Detail = function Detail(resolve) {
 
 var Singer = function Singer(resolve) {
   Promise.resolve().then(function () {
-    return _interopRequireWildcard(require("../views/Singer"));
+    return _interopRequireWildcard(require('../views/Singer'));
   }).then(function (module) {
     resolve(module);
   });
@@ -48,7 +48,7 @@ var Singer = function Singer(resolve) {
 
 var Rank = function Rank(resolve) {
   Promise.resolve().then(function () {
-    return _interopRequireWildcard(require("../views/Rank"));
+    return _interopRequireWildcard(require('../views/Rank'));
   }).then(function (module) {
     resolve(module);
   });
@@ -56,7 +56,7 @@ var Rank = function Rank(resolve) {
 
 var Search = function Search(resolve) {
   Promise.resolve().then(function () {
-    return _interopRequireWildcard(require("../views/Search"));
+    return _interopRequireWildcard(require('../views/Search'));
   }).then(function (module) {
     resolve(module);
   });
@@ -64,7 +64,7 @@ var Search = function Search(resolve) {
 
 var Account = function Account(resolve) {
   Promise.resolve().then(function () {
-    return _interopRequireWildcard(require("../views/Account"));
+    return _interopRequireWildcard(require('../views/Account'));
   }).then(function (module) {
     resolve(module);
   });
@@ -73,38 +73,42 @@ var Account = function Account(resolve) {
 _vue["default"].use(_vueRouter["default"]);
 
 var routes = [{
-  path: "/",
-  redirect: "/recommend"
+  path: '/',
+  redirect: '/recommend'
 }, {
-  path: "/recommend",
+  path: '/recommend',
   component: Recommend,
   children: [{
-    path: "detail/:id/:type",
+    path: 'detail/:id/:type',
     component: Detail
   }]
 }, {
-  path: "/singer",
+  path: '/singer',
   component: Singer,
   children: [{
-    path: "detail/:id/:type",
+    path: 'detail/:id/:type',
     component: Detail
   }]
 }, {
-  path: "/rank",
+  path: '/rank',
   component: Rank,
   children: [{
-    path: "detail/:id/:type",
+    path: 'detail/:id/:type',
     component: Detail
   }]
 }, {
-  path: "/search",
+  path: '/search',
   component: Search
 }, {
-  path: "/account",
+  path: '/account',
   component: Account
 }];
 var router = new _vueRouter["default"]({
-  mode: "history",
+  // 注意点: 如果Router中使用的是history模式, 那么打包之后的项目不能刷新, 刷新就会出现404
+  // 解决方案: 1.Router这两个不要使用history模式, 使用hash模式
+  //           2.在服务端上面进行一些额外的配置
+  // 注意点: 如果需要使用预渲染的插件, 那么Router的模式必须是history模式
+  mode: 'history',
   base: process.env.BASE_URL,
   routes: routes
 });
