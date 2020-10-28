@@ -14,10 +14,18 @@ require("./assets/css/base.scss");
 
 var _vueLazyload = _interopRequireDefault(require("vue-lazyload"));
 
+var _index = _interopRequireDefault(require("./plugin/loading/index"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /* eslint-disable */
-// import VConsole from "vconsole";
+// import MetaInfo from 'vue-meta-info'
+// Vue.use(MetaInfo)
+// 网络请求等待提示
+_vue["default"].use(_index["default"], {
+  title: "客官请稍等"
+});
+
 _vue["default"].use(_vueLazyload["default"], {
   // 可以通过配置loading配置图片还未加载好之前的占位图片  v-lazy
   loading: "./assets/images/loading.png"

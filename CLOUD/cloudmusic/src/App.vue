@@ -1,20 +1,23 @@
 <template>
   <div class="app">
-    <Header></Header>
+    <MainHeader></MainHeader>
     <Tabbar></Tabbar>
-    <router-view></router-view>
+    <!--歌手、搜索界面keepalive-->
+    <keep-alive include="Singer,Search">
+      <router-view></router-view>
+    </keep-alive>
     <Player></Player>
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
+import MainHeader from "./components/MainHeader.vue";
 import Tabbar from "./components/Tabbar.vue";
 import Player from "./views/Player.vue";
 export default {
   name: "App",
   components: {
-    Header,
+    MainHeader,
     Tabbar,
     Player
   },

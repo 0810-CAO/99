@@ -47,9 +47,6 @@ export default {
   .header-left {
     @include bg_img("../../assets/images/down");
   }
-  // .header-right {
-  //   // @include bg_img("../../assets/images/more");
-  // }
   .header-title {
     display: flex;
     justify-content: center;

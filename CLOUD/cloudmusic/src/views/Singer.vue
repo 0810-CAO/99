@@ -147,7 +147,7 @@ export default {
       });
     }
   },
-  // 确定左侧滚动后右侧的显示位置
+  // 吸顶效果具体实现
   mounted() {
     this.$refs.scrollView.scrolling(y => {
       this.scrollY = y;

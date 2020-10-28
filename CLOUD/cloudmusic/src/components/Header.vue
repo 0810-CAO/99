@@ -1,9 +1,15 @@
 <!--eslint-disable-->
 <template>
-  <div class="header" @click="changeTheme">
+  <!--<div class="header" @click="changeTheme">
     <div class="header-left"></div>
     <p class="header-title">cloud音乐</p>
     <div class="header-right" @click.stop="accountClick"></div>
+  </div>-->
+  <!--使用自定义插槽来解决头部样式冗余-->
+  <div class="header" @click="changeTheme">
+    <div class="left"><slot name="left">左边</slot></div>
+    <slot name="center">中间</slot>
+    <div class="right"><slot name="right" class="right">右边</slot></div>
   </div>
 </template>
 
@@ -41,34 +47,31 @@ export default {
 .header {
   width: 100%;
   height: 100px;
-  background: #f00;
   display: flex;
   @include bg_color();
   justify-content: space-between;
-
-  // position: relative;
-  // z-index: 100;
-  .header-left,
-  .header-right {
+  .left,
+  .right {
     width: 84px;
     height: 84px;
     margin-top: 8px;
+    * {
+      width: 100%;
+      height: 100%;
+    }
   }
-
-  .header-left {
-    @include bg_img("../assets/images/logo");
-  }
-
-  .header-right {
-    @include bg_img("../assets/images/account");
-  }
-
-  .header-title {
-    text-align: center;
-    line-height: 100px;
-    color: #fff;
-    font-weight: bold;
-    @include font_size($font_medium);
-  }
+  // .left {
+  //   @include bg_img("../assets/images/logo");
+  // }
+  // .right {
+  //   @include bg_img("../assets/images/account");
+  // }
+  // .header-title {
+  //   text-align: center;
+  //   line-height: 100px;
+  //   color: #fff;
+  //   font-weight: bold;
+  //   @include font_size($font_medium);
+  // }
 }
 </style>

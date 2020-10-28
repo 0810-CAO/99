@@ -110,7 +110,6 @@ export default {
       this.search();
     },
     selectedHistory(history) {
-      console.log("111");
       console.log(history);
       this.keywords = history;
       this.search();
