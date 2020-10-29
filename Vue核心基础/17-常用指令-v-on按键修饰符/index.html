@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17-常用指令-v-on按键修饰符</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--
+1.什么是按键修饰符
+我们可以通过按键修饰符监听特定按键触发的事件
+例如: 可以监听当前事件是否是回车触发的, 可以监听当前事件是否是ESC触发的等
+
+2.按键修饰符分类
+2.1系统预定义修饰符
+2.2自定义修饰符
+-->
+
+<!--这里就是MVVM中的View-->
+<div id="app">
+<!--    <input type="text" @keyup.enter="myFn">-->
+    <input type="text" @keyup.f2="myFn">
+</div>
+<script>
+    Vue.config.keyCodes.f2 = 113;
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+            myFn(){
+                alert("lnj");
+            }
+        }
+    });
+</script>
+</body>
+</html>

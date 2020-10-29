@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-Vue基本模板</title>
+    <!--1.下载导入Vue.js-->
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{ name }}</p>
+</div>
+<script>
+    // 2.创建一个Vue的实例对象
+    let vue = new Vue({
+        // 3.告诉Vue的实例对象, 将来需要控制界面上的哪个区域
+        el: '#app',
+        // 4.告诉Vue的实例对象, 被控制区域的数据是什么
+        data: {
+            name: "李南江"
+        }
+    });
+</script>
+</body>
+</html>
+
+<!--
+1.Vue框架使用方式
+1.1传统下载导入使用
+1.2vue-cli安装导入使用
+
+2.Vue框架使用步骤
+2.1下载Vue框架
+2.2导入Vue框架
+2.3创建Vue实例对象
+2.4指定Vue实例对象控制的区域
+2.5指定Vue实例对象控制区域的数据
+-->

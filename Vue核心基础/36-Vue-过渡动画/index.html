@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>36-Vue-过渡动画</title>
+    <script src="js/vue.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .v-enter{
+            opacity: 0;
+        }
+        .v-enter-to{
+            opacity: 1;
+        }
+        .v-enter-active{
+            transition: all 3s;
+        }
+        .v-leave{
+            opacity: 1;
+        }
+        .v-leave-to{
+            opacity: 0;
+        }
+        .v-leave-active{
+            transition: all 3s;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.transition-group注意点:
+默认情况下transition-group会将动画的元素放到span标签中
+我们可以通过tag属性来指定将动画元素放到什么标签中
+
+2.transition-group动画混乱问题
+一般情况下组动画出现动画混乱都是因为v-for就地复用导致的
+我们只需要保证所有数据key永远是唯一的即可
+-->
+<!--这里就是MVVM中的View-->
+<div id="app">
+    <form>
+        <input type="text" v-model="name">
+        <input type="submit" value="添加" @click.prevent="add">
+    </form>
+<!--    <ul>-->
+        <transition-group appear tag="ul">
+        <li v-for="(person,index) in persons" :key="person.id" @click="del(index)">
+            <input type="checkbox">
+            <span>{{index}} --- {{person.name}}</span>
+        </li>
+        </transition-group>
+<!--    </ul>-->
+</div>
+<script>
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+            persons: [
+                {name: "zs", id: 1},
+                {name: "ls", id: 2},
+                {name: "ww", id: 3}
+                ],
+            name: "",
+            id: 3
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+            add(){
+                this.id++;
+                // let lastPerson = this.persons[this.persons.length - 1];
+                let newPerson = {name: this.name, id: this.id};
+                // this.persons.push(newPerson);
+                this.persons.unshift(newPerson);
+                this.name = "";
+            },
+            del(index){
+                this.persons.splice(index, 1);
+            }
+        },
+        // 专门用于定义计算属性的
+        computed: {
+        }
+    });
+</script>
+</body>
+</html>

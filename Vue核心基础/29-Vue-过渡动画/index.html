@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>29-Vue-过渡动画</title>
+    <script src="js/vue.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .one-enter{
+            opacity: 0;
+        }
+        .one-enter-to{
+            opacity: 1;
+            margin-left: 500px;
+        }
+        .one-enter-active{
+            transition: all 3s;
+        }
+        .two-enter{
+            opacity: 0;
+        }
+        .two-enter-to{
+            opacity: 1;
+            margin-top: 500px;
+        }
+        .two-enter-active{
+            transition: all 3s;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.transition注意点:
+transition中只能放一个元素, 多个元素无效
+如果想给多个元素添加过渡动画, 那么就必须创建多个transition组件
+
+2.初始动画设置
+默认情况下第一次进入的时候没没有动画的
+如果想一进来就有动画, 我们可以通过给transition添加appear属性的方式
+告诉Vue第一次进入就需要显示动画
+
+3.如何给多个不同的元素指定不同的动画
+如果有多个不同的元素需要执行不同的过渡动画,那么我们可以通过给transition指定name的方式
+来指定"进入之前/进入之后/进入过程中, 离开之前/离开之后/离开过程中"对应的类名
+来实现不同的元素执行不同的过渡动画
+-->
+
+<!--这里就是MVVM中的View-->
+<div id="app">
+    <button @click="toggle">我是按钮</button>
+    <transition appear name="one">
+        <div class="box" v-show="isShow"></div>
+<!--        <div class="box" v-show="isShow"></div>-->
+    </transition>
+    <transition appear name="two">
+        <div class="box" v-show="isShow"></div>
+    </transition>
+</div>
+<script>
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+            isShow: true
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+            toggle(){
+                this.isShow = !this.isShow;
+            }
+        },
+        // 专门用于定义计算属性的
+        computed: {
+        }
+    });
+</script>
+</body>
+</html>

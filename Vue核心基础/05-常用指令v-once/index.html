@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-常用指令-v-once</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--
+1.什么是指令?
+指令就是Vue内部提供的一些自定义属性,
+这些属性中封装好了Vue内部实现的一些功能
+只要使用这些指令就可以使用Vue中实现的这些功能
+
+2.Vue数据绑定的特点
+只要数据发生变化, 界面就会跟着变化
+
+3.v-once指令:
+让界面不要跟着数据变化, 只渲染一次
+-->
+
+<!--这里就是MVVM中的View-->
+<div id="app">
+    <p v-once>原始数据: {{ name }}</p>
+    <p>当前数据: {{ name }}</p>
+</div>
+<script>
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+            name: "李南江",
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>46-Vue组件-父子组件</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--
+1.什么是父子组件?
+在一个组件中又定义了其它组件就是父子组件
+其实局部组件就是最简单的父子组件, 因为我们说过可以把Vue实例看做是一个大组件
+我们在Vue实例中定义了局部组件, 就相当于在大组件里面定义了小组件, 所以实局部组件就是最简单的父子组件
+
+2.如何定义其它的父子组件
+前面我们说过, 自定义组件中可以使用data, 可以使用methods. 当然自定义组件中也可以使用components
+所以我们也可以在自定义组件中再定义其它组件
+-->
+<!--这里就是MVVM中的View-->
+<div id="app">
+<!--    <home></home>-->
+    <father></father>
+<!--    <son></son>-->
+</div>
+<!--
+<template id="home">
+    <div>
+        <p>我是首页</p>
+    </div>
+</template>
+-->
+<template id="father">
+    <div>
+        <p>我是父组件</p>
+        <son></son>
+    </div>
+</template>
+<template id="son">
+    <div>
+        <p>我是子组件</p>
+    </div>
+</template>
+<script>
+    /*
+    Vue.component("father", {
+        template: "#father",
+        components: {
+            "son": {
+                template: "#son"
+            }
+        }
+    });
+     */
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+        },
+        // 专门用于定义计算属性的
+        computed: {
+        },
+        // 专门用于定义局部组件的
+        components: {
+            // "home": {
+            //     template: "#home"
+            // }
+            "father": {
+                template: "#father",
+                components: {
+                    "son": {
+                        template: "#son"
+                    }
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

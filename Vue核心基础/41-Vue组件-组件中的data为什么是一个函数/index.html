@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>41-Vue组件-组件中的data为什么是一个函数</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--
+1.自定义组件中的datadata为什么是一个函数
+因为自定义组件可以复用, 为了保证复用时每个组件的数据都是独立的, 所以必须是一个函数
+-->
+<!--这里就是MVVM中的View-->
+<div id="app">
+    <abc></abc>
+    <abc></abc>
+    <abc></abc>
+</div>
+<template id="info">
+    <div>
+        <button @click="add">累加</button>
+        <p>{{number}}</p>
+    </div>
+</template>
+<script>
+    // 自定义全局组件
+    Vue.component("abc", {
+        template: "#info",
+        /*
+        组件中的data如果不是通过函数返回的, 那么多个组件就会公用一份数据, 就会导致数据混乱
+        如果组件中的data是通过函数返回的, 那么每创建一个新的组件, 都会调用一次这个方法
+        将这个方法返回的数据和当前创建的组件绑定在一起, 这样就有效的避免了数据混乱
+        * */
+        data: function () {
+            return {
+                number: 0
+            }
+        },
+        methods: {
+            add(){
+                this.number++;
+            }
+        }
+    });
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+        },
+        // 专门用于定义计算属性的
+        computed: {
+        }
+    });
+</script>
+</body>
+</html>

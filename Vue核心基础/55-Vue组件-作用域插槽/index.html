@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>55-Vue组件-作用域插槽</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--
+1.什么是作用域插槽
+作用域插槽就是带数据的插槽, 就是让父组件在填充子组件插槽内容时也能使用子组件的数据
+
+2.如何使用作用域插槽
+2.1在slot中通过 v-bind:数据名称="数据名称" 方式暴露数据
+2.2在父组件中通过 <template slot-scope="作用域名称"> 接收数据
+2.3在父组件的<template></template>中通过 作用域名称.数据名称 方式使用数据
+-->
+<!--这里就是MVVM中的View-->
+<div id="app">
+    <father></father>
+</div>
+<template id="father">
+    <div>
+        <son>
+<!--            <div>我是填充的内容 {{names}}</div>-->
+            <!--
+            slot-scope="abc"作用: 接收子组件插槽暴露的数据
+            -->
+            <!--
+            作用域插槽的应用场景: 子组件提供数据, 父组件决定如何渲染
+            -->
+            <template slot-scope="abc">
+<!--                <div>我是填充的内容 {{abc.names}}</div>-->
+                <li v-for="(name, index) in abc.names">{{name}}</li>
+            </template>
+        </son>
+    </div>
+</template>
+<template id="son">
+    <div>
+        <div>我是头部 {{names}}</div>
+        <!--
+        v-bind:names="names"作用: 将当前子组件的names数据暴露给父组件
+        -->
+        <slot v-bind:names="names">我是默认内容 {{names}}</slot>
+        <div>我是底部</div>
+    </div>
+</template>
+<script>
+    // 父组件
+    Vue.component("father", {
+        template: "#father",
+        // 子组件
+        components: {
+            "son": {
+                template: "#son",
+                data:function () {
+                    return {
+                        names: ["zs", "ls", "ww", "zl"]
+                    }
+                }
+            }
+        }
+    });
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+        },
+        // 专门用于定义计算属性的
+        computed: {
+        },
+        // 专门用于定义局部组件的
+        components: {
+        }
+    });
+</script>
+</body>
+</html>

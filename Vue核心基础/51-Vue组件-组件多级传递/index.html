@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>51-Vue组件-数据和方法的多级传递</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--
+1.数据和方法的多级传递
+在Vue中如果儿子想使用爷爷的数据, 必须一层一层往下传递
+在Vue中如果儿子想使用爷爷的方法, 必须一层一层往下传递
+-->
+<!--这里就是MVVM中的View-->
+<div id="app">
+    <grandfather></grandfather>
+</div>
+<template id="grandfather">
+    <div>
+        <p>{{name}}</p>
+        <button @click="say">我是按钮</button>
+        <father :gfname="name" @gfsay="say"></father>
+    </div>
+</template>
+<template id="father">
+    <div>
+        <p>{{gfname}}</p>
+        <button @click="fatherFn">我是按钮</button>
+        <son :fname="gfname" @fsay="fatherFn"></son>
+    </div>
+</template>
+<template id="son">
+    <div>
+        <p>{{fname}}</p>
+        <button @click="sonFn">我是按钮</button>
+    </div>
+</template>
+<script>
+    // 爷爷组件
+    Vue.component("grandfather", {
+        template: "#grandfather",
+        data: function(){
+            return {
+                name: "lnj"
+            }
+        },
+        methods: {
+            say(){
+                console.log("我是爷爷的方法");
+            }
+        },
+        // 爸爸组件
+        components: {
+            "father": {
+                template: "#father",
+                props: ["gfname"],
+                methods:{
+                    fatherFn(){
+                        this.$emit("gfsay");
+                    }
+                },
+                // 儿子组件
+                components: {
+                    "son": {
+                        template: "#son",
+                        props: ["fname"],
+                        methods: {
+                            sonFn(){
+                                this.$emit("fsay");
+                            }
+                        },
+                    }
+                }
+            }
+        }
+    });
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+        },
+        // 专门用于定义计算属性的
+        computed: {
+        },
+        // 专门用于定义局部组件的
+        components: {
+        }
+    });
+</script>
+</body>
+</html>

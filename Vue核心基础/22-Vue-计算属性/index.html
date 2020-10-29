@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>22-Vue-计算属性</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--
+1.插值语法特点
+可以在{{}}中编写合法的JavaScript表达式
+
+2.在插值语法中编写JavaScript表达式缺点
+2.1没有代码提示
+2.2语句过于复杂不利于我们维护
+
+3.如何解决?
+对于任何复杂逻辑，你都应当使用计算属性
+-->
+
+<!--这里就是MVVM中的View-->
+<div id="app">
+    <p>{{name}}</p>
+    <p>{{age + 1}}</p>
+    <p>{{msg.split("").reverse().join("")}}</p>
+    <!--
+    注意点:
+    虽然在定义计算属性的时候是通过一个函数返回的数据
+    但是在使用计算属性的时候不能在计算属性名称后面加上()
+    因为它是一个属性不是一个函数(方法)
+    -->
+    <p>{{msg2}}</p>
+</div>
+<script>
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+            name: "lnj",
+            age: 18,
+            msg: "abcdef"
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {},
+        // 专门用于定义计算属性的
+        computed: {
+            msg2: function () {
+                let res = "abcdef".split("").reverse().join("");
+                return res;
+            }
+        }
+    });
+</script>
+</body>
+</html>

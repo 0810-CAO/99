@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>40-Vue组件-组件中的data和methods</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--
+1.自定义组件中的data和methods
+Vue实例控制的区域相当于一个大的组件, 在大组件中我们可以使用data和methods
+而我们自定义的组件也是一个组件, 所以在自定义的组件中也能使用data和methods
+
+2.自定义组件中data注意点
+在自定义组件中不能像在vue实例中一样直接使用data
+而是必须通过返回函数的方式来使用data
+-->
+<!--这里就是MVVM中的View-->
+<div id="app">
+    <!--
+    由于我们是在Vue实例控制的区域中使用的函数
+    所以系统回去Vue实例中查找有没有对应的方法
+    所以我们需要在Vue实例中实现对应的方法
+    -->
+    <button @click="appFn">我是按钮</button>
+    <!--
+    由于我们是在Vue实例控制的区域中使用了数据
+    所以系统回去Vue实例中查找有没有对应的数据
+    所以我们需要在Vue实例中添加对应的数据
+    -->
+    <p>{{appMsg}}</p>
+    <abc></abc>
+</div>
+<template id="info">
+    <div>
+        <img src="images/fm.jpg"/>
+        <!--
+        由于我们是在自定义组件中使用了函数
+        所以系统会去自定义的组件中查找有没有对应的方法
+        所以我们需要在自定义的组件中实现对应的方法
+        -->
+        <button @click="abcFn">我是按钮</button>
+        <p>{{abcMsg}}</p>
+    </div>
+</template>
+<script>
+    // 自定义全局组件
+    Vue.component("abc", {
+        // 注意点: 在创建组件指定组件的模板的时候, 模板只能有一个根元素
+        template: "#info",
+        methods: {
+            abcFn(){
+                alert("abcFn");
+            }
+        },
+        // data: {
+        //     abcMsg: "学院"
+        // }
+        // 注意点: 虽然在自定义的组件中也可以使用data, 但是在使用的时候, 使用的方式和Vue实例中不太一样
+        //         在自定义组件中使用data必须赋值一个函数, 然后通过函数的返回值来定义有哪些数据
+        data: function () {
+            return {
+                abcMsg: "学院"
+            }
+        }
+    });
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+            appMsg:"知播渔"
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+            appFn(){
+                alert("appFn");
+            }
+        },
+        // 专门用于定义计算属性的
+        computed: {
+        }
+    });
+</script>
+</body>
+</html>

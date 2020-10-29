@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>50-Vue组件-组件中的命名注意点</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--
+1.组件中的命名注意点
+1.1注册组件的时候使用了"驼峰命名", 那么在使用时需要转换成"短横线分隔命名"
+例如: 注册时: myFather  ->  使用时: my-father
+1.2在传递参数的时候如果想使用"驼峰名称", 那么就必须写"短横线分隔命名"
+例如: 传递时: parent-name="name" ->  接收时: props: ["parentName"]
+1.3在传递方法的时候不能使用"驼峰命名", 只能用"短横线分隔命名"
+@parent-say="say"  -> this.$emit("parent-say");
+-->
+<!--这里就是MVVM中的View-->
+<div id="app">
+    <my-father></my-father>
+</div>
+<template id="father">
+    <div>
+        <p>{{name}}</p>
+        <button @click="say">我是按钮</button>
+        <son :parent-name="name" @parent-say="say"></son>
+    </div>
+</template>
+<template id="son">
+    <div>
+        <p>{{parentName}}</p>
+        <button @click="sonFn">我是按钮</button>
+    </div>
+</template>
+<script>
+    // 父组件
+    Vue.component("myFather", {
+        template: "#father",
+        data: function(){
+            return {
+                name: "lnj"
+            }
+        },
+        methods: {
+            say(){
+                console.log("www.it666.com");
+            }
+        },
+        // 子组件
+        components: {
+            "son": {
+                template: "#son",
+                props: ["parentName"],
+                methods: {
+                    sonFn(){
+                        this.$emit("parent-say");
+                    }
+                }
+            }
+        }
+    });
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+        },
+        // 专门用于定义计算属性的
+        computed: {
+        },
+        // 专门用于定义局部组件的
+        components: {
+        }
+    });
+</script>
+</body>
+</html>

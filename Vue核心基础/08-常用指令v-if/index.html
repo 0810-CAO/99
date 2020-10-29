@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08-常用指令v-if</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--
+1.什么是v-if指令
+条件渲染: 如果v-if取值是true就渲染元素, 如果不是就不渲染元素
+
+2.v-if特点:
+如果条件不满足根本就不会创建这个元素(重点)
+
+3.v-if注意点
+v-if可以从模型中获取数据
+v-if也可以直接赋值一个表达式
+-->
+<!--
+4.v-else指令
+v-else指令可以和v-if指令配合使用, 当v-if不满足条件时就执行v-else就显示v-else中的内容
+
+5.v-else注意点
+v-else不能单独出现
+v-if和v-else中间不能出现其它内容
+-->
+<!--
+6.v-else-if指令
+v-else-if可以和v-if指令配合使用, 当v-if不满足条件时就依次执行后续v-else-if, 哪个满足就显示哪个
+
+7.v-else-if注意点
+和v-else一样
+-->
+
+<!--这里就是MVVM中的View-->
+<div id="app">
+<!--    <p v-if="show">我是true</p>-->
+<!--    <p v-if="hidden">我是false</p>-->
+<!--    <p v-if="true">我是true</p>-->
+<!--    <p v-if="false">我是false</p>-->
+<!--    <p v-if="age >= 18">我是true</p>-->
+<!--    <p v-if="age < 18">我是false</p>-->
+
+<!--    <p v-if="age >= 18">成年人</p>-->
+<!--    <p>中间的内容</p>-->
+<!--    <p v-else>未成年人</p>-->
+
+    <p v-if="score >= 80">优秀</p>
+    <p v-else-if="score >= 60">良好</p>
+    <p v-else>差</p>
+</div>
+<script>
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+            show: true,
+            hidden: false,
+            age: 17,
+            score: 50
+        }
+    });
+</script>
+</body>
+</html>

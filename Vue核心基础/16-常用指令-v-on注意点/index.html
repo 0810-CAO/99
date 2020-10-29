@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16-常用指令-v-on注意点</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--
+1.v-on注意点
+1.1绑定回调函数名称的时候, 后面可以写()也可以不写
+v-on:click="myFn"
+v-on:click="myFn()"
+
+1.2可以给绑定的回调函数传递参数
+v-on:click="myFn('lnj', 33)"
+
+1.3如果在绑定的函数中需要用到data中的数据必须加上this
+-->
+
+<!--这里就是MVVM中的View-->
+<div id="app">
+    <button @click="myFn('lnj', 33, $event)">我是按钮</button>
+</div>
+<script>
+    // 这里就是MVVM中的View Model
+    let vue = new Vue({
+        el: '#app',
+        // 这里就是MVVM中的Model
+        data: {
+            gender: "man"
+        },
+        // 专门用于存储监听事件回调函数
+        methods: {
+            myFn(name, age, e){
+                // alert('lnj');
+                // console.log(name, age, e);
+                console.log(this.gender);
+            }
+        }
+    });
+</script>
+</body>
+</html>
