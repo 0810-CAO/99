@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="./vue.js"></script> -->
+    <script src="./nue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <input type="text" v-model="name" />
+      <input type="text" v-model="time.h" />
+      <input type="text" v-model="time.m" />
+      <input type="text" v-model="time.s" />
+      <div v-html="html">111</div>
+      <div v-text="text">222</div>
+      <p>{{name}}</p>
+      <p>{{age}}</p>
+      <p>{{time.m}}</p>
+      <p>{{name}}-{{age}}</p>
+      <ul>
+        <li>666</li>
+        <li>66</li>
+        <li>6</li>
+      </ul>
+    </div>
+    <script>
+      // 1、想要使用自己的vue，需要定义一个vue的类
+      // 2、需要在编写的vue实例中拿到数据和控制区域（可以是ID名称也可以是dom元素），去编译渲染这个区域。vue会将传递的数据和控制区域都绑定到创建出来的实例对象上（$el/$data）
+      // let vue = new Vue({
+      let vue = new Nue({
+        // el:'app'
+        el: document.querySelector('#app'),
+        data: {
+          name: '李华',
+          age: 22,
+          time: {
+            h: 9,
+            m: 03,
+            s: 33
+          },
+          html: `<div>一个div</div>`,
+          text: `<div>一个div</div>`
+        }
+      })
+      // console.log(vue.$el)
+      // console.log(vue.$data)
+    </script>
+  </body>
+</html>

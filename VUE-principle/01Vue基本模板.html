@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./nue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="name" />
+      <p>{{name}}</p>
+      <div v-on:click="Fn">div</div>
+      <p>{{getName}}</p>
+    </div>
+    <script>
+      let vue = new Nue({
+        el: '#app',
+        data: {
+          name: '李华'
+        },
+        methods: {
+          Fn () {
+            alert('hello')
+            console.log(this)
+            console.log(this.name)
+          }
+        },
+        computed: {
+          getName () {
+            return this.name + 'name'
+          }
+        }
+      })
+      //①
+      // vue实现实时监听数据绑定，通过原生js的defineproperty
+      // defineproperty方法特点，可以直接在一个对象上定义一个新属性
+      // defineproperty用法 obj：需要操作的对象 prop：需要操作的属性 descriptor：属性描述符
+      /*let obj = { name: '张良' }
+      Object.defineProperty(obj, 'name', {
+        // 可以通过value来告诉defineproperty方法新增的属性是什么
+        value: 'lihua',
+        //修改为true后新增属性可以修改,显示修改
+        writable: true,
+        //修改为true后新增属性可以删除
+        configurable: true,
+        //修改为true后新增属性可以迭代
+        enumerable: true
+      })
+      // obj.name = '刘'
+      // console.log(obj)
+      // 注意：默认defineproperty新增属性不能修改、不能删除、不能迭代
+      // delete obj.name
+      // console.log(obj)
+      for (let key in obj) {
+        console.log(key, obj[key])
+      }*/
+      //②
+      // defineproperty可以给属性添加get、set方法。以后获取属性值自动调用get，设置值调用set，此时不能通过value直接赋值，也不能编写writable: true,
+      // let obj = {}
+      // let oldvalue = '项羽'
+      // Object.defineProperty(obj, 'name', {
+      //   configurable: true,
+      //   enumerable: true,
+      //   get () {
+      //     return oldvalue
+      //   },
+      //   set (newvalue) {
+      //     if (oldvalue !== newvalue) {
+      //       oldvalue = newvalue
+      //     }
+      //   }
+      // })
+      // console.log(obj.name)
+      // obj.name = '项羽2'
+      // console.log(obj.name)
+      //③
+      // 需求，快速监听对象中所有属性的变化
+      let obj = {
+        name: '李华',
+        age: 22,
+        public: {
+          a: 1
+        }
+      }
+      // class Oberver {
+      //   // 只要监听类对象传递到此处，可以快速给那个类添加get、set方法
+      //   constructor (data) {
+      //     this.observer(data)
+      //   }
+      //   observer (obj) {
+      //     if (obj && typeof obj === 'object') {
+      //       // 遍历传入对象所有属性并添加方法
+      //       for (let key in obj) {
+      //         this.defineRecative(obj, key, obj[key])
+      //       }
+      //     }
+      //   }
+      //   // obj:需要操作对象 attr：需要新增的get、set方法的属性 value：新增方法属性取值
+      //   defineRecative (obj, attr, value) {
+      //     // 如果属性的取值又是一个对象则需要给该对象所有属性添加get、set方法
+      //     this.observer(value)
+      //     Object.defineProperty(obj, attr, {
+      //       get () {
+      //         return value
+      //       },
+      //       set: newvalue => {
+      //         if (value !== newvalue) {
+      //           // 如果添加属性是一个对象，需要给属性对象的属性添加
+      //           this.observer(newvalue)
+      //           value = newvalue
+      //           console.log('修改数据')
+      //         }
+      //       }
+      //     })
+      //   }
+      // }
+      // new Oberver(obj)
+      // obj.name = '111'
+      // obj.name = '项羽2'
+      // obj.public.a = 111
+      // obj.name = { b: '2' }
+      // obj.name.b = '222'
+    </script>
+  </body>
+</html>
