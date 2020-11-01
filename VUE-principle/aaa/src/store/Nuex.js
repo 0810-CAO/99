@@ -42,6 +42,7 @@ class ModuleCollection {
       let parent = arr.splice(0, arr.length - 1).reduce((root, currentKey) => {
         return root._children[currentKey]
       }, this.root)
+      console.log(parent)
       parent._children[arr[arr.length - 1]] = module
     }
     for (let childrenModuleName in rootModule.modules) {

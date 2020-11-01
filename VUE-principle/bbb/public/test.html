@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <a href="#/home">首页</a>
+    <a href="#/about">关于</a>
+    <div id="html"></div> -->
+    <a onclick="go('/home')">首页</a>
+    <a onclick="go('/about')">关于</a>
+    <div id="html"></div>
+    <script>
+      //监听路径变化
+      function go (path) {
+        // console.log(path) /home /about
+        // 可以改变网址(存在跨域限制)而不刷新页面
+        history.pushState(null, null, path)
+        document.querySelector('#html').innerHTML = path//此处path不会改变
+      }
+      // popstate事件会在点击后退、前进按钮(或调用history.back()、history.forward()、history.go()方法)时触发。
+      // 前提是不能真的发生了页面跳转,而是在由history.pushState()或者history.replaceState()形成的历史节点中前进后退
+      window.addEventListener('popstate', () => {
+        // console.log('clicking pre or next', location.pathname)
+        document.querySelector('#html').innerHTML = location.pathname//会改变
+      })
+      //监听hash变化
+      // window.addEventListener('hashchange', () => {
+      //   // console.log("当前hash值发生变化")
+      //   // 假设当前的 URL 是 http://www.runoob.com/test.htm＃PART2： 输出#part2
+      //   let currentHash = location.hash.slice(1)
+      //   document.querySelector('#html').innerHTML = currentHash
+      // })
+      //加载完后保存
+      // window.addEventListener('load', () => {
+      //   let currentHash = location.hash.slice(1)
+      //   document.querySelector('#html').innerHTML = currentHash
+      // })
+    </script>
+  </body>
+</html>
