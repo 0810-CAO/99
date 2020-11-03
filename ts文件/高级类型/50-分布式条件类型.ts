@@ -5,19 +5,19 @@
 语法: T extends U ? X : Y;
 * */
 // type MyType<T> = T extends string ? string : any;
-// type res = MyType<boolean>
+// type res111 = MyType<boolean>
 
 /*
 2.分布式条件类型?
 被检测类型是一个联合类型的时候, 该条件类型就被称之为分布式条件类型
 * */
 // type MyType<T> = T extends any ? T : never;
-// type res = MyType<string | number | boolean>;
+// type res222 = MyType<string | number | boolean>;
 
 // 从T中剔除可以赋值给U的类型。 Exclude
 // type MyType<T, U> = T extends U ? never : T;
-// type res = MyType<string | number | boolean, number>
-// type res = Exclude<string | number | boolean, number>
+// type res333 = MyType<string | number | boolean, number>
+type res444 = Exclude<string | number | boolean, number>//作用同上
 
 // 提取T中可以赋值给U的类型。 Extract
 // type res = Extract<string | number | boolean, number | string>
@@ -29,10 +29,10 @@
 // type res = ReturnType<(()=>number)>
 
 // 获取一个类的构造函数参数组成的元组类型。 ConstructorParameters
-// class Person {
-//     constructor(name:string, age:number){}
-// }
-// type res = ConstructorParameters<typeof Person>;
+class Person1212 {
+    constructor(name:string, age:number){}
+}
+type res1212 = ConstructorParameters<typeof Person>;
 
 // 获得函数的参数类型组成的元组类型。 Parameters
 function say(name:string, age:number, gender:boolean) {

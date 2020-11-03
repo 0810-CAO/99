@@ -4,19 +4,17 @@
 还原映射之前的类型, 这种操作我们称之为拆包
 * */
 interface MyInterface {
-    name:string;
-    age:number;
+  name: string;
+  age: number;
 }
-type MyType<T> = {
-   +readonly [P in keyof T]: T[P];
+type MyType01<T> = {
+  +readonly [P in keyof T]: T[P];
 }
-
-type test = MyType<MyInterface>;
+type test = MyType01<MyInterface>;
 
 type UnMyType<T> = {
-    -readonly [P in keyof T]: T[P];
+  -readonly [P in keyof T]: T[P];
 }
-
 type test2 = UnMyType<test>;
 
 

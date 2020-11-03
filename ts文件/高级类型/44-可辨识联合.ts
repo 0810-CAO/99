@@ -21,9 +21,9 @@ Shape就是一个可辨识联合
 因为: 它的取值是一个联合
 因为: 这个联合的每一个取值都有一个共同的可辨识特征
 * */
-type Shape = (Square | Rectangle | Circle);
+type Shape1 = (Square | Rectangle | Circle);
 
-function aera(s: Shape) {
+function aera1(s: Shape1) {
     switch (s.kind) {
         case "square": return s.size * s.size;
         case "rectangle": return s.width * s.height;

@@ -18,34 +18,32 @@
 // value = {x:false, y:456};
 
 // 可以在类型别名类型的属性中使用自己
-/*
 type MyType = {
-    name:string,
-    // 一般用于定义一些树状结构或者嵌套结构
-    children?:MyType
+  name:string,
+  // 一般用于定义一些树状结构或者嵌套结构
+  children?:MyType
 }
 let value:MyType = {
-    name:'one',
-    children:{
-        name:'one',
-        children:{
-            name:'one',
-        }
-    }
+  name:'one',
+  children:{
+      name:'one',
+      children:{
+          name:'one',
+      }
+  }
 }
- */
 
 // 接口和类型别名是相互兼容的
-type MyType = {
-    name:string
-}
-interface MyInterface {
-    name:string
-}
-let value1:MyType = {name:'lnj'};
-let value2:MyInterface = {name:'zs'};
-value1 = value2;
-value2 = value1;
+// type MyType = {
+//     name:string
+// }
+// interface MyInterface {
+//     name:string
+// }
+// let value1:MyType = {name:'ccx'};
+// let value2:MyInterface = {name:'liu'};
+// value1 = value2;
+// value2 = value1;
 
 
 

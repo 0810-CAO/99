@@ -9,41 +9,36 @@
 //     say():void;
 // }
 
-// 2.都允许拓展
-/*
-interface MyInterface {
-    name:string;
-    say():void;
-}
-interface MyInterface2 extends MyInterface{
-    age:number;
-}
-let value:MyInterface2 = {
-    name:'lnj',
-    age:18,
-    say():void{
+// 2.都允许拓展  接口
+// interface MyInterface {
+//   name:string;
+//   say():void;
+// }
+// interface MyInterface2 extends MyInterface{
+//   age:number;
+// }
+// let value:MyInterface2 = {
+//   name:'ccx',
+//   age:21,
+//   say():void{
+//   }
+// }
 
-    }
-}
- */
+// 别名
+// type MyType = {
+//   name:string;
+//   say():void;
+// }
+// type MyType2 = MyType & {
+//   age:number;
+// }
+// let value:MyType2 = {
+//   name:'ccx',
+//   age: 21,
+//   say():void{
 
-/*
-type MyType = {
-    name:string;
-    say():void;
-}
-type MyType2 = MyType & {
-    age:number;
-}
-let value:MyType2 = {
-    name:'lnj',
-    age: 18,
-    say():void{
-
-    }
-}
- */
-
+//   }
+// }
 
 // 3.type 可以声明基本类型别名，联合类型，元组等类型, interface不能
 // type MyType1 = boolean;
@@ -58,8 +53,8 @@ let value:MyType2 = {
 //     age:number
 // }
 // let value:MyInterface  ={
-//     name:'lnj',
-//     age:18
+//     name:'ccx',
+//     age:21
 // }
 
 // type MyType = {

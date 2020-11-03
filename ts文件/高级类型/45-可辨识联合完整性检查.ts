@@ -1,15 +1,15 @@
 interface Square {
-    kind: "square"; // 共同的可辨识特征
-    size: number;
+  kind: "square"; // 共同的可辨识特征
+  size: number;
 }
 interface Rectangle {
-    kind: "rectangle"; // 共同的可辨识特征
-    width: number;
-    height: number;
+  kind: "rectangle"; // 共同的可辨识特征
+  width: number;
+  height: number;
 }
 interface Circle {
-    kind: "circle"; // 共同的可辨识特征
-    radius: number;
+  kind: "circle"; // 共同的可辨识特征
+  radius: number;
 }
 /*
 Shape就是一个可辨识联合
@@ -22,14 +22,21 @@ type Shape = (Square | Rectangle | Circle);
 方式一: 给函数添加返回值 + 开启strictNullChecks
 方式二: 添加default + never
 * */
-function MyNever(x: never):never {
-    throw new Error('可辨识联合处理不完整' + x);
+function MyNever(x: never): never {//方式二
+  throw new Error('可辨识联合处理不完整' + x);
 }
-function aera(s: Shape):number{
-    switch (s.kind) {
-        case "square": return s.size * s.size;
-        case "rectangle": return s.width * s.height;
-        case "circle": return  Math.PI * s.radius ** 2; // **是ES7中推出的幂运算符
-        default:return MyNever(s)
-    }
+
+function aera(s: Shape): number { //方式一
+  switch (s.kind) {
+    case "square": return s.size * s.size;
+    case "rectangle": return s.width * s.height;
+    case "circle": return Math.PI * s.radius ** 2; // **是ES7中推出的幂运算符
+    default: return MyNever(s)//方式二
+  }
 }
+let a: Circle = {
+  kind: 'circle',
+  radius: 10
+}
+let b = aera(a)
+console.log("result=" + b)
