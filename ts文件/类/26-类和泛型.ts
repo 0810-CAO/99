@@ -11,6 +11,6 @@ class Chache<T> {
 }
 let chache = new Chache<number>();
 chache.add(1);
+chache.add(2);
 chache.add(3);
-chache.add(5);
 console.log(chache.all());

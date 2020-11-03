@@ -42,33 +42,32 @@
 
 // TS函数重载
 // 函数的重载就是同名的函数可以根据不同的参数实现不同的功能
-/*
-function getArray(x:number):number[] {
-    let arr = [];
-    for(let i = 0; i <= x; i++){
-        arr.push(i);
-    }
-    return arr;
-}
-function getArray(str:string):string[] {
-    return str.split('');
-}
- */
+// function getArray(x:number):number[] {
+//   let arr = [];
+//   for(let i = 0; i <= x; i++){
+//       arr.push(i);
+//   }
+//   return arr;
+// }
+// function getArray(str:string):string[] {
+//   return str.split('');
+// }
+
 // 定义函数的重载
-function getArray(x:number):number[];
-function getArray(str:string):string[];
-// 实现函数的重载
-function getArray(value:any):any[] {
-    if(typeof value === 'string'){
-        return value.split('');
-    }else{
-        let arr = [];
-        for(let i = 0; i <= value; i++){
-            arr.push(i);
-        }
-        return arr;
-    }
-}
-// let res = getArray(10);
-let res = getArray('www.it666.com');
-console.log(res);
+// function getArray(x:number):number[];
+// function getArray(str:string):string[];
+// // 实现函数的重载
+// function getArray(value:any):any[] {
+//     if(typeof value === 'string'){
+//         return value.split('');
+//     }else{
+//         let arr = [];
+//         for(let i = 0; i <= value; i++){
+//             arr.push(i);
+//         }
+//         return arr;
+//     }
+// }
+// // let res = getArray(10);
+// let res = getArray('www.5260.site');
+// console.log(res);

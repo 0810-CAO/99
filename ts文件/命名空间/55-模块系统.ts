@@ -40,6 +40,6 @@ ES6的模块和Node的模块是不兼容的, 所以TS为了兼容两者就推出
 export = xxx;
 import xxx = require('path');
 * */
-import obj = require("./55/test");
+import obj = require("../55/test");
 console.log(obj);
 

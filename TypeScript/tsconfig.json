@@ -27,7 +27,7 @@
     /* Strict Type-Checking Options */
 //    "strict": true,                           /* Enable all strict type-checking options. */
     // "noImplicitAny": true,                 /* Raise error on expressions and declarations with an implied 'any' type. */
-//     "strictNullChecks": true,              /* Enable strict null checks. */
+    // "strictNullChecks": true,              /* Enable strict null checks. */
 //     "strictFunctionTypes": true,           /* Enable strict checking of function types. */
     // "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
     // "strictPropertyInitialization": true,  /* Enable strict checking of property initialization in classes. */
@@ -69,6 +69,6 @@
   },
   "include": [
     "./src/**/*.ts",
-    "./src/**/*.d.ts", "../ts文件/01-基础类型.ts", "../ts文件/12-接口的继承.ts", "../ts文件/13-函数.ts", "../ts文件/72-命名空间补充.ts"
+    "./src/**/*.d.ts", "../ts文件/基础类型/01-基础类型.ts", "../ts文件/12-接口的继承.ts", "../ts文件/函数/13-函数.ts", "../ts文件/72-命名空间补充.ts"
   ]
 }

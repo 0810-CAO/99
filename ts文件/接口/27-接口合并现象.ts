@@ -6,14 +6,13 @@ interface TestInterface {
 interface TestInterface {
     age:number;
 }
-/*
-interface TestInterface {
-    name:string;
-    age:number;
-}
-* */
 
-class Person implements TestInterface{
-    age:number = 19;
-    name:string = 'lnj';
+// interface TestInterface {
+//   name:string;
+//   age:number;
+// }
+
+class Person04 implements TestInterface{
+    age:number = 21;
+    name:string = 'ccx';
 }

@@ -27,20 +27,20 @@ let stu = new Student('lnj', 34);
 console.log(stu);
  */
 
-abstract class Person {
+abstract class Person04 {
     abstract name:string;
     abstract say():void;
-    eat():void{
+    eat():void{//具体实现
         console.log(`${this.name}正在吃东西`);
     }
 }
-// let p = new Person();
-class Student extends Person{
-    name:string = 'lnj';
+// let p = new Person();  子类必须存在name say()
+class Student01 extends Person04{
+    name:string = 'caochengxiang';
     say():void{
         console.log(`我的名字是${this.name}`);
     }
 }
-let stu = new Student();
+let stu = new Student01();
 stu.say();
 stu.eat();

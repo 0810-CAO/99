@@ -2,12 +2,17 @@
 // console.log(Validation.LettersValidator('abc')); // true
 // console.log(Validation.LettersValidator(123)); // false
 // console.log("hello word")
-// import './01-基础类型.ts'
-// import './02-数组和元组类型.ts'
-// import './03-枚举类型.ts'
-// import './04-any-void类型'
-// import './05-Never和Object类型'
-// import './06-类型断言'
-// import './09-可选属性和接口签名'
-// import './10-索引签名和只读属性'
-import '../../../ts文件/12-接口的继承'
+function getLength(value:(string | null | undefined)) {
+  value = 'abc';
+  return ()=>{
+      // return value.length; // 报错
+      // return (value || '').length;
+      // return (value as string).length;
+      // 我们可以使用!来去除null和undefined
+      // !的含义就是这个变量一定不是null和undefined
+      return value!.length;
+  }
+}
+let fn = getLength('www.5260.site');
+let res = fn();
+console.log(res);

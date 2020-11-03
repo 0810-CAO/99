@@ -10,6 +10,6 @@ function getLength(value:(string | null | undefined)) {
         return value!.length;
     }
 }
-let fn = getLength('www.it66.com');
+let fn = getLength('www.5260.site');
 let res = fn();
 console.log(res);
