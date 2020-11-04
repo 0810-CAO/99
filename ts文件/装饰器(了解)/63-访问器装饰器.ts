@@ -10,35 +10,35 @@
 
 - 注意: 
 TypeScript不允许同时装饰一个成员的get和set访问器。
-取而代之的是，一个成员的所有装饰的必须应用在文档顺序的第一个访问器上
+取而代之的是，一个成员的所有的装饰必须应用在文档顺序的第一个访问器上
 * */
 function test(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
-    // console.log(target);
-    // console.log(propertyKey);
-    // console.log(descriptor);
-    descriptor.set = (value:string)=>{
-        target.myName = value;
-    }
-    descriptor.get = ():string=>{
-        return target.myName;
-    }
+  // console.log(target);
+  // console.log(propertyKey);
+  // console.log(descriptor);
+  descriptor.set = (value: string) => {
+    target.myName = value;
+  }
+  descriptor.get = (): string => {
+    return target.myName;
+  }
 }
 class Person {
-    private _name:string; // lnj
-    constructor(name:string){
-        this._name = name;
-    }
-    @test
-    get name():string{
-        return this._name;
-    }
-    set name(value:string){
-        this._name = value;
-    }
-    
+  private _name: string; // ccx
+  constructor(name: string) {
+    this._name = name;
+  }
+  @test
+  get name(): string {
+    return this._name;
+  }
+  set name(value: string) {
+    this._name = value;
+  }
+
 }
-let p = new Person('lnj');
-p.name = 'zs';
+let p = new Person('ccx');
+p.name = 'liu';
 console.log(p.name);
 console.log(p);
 

@@ -1,4 +1,3 @@
-// <reference path="./72-命名空间补充.ts" />
-// console.log(Validation.LettersValidator('abc')); // true
-// console.log(Validation.LettersValidator(123)); // false
-// console.log("hello word")
+/// <reference path="./68-声明文件.ts" />
+console.log(Validation.LettersValidator00('abc')); // true
+console.log(Validation.LettersValidator00(123)); // false

@@ -7,15 +7,16 @@
 2.命名空间和模块区别
 在程序内部使用的代码, 可以使用命名空间封装和防止全局污染
 在程序内部外部使用的代码, 可以使用模块封装和防止全局污染
-总结: 由于模块也能实现相同的功能, 所以大部分情况下用模块即可
+总结: 由于模块也能实现相同的功能, 所以大部分情况下用模块即可  需要打包，tsc outfile a  b 
 * */
-// namespace Validation {
+// namespace Validation1 {
 //     const lettersRegexp = /^[A-Za-z]+$/;
 //     export const LettersValidator  = (value) =>{
 //         return lettersRegexp.test(value);
 //     }
 // }
 
-/// <reference path="./56/test.ts" />
-console.log(Validation.LettersValidator('abc'));
-console.log(Validation.LettersValidator(123));
+//引入命名空间
+/// <reference path="./test.ts" /> 
+console.log(Validation1.LettersValidator('abc'));
+console.log(Validation1.LettersValidator(123));

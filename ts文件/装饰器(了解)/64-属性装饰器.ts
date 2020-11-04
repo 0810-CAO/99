@@ -8,7 +8,7 @@
 function test(target:any, proptyName:string) {
     console.log(target);
     console.log(proptyName);
-    target[proptyName] = 'lnj';
+    target[proptyName] = 'ccx';
 }
 class Person {
     // @test

@@ -5,9 +5,9 @@ Object.defineProperty()
 * */
 // 定义一个新的属性
 /*
-let obj = {age:18};
+let obj = {age:21};
 Object.defineProperty(obj, 'name', {
-    value:'lnj'
+    value:'ccx'
 });
 console.log(obj);
  */
@@ -16,7 +16,7 @@ console.log(obj);
 /*
 let obj = {age:18};
 Object.defineProperty(obj, 'age', {
-    value:34
+    value:21
 });
 console.log(obj);
  */
@@ -25,7 +25,7 @@ console.log(obj);
 /*
 let obj = {age:18};
 Object.defineProperty(obj, 'age', {
-    writable:false
+    writable:false//非可读可写
 })
 obj.age = 34;
 console.log(obj.age);
@@ -34,9 +34,9 @@ console.log(obj.age);
 
 // 修改属性配置-迭代
 /*
-let obj = {age:18, name:'lnj'};
+let obj = {age:21, name:'ccx'};
 Object.defineProperty(obj, 'name', {
-    enumerable: false
+    enumerable: false//不可迭代
 })
 for(let key in obj){
     console.log(key);
@@ -44,15 +44,15 @@ for(let key in obj){
  */
 
 // 修改属性配置-配置
-let obj = {age:18, name:'lnj'};
+let obj = { age: 21, name: 'ccx' };
 Object.defineProperty(obj, 'name', {
-    enumerable:false,
-    configurable: false
+  enumerable: false,
+  configurable: false//配置完后就不能再次配置
 });
 Object.defineProperty(obj, 'name', {
-    enumerable:true,
-    configurable: false
+  enumerable: true,
+  configurable: false
 });
-for(let key in obj){
-    console.log(key);
+for (let key in obj) {
+  console.log(key);
 }

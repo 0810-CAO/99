@@ -6,10 +6,10 @@
 - 如何告诉TS呢?
   那就是通过声明来告诉
 * */
-declare const $:(selector:string)=>{
-    width():number;
-    height():number;
-    ajax(url:string, config:{}):void;
+declare const $: (selector: string) => {
+  width(): number;
+  height(): number;
+  ajax(url: string, config: {}): void;
 };
 console.log($);
 console.log($('.main').width());

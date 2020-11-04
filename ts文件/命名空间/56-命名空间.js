@@ -22,6 +22,6 @@ var Validation;
 //         return lettersRegexp.test(value);
 //     }
 // }
-/// <reference path="./56/test.ts" />
+/// <reference path="./test.ts" />
 console.log(Validation.LettersValidator('abc'));
 console.log(Validation.LettersValidator(123));

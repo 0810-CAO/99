@@ -28,6 +28,7 @@ interface TestInterface {
     name:number;
 }
  */
+
 // 1.2同名接口如果出现同名函数, 那么就会成为一个函数的重载
 /*
 interface TestInterface {
@@ -52,10 +53,10 @@ console.log(obj.getValue(3.14));
 // 2.命名空间
 /*
 namespace Validation{
-    export let name:string = 'lnj';
+    export let name:string = 'ccx';
 }
 namespace Validation{
-    export let age:number = 18;
+    export let age:number = 21;
 }
 console.log(Validation.name);
 console.log(Validation.age);
@@ -74,7 +75,7 @@ namespace Validation{
  */
 // 1.2同名的命名空间中其它命名空间没有通过export导出的内容是获取不到的
 namespace Validation{
-    let name:string = 'lnj';
+    let name:string = 'ccx';
 }
 namespace Validation{
     export let say = ()=> {

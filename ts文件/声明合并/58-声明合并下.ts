@@ -1,5 +1,6 @@
 // 除了同名的接口和命名空间可以合并以外
 // 命名空间还可以和同名的类/函数/枚举合并
+
 // 命名空间和类合并
 // 注意点: 类必须定义在命名空间的前面
 // 会将命名空间中导出的方法作为一个静态方法合并到类中
@@ -27,6 +28,8 @@ function getCounter() {
 namespace getCounter{
     export let count:number = 0;
 }
+getCounter()
+getCounter()
  */
 
 // 命名空间和枚举合并
@@ -37,7 +40,7 @@ enum Gender {
     Female
 }
 namespace Gender{
-    export const Yao:number = 666;
+    export const Yao:number = 123;
 }
 console.log(Gender);
  */

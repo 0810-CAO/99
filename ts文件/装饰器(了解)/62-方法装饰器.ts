@@ -4,7 +4,7 @@
 - 方法装饰器可以用来监视，修改或者替换方法定义。
 
 - 方法装饰器表达式会在运行时当作函数被调用，传入下列3个参数：
-    + 对于静态方法而言就是当前的类, 对于实力方法而言就是当前的实例
+    + 对于静态方法而言就是当前的类, 对于实例方法而言就是当前的实例
     + 被绑定方法的名字。
     + 被绑定方法的属性描述符。
 * */
@@ -18,11 +18,11 @@ function test(target: any, propertyKey: string, descriptor: PropertyDescriptor) 
 class Person {
     // @test
     sayName():void{
-        console.log('my name is lnj');
+        console.log('my name is ccx');
     }
     @test
     sayAge():void{
-        console.log('my age is 34');
+        console.log('my age is 21');
     }
     // @test
     static say():void{
@@ -34,6 +34,8 @@ for(let key in p){
     console.log(key);
 }
  */
+
+//替换方法
 function test(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
     descriptor.value = ():void=>{
         console.log('my name is it666');

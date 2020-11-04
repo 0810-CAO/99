@@ -1,10 +1,10 @@
-let myName = 'lnj';
+let myName = 'ccx';
 function say(name, age) {
     console.log(`name is ${name}, age is ${age}`);
 }
 class Person {
-    name = 'lnj';
-    age = 34;
+    name = 'ccx';
+    age = 21;
     constructor(name, age){
         this.name = name;
         this.age = age;

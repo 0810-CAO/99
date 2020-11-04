@@ -35,7 +35,7 @@ class Person1212 {
 type res1212 = ConstructorParameters<typeof Person>;
 
 // 获得函数的参数类型组成的元组类型。 Parameters
-function say(name:string, age:number, gender:boolean) {
+function say111(name:string, age:number, gender:boolean) {
 }
 type res = Parameters<typeof say>;
 

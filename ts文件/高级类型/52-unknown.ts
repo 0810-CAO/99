@@ -54,16 +54,15 @@
 //         console.log(`name = ${this.name}`);
 //     }
 // }
-// let p:unknown = new Person();
+// let p:unknown = new Person(); //报错
 // p.say();
 // console.log(p.name);
 
-
 // 10.使用映射类型时, 如果遍历的是unknown类型, 那么不会映射任何属性
-// type MyType<T> = {
-//     [P in keyof T]:any
-// }
-// type res = MyType<unknown>
+type MyType<T> = {
+    [P in keyof T]:any
+}
+type res222 = MyType<unknown>
 
 
 
