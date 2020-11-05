@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>递归监听</title>
+    <style>
+      body {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      p {
+        display: flex;
+        width: 550px;
+        height: 150px;
+        border-radius: 30px;
+        border: 1px solid #000;
+        text-align: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>递归监听</h2>
+    <ul>
+      <li>默认情况下，无论是通过ref还是通过reactive都是递归监听</li>
+    </ul>
+    <h2>递归监听存在的问题</h2>
+    <ul>
+      <li>
+        如果数据量比较大，非常消耗性能,因为递归监听将使每一层都被包装成一个Proxy
+      </li>
+    </ul>
+    <h2>非递归监听</h2>
+    <h3>shallowReactive</h3>
+    <ul>
+      <li>除了第一层之外其它层没有被包装成Proxy</li>
+    </ul>
+    <h3>shallowRef</h3>
+    <ul>
+      <li>除了第一层之外所有层均没有被包装</li>
+      <li>
+        如果是通过shallowRef创建数据，nameVue监听的是.value的变化，并不是第一层的变化
+      </li>
+    </ul>
+    <h3>triggerRef</h3>
+    <ul>
+      <li>
+        非递归监听如果想监听第四层的数据，可以使用triggerRef根据传入的数据主动更新界面
+      </li>
+      <li>
+        Vue3只提供了triggerRef方法，没有提供triggerReactive方法，所以如果是reactive类型的数据，那么是无法主动触发界面更新的
+      </li>
+    </ul>
+    <h3>shallowRef本质</h3>
+    <ul>
+      <li>ref->reactive</li>
+      <li>ref(10)->reactive({value: 10})</li>
+      <li>shallowRef->shallowReactive</li>
+      <li>shallowRef(10)->shallowReactive({value: 10})</li>
+      <li>*如果是通过shallowRef创建的数据，它监听的是.value的变化，因为底层本质上value才是第一层</li>
+    </ul>
+  </body>
+</html>

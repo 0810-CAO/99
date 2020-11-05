@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toRow</title>
+    <style>
+      body {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      p {
+        display: flex;
+        width: 550px;
+        height: 150px;
+        border-radius: 30px;
+        border: 1px solid #000;
+        text-align: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>toRaw</h2>
+    <ul>
+      <li>从reactive或ref中得到原始数据</li>
+    </ul>
+    <h2>toRaw作用</h2>
+    <ul>
+      <li>
+        ref/reactive数据类型的特点：每次修改都会被追踪，都会更新UI界面，但是这样其实是非常消耗性能的，所以如果我们有一些操作不需要追踪，不需要更新UI界面，那么这个时候，我们就可以通过toRaw方法拿到它的原始数据，对原始数据进行修改，这样就不会被追踪，这样就不会更新UI界面，这样性能就好了
+      </li>
+    </ul>
+    <h2>ref的toRaw</h2>
+    <h3>shallowReactive</h3>
+    <ul>
+      <li>
+        如果想通过toRaw拿到ref类型的原始数据（创建时传入的那个数据），那么就必须明确告诉toRaw方法，要获取的是.value的值，因为经过Vue处理之后.value中保存的才是当初创建时传入的那个原始数据
+      </li>
+    </ul>
+    <h3>markRaw</h3>
+    <ul>
+      <li>markRaw标记某个数据永远不会被追踪</li>
+    </ul>
+  </body>
+</html>

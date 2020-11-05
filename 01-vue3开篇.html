@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>开始</title>
+    <style>
+      body {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      p {
+        display: flex;
+        width: 550px;
+        height: 150px;
+        border-radius: 30px;
+        border: 1px solid #000;
+        text-align: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>①vue3.0六大亮点</h2>
+    <ul>
+      <li>performace:性能比vue2.x快1.2~2倍</li>
+      <li>treeshakingsupport：按需编译，体积比vue2.x更小 composition</li>
+      <li>api：组合api（类似react hooks）</li>
+      <li>better ts support:更好的ts支持</li>
+      <li>custom renderer api:暴露了自定义渲染api</li>
+      <li>fragment,teleport(protal),suspense:更先进的组件</li>
+    </ul>
+    <a href="https://vue-next-template-explorer.netlify.app/">vue3</a>
+    <h2>②vue3.0如何变快的</h2>
+    <h3>1、diff方法优化： vue2的虚拟dom是进行全量的对比</h3>
+    <p>
+      vue3新增了静态标记（patch
+      flag），在与上次虚拟节点对比的时候，只对比带有patch flag的节点
+      并且可以通过flag的信息得知当前节点要对比的具体内容。
+    </p>
+    eg:
+    <!-- <div>
+    <p>一个段落</p>
+    <p>{{msg}}</p>
+  </div>
+  export function render(_ctx, _cache, $props, $setup, $data, $options) {
+    return (_openBlock(), _createBlock("div", null, [
+      _createVNode("p", null, "一个段落"),
+      _createVNode("p", null, _toDisplayString(_ctx.msg), 1 /* TEXT */)
+    ]))
+  } -->
+    <h3>
+      2、hoiststatic 静态提升： vue2中无论元素是否参与更新，每次都会重新创建
+    </h3>
+    <p>
+      vue3中对于不参与更新的元素，只会被创建一次，之后会在每次渲染时被不停的复用
+    </p>
+    <!-- 
+  将会发生改变的元素提出来_hoisted_1
+  export function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (_openBlock(), _createBlock("div", null, [
+    _createVNode("p", null, "一个段落"),
+    _createVNode("p", null, _toDisplayString(_ctx.msg), 1 /* TEXT */)
+  ]))
+  }
+  =============》》》》》》》》
+  const _hoisted_1 = /*#__PURE__*/_createVNode("p", null, "一个段落", -1 /* HOISTED */)
+  export function render(_ctx, _cache, $props, $setup, $data, $options) {
+    return (_openBlock(), _createBlock("div", null, [
+     _hoisted_1,
+      _createVNode("p", null, _toDisplayString(_ctx.msg), 1 /* TEXT */)
+    ]))
+  }-->
+    <h3>3、cacheHandlers事件侦听器缓存</h3>
+    <p>
+      默认情况onclick会被视为动态绑定，所以每次都会去追踪他的变化，但是因为是同一个函数，所以没有追踪变化，直接缓存起来复用即可
+    </p>
+    <!-- 
+  <div>
+  <button @click="onclick">按钮一枚</button>
+  </div>
+  export function render(_ctx, _cache, $props, $setup, $data, $options) {
+    return (_openBlock(), _createBlock("div", null, [
+      _createVNode("button", { onClick: _ctx.onclick }, "按钮一枚", 8 /* PROPS */, ["onClick"])
+    ]))
+  }
+  =================》》》》》》》》》》
+  export function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (_openBlock(), _createBlock("div", null, [
+    _createVNode("button", {
+      onClick: _cache[1] || (_cache[1] = (...args) => (_ctx.onclick(...args)))
+    }, "按钮一枚")
+  ]))
+  }
+  转换之后的代码，大家可能还看不懂，但是不要紧，我们只需要观察有没有静态标记即可，
+  因为我们知道在Vue3的diff算法中，只有有静态标记的才会进行比较，才会进行追踪
+  -->
+    <h3>4、ssr渲染</h3>
+    <p>
+      当有大量静态内容时候，这些内容会被当做纯字符串推进一个buffer里面，即使存在动态的绑定，会通过模板差值嵌入进去，这样会比通过虚拟dom来渲染的快上很多。
+      当静态内容达到一定量级时候，会用_createstatucvnode方法在客户端生成一个static
+      node，这些静态node，会被直接innerhtml，就不需要创建对象，然后根据对象渲染
+    </p>
+    <h2>③创建Vue3的三种方式</h2>
+    <h3>1、Vue-CLI</h3>
+    <ul>
+      <li>npm install -g @vue/cli</li>
+      <li>vue create projectName</li>
+      <li>cd projectName</li>
+      <li>npm run serve</li>
+    </ul>
+    <h3>2、Webpack</h3>
+    <ul>
+      <li>
+        git clone https://github.com/vuejs/vue-next-webpack-preview.git
+        projectName
+      </li>
+      <li>cd projectName</li>
+      <li>npm install</li>
+      <li>npm run dev</li>
+    </ul>
+    <h3>2、Vite</h3>
+    <p>
+      Vite是Vue作者开发的一款意图取代webpack的工具
+      其实现原理是利用ES6的import会发送请求去加载文件的特性，拦截这些请求，做一些预编译，省去webpack冗长的打包时间
+    </p>
+    <ul>
+      <li>npm install -g create-vite-app</li>
+      <li>create-vite-app projectName</li>
+      <li>cd projectName</li>
+      <li>npm install</li>
+      <li>npm run dev</li>
+    </ul>
+  </body>
+</html>
+<!-- 附录：export const enum PatchFlags {
+  TEXT = 1, // 动态文本节点
+  CLASS = 1 << 1, // 2 动态class
+  STYLE = 1 << 2, // 4 动态style
+  PROPS = 1 << 3, // 8 动态属性，但不包含类名和样式
+  FULL_PROPS = 1 << 4, // 16 具有动态 key 属性，当 key 改变时，需要进行完整的 diff 比较
+  HYDRATE_EVENTS = 1 << 5, // 32 带有监听事件的节点
+  STABLE_FRAGMENT = 1 << 6, // 64 一个不会改变子节点顺序的 fragment
+  KEYED_FRAGMENT = 1 << 7, // 128 带有key属性的 fragment 或部分带有 key
+  UNKEYED_FRAGMENT = 1 << 8, // 256 子节点没有 key 的 fragment
+  NEED_PATCH = 1 << 9, // 512 一个节点只会进行非 props 比较
+  DYNAMIC_SLOTS = 1 << 10, // 1024
+  HOISTED = -1,
+  BAIL = -2
+}-->
