@@ -12,9 +12,9 @@
 import {
   shallowReactive
 } from 'vue'
-import {
-  shallowRef
-} from 'vue'
+// import {
+//   shallowRef
+// } from 'vue'
 export default {
   name: 'App',
   setup() {

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toRow</title>
+    <style>
+      body {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      p {
+        display: flex;
+        width: 550px;
+        height: 150px;
+        border-radius: 30px;
+        border: 1px solid #000;
+        text-align: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>toRef的理解</h2>
+    <ul>
+      <li>
+        如果利用ref将某一个对象中的属性变成响应式的数据，
+        我们修改响应式数据是不会影响到原始数据的。
+      </li>
+      <li>
+        如果利用toRef将某一个对象中的属性变成响应式的数据，我们修改响应式数据是会影响到原始数据的
+      </li>
+      <li>
+        但是如果响应式数据是通过toRef创建的，那么修改了数据并不会触发UI界面的更新
+      </li>
+    </ul>
+    <h2>ref和toRef区别</h2>
+    <ul>
+      <li>ref->复制，修改响应式数据不会影响以前的数据</li>
+      <li>toRef->引用，修改响应式数据会影响以前的数据</li>
+      <li>ref->数据发生改变，界面就会自动更新</li>
+      <li>toRef->数据发生改变，界面也不会自动更新</li>
+    </ul>
+    <h2>toRef应用场景</h2>
+    <ul>
+      <li>
+        如果想让响应式数据和以前的数据关联起来，并且更新响应式数据之后还不想更新UI，name就可以使用toRef。
+      </li>
+    </ul>
+    <h2>toRefs</h2>
+    <ul>
+      <li>将对象中所有的属性全部追踪</li>
+    </ul>
+    <h2>customRef</h2>
+    <ul>
+      <li>返回一个ref对象，可以显式地控制依赖追踪和触发响应</li>
+      <li>一个使用customRef的场景，根据数据的请求路径进行追踪</li>
+      <li></li>
+    </ul>
+    <h2>ref</h2>
+    <ul>
+      <li>在vue2.x中通过给元素添加ref='xxx',然后在代码中通过refs.xx的方式来获取元素
+      </li>
+      <li>在vue3.x中也可以通过ref获取元素</li>
+    </ul>
+  </body>
+</html>
