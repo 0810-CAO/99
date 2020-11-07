@@ -1,3 +1,8 @@
+// function ref (val) {
+//   return reactive({
+//     value: val
+//   })
+// }
 function reactive (obj) {
   if (typeof obj === 'object') {
     if (obj instanceof Array) {
@@ -29,12 +34,28 @@ function reactive (obj) {
       }
     })
   } else {
-    console.warn('不是一个对象')
+    console.warn(`${obj} 不是一个对象`)
   }
 }
-
-function ref (val) {
-  return reactive({
-    value: val
-  })
+let obj = {
+  a: 'a',
+  gf: {
+    b: 'b',
+    f: {
+      c: 'c',
+      s: {
+        d: 'd',
+      },
+    },
+  },
 }
+// let state=reactive(obj)
+// state.a = '1' 
+// state.gf.b = '2'
+// state.gf.f.c = '3'
+// state.gf.f.s.d = '4'
+let arr=[{id:1,name:'liu',attr:{age:22}},{id:2,name:'li'},{id:3,name:'zhang'}]
+let state=reactive(arr)
+state[0].name='qqq'
+state[0].id=12
+state[0].attr.age=88
