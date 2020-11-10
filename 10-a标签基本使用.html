@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-a标签基本使用</title>
+</head>
+<body>
+<!--
+什么是a标签?
+a标签的作用: 就是用于控制页面与页面之间跳转的
+a标签的格式: <a href="指定需要跳转的目标界面">需要展现给用户查看的内容</a>
+
+a标签中有一个叫做target属性, 这个属性的作用就是专门用于控制如何跳转
+_self: 用于在当前选项卡中跳转, 也就是不新建界面跳转. 默认就是_self
+_blank: 用于在新的选项卡中跳转, 也就是新建界面跳转
+
+a标签中还有一个属性, 叫做title. a标签中的title和img标签中的title一样, 都是用来控制鼠标悬停时显示的提示文本的
+
+注意点:
+1.a标签不仅可以让文字可以点击, 还可以让图片也能够被点击
+2.一个a标签必须有一个href属性, 否则a标签不知道要跳转到什么地方
+3.如果通过a标签的href属性指定一个URL地址, 那么必须在地址前面加上http://或https://
+4.a标签的href属性除了可以指定一个网络地址以外, 还可以指定一个本地地址
+-->
+
+<a href="https://www.nuomi.com/?cid=002540">糯米</a>
+
+<a href="https://binjiejw.tmall.com/category-1080022346.htm?search=y&parentCatId=1080019249&parentCatName=%A1%A4?catName=??%A1%A4???????spm=a220o.1000855.w5001-10945243352.20.Fq84rf&scene=taobao_shop&ali_trackid=30_e27f91873d121ea29b062a117ba2991b&spm=a21bo.50862.201862-4.1.9GysHu#bd">
+    <img src="images/QRCode.jpg" width="150">
+</a>
+
+<a href="08-br标签.html">08-br标签.html</a>
+<a href="test/demo/10-路径练习.html">10-路径练习.html</a>
+
+<a href="https://www.nuomi.com/?cid=002540" target="_self">糯米</a>
+<a href="https://www.nuomi.com/?cid=002540" target="_blank">糯米</a>
+
+
+<a href="https://www.nuomi.com/?cid=002540" target="_blank" title="江哥提示: 会跳转到百度糯米的首页">糯米</a>
+
+</body>
+</html>

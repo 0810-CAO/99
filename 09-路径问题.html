@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路径问题</title>
+</head>
+<body>
+
+<!--
+路径问题
+其实想给src属性赋值有两种方式
+1.通过相对路径赋值(掌握)
+相对路径就是每次都从.html文件所在的文件夹开始查找, 我们称之为相对路径
+
+1.1同级
+同级就是"图片"和".html文件"存储在同一个文件夹中
+格式: src="QRCode.jpg"
+含义: 在.html文件所在的文件夹中查找名称叫做QRCode.jpg的图片
+
+1.2下级
+下级就是"存储图片的文件夹"和".html文件"在同一个文件夹中
+格式: src="images/QRCode.jpg"
+含义: 在.html文件所在的文件夹中找到名称叫做images的文件夹
+然后再在images文件夹中找到名称叫做QRCode.jpg的图片
+
+1.3上级
+上级就是"存储图片的位置"和存"储代码的文件夹"在同一个文件夹中
+格式: src="../QRCode.jpg"
+含义：在.html文件所在的文件夹中找到这个文件夹的上一级文件夹, 然后再在上一级文件夹中找到名称叫做QRCode.jpg
+其中../代表找到当前文件夹的上一级文件夹
+
+2.通过绝对路径赋值(了解)
+绝对路径就是每次都从指定的盘符开始查找
+
+格式: src="C:\Users\Jonathan_Lee\Desktop\HTML基础\QRCode.jpg"
+含义: 在C盘下找到Users文件夹, 然后在Users文件夹中找到Jonathan_Lee文件夹, 然后在Jonathan_Lee文件夹中找到Desktop文件夹, 然后在Desktop文件夹中找到HTML基础文件夹, 然后在HTML基础文件夹中找到名称叫做QRCode.jpg的图片
+
+注意:
+1.路径中不要出现中文, 否则可能出现未知问题
+2.如果是通过"相对路径"来指定图片, 不能跨盘符
+2.1例如.html文件在C盘, 那么不能去查找D盘图片
+-->
+<img src="QRCode.jpg">
+<img src="images/QRCode.jpg">
+<img src="../QRCode.jpg">
+<img src="C:\Users\Jonathan_Lee\Desktop\HTML基础\QRCode.jpg" >
+</body>
+</html>

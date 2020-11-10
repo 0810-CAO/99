@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>31-Datalist标签</title>
+</head>
+<body>
+<!--
+1.datalist标签
+作用: 给输入框绑定待选项
+
+2.datalist格式:
+<datalist>
+    <option>待选项内容</option>
+</datalist>
+
+3.如何给输入框绑定待选列表
+1.搞一个输入框
+2.搞一个datalist列表
+3.给datalist列表标签添加一个id
+4.给输入框添加一个list属性,将datalist的id对应的值赋值给list属性即可
+-->
+
+请输入你的车型: <input type="text" list="cars">
+
+<datalist id="cars">
+    <option>奔驰</option>
+    <option>宝马</option>
+    <option>奥迪</option>
+    <option>路虎</option>
+    <option>宾利</option>
+</datalist>
+
+</body>
+</html>

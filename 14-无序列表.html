@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14-无序列表</title>
+    <style type="text/css">
+        ul {
+            list-style: none;
+        }
+        li {
+            float: left;
+            background-color: yellow;
+            width: 150px;
+            height:50px;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.什么是列表标签?
+列表标签的作用: 给一堆数据添加列表语义, 也就是告诉搜索引擎告诉浏览器这一堆数据是一个整体
+
+2.HTML中列表标签的分类
+2.1无序列表(最多)(unordered list)
+2.2有序列表(最少)(ordered list)
+2.3定义列表(其次)(definition list)
+
+3.无序列表作用:
+给一堆数据添加列表语义, 并且这一堆数据中所有的数据都没有先后之分
+
+什么叫有先后之分?
+例如: 排行榜
+什么叫没有先后之分?
+例如: 中国有哪些城市
+
+4.无序列表格式:
+<ul>
+    <li>需要显示的条目内容</li>
+</ul>
+li其实是英文list item的缩写
+list是列表的意思
+item是条目的意思
+所以结合起来就是 列表条目的意思
+
+5.注意点:
+1.一定要记住ul标签是用来给一堆数据添加列表语义的, 而不是用来给他们添加小圆点的
+2. ul标签和li标签是一个整体, 是一个组合. 所以一般情况下ul标签和li标签都是一起出现, 不会单个出现. 也就是说不会单独使用一个ul标签或者单独使用一个li 标签, 都是结合在一起使用
+3.由于ul标签和li标签是一个组合, 所以ul标签中不推荐包含其它标签, 也就是说以后你在ul标签中只会看到li标签
+
+无序列表应用场景:
+1.新闻列表
+2.商品列表
+3.导航条
+
+-->
+
+<h2>中国的城市有哪些</h2>
+<ul>
+    <li>广州</li>
+    <li>北京</li>
+    <li>上海</li>
+    <li>武汉</li>
+</ul>
+</body>
+</html>

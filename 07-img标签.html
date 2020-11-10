@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>img标签</title>
+  </head>
+  <body>
+    <!--
+1.img标签中的img其实是英文image的缩写
+所以img标签的作用, 就是告诉浏览器我们需要显示一张图片
+
+2.img标签格式: <img src="">
+其实img标签中的src是英文source的缩写
+所以img标签中的src就是用来告诉img标签, 需要显示的图片名称
+
+3.注意点
+- 和H系列标签/p标签还有Hr标签不一样, img标签不会独占一行
+- 如果我们手动指定了img标签显示的图片的宽度和高度, 有可能会导致图片变形, 那么如果又想指定宽度和高度, 又不想让图片变形. 我们可以只指定宽度和高度其中的一个值即可
+- 只要指定了高度, 系统会自动根据高度计算出宽度, 只要指定了宽度, 系统会自动根据宽度计算出高度, 并且都是等比拉伸的, 也就是说不会变形
+
+4.img中的其它属性
+width: 宽度
+height: 高度
+所以在img标签中width/height这两个属性的作用, 就是用来告诉img标签将来需要显示的图片有多宽有多高
+如果img标签没有指定需要显示的图片的宽高, 那么系统会按照图片默认的宽高来显示
+如果img标签指定的宽高, 那么系统会按照指定的宽高来显示
+
+title: 用于告诉浏览器, 当鼠标悬停在图片上时, 需要弹出的描述框中显示什么内容
+
+alt其实是英文alternate的缩写, 它的作用就是用于告诉浏览器, 当需要显示的图片找不到时显示什么内容
+-->
+
+    <img src="images/QRCode.jpg" />
+
+    <img src="images/QRCode.jpg" width="300" height="478" />
+
+    <img src="images/QRCode.jpg" width="100" height="478" />
+
+    <img src="images/QRCode.jpg" height="178" />
+    <img src="images/QRCode.jpg" width="100" />
+
+    <img
+      src="images/QRCode.jpg"
+      width="100"
+      title="这个是江哥的微信二维码图片"
+    />
+
+    <img
+      src="images/QRCode1.jpg"
+      width="100"
+      alt="对不起, 你需要查看的图片不见了"
+    />
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-锚点</title>
+</head>
+<body>
+
+<!--
+1.要想通过a标签跳转到指定的位置, 那么必须告诉a标签一个独一无二的身份证号码, 这样a标签才能在当前界面中找到需要跳转到的目标位置
+
+2.如果和HTML中的标签绑定一个独一无二的身份证号码呢?
+在HTML中, 每一个标签都有一个名称叫做id的属性, 这个属性就是用来给标签指定一个独一无二的身份证号码的
+
+3.所以要想实现通过a标签跳转到指定的位置分为两步
+3.1给目标位置的标签添加一个id属性, 然后指定一个独一无二的值
+3.2告诉a标签你需要跳转到的目标标签对应的独一无二的身份证号码是多少
+格式:
+<a href="#center">跳转到中部</a>
+<h2 id="center">我是中部</h2>
+
+注意点:
+1.通过我们的a标签跳转到指定的位置, 是没有过度动画的, 是直接一下子就跳转到了指定位置
+2.a标签除了可以跳转到当前界面的指定位置以外, 还可以在跳转到其它界面的时候直接跳转到其它界面的指定位置
+格式:
+<a href="13-锚点测试界面.html#bottom" target="_blank">跳转到锚点测试界面</a>
+<h2 id="bottom">我是锚点测试界面33333</h2>
+-->
+<a href="13-锚点测试界面.html#bottom" target="_blank">跳转到锚点测试界面</a>
+<h2>我是顶部</h2>
+<a href="#center">跳转到中部</a>
+<br>
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2 id="center">我是中部</h2>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2>我是底部</h2>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

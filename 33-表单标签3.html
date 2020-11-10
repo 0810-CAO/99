@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>33-表单标签3</title>
+    <style type="text/css">
+        textarea{
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.select标签
+作用: 用于定义下拉列表
+
+格式:
+<select>
+    <optgroup label="分组名称">
+        <option>列表数据</option>
+    </optgroup>
+</select>
+
+注意点:
+1.下拉列表不能输入内容, 但是可以直接在列表中选择内容
+2.可以通过给option标签添加一个selected属性来指定列表的默认值
+3.可以通过给option标签包裹一层optgroup标签来给下拉列表中的数据分类
+
+2.textarea标签
+作用: 定义一个多行输入框
+
+格式:
+<textarea>
+</textarea>
+
+注意点:
+1.默认情况下输入框可以无限换行
+2.默认情况下输入框有自己的宽度和高度
+3.可以通过cols和rows来指定输入框的宽度和高度, 但是虽然指定了列数和行数, 但是还是可以无限往下输入
+4.默认情况下输入框是可以手动拉伸的
+-->
+
+<!--<select>-->
+    <!--<option>北京</option>-->
+    <!--<option>上海</option>-->
+    <!--<option>广州</option>-->
+    <!--<option>广西</option>-->
+    <!--<option selected="selected">武汉</option>-->
+<!--</select>-->
+
+<select>
+    <optgroup label="北京">
+        <option>朝阳区</option>
+        <option>昌平区</option>
+        <option>通州区</option>
+    </optgroup>
+    <optgroup label="广州">
+        <option>天河区</option>
+        <option>越秀区</option>
+        <option>黄浦区</option>
+    </optgroup>
+</select>
+
+<hr>
+
+<textarea cols="20" rows="5">
+</textarea>
+</body>
+</html>

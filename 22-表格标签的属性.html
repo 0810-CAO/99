@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>22-表格标签的属性</title>
+</head>
+<body>
+<!--
+1.宽度和高度的属性
+可以给table标签和td标签使用
+1.1表格的宽度和高度默认是按照内容的尺寸来调整的, 也可以通过给table标签设置width/height属性的方式来手动指定表格的宽度和高度
+1.2如果给td标签设置widht/height属性, 会修改当前单元格的宽度和高度, 不会影响整个表格的宽度和高度
+
+2.水平对齐和垂直对齐的属性
+其中水平对齐可以给table标签和tr标签和td标签使用
+垂直对齐只能给tr标签和td标签使用
+2.1给table标签设置align属性, 可以控制表格在水平方向的对齐方式
+2.2给tr标签设置align属性, 可以控制当前行中所有单元格内容的水平方向的对齐方式
+2.3给td标签设置align属性, 可以控制当前单元格中内容在水平方向的对齐方式
+注意点: 如果td中设置了align属性, tr中也设置了align属性, 那么单元格中的内容会按照td中设置的来对齐
+
+2.4给tr标签设置valign属性, 可以控制当前行中所有单元格中的内容, 在垂直方向的对齐方式
+2.5给td标签设置valign属性, 可以控制当前单元格中的内容在垂直方向的对齐方式
+注意点:  如果td中设置了valign属性, tr中也设置了valign属性, 那么单元格中的内容会按照td中设置的来对齐
+
+3.外边距和内边距的属性
+只能给table标签使用
+3.1.外边距就是单元格和单元格之间的距离, 我们称之为外边距
+默认情况下单元格和单元格之间的外边距的距离是2px
+
+3.2 内边距就是单元格的边框和文字之间的间隙, 我们称之为内边距
+默认情况下内边距是1
+cellspacing 外边距  cellpadding内边距
+
+注意: 以上讲解的内容仅仅作为了解, 以后在企业开发中所有控制样式的都是通过CSS
+-->
+
+<!--编写一个2行2列的表格-->
+<table border="1" width="500px" height="300px" align="right" cellspacing="12px" cellpadding="1">
+    <tr valign="bottom">
+        <td width="150px" height="50px">1.1</td>
+        <td valign="top">1.2</td>
+    </tr>
+    <tr align="center">
+        <td align="right">2.1</td>
+        <td>2.2</td>
+    </tr>
+</table>
+</body>
+</html>

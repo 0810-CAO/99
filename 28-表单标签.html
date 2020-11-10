@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>28-表单标签</title>
+</head>
+<body>
+<!--
+1.什么是表单?
+表单就是专门用来收集用户信息的
+
+2.什么是表单元素?
+2.1什么是元素?
+在HTML中 标签/标记/元素都是指HTML中的标签
+例如: <a> a标签/a标记/a元素
+
+表单元素其实还是HTML中的一些标签, 只不过这些标签比较特殊, 在浏览器中所有的表单标签都有特殊的外观和默认的功能
+
+3.表单的格式:
+<form>
+    <表单元素>
+</form>
+
+4.常见的表单元素
+input标签, input标签有一个type属性, 这个属性有很多类型的取值, 取值的不同就决定了input标签的功能和外观不同
+
+5.注意:
+表单元素一定要写在表单中
+-->
+<form>
+    <!--明文输入框-->
+    账号:<input type="text"><br>
+    <!--暗文输入框-->
+    密码:<input type="password"><br>
+    <!--给输入框设置默认值-->
+    账号:<input type="text" value="lnj"><br>
+    密码:<input type="password" value="123"><br>
+
+    <!--
+    单选框
+    注意点:
+    1.默认情况下单选框不会互斥, 要想单选框互斥那么必须给每一个单选框标签都设置一个name属性, 然后name属性还必须设置相同的值
+    2.要想让单选框默认选中某一个框子, 那么可以给input标签添加一个checked属性
+    3.在HTML中如果属性的取值和属性的名称一样, 可以只写一个. 但是在XHTML中必须写上取值, 所以在企业开发中我们推荐大家不要省略取值
+    -->
+    性别:
+    <input type="radio" name="xx" checked>男
+    <input type="radio" name="xx">女
+    <input type="radio" name="xx" >保密<br>
+
+    <!--多选框-->
+    爱好:
+    <input type="checkbox">篮球
+    <input type="checkbox">足球
+    <input type="checkbox" checked="checked">棒球
+    <input type="checkbox" checked="checked">足浴
+</form>
+</body>
+</html>

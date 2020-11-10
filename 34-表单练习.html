@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>34-表单练习</title>
+</head>
+<body>
+
+<form action="http://www.baidu.com">
+    <fieldset>
+        <legend>注册界面</legend>
+        <p>
+            账号: <input type="text" name="account">
+        </p>
+        <p>
+            密码: <input type="password" name="pwd">
+        </p>
+    <!--
+    在单选框和多选框中,所有的项目的name必须一致
+    在表单标签中,除了按钮标签以外的标签,都可以通过value来指定需要提交到服务器的数据
+    -->
+        <p>
+            性别:
+            <input type="radio" name="gender" value="male">男
+            <input type="radio" name="gender" value="female">女
+            <input type="radio" checked="checked" name="gender" value="yao">保密
+        </p>
+        <p>
+            爱好:
+            <input type="checkbox" name="sport" value="basketball">篮球
+            <input type="checkbox" name="sport" value="football">足球
+            <input type="checkbox" checked="checked" name="sport" value="crazy">足浴
+        </p>
+        <p>
+            简介:
+            <textarea cols="30" rows="10" name="desc"></textarea>
+        </p>
+        <p>
+            生日:
+            <input type="date" name="birthday">
+        </p>
+        <p>
+            邮箱:
+            <input type="email" name="email">
+        </p>
+        <p>
+            电话:
+            <input type="number" name="phone">
+        </p>
+        <p>
+            <input type="submit" value="注册">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="reset" value="清空">
+        </p>
+    <!--
+    account=lnj
+    &pwd=123
+    &gender=on
+    &sport=on
+    &sport=on
+    &desc=just+do+it
+    &birthday=2018-03-26
+    &email=123%40qq.com
+    &phone=01234567890
+
+account=lnj
+&pwd=123
+&gender=male
+&sport=basketball
+&sport=crazy
+&desc=just+do+it
+&birthday=2018-03-26
+&email=123%40qq.com
+&phone=01234567890
+    -->
+        </fieldset>
+</form>
+</body>
+</html>

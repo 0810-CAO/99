@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>39-marquee标签</title>
+    <style>
+        marquee {
+            width:200px;
+            height:200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.什么是marquee标签?
+作用: 跑马灯
+
+格式:
+<marquee>内容</marquee>
+
+属性:
+direction: 设置滚动方向 left/right/up/down
+scrollamount: 设置滚动速度, 值越大就越快
+loop: 设置滚动次数, 默认是-1, 也就是无限滚动
+behavior: 设置滚动类型 slide滚动到边界就停止, alternate滚动到边界就弹回
+
+注意点:
+marquee标签不是W3C推荐的标签, 在W3C官方文档中也无法查询这个标签, 但是各大浏览器对这个标签的支持非常好
+-->
+
+<!--滚动方向-->
+<marquee>随便写点内容</marquee>
+<marquee direction="right">随便写点内容</marquee>
+<marquee direction="up">随便写点内容</marquee>
+<marquee direction="down">随便写点内容</marquee>
+<hr>
+<!--设置滚动速度-->
+<marquee scrollamount="1">随便写点内容</marquee>
+<marquee scrollamount="100">随便写点内容</marquee>
+<hr>
+<!--设置滚动次数-->
+<marquee loop="1">随便写点内容</marquee>
+<hr>
+<!--设置滚动类型-->
+<marquee behavior="slide">随便写点内容</marquee>
+<marquee behavior="alternate">随便写点内容</marquee>
+
+<marquee>
+    <img src="images/NJ.jpg" width="50px">
+</marquee>
+</body>
+</html>

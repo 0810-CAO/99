@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>29-表单标签2</title>
+</head>
+<body>
+<form action="http://www.baidu.com">
+    <!--明文输入框-->
+    账号:<input type="text" name="aa"><br>
+    <!--暗文输入框-->
+    密码:<input type="password" name="bb"><br>
+    <!--
+    定义一个普通按钮
+    作用:配合JS完成一些操作
+    -->
+    <input type="button" value="我是按钮" onclick="alert('lnj')">
+
+    <!--
+    定义一个图片按钮
+    作用:配合JS完成一些操作
+    -->
+    <input type="image" src="images/register.jpg" onclick="alert('lnj')">
+
+    <!--
+    定义重置按钮
+    作用:清空表单中的数据
+    注意点:
+    重置按钮有默认的按钮标题, 默认叫做 重置
+    也可以通过value属性来修改默认标题
+    -->
+    <input type="reset" value="清空">
+
+    <!--
+    定义提交按钮
+    作用:将表单中的数据提交到远程服务器
+    注意点:
+    要想把表单中的数据提交到远程服务器,必须满足两个条件
+    1.告诉表单需要提交到哪个服务器
+    可以通过form标签的action属性来告诉表单,需要提交到那个服务器
+    2.告诉表单,表单中的哪些数据需要提交
+    -->
+    <input type="submit">
+
+    <!--
+    隐藏域
+    作用: 用于悄悄咪咪的收集用户的一些数据, 隐藏域是不会出现在界面中的
+    -->
+    <input type="hidden" name="cc" value="it666">
+</form>
+</body>
+</html>
