@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-id选择器和class选择器</title>
+    <style>
+        /*
+        .para1{
+            color: red;
+            font-size: 30px;
+        }
+        .para2{
+            font-size: 30px;
+            text-decoration: underline;
+        }
+        .para3{
+            color: red;
+            text-decoration: underline;
+        }
+        */
+        .colorR{
+            color: red;
+        }
+        .size30{
+            font-size: 30px;
+        }
+        .line{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.id和class的区别?
+1.1
+id相当于人的身份证不可以重复
+class相当于人的名称可以重复
+1.2
+一个HTML标签只能绑定一个id名称
+一个HTML标签可以绑定多个class名称
+
+2.id选择器和class选择器区别?
+id选择器是以#开头
+class选择器是以.开头
+
+3.在企业开发中到底用id选择器还是用class选择器?
+id一般情况下是给js使用的, 所以除非特殊情况, 否则不要使用id去设置样式
+
+4.在企业开发中一个开发人员对类的使用可以看出这个开发人员的技术水平
+一般情况下在企业开发中要注重冗余代码的抽取, 可以将一些公共的代码抽取到一个类选择器中, 然后让标签和这个类选择器绑定即可
+
+-->
+<!--
+<p class="para1">第一段文字</p>
+<p class="para2">第二段文字</p>
+<p class="para3">第三段文字</p>
+-->
+<p class="colorR size30">第一段文字</p>
+<p class="size30 line">第二段文字</p>
+<p class="colorR line">第三段文字</p>
+</body>
+</html>

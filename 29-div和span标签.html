@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>29-div和span标签</title>
+    <style>
+        .header{
+            width: 980px;
+            height: 100px;
+            background: red;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+        .content{
+            width: 980px;
+            height: 500px;
+            background: green;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+        .footer{
+            width: 980px;
+            height: 100px;
+            background: blue;
+            margin: auto;
+        }
+        .logo{
+            width: 200px;
+            height: 50px;
+            background: pink;
+            float: left;
+            margin: 20px;
+        }
+        .nav{
+            width: 600px;
+            height: 50px;
+            background: yellow;
+            float: right;
+            margin: 20px;
+        }
+        .aside{
+            width: 250px;
+            height: 460px;
+            background: purple;
+            float: left;
+            margin: 20px;
+        }
+        .article{
+            width: 650px;
+            height: 460px;
+            background: deepskyblue;
+            float: right;
+            margin: 20px;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.什么是div?
+作用: 一般用于配合css完成网页的基本布局
+
+2.什么是span?
+作用: 一般用于配合css修改网页中的一些局部信息
+
+3.div和span有什么区别?
+1.div会单独的占领一行,而span不会单独占领一行
+2.div是一个容器级的标签, 而span是一个文本级的标签
+
+4.容器级的标签和文本级的标签的区别?
+容器级的标签中可以嵌套其它所有的标签
+文本级的标签中只能嵌套文字/图片/超链接
+
+容器级的标签
+div h ul ol dl li dt dd ...
+
+文本级的标签
+span p buis strong em ins del ...
+
+注意点:
+哪些标签是文本级的哪些标签是容器级的, 我们不用刻意去记忆, 在企业开发中一般情况下要嵌套都是嵌套在div中, 或者按照组标签来嵌套
+-->
+<!--
+<div class="header">
+    <div class="logo"></div>
+    <div class="nav"></div>
+</div>
+<div class="content">
+    <div class="aside"></div>
+    <div class="article"></div>
+</div>
+<div class="footer"></div>
+-->
+
+<!--
+<p>努力到<span>无能为力</span>, 拼搏到<span>感动自己</span></p>
+-->
+
+<!--
+<div>我是div</div>
+<div>我是div</div>
+
+<span>我是span</span>
+<span>我是span</span>
+-->
+
+<!--
+<div>
+    <div>
+        <ul>
+            <li>
+                <img src="images/picture.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+</div>
+-->
+
+<!--
+<p>我是段落
+    <h1>我是标题</h1>
+</p>
+-->
+
+<h1>我是标题
+    <p>我是段落</p>
+</h1>
+</body>
+</html>

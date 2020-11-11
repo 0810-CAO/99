@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20-属性选择器上</title>
+    <style>
+        /*
+        p[id]{
+            color: red;
+        }
+        */
+        p[class=cc]{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.什么是属性选择器?
+作用: 根据指定的属性名称找到对应的标签, 然后设置属性
+
+格式:
+[attribute]
+作用:根据指定的属性名称找到对应的标签, 然后设置属性
+
+[attribute=value]
+作用: 找到有指定属性, 并且属性的取值等于value的标签, 然后设置属性
+最常见的应用场景, 就是用于区分input属性
+input[type=password]{}
+<input type="text" name="" id="">
+<input type="password" name="" id="">
+-->
+<p id="identity1">我是段落1</p>
+<p id="identity2" class="cc">我是段落2</p>
+<p class="cc">我是段落3</p>
+<p id="identity3" class="para">我是段落4</p>
+<p>我是段落5</p>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-后代选择器</title>
+    <style>
+        /*
+        div p{
+            color: red;
+        }
+        */
+        /*
+        #identity p{
+            color: red;
+        }
+        */
+        /*
+        .para p{
+            color: blue;
+        }
+        */
+        /*
+        #identity #iii{
+            color: skyblue;
+        }
+        */
+        /*
+        #identity .ccc{
+            color: purple;
+        }
+        */
+        div ul li p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.什么是后代选择器?
+作用: 找到指定标签的所有特定的后代标签, 设置属性
+
+格式:
+标签名称1 标签名称2{
+    属性:值;
+}
+先找到所有名称叫做"标签名称1"的标签, 然后再在这个标签下面去查找所有名称叫做"标签名称2"的标签, 然后在设置属性
+div p{}
+
+注意点:
+1.后代选择器必须用空格隔开
+2.后代不仅仅是儿子, 也包括孙子/重孙子, 只要最终是放到指定标签中的都是后代
+3.后代选择器不仅仅可以使用标签名称, 还可以使用其它选择器
+4.后代选择器可以通过空格一直延续下去
+-->
+<!--div ul li p-->
+<p>我是段落</p>
+<div id="identity" class="para">
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <ul>
+        <li>
+            <!--<p id="iii" class="ccc">我是段落</p>-->
+            <p>我是段落</p>
+        </li>
+        <li>
+            <p>我是段落</p>
+        </li>
+    </ul>
+</div>
+<p>我是段落</p>
+</body>
+</html>

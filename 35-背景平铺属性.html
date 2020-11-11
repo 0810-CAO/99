@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>35-背景平铺属性</title>
+    <style>
+        /*
+        div{
+            width: 500px;
+            height: 500px;
+        }
+        .box1{
+            background-image: url(images/girl.jpg);
+            background-repeat: repeat-y;
+        }
+        */
+        /*
+        body{
+            background-image: url(images/bg2.jpg);
+        }
+        */
+        div{
+            width: 980px;
+            height: 60px;
+            background-image: url(images/1.png);
+        }
+    </style>
+</head>
+<body>
+<!--
+1.如何控制背景图片的平铺方式?
+在CSS中有一个background-repeat属性, 就是专门用于控制背景图片的平铺方式的
+
+取值:
+repeat 默认, 在水平和垂直都需要平铺
+no-repeat 在水平和垂直都不需要平铺
+repeat-x 只在水平方向平铺
+repeat-y 只在垂直方向平铺
+
+快捷键
+bgr background-repeat:
+
+应用场景:
+可以通过背景图片的平铺来降低图片的大小, 提升网页的访问速度
+-->
+<div class="box1"></div>
+</body>
+</html>

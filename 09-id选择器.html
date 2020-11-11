@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-id选择器</title>
+    <style>
+        #identity1{
+            color: red;
+        }
+        #identity2{
+            color: green;
+        }
+        #identity3{
+            color: blue;
+        }
+        #identity4{
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.什么是id选择器?
+作用: 根据指定的id名称找到对应的标签, 然后设置属性
+
+格式:
+#id名称{
+    属性:值;
+}
+
+注意点:
+1.每个HTML标签都有一个属性叫做id, 也就是说每个标签都可以设置id
+2.在同一个界面中id的名称是不可以重复的
+3.在编写id选择器时一定要在id名称前面加上#
+4.id的名称是有一定的规范的
+4.1id的名称只能由字母/数字/下划线
+a-z 0-9 _
+4.2id名称不能以数字开头
+4.3id名称不能是HTML标签的名称
+不能是a h1 img input ...
+5.在企业开发中一般情况下如果仅仅是为了设置样式, 我们不会使用id ,因为在前端开发中id是留给js使用的
+-->
+<p id="identity1">迟到毁一生</p>
+<p id="identity2">早退穷三代</p>
+<p id="identity3">按时上下班</p>
+<p id="identity4">必成高富帅</p>
+</body>
+</html>

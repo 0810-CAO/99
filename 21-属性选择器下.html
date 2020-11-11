@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>21-属性选择器下</title>
+    <style>
+        /*
+        img[alt^=abc]{
+            color: red;
+        }
+        */
+        /*
+        img[alt|=abc]{
+            color: red;
+        }
+        img[alt$=abc]{
+            color: blue;
+        }
+        */
+        /*
+        img[alt*=abc]{
+            color: red;
+        }
+        */
+        img[alt~=abc]{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.属性的取值是以什么开头的
+[attribute|=value] CSS2
+[attribute^=value] CSS3
+两者之间的区别:
+CSS2中的只能找到value开头,并且value是被-和其它内容隔开的
+CSS3中的只要是以value开头的都可以找到, 无论有没有被-隔开
+
+2.属性的取值是以什么结尾的
+[attribute$=value] CSS3
+
+3.属性的取值是否包含某个特定的值得
+[attribute~=value] CSS2
+[attribute*=value] CSS3
+两者之间的区别:
+CSS2中的只能找到独立的单词, 也就是包含value,并且value是被空格隔开的
+CSS3中的只要包含value就可以找到
+-->
+
+<!--
+<img src="" alt="abcdef">
+<img src="" alt="abc-www">
+<img src="" alt="abc ppp">
+<img src="" alt="defabc">
+<img src="" alt="ppp abc">
+<img src="" alt="www-abc">
+<img src="" alt="qq">
+<img src="" alt="yy">
+-->
+
+<img src="" alt="abcwwwmmm">
+<img src="" alt="wwwmmmabc">
+<img src="" alt="wwwabcmmm">
+<img src="" alt="www-abc-mmm">
+<img src="" alt="www abc mmm">
+<img src="" alt="qq">
+
+</body>
+</html>

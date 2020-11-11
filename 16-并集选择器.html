@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16-并集选择器</title>
+    <style>
+        /*
+        .ht{
+            color: red;
+        }
+        .para{
+            color: red;
+        }
+        */
+        .ht,.para{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.什么是并集选择器?
+作用: 给所有选择器选中的标签设置属性
+
+格式:
+选择器1,选择器2{
+    属性:值;
+}
+
+注意点:
+1.并集选择器必须使用,来连接
+2.选择器可以使用标签名称/id名称/class名称
+-->
+
+<h1 class="ht">我是标题</h1>
+<p class="para">我是段落</p>
+<p>我是段落</p>
+<p>我是段落</p>
+</body>
+</html>

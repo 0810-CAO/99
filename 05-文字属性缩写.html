@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-文字属性的缩写</title>
+    <style>
+        p{
+            /*
+            font-style: italic;
+            font-weight: bold;
+            font-size: 10px;
+            font-family:"楷体";
+            */
+            font:bold italic 10px "楷体";
+        }
+    </style>
+</head>
+<body>
+<!--
+缩写格式:
+font: style weight size family;
+例如:
+font:italic bold 10px "楷体";
+
+注意点:
+1.在这种缩写格式中有的属性值可以省略
+sytle可以省略
+weight可以省略
+2.在这种缩写格式中style和weight的位置可以交换
+3.在这种缩写格式中有的属性值是不可以省略的
+size不能省略
+family不能省略
+4.size和family的位置是不能顺便乱放的
+size一定要写在family的前面, 而且size和family必须写在所有属性的最后
+-->
+<p>abc我是段落</p>
+</body>
+</html>

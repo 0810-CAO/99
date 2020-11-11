@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-体验CSS</title>
+    <style type="text/css">
+        h1{
+            text-align: center;
+            color: red;
+            font-family: "微软雅黑";
+        }
+        p{
+            text-align: center;
+            color: blue;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<!--
+分析:
+有一个标题(H1), 还有一些段落(P)
+标题是居中的, 段落也是居中的. 所以我们可以设置H标签和P标签的align属性等于center来实现
+标题和段落都有颜色,都有字体,都有大小, 所以需要给文字包裹一个font标签, 然后通过font标签来设置颜色和字体以及大小
+
+1.通过标签来修改样式的缺点:
+1.需要记忆哪些标签有哪些属性, 如果该标签没有这个属性, 那么设置了也没有效果
+2.当需求变更时我们需要修改大量的代码才能满足现有的需求
+3.HTML只有一个作用就是用来添加语义
+
+所以在企业开发中修改样式都是交给CSS来做
+2.通过CSS来修改样式有什么好处?
+1.不用记忆哪些属性属于哪个标签
+2.当需求变更时我们不需要修改大量的代码就可以满足需求
+3.在前端开发中CSS只有一个作用, 就是用来修改样式
+-->
+<!--
+<h1 align="center">
+    <font face="微软雅黑" color="red">成功法则</font>
+</h1>
+<p align="center">
+    <font face="微软雅黑" color="blue" size="5">迟到毁一生</font>
+</p>
+<p align="center">
+    <font face="微软雅黑" color="blue" size="5">早退穷三代</font>
+</p>
+<p align="center">
+    <font face="微软雅黑" color="blue" size="5">按时上下班</font>
+</p>
+<p align="center">
+    <font face="微软雅黑" color="blue" size="5">必成高富帅</font>
+</p>
+-->
+
+<h1>成功法则</h1>
+<p>迟到毁一生</p>
+<p>早退穷三代</p>
+<p>按时上下班</p>
+<p>必成高富帅</p>
+</body>
+</html>

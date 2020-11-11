@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>42-边框属性上</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /*border: 5px solid blue;*/
+            /*border: 5px solid;*/
+            /*border: 5px blue;*/
+            /*border: solid blue;*/
+
+            border-top:5px solid blue;
+            border-right:10px dashed green;
+            border-bottom:15px dotted purple;
+            border-left:20px double pink;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.什么边框?
+边框就是环绕在标签宽度和高度周围的线条
+
+2.边框属性的格式
+2.1连写(同时设置四条边的边框)
+border: 边框的宽度 边框的样式 边框的颜色;
+
+快捷键:
+bd+ border: 1px solid #000;
+
+注意点:
+1.连写格式中颜色属性可以省略, 省略之后默认就是黑色
+2.连写格式中样式不能省略, 省略之后就看不到边框了
+3.连写格式中宽度可以省略, 省略之后还是可以看到边框
+
+2.2连写(分别设置四条边的边框)
+border-top: 边框的宽度 边框的样式 边框的颜色;
+border-right: 边框的宽度 边框的样式 边框的颜色;
+border-bottom: 边框的宽度 边框的样式 边框的颜色;
+border-left: 边框的宽度 边框的样式 边框的颜色;
+
+快捷键:
+bt+ border-top: 1px solid #000;
+br+
+bb+
+bl+
+-->
+<div class="box"></div>
+</body>
+</html>

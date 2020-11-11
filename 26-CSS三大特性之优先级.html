@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>26-CSS三大特性之优先级</title>
+    <style>
+        /*
+        li{
+            color: blue;
+        }
+        ul{
+            color: red;
+        }
+        */
+        /*
+        p{
+            color: blue;
+        }
+        p{
+            color: red;
+        }
+        */
+        #identity{
+            color: purple;
+        }
+        .para{
+            color: pink;
+        }
+        p{
+            color: green;
+        }
+        *{
+            color: blue;
+        }
+        li{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.什么是优先级?
+作用:当多个选择器选中同一个标签, 并且给同一个标签设置相同的属性时, 如何层叠就由优先级来确定
+
+2.优先级判断的三种方式
+2.1间接选中就是指继承
+如果是间接选中, 那么就是谁离目标标签比较近就听谁的
+2.2相同选择器(直接选中)
+如果都是直接选中, 并且都是同类型的选择器, 那么就是谁写在后面就听谁的
+2.3不同选择器(直接选中)
+如果都是直接选中, 并且不是相同类型的选择器, 那么就会按照选择器的优先级来层叠
+id>类>标签>通配符>继承>浏览器默认
+-->0
+<ul>
+    <li>
+        <p id="identity" class="para">我是段落</p>
+    </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-类选择器</title>
+    <style>
+        .pp{
+            color: red;
+        }
+        .ppp{
+            color: green;
+        }
+        .pppp{
+            color: blue;
+        }
+        .ppppp{
+            color: yellow;
+        }
+        .para1{
+            font-size: 100px;
+        }
+        .para2{
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.什么是类选择器?
+作用: 根据指定的类名称找到对应的标签, 然后设置属性
+
+格式:
+.类名{
+    属性:值;
+}
+
+注意点:
+1.每个HTML标签都有一个属性叫做class, 也就是说每个标签都可以设置类名
+2.在同一个界面中class的名称是可以重复的
+3.在编写class选择器时一定要在class名称前面加上.
+4.类名的命名规范和id名称的命名规范一样
+5.类名就是专门用来给CSS设置样式的
+6.在HTML中每个标签可以同时绑定多个类名
+格式:
+<标签名称 class="类名1 类名2 ...">
+错误的写法:
+<p class="para1" class="para2">
+-->
+<p class="pp">迟到毁一生</p>
+<p class="ppp">早退穷三代</p>
+<p class="pppp">按时上下班</p>
+<p class="ppppp">必成高富帅</p>
+
+<p class="para1 para2">我是段落</p>
+<p class="para1 para2">我是段落</p>
+
+</body>
+</html>

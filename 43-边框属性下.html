@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>43-边框属性下</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            /*border-width: 5px 10px 15px 20px;*/
+            /*border-style: solid dashed dotted double;*/
+            /*border-color: blue green purple pink;*/
+            /*border-color: blue green purple;*/
+            /*border-color: blue green;*/
+            /*border-color: blue;*/
+
+            border-top-width: 5px;
+            border-top-style: solid;
+            border-top-color: blue;
+
+            border-right-width: 10px;
+            border-right-style: dashed;
+            border-right-color: green;
+
+            border-bottom-width: 15px;
+            border-bottom-style: dotted;
+            border-bottom-color: purple;
+
+            border-left-width: 20px;
+            border-left-style: double;
+            border-left-color: pink;
+        }
+    </style>
+</head>
+<body>
+<!--
+2.3连写(分别设置四条边的边框)
+border-width: 上 右 下 左;
+border-style: 上 右 下 左;
+border-color: 上 右 下 左;
+
+注意点:
+1.这三个属性的取值是按照顺时针来赋值, 也就是按照上右下左来赋值, 而不是按照日常生活中的上下左右
+2.这三个属性的取值省略时的规律
+2.1上 右 下 左 > 上 右 下 > 左边的取值和右边的一样
+2.2上 右 下 左 > 上 右 > 左边的取值和右边的一样 下边的取值和上边一样
+2.3上 右 下 左 > 上 > 右下左边取值和上边一样
+
+
+3.非连写(方向+要素)
+border-left-width: 20px;
+border-left-style: double;
+border-left-color: pink;
+-->
+<div class="box"></div>
+</body>
+</html>

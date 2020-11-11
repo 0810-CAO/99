@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>48-CSS盒子模型</title>
+    <style>
+        span,a,b,strong{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 6px solid #000;
+            padding: 20px;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<!--
+1.什么是CSS盒子模型?
+CSS盒子模型仅仅是一个形象的比喻, HTML中所有的标签都是盒子
+
+结论
+1.在HTML中所有的标签都可以设置
+宽度/高度  == 指定可以存放内容的区域
+内边距  == 填充物
+边框  == 手机盒子自己
+外边距  == 盒子和盒子之间的间隙
+-->
+<span>我是span</span>
+<a href="#">我是超链接</a>
+<b>我是加粗</b>
+<strong>我是强调</strong>
+
+</body>
+</html>

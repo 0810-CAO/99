@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>44-边框练习</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        .box1{
+            border: 5px solid black;
+            /*
+            border-top: 5px solid #000;
+            border-right: 5px solid #000;
+            border-bottom: 5px solid #000;
+            border-left: 5px solid #000;
+            */
+            /*
+            border-width:5px;
+            border-style:solid;
+            border-color: #000;
+            */
+            /*
+            border-top-width: 5px;
+            border-top-style: solid;
+            border-top-color: #000;
+
+            border-right-width: 5px;
+            border-right-style: solid;
+            border-right-color: #000;
+
+            border-bottom-width: 5px;
+            border-bottom-style: solid;
+            border-bottom-color: #000;
+
+            border-left-width: 5px;
+            border-left-style: solid;
+            border-left-color: #000;
+            */
+        }
+        .box2{
+            /*
+            border-top: 5px solid red;
+            border-right: 5px solid green;
+            border-bottom: 5px solid blue;
+            border-left: 5px solid purple;
+            */
+            border-width:5px;
+            border-style:solid;
+            border-color: red green blue purple;
+        }
+
+        .box3{
+            border: 5px solid red;
+            border-right:5px dashed red;
+            /*同一个选择器中后面的边框属性会覆盖前面的边框属性*/
+        }
+        .box4{
+            border: 5px solid red;
+            border-style:solid dashed solid dashed;
+            /*border-right:5px dashed red;*/
+            /*border-left:5px dashed red;*/
+        }
+        .box5{
+            border: 5px solid #000;
+            border-bottom: none;
+            /*none 代表不需要边框*/
+        }
+        .box6{
+            width: 0px;
+            height: 0px;
+            border-width:25px;
+            border-style:solid;
+            border-color: red white blue white;
+            border-bottom:none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box1"></div>
+<hr>
+<div class="box2"></div>
+<hr>
+<div class="box3"></div>
+<hr>
+<div class="box4"></div>
+<hr>
+<div class="box5"></div>
+<hr>
+<div class="box6"></div>
+</body>
+</html>
