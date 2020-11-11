@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>102-动画模块-其它属性下</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1 {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation-name: sport;
+            animation-duration: 5s;
+        }
+        @keyframes sport {
+            0%{
+                left: 0;
+                top: 0;
+            }
+            25%{
+                left: 300px;
+                top: 0;
+            }
+            50%{
+                left: 300px;
+                top: 300px;
+            }
+            75%{
+                left: 0;
+                top: 300px;
+            }
+            100%{
+                left: 0;
+                top: 0;
+            }
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin: 100px auto;
+            animation-name: myRotate;
+            animation-duration: 5s;
+            animation-delay: 2s;
+            /*
+            通过我们的观察, 动画是有一定的状态的
+            1.等待状态
+            2.执行状态
+            3.结束状态
+            */
+            /*
+            animation-fill-mode作用:
+            指定动画等待状态和结束状态的样式
+            取值:
+            none: 不做任何改变
+            forwards: 让元素结束状态保持动画最后一帧的样式
+            backwards: 让元素等待状态的时候显示动画第一帧的样式
+            both: 让元素等待状态显示动画第一帧的样式, 让元素结束状态保持动画最后一帧的样式
+            */
+            /*animation-fill-mode: backwards;*/
+            /*animation-fill-mode: forwards;*/
+            animation-fill-mode: both;
+        }
+        @keyframes myRotate {
+            0%{
+                transform: rotate(10deg);
+            }
+            50%{
+                transform: rotate(50deg);
+            }
+            100%{
+                transform: rotate(70deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+</body>
+</html>

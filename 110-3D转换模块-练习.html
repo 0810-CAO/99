@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>110-3D转换模块-练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            /*想看到整个立方的近大远小效果, 就给ul的父元素添加透视*/
+            perspective: 500px;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            margin: 100px auto;
+            position: relative;
+            transform: rotateY(0deg) rotateX(0deg);
+            transform-style: preserve-3d;
+            animation: sport 5s linear 0s infinite normal;
+        }
+        ul li{
+            list-style: none;
+            width: 200px;
+            height: 200px;
+            font-size: 60px;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        ul li:nth-child(1){
+            background-color: red;
+            transform: rotateX(90deg) translateZ(100px) scale(2, 1);
+        }
+        ul li:nth-child(2){
+            background-color: green;
+            transform: rotateX(180deg) translateZ(100px) scale(2, 1);
+        }
+        ul li:nth-child(3){
+            background-color: blue;
+            transform: rotateX(270deg) translateZ(100px) scale(2, 1);
+        }
+        ul li:nth-child(4){
+            background-color: yellow;
+            transform: rotateX(360deg) translateZ(100px) scale(2, 1);
+        }
+        ul li:nth-child(5){
+            background-color: purple;
+            transform: translateX(-200px) rotateY(90deg);
+        }
+        ul li:nth-child(6){
+            background-color: pink;
+            transform: translateX(200px) rotateY(90deg);
+        }
+        ul li img{
+            /*
+            注意点:
+            只要父元素被拉伸了,子元素也会被拉伸
+            */
+            width: 200px;
+            height: 200px;
+        }
+        @keyframes sport {
+            from{
+                transform: rotateX(0deg);
+            }
+            to{
+                transform: rotateX(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="images/banner1.jpg" alt=""></li>
+    <li><img src="images/banner2.jpg" alt=""></li>
+    <li><img src="images/banner3.jpg" alt=""></li>
+    <li><img src="images/banner4.jpg" alt=""></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

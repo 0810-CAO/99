@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>128-伸缩布局-主轴方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 400px;
+            height: 600px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            /*
+            如果伸缩容器中的伸缩项换行了, 那么我们就可以通过align-content来设置行与行之间的对齐方式
+            */
+            /*align-content: flex-start;*/
+            /*align-content: flex-end;*/
+            /*align-content: center;*/
+            /*align-content: space-between;*/
+            /*align-content: space-around;*/
+            /*
+            默认情况下换行就是就是拉伸对齐
+            一定要注意: 在换行中的拉伸对齐是指, 所有行的高度总和要和伸缩容器的高度一样
+            所以会将多余的空间平分之后添加给每一行
+            */
+            align-content: stretch;
+        }
+        ul>li{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            text-align: center;
+            line-height: 200px;
+            font-size: 35px;
+        }
+        ul>li:nth-child(1){
+
+        }
+        ul>li:nth-child(2){
+            background-color: skyblue;
+        }
+        ul>li:nth-child(3){
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

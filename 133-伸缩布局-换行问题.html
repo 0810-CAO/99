@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>128-伸缩布局-主轴方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 400px;
+            height: 600px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            list-style: none;
+            display: flex;
+            /*
+            在伸缩布局中, 如果伸缩容器的宽度不够, 系统会自动压缩伸缩项的宽度, 保证所有的伸缩想都能放在伸缩容器中
+            如果当伸缩容器宽度不够时, 不想让伸缩项被压缩, 也可以让系统换行flex-wrap: wrap;
+
+            默认情况下如果伸缩容器的高度比换行之后所有伸缩项的高度还要高, 那么系统会自动将剩余空间平分之后添加给每一行
+            */
+            /*宽度不够也不换行, 默认取值*/
+            /*flex-wrap: nowrap;*/
+            flex-wrap: wrap;
+            /*flex-wrap: wrap-reverse;*/
+        }
+        ul>li{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            text-align: center;
+            line-height: 200px;
+            font-size: 35px;
+        }
+        ul>li:nth-child(1){
+
+        }
+        ul>li:nth-child(2){
+            background-color: skyblue;
+        }
+        ul>li:nth-child(3){
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>117-CSS书写格式</title>
+    <!--<style>
+        div{
+            color: blue;
+        }
+    </style>-->
+
+    <!--<link rel="stylesheet" href="117-abc.css">-->
+
+    <style>
+        @import "117-abc.css";
+    </style>
+</head>
+<body>
+<!--
+1.行内样式
+2.内嵌样式
+3.外链样式
+4.导入样式
+
+外链样式和导入样式异同
+相同点: 都是把CSS代码写到了一个单独的文件中
+不同点:
+1.外链样式会先加载样式, 再显示界面
+2.导入样式会先显示界面, 再加载样式
+
+1.外链样式是通过HTML标签链接样式
+2.导入样式是CSS2.1新增的, 所以有兼容问题
+-->
+<!--<div style="color: red">我是div</div>-->
+<div>我是div</div>
+</body>
+</html>

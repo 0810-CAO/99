@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>128-伸缩布局-主轴方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            list-style: none;
+            display: flex;
+        }
+        ul>li{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            text-align: center;
+            line-height: 100px;
+            font-size: 35px;
+        }
+        ul>li:nth-child(1){
+            /*
+            如果想调整伸缩布局中伸缩项的顺序, 那么我们可以通过修改伸缩项的order属性来实现
+            默认情况下order的取值是0
+            如果我们设置了order属性的值, 那么系统就会按照设置的值从小到大的排序
+            */
+            order:-1;
+        }
+        ul>li:nth-child(2){
+            background-color: skyblue;
+            order: 2;
+        }
+        ul>li:nth-child(3){
+            background-color: yellow;
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

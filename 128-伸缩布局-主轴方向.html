@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>128-伸缩布局-主轴方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            border: 1px solid #000;
+            margin: 100px auto;
+            list-style: none;
+            /*
+            在伸缩布局中, 默认伸缩项是从左至右的排版的
+            */
+            display: flex;
+            /*
+            主轴的排版的方向默认就是row, 默认就是从左至右
+            */
+            /*flex-direction: row;*/
+            /*
+            修改主轴的排版方向为从右至左
+            */
+            /*flex-direction: row-reverse;*/
+            /*
+            告诉系统把主轴的方向改为垂直方向
+            注意点:
+            1.默认情况下主轴是水平方向的, 但是也可以修改为垂直方向.只要看到flex-direction: column/column-reverse就代表主轴被修改为了垂直方向
+            2.如果将主轴修改为了垂直方向, 那么侧轴就会自动从垂直方向转换为水平方向
+            */
+            /*
+            修改主轴的排版方向为从上至下
+            */
+            /*flex-direction: column;*/
+
+            /*
+            修改主轴的排版方向为从下至上
+            */
+            flex-direction: column-reverse;
+        }
+        ul>li{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            text-align: center;
+            line-height: 100px;
+            font-size: 35px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

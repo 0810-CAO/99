@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>128-伸缩布局-主轴方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 600px;
+            height: 600px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            list-style: none;
+            display: flex;
+            /*
+            justify-content:
+            用于设置伸缩项主轴上的对齐方式
+            如果设置为flex-start, 代表告诉系统伸缩项和主轴的起点对齐
+            */
+            /*justify-content: flex-start;*/
+            /*justify-content: flex-end;*/
+            /*居中对齐*/
+            /*justify-content: center;*/
+            /*两端对齐*/
+            /*justify-content: space-between;*/
+            /*环绕对齐*/
+            justify-content: space-around;
+        }
+        ul>li{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            text-align: center;
+            line-height: 100px;
+            font-size: 35px;
+        }
+        ul>li:nth-child(2){
+            background-color: skyblue;
+        }
+        ul>li:nth-child(3){
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

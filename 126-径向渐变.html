@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>126-径向渐变</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            border: 1px solid #000;
+            /*可以在颜色前面添加at和关键字来指定从什么位置开始渐变*/
+            /*background-image: radial-gradient(at left top,red, blue);*/
+            /*除了可以通过关键字指定从什么位置开始渐变以外, 还可以通过指定具体像素来指定从什么位置开始渐变*/
+            /*background-image: radial-gradient(at 50px 50px,red, blue);*/
+
+            /*也可以在颜色前面直接加上一个具体的像素来指定渐变的范围*/
+            /*background-image: radial-gradient(150px ,red, blue);*/
+
+            /*
+            编写规范:
+            如果既要指定扩散的范围, 又要指定起始位置, 那么把扩散的范围写在前面, 而起始位置写在后面
+            */
+            background-image: radial-gradient(50px at right bottom ,red, blue);
+        }
+    </style>
+</head>
+<body>
+
+<div></div>
+</body>
+</html>

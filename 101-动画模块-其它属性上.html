@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>101-动画模块-其它属性上</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            animation-name: sport;
+            animation-duration: 2s;
+            /*告诉系统多少秒之后开始执行动画*/
+            /*animation-delay: 2s;*/
+            /*告诉系统动画执行的速度*/
+            animation-timing-function: linear;
+            /*告诉系统动画需要执行几次*/
+            animation-iteration-count: 3;
+            /*告诉系统是否需要执行往返动画
+            取值:
+            normal, 默认的取值, 执行完一次之后回到起点继续执行下一次
+            alternate, 往返动画, 执行完一次之后往回执行下一次
+            */
+            animation-direction: alternate;
+        }
+        @keyframes sport {
+            from{
+                margin-left: 0;
+            }
+            to{
+                margin-left: 500px;
+            }
+        }
+        div:hover{
+            /*
+            告诉系统当前动画是否需要暂停
+            取值:
+            running: 执行动画
+            paused: 暂停动画
+            */
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+</body>
+</html>

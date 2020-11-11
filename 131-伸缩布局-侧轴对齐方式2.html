@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>128-伸缩布局-主轴方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 600px;
+            height: 600px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            list-style: none;
+            display: flex;
+        }
+        ul>li{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            text-align: center;
+            line-height: 100px;
+            font-size: 35px;
+        }
+        ul>li:nth-child(1){
+            /*padding-top: 50px;*/
+            /*
+            如果在伸缩容器中通过 align-items 修改侧轴的对齐方式, 是修改所有伸缩项侧轴的对齐方式
+            如果是在伸缩项中通过 align-self 修改侧轴的对齐方式, 是单独修改当前伸缩项侧轴的对齐方式
+            align-self属性的取值和align-items一样
+            */
+            align-self: flex-end;
+        }
+        ul>li:nth-child(2){
+            background-color: skyblue;
+            align-self: center;
+        }
+        ul>li:nth-child(3){
+            /*padding-top: 100px;*/
+            background-color: yellow;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>j</li>
+    <li>y</li>
+    <li>z</li>
+</ul>
+</body>
+</html>

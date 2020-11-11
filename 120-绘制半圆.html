@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            /*规律: 如果边框的宽度小于圆角的半径, 那么内圆和外圆都是圆弧形状
+            如果边框的宽度大于或者等于圆角的半径, 那么内圆就会变成直角而不是圆角
+            */
+            border: 110px solid #000;
+            margin: 100px auto;
+            border-radius: 110px;
+
+        }
+        .father>.son{
+            width: 200px;
+            height: 200px;
+            /*background-color: pink;*/
+            /*border-top-left-radius: 100px 100px;*/
+            /*border-top-right-radius: 100px 100px;*/
+
+
+            border-bottom-left-radius: 100px 100px;
+            border-bottom-right-radius: 100px 100px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <!--<div class="son"></div>-->
+</div>
+</body>
+</html>

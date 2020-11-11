@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>118-边框圆角基本概念</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        .father>.son{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /*
+            边框圆角的作用:
+            将原始的直角变为圆角
+            格式:
+            border-radius: 100px 0px 0px 0px;
+            第一个参数: 指定左上角的半径
+            按照左上/右上/右下/左下的顺序
+            */
+            /*border-radius: 0px 0px 0px 100px;*/
+            /*如果省略一个参数, 会变成对角的值*/
+            /*border-radius: 100px 80px 40px;*/
+            /*如果省略两个参数, 会变成对角的值*/
+            /*border-radius: 100px 80px;*/
+            /*如果省略三个参数, 其它角会和它一样*/
+            /*border-radius: 100px;*/
+            /*如果指定的半径是当前元素宽高的一半, 那么就是一个圆形*/
+            /*border-radius: 100px;*/
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>

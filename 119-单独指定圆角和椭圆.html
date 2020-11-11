@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            /*height: 200px;*/
+            height: 100px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        .father>.son {
+            width: 200px;
+            /*height: 200px;*/
+            height: 100px;
+            background-color: pink;
+            /*单独指定某一个角的半径*/
+            /*border-top-left-radius: 100px;*/
+            /*border-top-right-radius: 100px;*/
+            /*border-bottom-left-radius: 100px;*/
+            /*border-bottom-right-radius: 100px;*/
+
+            /*如果传递了两个参数, 那么第一个参数代表水平方向的半径, 第二个参数代表垂直方向的半径*/
+            /*
+            border-top-left-radius: 100px 50px;
+            border-top-right-radius: 100px 50px;
+            border-bottom-left-radius: 100px 50px;
+            border-bottom-right-radius: 100px 50px;
+            */
+
+            /*border-top-left-radius: 50%;*/
+            /*border-top-right-radius: 50%;*/
+            /*border-bottom-left-radius: 50%;*/
+            /*border-bottom-right-radius: 50%;*/
+
+            /*
+            斜杠之前的代表左上/右上/右下/左下的水平方向的半径
+              斜杠之后的代表左上/右上/右下/左下的垂直方向的半径
+              */
+            /*border-radius: 100px 100px 100px 100px/50px 50px 50px 50px;*/
+            border-radius: 100px/50px;
+        }
+        </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>

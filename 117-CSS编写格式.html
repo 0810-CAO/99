@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>117-CSS编写格式</title>
+
+    <!--<link rel="stylesheet" href="117-abc.css">-->
+
+    <style>
+        @import "117-abc.css";
+    </style>
+
+    <style>
+        div{
+            color: blue;
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+<!--
+1.行内样式
+2.内嵌样式
+3.外链样式  -- 企业开发用外链样式
+4.导入样式
+
+
+外链样式和导入样式区别:
+共同点: 都是将CSS代码写到了一个单独的文件中
+不同点:
+外链样式, 在显示网页时, 会先加载CSS文件, 再显示页面
+导入样式, 在显示网页时, 会先显示界面, 再加载CSS文件
+
+外链样式是通过一个HTML标签引入CSS的
+而导入样式是通过@import引入CSS的, 而@import是CSS2.1推出, 所以导入样式存在兼容问题
+
+
+优先级问题
+行内样式的优先级最高
+其它写法谁写在后面就听谁的
+-->
+<!--<div style="color: red">我是div</div>-->
+<div>我是div</div>
+
+</body>
+</html>

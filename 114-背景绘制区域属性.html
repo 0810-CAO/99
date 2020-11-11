@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>114-背景绘制区域属性</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            list-style: none;
+            float: left;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border: 20px dashed #000;
+            padding: 50px;
+            margin-left: 20px;
+            background: red url("images/dog.jpg") no-repeat;
+        }
+        ul li:nth-child(2){
+            /*
+            背景绘制区域属性是专门用于指定从哪个区域开始绘制背景的, 默认情况下会从border区域开始绘制背景
+            */
+            background-clip: padding-box;
+        }
+        ul li:nth-child(3){
+            background-clip: border-box;
+        }
+        ul li:nth-child(4){
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>默认</li>
+    <li>padding</li>
+    <li>border</li>
+    <li>content</li>
+</ul>
+</body>
+</html>

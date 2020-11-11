@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>124-边框圆角练习4</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .clock{
+            width: 300px;
+            height: 300px;
+            border: 5px solid #000;
+            border-radius: 50%;
+            margin: 100px auto;
+            position: relative;
+        }
+        .clock>div{
+            width: 10px;
+            height: 300px;
+            background-color: #ccc;
+            position: absolute;
+            left: 50%;
+            margin-left: -5px;
+        }
+        .clock>div:nth-child(1){
+            width: 20px;
+            margin-left: -10px;
+        }
+        .clock>div:nth-child(2){
+            transform: rotateZ(30deg);
+        }
+        .clock>div:nth-child(3){
+            transform: rotateZ(60deg);
+        }
+        .clock>div:nth-child(4){
+            transform: rotateZ(90deg);
+            width: 20px;
+            margin-left: -10px;
+        }
+        .clock>div:nth-child(5){
+            transform: rotateZ(120deg);
+        }
+        .clock>div:nth-child(6){
+            transform: rotateZ(150deg);
+        }
+        .clock>.cover{
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin-left: -120px;
+            top: 50%;
+            margin-top: -120px;
+        }
+        .clock>.hour{
+            height: 70px;
+            background-color: black;
+            bottom: 50%;
+        }
+        .clock>.minute{
+            height: 100px;
+            background-color: blue;
+            bottom: 50%;
+            transform: rotateZ(30deg);
+            transform-origin: center bottom;
+        }
+        .clock>.second{
+            height: 140px;
+            background-color: red;
+            bottom: 50%;
+            transform: rotateZ(60deg);
+            transform-origin: center bottom;
+        }
+        .clock>.dot{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: black;
+            margin-left: -15px;
+            top: 50%;
+            margin-top: -15px;
+        }
+    </style>
+</head>
+<body>
+<div class="clock">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="cover"></div>
+    <div class="hour"></div>
+    <div class="minute"></div>
+    <div class="second"></div>
+    <div class="dot"></div>
+</div>
+
+</body>
+</html>

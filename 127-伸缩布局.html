@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>127-伸缩布局</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .one{
+            border: 1px solid #000;
+            margin: 100px auto;
+            list-style: none;
+            overflow: hidden;
+        }
+        .one>li{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 20px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 35px;
+        }
+        .two{
+            border: 1px solid #000;
+            margin: 0 auto;
+            list-style: none;
+
+            display: flex;
+        }
+        .two>li{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 20px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+<ul class="one">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+<ul class="two">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

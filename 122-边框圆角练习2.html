@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>122-边框圆角练习2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            list-style: none;
+            position: relative;
+        }
+        ul>li{
+            box-shadow: 0 0 60px #000;
+            animation: sport 0.5s linear 0s infinite alternate;
+        }
+        ul>li:nth-child(1){
+            width: 200px;
+            height: 200px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: 0;
+        }
+        ul>li:nth-child(2){
+            width: 200px;
+            height: 200px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            position: absolute;
+            right: 20px;
+            top: 0;
+        }
+        ul>li:nth-child(3){
+            width: 200px;
+            height: 200px;
+            background-color: #ff0000;
+            transform: rotateZ(45deg);
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            bottom: 121px;
+            border-top-left-radius: 50%;
+        }
+        @keyframes sport {
+            from{
+                transform: rotateZ(45deg) scale(1);
+            }
+            to{
+                transform: rotateZ(45deg) scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>125-线性渐变</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 500px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            /*
+            渐变不是一个新的属性, 而是一个取值
+            默认情况下线性渐变是从上至下的渐变
+            我们可以通过在颜色的前面添加to xxx修改渐变的方向
+            to top
+            to left
+            to right
+
+            */
+            /*background-image: linear-gradient(to top right, red, blue);*/
+            
+            /*除了可以通过关键字控制渐变的方向以外, 还可以通过角度来控制渐变的方向, 角度是按照顺时针旋转*/
+            /*background-image: linear-gradient(200deg, red, blue);*/
+
+
+            /*30%以前不渐变, 从30%开始慢慢渐变到下一个颜色*/
+            /*background-image: linear-gradient(red 30%, blue);*/
+            /*background-image: linear-gradient(red 0%, red 30%,blue 30%, blue 60%, green 60%, green 100%);*/
+            background-image: linear-gradient(to left ,red 0%, red 30%,blue 30%, blue 60%, green 60%, green 100%);
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

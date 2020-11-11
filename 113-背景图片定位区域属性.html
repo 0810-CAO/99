@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>113-背景图片定位区域属性</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            list-style: none;
+            float: left;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border: 20px dashed #000;
+            padding: 50px;
+            margin-left: 20px;
+            background: url("images/dog.jpg") no-repeat;
+        }
+        ul li:nth-child(2){
+            /*
+            告诉系统背景图片从什么区域开始显示,
+            默认情况下就是从padding区域开始显示
+            */
+            background-origin: padding-box;
+        }
+        ul li:nth-child(3){
+            background-origin:border-box;
+        }
+        ul li:nth-child(4){
+            background-origin:content-box;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>默认</li>
+    <li>padding</li>
+    <li>border</li>
+    <li>content</li>
+</ul>
+</body>
+</html>

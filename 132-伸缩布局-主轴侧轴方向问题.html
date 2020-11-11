@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>128-伸缩布局-主轴方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 600px;
+            height: 600px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            list-style: none;
+            display: flex;
+            /*
+            默认情况下主轴是水平方向, 侧轴是垂直方向
+            默认情况下主轴的起点在伸缩容器的最左边, 主轴的终点在伸缩容器的最右边
+             默认情况下侧轴的起点在伸缩容器的最顶部, 侧轴的终点在伸缩容器的最底部
+             我们可以通过flex-direction属性修改主轴的方向
+             如果flex-direction属性的取值是column/column-reverse
+             就代表将主轴的方向修改为了垂直方向, 那么侧轴就会立刻变为水平方向
+            */
+            /*justify-content: space-around;*/
+            /*flex-direction: column;*/
+            /*align-items: center;*/
+        }
+        ul>li{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            text-align: center;
+            line-height: 100px;
+            font-size: 35px;
+        }
+        ul>li:nth-child(1){
+
+        }
+        ul>li:nth-child(2){
+            background-color: skyblue;
+        }
+        ul>li:nth-child(3){
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>j</li>
+    <li>y</li>
+    <li>z</li>
+</ul>
+</body>
+</html>
