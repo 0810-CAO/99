@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>143-媒体查询</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*
+        需求:
+        PC显示小牛(大于等于980)
+        pad显示小猪(小于980, 并且大于等于620)
+        phone显示小马(小于620)
+        */
+
+        /*如果浏览器的宽度大于等于980, 那么就执行后面{}中的代码*/
+        @media(min-width: 980px) {
+            body{
+                background: url("images/animal1.png");
+            }
+        }
+        /*如果浏览器的宽度大于等于620, 并且宽度小于980*/
+        /*注意点: and的两边必须添加空格*/
+        @media(min-width: 620px) and (max-width: 979px) {
+            body{
+                background: url("images/animal2.png");
+            }
+        }
+        @media(max-width: 619px) {
+            body{
+                background: url("images/animal3.png");
+            }
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

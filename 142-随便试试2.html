@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>142-随便试试2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+        }
+        .main{
+            width: 980px;
+            height: 100%;
+            margin: 0 auto;
+            border: 1px solid #000;
+            display: flex;
+            /*flex-wrap: wrap;*/
+            /*align-content: flex-start;*/
+            flex-direction: column;
+        }
+        .header{
+            width: 100%;
+            /*height: 100px;*/
+            flex: 1;
+            background-color: red;
+        }
+        .content{
+            width: 100%;
+            /*height: 500px;*/
+            flex: 3;
+            background-color: blue;
+            display: flex;
+        }
+        .footer{
+            width: 100%;
+            /*height: 100px;*/
+            flex: 1;
+            background-color: green;
+        }
+        .aside{
+            flex: 1;
+            background-color: pink;
+        }
+        .article{
+            flex: 6;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main">
+    <div class="header"></div>
+    <div class="content">
+        <div class="aside"></div>
+        <div class="article"></div>
+    </div>
+    <div class="footer"></div>
+</div>
+</body>
+</html>

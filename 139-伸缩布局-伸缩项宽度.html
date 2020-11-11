@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>128-伸缩布局-主轴方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 800px;
+            height: 400px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            list-style: none;
+            display: flex;
+        }
+        ul>li{
+            /*width: 200px;*/
+            height: 200px;
+            background-color: pink;
+            text-align: center;
+            line-height: 200px;
+            font-size: 35px;
+        }
+        ul>li:nth-child(1){
+            /*
+            如果是伸缩布局, 除了可以通过元素的width属性来设置宽度以外, 还可以通过flex-basis属性来设置伸缩项的宽度
+
+            注意点:
+            1.width属性可以设置宽度/flex-basis也可以设置宽度
+            那么如果两者同时存在, 系统会听flex-basis的
+            2.flex-basis属性是专门提供给伸缩布局使用的
+            3.如果同时通过这两个属性设置了宽度, 但是其中一个是auto, 那么系统会按照具体值来设置
+            */
+            flex-basis: 100px;
+            /*width: 200px;*/
+            width: auto;
+            /*flex-basis: auto;*/
+        }
+        ul>li:nth-child(2){
+            background-color: skyblue;
+            flex-basis:200px;
+        }
+        ul>li:nth-child(3){
+            background-color: yellow;
+            flex-basis:300px;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>
