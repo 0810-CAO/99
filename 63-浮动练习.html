@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>63-浮动练习</title>
+    <style>
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+            margin:0;padding:0
+        }
+        .header{
+            width: 980px;
+            height: 100px;
+            /*background-color: red;*/
+            margin:0 auto;
+        }
+        .header .logo{
+            width: 250px;
+            height: 100px;
+            background-color: pink;
+            float: left;
+        }
+        .header .language{
+            width: 150px;
+            height: 50px;
+            background-color: skyblue;
+            float: right;
+        }
+        .header .nav{
+            width: 650px;
+            height: 50px;
+            background-color: purple;
+            float: right;
+        }
+        .content{
+            width: 980px;
+            height: 400px;
+            /*background-color: green;*/
+            margin:0 auto;
+            margin-top: 10px;
+        }
+        .content .aside{
+            width: 320px;
+            height: 400px;
+            background-color: yellow;
+            float: left;
+        }
+        .content .article{
+            width: 650px;
+            height: 400px;
+            /*background-color: pink;*/
+            float: right;
+        }
+        .content .article .articleTop{
+            width: 650px;
+            height: 350px;
+            /*background-color: blue;*/
+        }
+        .content .article .articleTop .articleTopLeft{
+            width: 400px;
+            height: 350px;
+            /*background-color: red;*/
+            float: left;
+        }
+        .content .article .articleTop .articleTopLeft .new1{
+            width: 400px;
+            height: 200px;
+            background-color: deepskyblue;
+        }
+        .content .article .articleTop .articleTopLeft .new2{
+            width: 400px;
+            height: 140px;
+            background-color: tomato;
+            margin-top: 10px;
+        }
+        .content .article .articleTop .articleTopRight{
+            width: 240px;
+            height: 350px;
+            background-color: green;
+            float: right;
+        }
+        .content .article .articleBottom{
+            width: 650px;
+            height: 40px;
+            background-color: darkgoldenrod;
+            margin-top: 10px;
+        }
+        .footer{
+            width: 980px;
+            height: 40px;
+            background-color: tomato;
+            margin:0 auto;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.企业开发中什么时候使用标准流什么时候使用浮动流?
+垂直方向使用标准流, 水平方向使用浮动流
+
+2.拿到一个很复杂的界面如何入手?
+2.1从上至下布局
+2.2从外向内布局
+2.3水平方向可以先划分为一左一右再对左边或者右边进行进一步布局
+-->
+<div class="header">
+    <div class="logo"></div>
+    <div class="language"></div>
+    <div class="nav"></div>
+</div>
+<div class="content">
+    <div class="aside"></div>
+    <div class="article">
+        <div class="articleTop">
+            <div class="articleTopLeft">
+                <div class="new1"></div>
+                <div class="new2"></div>
+            </div>
+            <div class="articleTopRight"></div>
+        </div>
+        <div class="articleBottom"></div>
+    </div>
+</div>
+<div class="footer"></div>
+</body>
+</html>

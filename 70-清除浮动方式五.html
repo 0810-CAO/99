@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>70-清除浮动方式五</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            overflow: hidden;
+        }
+        */
+        /*
+        .box1{
+            background-color: red;
+            overflow: hidden;
+            *zoom:1;
+        }
+        .box2{
+            background-color: green;
+        }
+        .box1 p{
+            width: 100px;
+            background-color: blue;
+        }
+        .box2 p{
+            width: 100px;
+            background-color: yellow;
+        }
+        p{
+            float: left;
+        }
+        */
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /*border: 1px solid #000;*/
+            overflow: hidden;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.overflow: hidden;作用
+1.1可以将超出标签范围的内容裁剪掉
+1.2清除浮动
+1.3可以通过overflow: hidden;让里面的盒子设置margin-top之后, 外面的盒子不被顶下来
+-->
+
+<!--
+<div>我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字</div>
+-->
+
+<!--
+<div class="box1">
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+
+</div>
+
+<div class="box2">
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+</div>
+-->
+<div class="box1">
+    <div class="box2"></div>
+</div>
+</body>
+</html>

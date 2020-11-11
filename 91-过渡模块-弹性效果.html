@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>91-过渡模块-弹性效果</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            height: 100px;
+            background-color: red;
+            margin-top: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+        div span{
+            font-size: 80px;
+            /*transition-property: margin;*/
+            /*transition-duration: 3s;*/
+            transition: margin 3s;
+        }
+        div:hover span{
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.编写过渡套路
+1.1不要管过渡, 先编写基本界面
+1.2修改我们认为需要修改的属性
+1.3再回过头去给被修改属性的那个元素添加过渡即可
+-->
+<div>
+    <span>江</span>
+    <span>哥</span>
+    <span>带</span>
+    <span>你</span>
+    <span>狂</span>
+    <span>虐</span>
+    <span>H</span>
+    <span>5</span>
+</div>
+</body>
+</html>

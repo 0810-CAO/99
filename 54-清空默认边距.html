@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>54-清空默认边距</title>
+    <style>
+        /*
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        */
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+            margin:0;padding:0
+        }
+        p{
+            width: 610px;
+            height: 110px;
+            background-color: #cdcdcd;
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.为什么要清空默认边距(外边距和内边距)
+在企业开发中为了更好的控制盒子的宽高和计算盒子的宽高等等, 所以在企业开发中, 编写代码之前第一件事情就是清空默认的边距
+
+2.如何清空默认的边距
+格式
+*{
+            margin: 0;
+            padding: 0;
+}
+
+3.注意点
+通配符选择器会找到(遍历)当前界面中所有的标签, 所以性能不好
+企业开发中可以从这个网址中拷贝
+http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css
+
+-->
+<p>葬爱:非主流文化的常用词，是当今网络流行术语.且流行于非主流杀马特之中。葬，即埋葬，爱，即爱情，翻译成外语就bury love</p>
+</body>
+</html>

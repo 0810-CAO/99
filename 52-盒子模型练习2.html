@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>52-盒子模型练习2</title>
+    <style>
+        .big{
+            /*width: 350px;*/
+            /*height: 350px;*/
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            /*
+            box-sizing: border-box;
+            padding-top:150px;
+            padding-left:150px;
+            */
+            border: 5px solid #000;
+        }
+        .small{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            /*
+            注意点:
+            1.如果两个盒子是嵌套关系, 那么设置了里面一个盒子顶部的外边距, 外面一个盒子也会被顶下来
+            2.如果外面的盒子不想被一起定下来,那么可以给外面的盒子添加一个边框属性
+            3.在企业开发中, 一般情况下如果需要控制嵌套关系盒子之间的距离, 应该首先考虑padding, 其次再考虑margin
+            margin本质上是用于控制兄弟关系之间的间隙的
+            */
+            /*
+            margin-top:150px;
+            margin-left:150px;
+            */
+            /*
+            注意点:
+            1.在嵌套关系的盒子中, 我们可以利用margin: 0 auto;的方式来让里面的盒子在外面的盒子中水平居中
+            2.margin: 0 auto; 只对水平方向有效, 对垂直方向无效
+            */
+            margin:150px auto;
+        }
+    </style>
+</head>
+<body>
+<!--
+需求
+有一个大盒子, 元素的宽高是500
+有一个小盒子, 元素的宽高是200
+要求将小盒子放到大盒子中, 并且让小盒子在大盒子中水平垂直居中
+-->
+
+<div class="big">
+    <div class="small"></div>
+</div>
+</body>
+</html>

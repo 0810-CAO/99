@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>79-绝对定位-子绝父相</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            width: 800px;
+            height: 50px;
+            margin: 0 auto;
+            margin-top: 100px;
+            background-color: red;
+        }
+        ul li{
+            float: left;
+            width: 150px;
+            line-height: 50px;
+            text-align: center;
+            background-color: #ccc;
+        }
+        ul li:nth-of-type(4){
+            background-color: yellow;
+            position: relative;
+        }
+        ul li img{
+            /*
+            相对定位弊端:
+            相对定位不会脱离标准流, 会继续在标准流中占用一份空间, 所以不利于布局界面
+            */
+            /*
+            position: relative;
+            left: -42px;
+            top: -18px;
+            */
+            /*
+            绝对定位弊端:
+            默认情况下绝对定位的元素会以body作为参考点, 所以会随着浏览器的宽度高度的变化而变化
+            */
+            /*
+            position: absolute;
+            left: 526px;
+            top: 90px;
+            */
+
+            /*
+            子绝父相
+            子元素用绝对定位, 父元素用相对定位
+            */
+            position: absolute;
+            /*left: 40px;*/
+            left: 50%;
+            margin-left: -12px;
+            top: -10px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>服装城</li>
+    <li>美妆馆</li>
+    <li>京东超市</li>
+    <li>全球购
+        <img src="images/hot.png" alt="">
+    </li>
+    <li>闪购</li>
+    <li>团购</li>
+    <li>拍卖</li>
+    <li>金融</li>
+</ul>
+</body>
+</html>

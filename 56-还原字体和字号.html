@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>54-清空默认边距</title>
+    <style>
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+            margin:0;padding:0
+        }
+        p{
+            box-sizing: border-box;
+            width: 610px;
+            height: 110px;
+            background-color: #cdcdcd;
+            border: 1px solid #000000;
+            font-family:"黑体";
+            font-size: 20px;
+            line-height: 40px;
+            color: #67676d;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<!--
+注意点:
+1.在企业开发中, 如果一个盒子中存储的是文字, 那么一般情况下我们会以盒子左边的内边距为基准, 不会以右边的内边距为基准, 因为这个右边的内边距有误差
+
+2.右边内边距的误差从何而来? 因为右边如果放不下一个文字, 那么文字就会换行显示, 所以文字和内边距之间的距离就有了误差
+
+3.顶部的内边距并不是边框到文字顶部的距离, 而是边框到行高顶部的距离
+-->
+
+<p>葬爱:非主流文化的常用词，是当今网络流行术语.且流行于非主流杀马特之中。葬，即埋葬，爱，即爱情，翻译成外语就bury love</p>
+
+</body>
+</html>

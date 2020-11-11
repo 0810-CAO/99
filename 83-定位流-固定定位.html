@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>83-定位流-固定定位</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*
+        div{
+            width: 200px;
+            height: 2000px;
+            border: 1px solid #000;
+            background-image: url(images/girl.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        */
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: green;
+            position: fixed;
+        }
+        .box3{
+            background-color: blue;
+        }
+        /*
+        span{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: fixed;
+        }
+        */
+        .box4{
+            height: 2000px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<!--<div></div>-->
+
+<!--
+1.什么是固定定位?
+固定定位和前面学习的背景关联方式很像, 背景定位可以让背景图片不随着滚动条的滚动而滚动, 而固定定位可以让某个盒子不随着滚动条的滚动而滚动
+
+注意点:
+1.固定定位的元素是脱离标准流的, 不会占用标准流中的空间
+2.固定定位和绝对定位一样不区分行内/块级/行内块级
+3.IE6不支持固定定位
+-->
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<!--<span>我是span</span>-->
+</body>
+</html>

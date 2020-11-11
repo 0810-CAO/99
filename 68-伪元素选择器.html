@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>68-伪元素选择器</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        /*
+        p{
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+        */
+
+        div::before{
+            content: "爱你";
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            display: block;
+        }
+        div::after{
+            /*指定添加的子元素中存储的内容*/
+            content: "么么哒";
+            /*指定添加的子元素的宽度和高度*/
+            width: 50px;
+            /*height: 50px;*/
+            /*内容是可以超出标签的范围的, 所以高度为0依然可以看见内容*/
+            height:0;
+            background-color: pink;
+            /*指定添加的子元素的显示模式*/
+            display: block;
+            /*隐藏添加的子元素*/
+            visibility: hidden;
+        }
+
+    </style>
+</head>
+<body>
+<!--
+1.什么是伪元素选择器?
+伪元素选择器作用就是给指定标签的内容前面添加一个子元素或者给指定标签的内容后面添加一个子元素
+
+2.格式:
+标签名称::before{
+    属性名称:值;
+}
+给指定标签的内容前面添加一个子元素
+
+标签名称::after{
+    属性名称:值;
+}
+给指定标签的内容后面添加一个子元素
+
+-->
+<div>
+    <!--<p>爱你</p>-->
+    我是文字
+    <!--<p>么么哒</p>-->
+</div>
+
+</body>
+</html>

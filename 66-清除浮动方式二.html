@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>66-清除浮动方式二</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            border: 1px solid #000;
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: green;
+            clear: both;
+            margin-top: 28px;
+        }
+        .box1 p{
+            width: 100px;
+            background-color: blue;
+        }
+        .box2 p{
+            width: 100px;
+            background-color: yellow;
+        }
+        p{
+            float: left;
+        }
+        /*
+        .dd{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            border: 1px solid #000;
+        }
+        .ddd{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin-top: 100px;
+        }
+        */
+    </style>
+</head>
+<body>
+<!--
+1.清除浮动的第二种方式
+给后面的盒子添加clear属性
+
+clear属性取值:
+none: 默认取值, 按照浮动元素的排序规则来排序(左浮动找左浮动, 右浮动找右浮动)
+left: 不要找前面的左浮动元素
+right: 不要找前面的右浮动元素
+both: 不要找前面的左浮动元素和右浮动元素
+
+注意点:
+当我们给某个元素添加clear属性之后, 那么这个属性的margin属性就会失效
+-->
+
+<div class="box1">
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+</div>
+
+<div class="box2">
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+</div>
+
+<!--
+<div class="dd">
+    <div class="ddd"></div>
+</div>
+-->
+</body>
+</html>

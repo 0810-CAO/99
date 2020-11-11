@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>89-过渡模块-其它属性</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            transition-property: width;
+            transition-duration: 5s;
+            /*告诉系统延迟多少秒之后才开始过渡动画*/
+            /*transition-delay: 2s;*/
+        }
+        div:hover{
+            width: 300px;
+        }
+        ul{
+            width: 800px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: pink;
+            border: 1px solid #000;
+        }
+        ul li{
+            list-style: none;
+            width: 100px;
+            height: 50px;
+            margin-top: 50px;
+            background-color: blue;
+            transition-property: margin-left;
+            transition-duration: 10s;
+        }
+        ul:hover li{
+            margin-left: 700px;
+        }
+        ul li:nth-child(1){
+            /*告诉系统过渡动画的运动的速度*/
+            transition-timing-function: linear;
+        }
+        ul li:nth-child(2){
+            transition-timing-function: ease;
+        }
+        ul li:nth-child(3){
+            transition-timing-function: ease-in;
+        }
+        ul li:nth-child(4){
+            transition-timing-function: ease-out;
+        }
+        ul li:nth-child(5){
+            transition-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<!--<div></div>-->
+<ul>
+    <li>linear</li>
+    <li>ease</li>
+    <li>ease-in</li>
+    <li>ease-out</li>
+    <li>ease-in-out</li>
+</ul>
+</body>
+</html>

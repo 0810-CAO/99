@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>88-过渡模块</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            /*告诉系统哪个属性需要执行过渡效果*/
+            transition-property: width, background-color;
+            /*告诉系统过渡效果持续的时长*/
+            transition-duration: 5s, 5s;
+
+            /*transition-property: background-color;*/
+            /*transition-duration: 5s;*/
+        }
+        /*:hover这个伪类选择器除了可以用在a标签上, 还可以用在其它的任何标签上*/
+        div:hover{
+            width: 300px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<!--
+1,过渡三要素
+1.1必须要有属性发生变化
+1.2必须告诉系统哪个属性需要执行过渡效果
+1.3必须告诉系统过渡效果持续时长
+
+2.注意点
+当多个属性需要同时执行过渡效果时用逗号隔开即可
+transition-property: width, background-color;
+transition-duration: 5s, 5s;
+-->
+<div></div>
+</body>
+</html>

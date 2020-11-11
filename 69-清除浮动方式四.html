@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>69-清除浮动方式四</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            background-color: red;
+            /*margin-bottom: 10px;*/
+        }
+        .box2{
+            background-color: green;
+            /*margin-top: 10px;*/
+        }
+        .box1 p{
+            width: 100px;
+            background-color: blue;
+        }
+        .box2 p{
+            width: 100px;
+            background-color: yellow;
+        }
+        p{
+            float: left;
+        }
+        .box1::after{
+            /*设置添加的子元素的内容为空*/
+            content: "";
+            /*设置添加的子元素为块级元素*/
+            display: block;
+            /*设置添加的子元素的高度为0*/
+            height: 0;
+            /*设置添加的子元素看不见*/
+            visibility: hidden;
+            /*给添加的子元素设置clear: both;*/
+            clear: both;
+        }
+        .box1{
+            /*兼容IE6*/
+            *zoom:1;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.清除浮动的第四种方式
+利用伪元素选择器清除浮动
+本质上就是内墙法, 只不过是直接通过CSS代码添加了内墙, 其它特性和内墙法都一样
+
+注意点:
+IE6中不支持这种方式, 为了兼容IE6必须给前面的盒子添加*zoom:1;属性
+-->
+<div class="box1">
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+    <p>我是文字1</p>
+</div>
+
+<div class="box2">
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+    <p>我是文字2</p>
+</div>
+</body>
+</html>
