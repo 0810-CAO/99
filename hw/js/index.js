@@ -64,6 +64,7 @@ $(function () {
             }
         }
     });
+    // 先停止轮播解决性能问题
     mySwiper.autoplay.stop();
 
     /*控制第一屏动画*/
@@ -99,6 +100,7 @@ $(function () {
     let scene3 = new ScrollMagic.Scene({
         triggerElement:".trigger-section2",
         triggerHook: "onLeave",
+        // 等到文字被覆盖后再固定
         offset: $(".section2-top").height() + 100,
         duration: "100%"
     });
@@ -126,7 +128,7 @@ $(function () {
     controller.addScene(scene3);
 
 
-    // 2.创建一个场景对象
+    // 2.创建一个场景对象  等待滚动到一定位置后轮播图开始，向上滚动后停止
     let scene4 = new ScrollMagic.Scene({
         triggerElement:".section2-bottom",
         triggerHook: "onCenter",
