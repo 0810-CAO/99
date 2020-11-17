@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-GSAP动画常用事件</title>
+    <script src="js/TweenMax.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script>
+    let obj = {name: "lnj"};
+    TweenMax.to(".box", 3, {
+        x: 500,
+        delay: 3,
+        onStart:function(a, b, c){
+            // console.log("动画开始了", a, b, c);
+            console.log(this);
+        },
+        // 给onstart传递参数
+        onStartParams:["123", "456", "789"],
+        // 修改this
+        onStartScope: obj,
+    });
+</script>
+</body>
+</html>

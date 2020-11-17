@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-Velocity常用配置</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/velocity.js"></script>
+</head>
+<body>
+<div class="box"></div>
+<script>
+    $(".box").velocity({
+        marginLeft: "500px"
+    }, {
+        duration: 3000,
+        // 设置动画开始之前的延迟时间
+        // delay: 2000,
+        // 设置动画循环的次数
+        // 注意点: 从初始位置到指定位置再到初始的位置算一次
+        // loop: 2,
+        // 设置动画运动的节奏
+        // easing: "easeInOutQuint",
+        // 设置动画结束之后元素的状态
+        // display: "none",
+        // visibility: "hidden"
+        // 设置动画队列
+        // 注意点: 只要设置了动画队列动画就不会自动执行
+        queue: "a"
+    });
+
+    $(".box").velocity({
+        marginTop: "500px"
+    }, {
+        duration: 3000,
+        queue: "b"
+    });
+    $(".box").dequeue("a");
+    setTimeout(function () {
+        $(".box").dequeue("b");
+    }, 3000)
+</script>
+</body>
+</html>

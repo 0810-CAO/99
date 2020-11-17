@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>07-Bootstrap栅格系统实现</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+        div{
+            height: 100px;
+            background: red;
+        }
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+        .container>.row{
+            height: 100%;
+            background: blue;
+        }
+
+        .col{
+            flex: 1;
+        }
+        .row>div{
+            background: skyblue;
+        }
+        .row>div:nth-child(2){
+            background: deeppink;
+        }
+        .row>div:nth-child(3){
+            background: orangered;
+        }
+        .col-6{
+            flex-basis: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <span class="row">
+        <div class="col-6">我是第1列</div>
+        <div class="col">我是第2列</div>
+        <div class="col">我是第3列</div>
+    </span>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!--为了保证在移动端能够正常的显示-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 导入Bootstrap的CSS文件 -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>21-Bootstrap常用组件(提示气泡)</title>
+</head>
+<body>
+
+<div style="margin: 200px">
+    <!--
+    1.data-toggle="tooltip": 告诉bootstrap需要切换的是提示气泡
+    2.data-placement="top": 告诉bootstrap提示气泡出现的位置
+    3.title="Tooltip on top": 告诉bootstrap提示气泡中提示的内容是什么
+    -->
+    <!--
+    <button class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="内容是什么">
+        我是按钮
+    </button>
+    -->
+
+    <!--
+    1.data-container="body": 当你在一个父元素上有一些样式与提示框产生样式干扰，你可以指定一个自定义的container容器，这样提示框的HTML将出现在这个元素内部了。
+    2.data-toggle="popover": 告诉bootstrap需要切换的是提示气泡
+    3.data-placement="top": 告诉bootstrap提示气泡出现的位置
+    4.data-content="": 告诉bootstrap提示气泡中提示的内容是什么
+    -->
+    <button class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" data-content="我是内容我是内容">
+        我是按钮
+    </button>
+</div>
+
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="js/jquery-3.1.1.js"></script>
+<!--在Bootstrap4中很多的提示/弹窗都是通过popper.min.js实现的, 所以需要导入-->
+<script src="js/popper.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="js/bootstrap.js"></script>
+<script>
+    /*
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+    */
+    $('button').popover()
+</script>
+</body>
+</html>

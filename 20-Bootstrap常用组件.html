@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!--为了保证在移动端能够正常的显示-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 导入Bootstrap的CSS文件 -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>20-Bootstrap常用组件(模态弹窗)</title>
+</head>
+<body>
+<!--
+1.data-toggle="modal": 告诉bootstrap需要切换的是模态弹窗
+2.data-target="#exampleModal": 告诉bootstrap需要切换的是哪一个模态弹窗
+-->
+<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    我是按钮
+</button>
+
+<!--
+class="modal fade": 创建模态弹窗的容器
+-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+    <!--
+    1.class="modal-dialog": 创建真正弹出的内容
+    -->
+    <div class="modal-dialog" role="document">
+        <div class="bg-danger">
+            <p>我是段落1</p>
+            <p>我是段落2</p>
+            <p>我是段落3</p>
+            <p>我是段落4</p>
+            <p>我是段落5</p>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="js/jquery-3.1.1.js"></script>
+<!--在Bootstrap4中很多的提示/弹窗都是通过popper.min.js实现的, 所以需要导入-->
+<script src="js/popper.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="js/bootstrap.js"></script>
+
+</body>
+</html>

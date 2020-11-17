@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!--为了保证在移动端能够正常的显示-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 导入Bootstrap的CSS文件 -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>17-Bootstrap常用组件(轮播图)</title>
+</head>
+<body>
+<!--
+1.class="carousel slide" 创建一个轮播图组件
+2.data-ride="carousel" 自动轮播
+-->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <!--
+    1.class="carousel-indicators" 创建指示器
+    2.data-target="#carouselExampleIndicators" 告诉bootstrap当前的索引属于哪一个轮播图
+    3.data-slide-to="0" 指定当前指示器的索引
+    4.class="active" 设置默认选中的指示器索引
+    -->
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <!--
+    1.class="carousel-inner" 创建轮播图的内容部分
+    2.class="carousel-item" 指定轮播图的每一页
+    -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="images/img1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="images/img2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="images/img3.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <!--
+    1.class="carousel-control-prev" 创建上一页的控制按钮
+    2. href="#carouselExampleIndicators" 指定控制按钮可用控制哪一个轮播图
+    -->
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+</div>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="js/jquery-3.1.1.js"></script>
+<!--在Bootstrap4中很多的提示/弹窗都是通过popper.min.js实现的, 所以需要导入-->
+<script src="js/popper.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="js/bootstrap.js"></script>
+<script>
+    $('.carousel').carousel({
+        interval: 1000
+    });
+</script>
+</body>
+</html>

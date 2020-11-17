@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!--为了保证在移动端能够正常的显示-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 导入Bootstrap的CSS文件 -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>14-Bootstrap常用组件(提示框)</title>
+    <style>
+        .alert{
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<!--
+    1.什么是role?
+    role属性用于增强语义性, 当现有的HTML标签不能充分表达语义性的时候，就可以借助role来说明
+    比如用div做button，那么设置div 的 role=“button”，辅助工具就可以认出这实际上是个button
+
+    2.什么是aria-xxx?
+    aria全称: Accessible Rich Internet Applications
+    这一套协定是w3和apple为了"残疾人士"无障碍使用网站的
+
+    3.什么是aria-hidden?
+    为了避免屏幕识读设备抓取非故意的和可能产生混淆的输出内容（尤其是当图标纯粹作为装饰用途时），我们为这些图标设置了 aria-hidden=“true” 属性
+-->
+<div class="alert alert-success" role="alert">
+    A simple primary alert—check it out!
+</div>
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <img src="images/ad.jpg" alt="">
+    <!--
+    data-dismiss="alert" 告诉bt需要关闭谁
+    -->
+    <button type="button" class="close" data-dismiss="alert">
+        <span>&times;</span>
+    </button>
+</div>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="js/jquery-3.1.1.js"></script>
+<!--在Bootstrap4中很多的提示/弹窗都是通过popper.min.js实现的, 所以需要导入-->
+<script src="js/popper.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

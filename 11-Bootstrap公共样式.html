@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!--为了保证在移动端能够正常的显示-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 导入Bootstrap的CSS文件 -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>11-Bootstrap公共样式-颜色和边框</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<!--
+    1.文字颜色
+    柔和灰（text-muted）
+    主要蓝（text-primary）
+    次要灰（text-secondary）
+    成功绿（text-success）
+    危险红（text-danger）
+    警告黄（text-warning）
+    危息绿（text-info）
+    黑白对比（text-dark）
+    注意点: .text-white 、 .text-muted这两个样式不支持链接上使用
+-->
+<p class="text-success">知播渔</p>
+<p class="text-danger">知播渔</p>
+<p class="text-warning">知播渔</p>
+<!--
+    2.背景颜色
+    主要蓝（bg-primary）
+    次要灰（bg-secondary）
+    成功绿（bg-success）
+    危险红（bg-danger）
+    警告黄（bg-warning）
+    危息绿（bg-info）
+    黑白对比（bg-dark）
+-->
+<p class="bg-success">知播渔</p>
+<p class="bg-danger">知播渔</p>
+<p class="bg-warning">知播渔</p>
+
+<!--
+    3.边框相关
+    3.1快速添加边框
+    border / border-*
+    3.2快速删除边框
+    border-0 / border-*-0
+    3.3快速指定边框颜色
+    border-color
+    3.4快速添加边框圆角
+    rounded / rounded-*
+-->
+<!--<div class="border-top border-left border-warning"></div>-->
+<div class="border border-warning rounded-circle"></div>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="js/jquery-3.1.1.js"></script>
+<!--在Bootstrap4中很多的提示/弹窗都是通过popper.min.js实现的, 所以需要导入-->
+<script src="js/popper.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
