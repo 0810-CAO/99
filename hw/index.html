@@ -25,6 +25,7 @@
 <body>
   <!--头部-->
   <div class="header container-fluid position-fixed">
+    <!-- 指定在超大屏幕上显示 -->
     <div class="header-top d-none d-xl-block">
       <div>
         <a class="dropdown-toggle" data-toggle="collapse" href="#collapseExample">消费者业务网站</a>
@@ -58,8 +59,10 @@
           <span></span>
         </button>
         <a class="navbar-brand m-auto" href="#"></a>
+        <!-- 超大屏幕隐藏 -->
         <div class="navbar-shop d-inline-block d-xl-none">
           <a href="#">
+            <!-- 手机版顶部右侧购物车 -->
             <svg width="24" height="24">
               <g fill="none" fill-rule="evenodd" stroke="#1E1E1E">
                 <rect x="5.5" y="5.5" width="13" height="14" rx="2"></rect>
@@ -70,7 +73,9 @@
         </div>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- 顶部导航条左部 -->
           <ul class="navbar-nav mr-auto">
+            <!-- 设置margin-top 小屏幕不设置 -->
             <li class="nav-item mt-4 mt-xl-0 active">
               <a class="nav-link d-flex justify-content-between d-xl-inline-block" href="#"
                 data-toggle="dropdown">智能手机</a>
@@ -127,6 +132,7 @@
             <li class="nav-item mt-4 mt-xl-0">
               <a class="nav-link d-flex justify-content-between d-xl-inline-block" href="#">服务与支持</a>
             </li>
+            <!-- 小屏幕显示再加上margin-top 5rem -->
             <li class="login-item nav-item mt-5 d-block d-xl-none">
               <a href="#">
                 <svg width="20" height="20" viewBox="0 0 24 24">
@@ -157,9 +163,13 @@
               </a>
             </li>
           </ul>
+          <!-- 顶部导航条右部 -->
+          <!-- 大屏幕flex显示，小屏幕不显示 -->
           <div class="navbar-other d-none d-xl-flex">
+            <!-- 去除margin-left -->
             <div class="ml-0">
               <a href="#">
+                <!-- svg绘图 -->
                 <svg width="24" height="24">
                   <g fill="none" fill-rule="evenodd" stroke="#1E1E1E">
                     <circle cx="11" cy="10" r="6.5"></circle>
@@ -170,6 +180,7 @@
             </div>
             <div class="login">
               <a href="#">
+                 <!-- svg绘图 -->
                 <svg width="20" height="20" viewBox="0 0 24 24">
                   <rect y="0" fill="#FFFFFF" width="24" height="24"></rect>
                   <g>
@@ -190,6 +201,7 @@
                   <b></b>
                 </span>
                 <p class="border-bottom"><a href="#" data-toggle="modal" data-target="#exampleModal">
+                   <!-- svg登陆图 -->
                     <svg class="float-left" width="24" height="26" x="0px" y="0px" viewBox="0 0 24 24">
                       <defs>
                         <style>
@@ -210,6 +222,7 @@
                     登录
                   </a></p>
                 <p><a href="#">
+                  <!-- svg注册图 -->
                     <svg class="float-left" width="24" height="24" x="0px" y="0px" viewBox="0 0 24 24">
                       <rect y="0" fill="#FFFFFF"></rect>
                       <g>
@@ -229,6 +242,7 @@
             <div>
               <a href="#">
                 华为商城
+                <!-- svg商城图 -->
                 <svg width="24" height="24">
                   <path d="M19.5 16v1.5a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11c0-1.1.9-2 2-2H8m5 0h6.5V11m0-6.5l-9
                                 9 " stroke="#1E1E1E " fill="none "></path>
@@ -251,6 +265,7 @@
     </div>
   </div>
   <!--第一屏-->
+  <!-- 仅作为一个第一屏变化的起始点 -->
   <div class="trigger-section1"></div>
   <div class="section1">
     <picture>
@@ -312,7 +327,7 @@
       </div>
     </div>
   </div>
-  <!-- Modal -->
+  <!-- Modal 登录页面-->
   <div class="modal fade" id="exampleModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
