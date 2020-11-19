@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>76-JavaScript-函数形参默认值</title>
+    <script>
+        /*
+        function getSum(a, b) {
+            // 在ES6之前可以通过逻辑运算符来给形参指定默认值
+            // 格式: 条件A || 条件B
+            // 如果条件A成立, 那么就返回条件A
+            // 如果条件A不成立, 无论条件B是否成立, 都会返回条件B
+            a = a || "指趣学院";
+            b = b || "知播渔教育";
+            console.log(a, b);
+        }
+        getSum(123, "abc");
+        */
+        // 从ES6开始, 可以直接在形参后面通过=指定默认值
+        // 注意点: ES6开始的默认值还可以从其它的函数中获取
+        // function getSum(a = "指趣学院", b = "知播渔教育") {
+        function getSum(a = "指趣学院", b = getDefault()) {
+            console.log(a, b);
+        }
+        getSum();
+        // getSum(123, "abc");
+        function getDefault() {
+            return "李南江"
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>100-JavaScript-对象三角恋关系</title>
+    <script>
+        /*
+        1.每个"构造函数"中都有一个默认的属性, 叫做prototype
+          prototype属性保存着一个对象, 这个对象我们称之为"原型对象"
+        2.每个"原型对象"中都有一个默认的属性, 叫做constructor
+          constructor指向当前原型对象对应的那个"构造函数"
+        3.通过构造函数创建出来的对象我们称之为"实例对象"
+          每个"实例对象"中都有一个默认的属性, 叫做__proto__
+          __proto__指向创建它的那个构造函数的"原型对象"
+        */
+        function Person(myName, myAge) {
+            this.name = myName;
+            this.age = myAge;
+        }
+        let obj1 = new Person("lnj", 34);
+
+        console.log(Person.prototype);
+        console.log(Person.prototype.constructor);
+        console.log(obj1.__proto__);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>94-JavaScript-构造函数</title>
+    <script>
+        /*
+        1.什么是构造函数
+        构造函数和工厂函数一样, 都是专门用于创建对象的
+        构造函数本质上是工厂函数的简写
+
+        2.构造函数和工厂函数的区别
+        2.1构造函数的函数名称首字母必须大写
+        2.2构造函数只能够通过new来调用
+        */
+        function Person(myName, myAge) {
+            // let obj = new Object();  // 系统自动添加的
+            // let this = obj; // 系统自动添加的
+            this.name = myName;
+            this.age = myAge;
+            this.say = function () {
+                console.log("hello world");
+            }
+            // return this; // 系统自动添加的
+        }
+        /*
+        1.当我们new Person("lnj", 34);系统做了什么事情
+        1.1会在构造函数中自动创建一个对象
+        1.2会自动将刚才创建的对象赋值给this
+        1.3会在构造函数的最后自动添加return this;
+        */
+        let obj1 = new Person("lnj", 34);
+        let obj2 = new Person("zs", 44);
+        console.log(obj1);
+        console.log(obj2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

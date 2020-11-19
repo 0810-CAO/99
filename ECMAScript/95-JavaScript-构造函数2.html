@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>95-JavaScript-构造函数2</title>
+    <script>
+        /*
+        function Person(myName, myAge) {
+            // let obj = new Object();  // 系统自动添加的
+            // let this = obj; // 系统自动添加的
+            this.name = myName;
+            this.age = myAge;
+            this.say = function () {
+                // 方法中的this谁调用就是谁, 所以当前是obj1调用, 所以当前的this就是obj1
+                // console.log("hello world");
+                console.log(this.name, this.age);
+            }
+            // return this; // 系统自动添加的
+        }
+        let obj1 = new Person("lnj", 34);
+        // console.log(obj1.name);
+        // console.log(obj1.age);
+        obj1.say();
+
+        let obj2 = new Person("zs", 44);
+        obj2.say();
+        */
+        function Person(myName, myAge) {
+            // let obj = new Object();  // 系统自动添加的
+            // let this = obj; // 系统自动添加的
+            this.name = myName;
+            this.age = myAge;
+            this.say = function () {
+                console.log("hello world");
+            }
+            // return this; // 系统自动添加的
+        }
+        let obj1 = new Person("lnj", 34);
+        let obj2 = new Person("zs", 44);
+        // 由于两个对象中的say方法的实现都是一样的, 但是保存到了不同的存储空间中
+        // 所以有性能问题
+        console.log(obj1.say === obj2.say); // false
+
+        /*
+        function demo() {
+            console.log("demo");
+        }
+        // 通过三个等号来判断两个函数名称, 表示判断两个函数是否都存储在同一块内存中
+        console.log(demo === demo); // true
+        */
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

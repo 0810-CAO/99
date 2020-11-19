@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>103-JavaScript-函数对象关系</title>
+    <script>
+        /*
+        1.所有的构造函数都有一个prototype属性, 所有prototype属性都指向自己的原型对象
+        2,所有的原型对象都有一个constructor属性, 所有constructor属性都指向自己的构造函数
+        3.所有函数都是Function构造函数的实例对象
+        4.所有函数都是对象, 包括Function构造函数
+        5.所有对象都有__proto__属性
+        6.普通对象的__proto__属性指向创建它的那个构造函数对应的"原型对象"
+        7.所有对象的__proto__属性最终都会指向"Object原型对象"
+        8."Object原型对象"的__proto__属性指向NULL
+         */
+        function Person(myName, myAge) {
+            this.name = myName;
+            this.age = myAge;
+        }
+        let obj1 = new Person("lnj", 34);
+
+        console.log(Function.prototype.__proto__);
+        console.log(Person.prototype.__proto__);
+        console.log(Function.prototype.__proto__ === Person.prototype.__proto__);
+        console.log(Function.prototype.__proto__ === Object.prototype);
+        console.log(Person.prototype.__proto__ === Object.prototype);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

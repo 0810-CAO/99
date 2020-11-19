@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>78-JavaScript-匿名函数</title>
+    <script>
+        /*
+        1.什么是匿名函数?
+        匿名函数就是没有名称的函数
+
+        2.匿名函数的注意点
+        匿名函数不能够只定义不使用
+
+        3.匿名函数的应用场景
+        3.1作为其他函数的参数
+        3.2作为其他函数的返回值
+        3.3作为一个立即执行的函数
+        */
+        /*
+        // 有名称的函数
+        // function say() {
+        //     console.log("hello lnj");
+        // }
+        // let say = function() {
+        //     console.log("hello lnj");
+        // }
+
+        // 匿名函数
+        function() {
+            console.log("hello lnj");
+        }
+        */
+
+        // 3.1作为其他函数的参数
+        /*
+        function test(fn) { // let fn = say;
+            fn();
+        }
+        test(function () {
+            console.log("hello world");
+        });
+        */
+
+        // 3.2作为其他函数的返回值
+        /*
+        function test() {
+            return function () {
+                console.log("hello lnj");
+            };
+        }
+        let fn = test(); // let fn = say;
+        fn();
+        */
+
+        // 3.3作为一个立即执行的函数
+        // 注意点: 如果想让匿名函数立即执行, 那么必须使用()将函数的定义包裹起来才可以
+        (function () {
+            console.log("hello it666");
+        })();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>115-JavaScript-ES6类和对象</title>
+    <script>
+        /*
+        1.在ES6之前如果定义一个类?
+        通过构造函数来定义一个类
+        */
+        /*
+        function Person(myName, myAge) {
+            // 实例属性
+            // this.name = "lnj";
+            // this.age = 34;
+            this.name = myName;
+            this.age = myAge;
+
+            // 实例方法
+            this.say = function () {
+                console.log(this.name, this.age);
+            }
+            // 静态属性
+            Person.num = 666;
+            // 静态方法
+            Person.run = function () {
+                console.log("run");
+            }
+        }
+        // let p = new Person();
+        let p = new Person("zs", 18);
+        p.say();
+        console.log(Person.num);
+        Person.run();
+        */
+
+        /*
+        2.从ES6开始系统提供了一个名称叫做class的关键字, 这个关键字就是专门用于定义类的
+        */
+        /*
+        class Person{
+            // 当我们通过new创建对象的时候, 系统会自动调用constructor
+            // constructor我们称之为构造函数
+            constructor(myName, myAge){
+                this.name = myName;
+                this.age = myAge;
+            }
+            // 实例属性
+            // name = "lnj";
+            // age = 34;
+            // 实例方法
+            say(){
+                console.log(this.name, this.age);
+            }
+            // 静态属性
+            static num = 666;
+            // 静态方法
+            static run() {
+                console.log("run");
+            }
+        }
+        // let p = new Person();
+        let p = new Person("zs", 18);
+        p.say();
+        console.log(Person.num);
+        Person.run();
+        */
+    </script>
+    <script>
+        /*
+        class Person{
+            // 以下定义"实例属性"的方式并不是ES6正式版标准中的写法, 大部分的浏览器不支持
+            // 在ES6标准中添加实例属性都需要在constructor中添加
+            // 实例属性
+            // name = "lnj";
+            // age = 34;
+            constructor(){
+                this.name = "lnj";
+                this.age = 34;
+            }
+            // 实例方法
+            say(){
+                console.log(this.name, this.age);
+            }
+        }
+        let p = new Person();
+        console.log(p);
+        */
+        /*
+        class Person{
+            // 以下定义"静态属性"的方式并不是ES6正式版标准中的写法, 大部分的浏览器不支持
+            // 在ES标准中static只支持定义静态方法不支持定义静态变量
+            // 静态属性
+            // static num = 666;
+
+            // 静态方法
+            static run() {
+                console.log("run");
+            }
+        }
+        Person.num = 666;
+        let p = new Person();
+        console.log(p);
+        */
+        /*
+        function Person(myName, myAge) {
+            // 实例属性
+            this.name = myName;
+            this.age = myAge;
+            // 实例方法
+            this.hi = function () {
+                console.log("hi");
+            }
+        }
+        // 原型上的方法
+        Person.prototype.say = function () {
+            console.log(this.name, this.age);
+        }
+        let p = new Person("lnj", 34);
+        console.log(p);
+        */
+        /*
+        class Person{
+            constructor(myName, myAge){
+                this.name = myName;
+                this.age = myAge;
+                this.hi = function () {
+                    console.log("hi");
+                }
+            }
+            say(){
+                console.log("hi");
+            }
+        }
+        let p = new Person("lnj", 34);
+        console.log(p);
+        */
+
+    </script>
+    <script>
+        /*
+        function Person(myName, myAge) {
+            // 实例属性
+            this.name = myName;
+            this.age = myAge;
+            // 实例方法
+            this.hi = function () {
+                console.log("hi");
+            }
+        }
+        // 原型上的方法
+        // Person.prototype.type = "人";
+        // Person.prototype.say = function () {
+        //     console.log(this.name, this.age);
+        // };
+        Person.prototype = {
+            constructor: Person,
+            type: "人",
+            say: function () {
+                console.log(this.name, this.age);
+            }
+        };
+        */
+
+        class Person{
+            constructor(myName, myAge){
+                this.name = myName;
+                this.age = myAge;
+                this.hi = function () {
+                    console.log("hi");
+                }
+            }
+            run(){
+                console.log("run");
+            }
+        }
+        // Person.prototype.type = "人";
+        // Person.prototype.say = function () {
+        //     console.log(this.name, this.age);
+        // };
+
+        let obj = {
+            constructor: Person,
+            type: "人",
+            say: function () {
+                console.log(this.name, this.age);
+            }
+        };
+        Person.prototype = obj;
+
+        let p = new Person("lnj", 34);
+        console.log(p);
+
+        /*
+        注意点:
+        如果通过class定义类, 那么不能自定义这个类的原型对象
+        如果想将属性和方法保存到原型中, 只能动态给原型对象添加属性和方法
+        */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

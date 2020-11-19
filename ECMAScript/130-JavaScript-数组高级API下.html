@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>130-JavaScript-数组高级API下</title>
+    <script>
+        //         0  1  2  3  4
+        let arr = [1, 2, 3, 4, 5];
+        // 1.数组的filter方法:
+        // 将满足条件的元素添加到一个新的数组中
+        /*
+        let newArray = arr.filter(function (currentValue, currentIndex, currentArray) {
+            // console.log(currentValue, currentIndex, currentArray);
+            if(currentValue % 2 === 0){
+                return true;
+            }
+        });
+        console.log(newArray); // [2, 4]
+        */
+
+        // 2.数组的map方法:
+        // 将满足条件的元素映射到一个新的数组中
+        /*
+        let newArray = arr.map(function (currentValue, currentIndex, currentArray) {
+            // console.log(currentValue, currentIndex, currentArray);
+            if(currentValue % 2 === 0){
+                return currentValue;
+            }
+        });
+        console.log(newArray); // [undefined, 2, undefined, 4, undefined]
+        */
+
+        // filter实现
+        Array.prototype.myFilter = function (fn) {
+            let newArray = [];
+            for(let i = 0; i < this.length; i++){
+                let result = fn(this[i], i, this);
+                if(result){
+                    newArray.push(this[i]);
+                }
+            }
+            return newArray;
+        }
+
+        // map实现
+        Array.prototype.myMap = function (fn) {
+            let newArray = new Array(this.length);
+            newArray.fill(undefined);
+            for(let i = 0; i < this.length; i++){
+                let result = fn(this[i], i, this);
+                if(result !== undefined){
+                    newArray[i] = result;
+                }
+            }
+            return newArray;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

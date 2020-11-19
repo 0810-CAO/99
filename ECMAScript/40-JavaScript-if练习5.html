@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>40-JavaScript-if练习5</title>
+    <script>
+        /*需求: 有3个变量a, b, c, 要求至少使用两种方法将升序排序后输出
+        * 排序前: a = 5, b = 3, c = 4
+        * 排序后: a = 3, b = 4, c = 5
+        * */
+        let a = 5, b = 3, c = 4, temp;
+
+        console.log(a, b, c);
+        // 1.利用a和b比较, 如果a>b, 就交换a和b中保存的数据
+        if(a > b){
+            temp = a;
+            a = b;
+            b = temp;
+        }
+        // 1.利用b和c比较, 如果b>c, 就交换b和c中保存的数据
+        if(b > c){
+            temp = b;
+            b = c;
+            c = temp;
+        }
+        // 1.利用a和b比较, 如果a>b, 就交换a和b中保存的数据
+        if(a > b){
+            temp = a;
+            a = b;
+            b = temp;
+        }
+        console.log(a, b, c);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>41-JavaScript-switch</title>
+    <script>
+        /*
+        1.switch格式:
+        switch(表达式){
+            case 表达式A:
+                语句A;
+                break;
+            case 表达式B:
+                语句B;
+                break;
+            ... ...
+            default:
+                前面所有case都不匹配执行的代码;
+                break;
+        }
+
+        2.switch特点
+        会从上至下的依次判断每一个case是否和()中表达式的结果相等, 如果相等就执行对应case后面的代码, 如果前面所有的case都不匹配, 那么就会执行default后面的代码
+        并且所有的case和default只有一个会被执行, 并且只会被执行一次
+        */
+        let day = 7;
+        switch (day) {
+            case 1:
+                console.log("星期1");
+                break;
+            case 2:
+                console.log("星期2");
+                break;
+            case 3:
+                console.log("星期3");
+                break;
+            default:
+                console.log("Other");
+                break;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

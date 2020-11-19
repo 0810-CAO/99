@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>71-JavaScript-函数</title>
+    <script>
+        /*
+        1.什么是函数?
+        函数是专门用于封装代码的, 函数是一段可以随时被反复执行的代码块
+
+        2.函数格式
+        function 函数名称(形参列表){
+            被封装的代码;
+        }
+
+        3.不使用函数的弊端
+        3.1冗余代码太多
+        3.2需求变更, 需要修改很多的代码
+
+        4.使用函数的好处
+        4.1冗余代码变少了
+        4.2需求变更, 需要修改的代码变少了
+        */
+
+        // 定义向左变道的函数
+        function toLeft(){
+            console.log("打左转向灯");
+            console.log("踩刹车");
+            console.log("向左打方向盘");
+            console.log("回正方向盘");
+        }
+        // 定义向右变道的函数
+        function toRight(){
+            console.log("打右转向灯");
+            console.log("向右打方向盘");
+            console.log("回正方向盘");
+        }
+
+        /*
+        // 向左变道
+        console.log("打左转向灯");
+        console.log("踩刹车");
+        console.log("向左打方向盘");
+        console.log("回正方向盘");
+
+        // 向右变道
+        console.log("打右转向灯");
+        console.log("向右打方向盘");
+        console.log("回正方向盘");
+
+        // 向左变道
+        console.log("打左转向灯");
+        console.log("踩刹车");
+        console.log("向左打方向盘");
+        console.log("回正方向盘");
+        */
+
+        // 向左变道
+        // 以下代码的含义: 找到名称叫做toLeft的函数, 执行这个函数中封装的代码
+        toLeft();
+        // 向右变道
+        toRight();
+        // 向左变道
+        toLeft();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

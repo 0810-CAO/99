@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18-JavaScript自增自减运算符</title>
+    <script>
+        /*
+        1.什么是自增自减运算符?
+        自增运算符: ++
+        自减运算符: --
+
+        2.自增自减运算符的作用
+        自增运算符: 可以快速的对一个变量中保存的数据进行+1操作
+        自减运算符: 可以快速的对一个变量中保存的数据进行-1操作
+
+        3.自增和自减写在变量的前面和后面的区别?
+        写在变量的后面, 表示变量先参与其它的运算, 然后再自增或者自减
+        写在变量的前面, 表示变量先自增或者自减, 然后再参与其它的运算
+        */
+        /*
+        let num = 5;
+        // num = num + 1;
+        // num += 1; // num = num + 1;
+        // num++; // num = num + 1;
+        ++num;
+        console.log(num);
+        */
+
+        /*
+        let num = 5;
+        // num = num - 1;
+        // num -= 1;
+        // num--;
+        --num;
+        console.log(num);
+        */
+
+        let num = 1;
+        // let res = num++ + 1; // let res = num + 1; num++;
+        let res = ++num + 1;  // num++; let res = num + 1;
+        console.log(res); // 2  3
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>34-JavaScript-if第三种形式</title>
+    <script>
+        /*
+        1.if第三种形式
+        if(条件表达式A){
+            条件A满足执行的语句;
+        }else if(条件表达式B){
+            条件B满足执行的语句;
+        }
+        ... ...
+        else{
+            前面所有条件都不满足执行的语句;
+        }
+
+        2.if第三种形式的特点
+        会从上至下的依次判断每一个条件表达式, 哪一个条件表达式满足, 就执行哪一个条件表达式后面{}中的代码
+        如果前面所有的条件表达式都不满足, 就会执行else后面{}中的代码
+        并且众多的大括号只有一个会被执行, 并且只会执行一次
+        */
+        let age = 4;
+        if(age >= 18){
+            console.log("上大学");
+        }else if(age >= 12){
+            console.log("上中学");
+        }else if(age >= 6){
+            console.log("上小学");
+        }else{
+            console.log("在家玩");
+        }
+        console.log("选择结构后面的代码");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

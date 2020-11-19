@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20-JavaScript关系运算符</title>
+    <script>
+        /*
+        1.什么是关系运算符?
+        > < >= <= == != === !==
+
+        2.关系运算符的返回值
+        只有两个, 要么是true, 要么是false
+        如果关系成立, 就返回true
+        如果关系不成立, 就返回false
+
+        3.关系运算符的注意点
+        3.1对于非数值类型的数据, 会先转换成数值类型, 再进行判断
+        3.2对于关系运算符来说, 任何数据和NaN进行比较, 返回值都是false
+        3.3如果参与比较的都是字符串类型, 那么不会转换成数值类型再比较, 而是直接比较字符对应的Unicode编码
+        3.4特殊比较的结果
+        */
+        // let res = 10 != 5;
+        // console.log(res);
+
+        // let res = 1 > true; // let res = 1 > 1;
+        // let res = 1 > false; // let res = 1 > 0;
+        // let res = 1 > null; // let res = 1 > 0;
+        // let res = 1 > "10"; // let res = 1 > 10;
+
+        // let res = 666 > NaN;
+        // let res = 666 > undefined; // let res = 666 > NaN;
+
+        // let res = "a" > "b"; // let res = 0061 > 0062;
+        // let res = "b" > "a"; // let res = 0062 > 0061;
+        // 如果字符串中有多个字符, 那么会从左至右的依次比较, 直到条件不满足为止
+        // let res = "ab" > "ac";
+
+        // let res = null == 0; // false
+        // let res = undefined == 0; // false
+        // let res = null == undefined;  // true
+        // 在企业开发中千万不要通过==来判断某一个数据是否是NaN
+        // 如果想判断某一个数据是否是NaN那么可以通过isNaN来进行判断
+        // let res = NaN == NaN; // false
+        let num = NaN;
+        let res = isNaN(num);
+        console.log(res);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

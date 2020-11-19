@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>112-JavaScript-继承方式三</title>
+    <script>
+        function Person(myName, myAge) {
+            // let per = new Object();
+            // let this = per;
+            // this = stu;
+            this.name = myName; // stu.name = myName;
+            this.age = myAge; // stu.age = myAge;
+            // this.say = function () { // stu.say = function () {}
+            //     console.log(this.name, this.age);
+            // }
+            // return this;
+        }
+        Person.prototype.say = function () {
+            console.log(this.name, this.age);
+        }
+        function Student(myName, myAge, myScore) {
+            Person.call(this, myName, myAge);
+            this.score = myScore;
+            this.study = function () {
+                console.log("day day up");
+            }
+        }
+        // 注意点: 要想使用Person原型对象中的属性和方法, 那么就必须将Student的原型对象改为Person的原型对象才可以
+        Student.prototype = Person.prototype;
+        Student.prototype.constructor = Student;
+
+        let stu = new Student("ww", 19, 99);
+        console.log(stu.score);
+        stu.say();
+        stu.study();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

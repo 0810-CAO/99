@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>50-JavaScript-while和dowhile如何选择</title>
+    <script>
+        /*
+        需求: 要求用户输入密码, 判断输入密码是否正确(假设正确密码是123456)
+              如果正确, 输出"欢迎回来"
+              如果不正确, 要求用户重新输入
+        */
+        /*
+        let pwd = prompt("请输入密码");
+        if(pwd !== "123456"){
+            pwd = prompt("请输入密码");
+        }
+        if(pwd !== "123456"){
+            pwd = prompt("请输入密码");
+        }
+        if(pwd !== "123456"){
+            pwd = prompt("请输入密码");
+        }
+        if(pwd !== "123456"){
+            pwd = prompt("请输入密码");
+        }
+        alert("欢迎回来");
+        */
+        /*
+        let pwd = prompt("请输入密码");
+        while (pwd !== "123456") {
+            pwd = prompt("请输入密码");
+        }
+        alert("欢迎回来");
+        */
+        let pwd = -1;
+        do{
+            pwd = prompt("请输入密码");
+        }while (pwd !== "123456");
+        alert("欢迎回来");
+        /*
+        1.在企业开发中大部分情况下while循环和dowhile循环是可以互换的
+        2.在企业开发中如果循环体中的代码无论如何都需要先执行一次, 那么建议使用dowhile循环
+        3.在企业开发中其它的情况都建议使用while循环
+        */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

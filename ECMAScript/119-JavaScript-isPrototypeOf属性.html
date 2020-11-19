@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>119-JavaScript-isPrototypeOf属性</title>
+    <script>
+        /*
+        1.什么是isPrototypeOf属性
+        isPrototypeOf用于判断 一个对象是否是另一个对象的原型
+        */
+        /*
+        2.isPrototypeOf注意点
+        2.1只要调用者在传入对象的原型链上都会返回true
+        */
+
+        /*
+        class Person{
+            name = "lnj";
+        }
+        let  p = new Person();
+        console.log(Person.prototype.isPrototypeOf(p)); // true
+
+        class Cat{
+            name = "mm";
+        }
+        console.log(Cat.prototype.isPrototypeOf(p)); // false
+        */
+
+        function Person(myName) {
+            this.name = myName;
+        }
+        function Student(myName, myScore) {
+            Person.call(this, myName);
+            this.score = myScore;
+        }
+        Student.prototype = new Person();
+        Student.prototype.constructor = Student;
+
+        let stu = new Student();
+        console.log(Person.prototype.isPrototypeOf(stu)); // true
+    </script>
+</head>
+<body>
+
+</body>
+</html>

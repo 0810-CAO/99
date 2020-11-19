@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>80-JavaScript-变量作用域</title>
+    <script>
+        /*
+        1.在JavaScript中定义变量有两种方式
+        ES6之前: var 变量名称;
+        ES6开始: let 变量名称;
+        */
+        // 2.两种定义变量方式的区别
+        // 2.1是否能够定义同名变量
+        /*
+        1.通过var定义变量,可以重复定义同名的变量,并且后定义的会覆盖先定义的
+        var num = 123;
+        var num = 456;
+        console.log(num);
+
+        2.2如果通过let定义变量,  "相同作用域内"不可以重复定义同名的变量
+        let num = 123;
+        let num = 456; // 报错
+        */
+
+        // 2.2是否能够先使用后定义
+        /*
+        2.3通过var定义变量, 可以先使用后定义(预解析)
+        console.log(num);
+        var num = 123;
+
+        2.4通过let定义变量, 不可以先使用再定义(不会预解析)
+        console.log(num); // 报错
+        let num = 123;
+        */
+
+        // 2.3是否能被{}限制作用域
+        /*
+        2.5无论是var还是let定义在{}外面都是全局变量
+        var num = 123;
+        let num = 123;
+
+        2.6将var定义的变量放到一个单独的{}里面, 还是一个全局变量
+        {
+            var num = 123;
+        }
+        console.log(num);  //不会报错
+
+        2.7将let定义的变量放到一个单独的{}里面, 是一个局部变量
+        {
+            let num = 123;
+        }
+        console.log(num);  //会报错
+        */
+
+        /*
+        1.在JavaScript中{}外面的作用域, 我们称之为全局作用域
+
+        2.在JavaScript中函数后面{}中的的作用域, 我们称之为"局部作用域"
+        3.在ES6中只要{}没有和函数结合在一起, 那么应该"块级作用域"
+        4.块级作用域和局部作用域区别
+        4.1在块级作用域中通过var定义的变量是全局变量
+        4.2在局部作用域中通过var定义的变量是局部变量
+
+        5.无论是在块级作用域还是在局部作用域, 省略变量前面的let或者var就会变成一个全局变量
+        */
+        /*
+        {
+            // 块级作用域
+        }
+        if(false){
+            // 块级作用域
+        }
+        while (false){
+            // 块级作用域
+        }
+        for(;;){
+            // 块级作用域
+        }
+        do{
+            // 块级作用域
+        }while (false);
+        switch () {
+            // 块级作用域
+        }
+        function say() {
+            // 局部作用域
+        }
+        */
+
+        /*
+        {
+            // 块级作用域
+            var num = 123; // 全局变量
+        }
+        console.log(num);
+
+        function test() {
+            var value = 666; // 局部变量
+        }
+        test();
+        console.log(value);
+        */
+        /*
+        if(true){
+            var num = 666;
+        }
+        console.log(num);
+        */
+
+        /*
+        {
+            // var num = 678; // 全局变量
+            // let num = 678; // 局部变量
+            num = 678; // 全局变量
+        }
+        console.log(num);
+        */
+        function test() {
+            // var num = 123; // 局部变量
+            // let num = 123; // 局部变量
+            num = 123; // 全局变量
+        }
+        test();
+        console.log(num);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

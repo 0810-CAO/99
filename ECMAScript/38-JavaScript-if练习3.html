@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>38-JavaScript-if练习3</title>
+    <script>
+        /*需求: 接收用户输入的整数, 判断是什么季节之后输出
+        * 3/4/5春季  6/7/8夏季  9/10/11秋季  12/1/2冬季
+        * */
+        let str = prompt("请输入一个1~12的整数");
+        let month = +str;
+        /*
+        if(3 === month || 4 === month || 5 === month){
+            alert("春季");
+        }else if(6 === month || 7 === month || 8 === month){
+            alert("夏季");
+        }else if(9 === month || 10 === month || 11 === month){
+            alert("秋季");
+        }else if(12 === month || 1 === month || 2 === month){
+            alert("冬季");
+        }else{
+            alert("回到火星去");
+        }
+        */
+
+        if(month <= 0 || month > 12){
+            alert("回到火星去");
+        }else if(3 === month || 4 === month || 5 === month){
+            alert("春季");
+        }else if(6 === month || 7 === month || 8 === month){
+            alert("夏季");
+        }else if(9 === month || 10 === month || 11 === month){
+            alert("秋季");
+        }else{
+            alert("冬季");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

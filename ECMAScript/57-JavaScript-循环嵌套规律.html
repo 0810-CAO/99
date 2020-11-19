@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>57-JavaScript-循环嵌套规律</title>
+    <script>
+        /*
+        需求: 要求往界面中打印****
+        需求: 要求往界面中打印三行 ****
+        */
+        // document.write("****");
+        /*
+        document.write("*");
+        document.write("*");
+        document.write("*");
+        document.write("*");
+        */
+        /*
+        for(let i = 0; i < 4; i++){
+            document.write("*");
+        }
+        document.write("<br>");
+        for(let i = 0; i < 4; i++){
+            document.write("*");
+        }
+        document.write("<br>");
+        for(let i = 0; i < 4; i++){
+            document.write("*");
+        }
+        */
+
+        // 在循环嵌套中外循环控制的是行数, 内循环控制的是列数
+        for(let j = 0; j < 3; j++){
+            for(let i = 0; i < 4; i++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

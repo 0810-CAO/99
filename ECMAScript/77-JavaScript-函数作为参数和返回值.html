@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>77-JavaScript-函数作为参数和返回值</title>
+    <script>
+        /*
+        let say = function () {
+            console.log("hello world");
+        }
+        // say();
+        // let fn = say;
+        // fn();
+        // 将函数作为其他函数的参数
+        function test(fn) { // let fn = say;
+            fn();
+        }
+        test(say);
+        */
+        // 将函数作为其他函数的返回值
+        function test() {
+            // 注意点: 在其它编程语言中函数是不可以嵌套定义的,
+            // 但是在JavaScript中函数是可以嵌套定义的
+            let say = function () {
+                console.log("hello world");
+            }
+            return say;
+        }
+        let fn = test(); // let fn = say;
+        fn();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

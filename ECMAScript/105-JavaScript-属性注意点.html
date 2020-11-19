@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>105-JavaScript-属性注意点</title>
+    <script>
+        function Person(myName, myAge) {
+            this.name = myName;
+            this.age = myAge;
+        }
+        Person.prototype = {
+            constructor: Person,
+            currentType: "人",
+            say: function () {
+                console.log("hello world");
+            }
+        }
+        let obj = new Person("lnj", 34);
+        // console.log(obj.currentType); // "人"
+        // console.log(obj.__proto__.currentType); // "人"
+
+        // 注意点: 在给一个对象不存在的属性设置值的时候, 不会去原型对象中查找, 如果当前对象没有就会给当前对象新增一个不存在的属性
+        obj.currentType = "新设置的值";
+        console.log(obj.currentType); // 新设置的值
+        console.log(obj.__proto__.currentType); // "人"
+    </script>
+</head>
+<body>
+
+</body>
+</html>

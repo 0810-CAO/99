@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>110-JavaScript-继承方式一弊端</title>
+    <script>
+        function Person(myName, myAge) {
+            this.name = myName;
+            this.age = myAge;
+            this.say = function () {
+                console.log(this.name, this.age);
+            }
+        }
+       // let per = new Person("lnj", 34);
+       //  per.say();
+
+        // 学生 is a 人 , 学生是一个人
+        function Student(myName, myAge, myScore) {
+            this.score = myScore;
+            this.study = function () {
+                console.log("day day up");
+            }
+        }
+
+        // let stu = new Student();
+        // stu.name = "zs";
+        // stu.age = 18;
+        // stu.score = 99;
+        // stu.say();
+        // stu.study();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

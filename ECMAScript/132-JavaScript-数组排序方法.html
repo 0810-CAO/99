@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>132-JavaScript-数组排序方法</title>
+    <script>
+        // let arr = ["c", "a", "b"];
+        // arr.sort();
+        /*
+        如果 compareFunction(a, b) 小于 0 ，那么 a 会被排列到 b 之前；
+        如果 compareFunction(a, b) 等于 0 ， a 和 b 的相对位置不变。
+        如果 compareFunction(a, b) 大于 0 ， b 会被排列到 a 之前
+        注意点: 如果元素是字符串类型, 那么比较的是字符串的Unicode编码
+        */
+        /*
+        arr.sort(function (a, b) {
+            if(a > b){
+                return -1;
+            }else if(a < b){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+        console.log(arr);
+        */
+
+        /*
+        let arr = [3, 4, 2, 5, 1];
+        // arr.sort();
+        arr.sort(function (a, b) {
+            // if(a > b){
+            //     return -1;
+            // }else if(a < b){
+            //     return 1;
+            // }else{
+            //     return 0;
+            // }
+            // 规律: 如果数组中的元素是数值类型
+            //       如果需要升序排序, 那么就返回a - b;
+            //       如果需要降序排序, 那么就返回b - a;
+            // return a - b;
+            return b - a;
+        });
+        console.log(arr);
+        */
+
+        /*
+        let arr = ["1234", "21", "54321", "123", "6"];
+        arr.sort(function (str1, str2) {
+            // return str1.length - str2.length;
+            return str2.length - str1.length;
+        });
+        console.log(arr);
+        */
+
+        let students = [
+            {name: "zs", age: 34},
+            {name: "ls", age: 18},
+            {name: "ww", age: 22},
+            {name: "mm", age: 28},
+        ];
+        students.sort(function (o1, o2) {
+            // return o1.age - o2.age;
+            return o2.age - o1.age;
+        });
+        console.log(students);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

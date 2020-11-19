@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>66-JavaScript-数组练习1</title>
+    <script>
+        /*2.从接盘接收4个数字, 排序后输出
+        * 4, 3, -5, 1
+        * */
+        let str = prompt("请输入五个整数, 用逗号隔开");
+        let arr = str.split(",");
+        console.log(arr);
+        /*
+        for(let i = 0; i < 3; i++){
+            for(let j = i; j < 3; j++){
+                // document.write("*");
+                // console.log(i, j + 1);
+                if(arr[i] > arr[j + 1]){
+                    let temp = arr[i];
+                    arr[i] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+            // document.write("<br>");
+        }
+        */
+        for(let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3 - i; j++) {
+                // document.write("*");
+                // console.log(j, j + 1);
+                if(arr[j] > arr[j + 1]){
+                    let temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+            // document.write("<br>");
+        }
+        console.log(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

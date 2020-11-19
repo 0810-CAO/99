@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>137-JavaScript-Math内置对象</title>
+    <script>
+        /*
+        Math.floor()    向下取整
+        Math.ceil()     向上取整
+        Math.round()    四舍五入
+        Math.abs()      绝对值
+        Math.random()   生成随机数
+        */
+        /*
+        // Math.floor()    向下取整
+        // 直接砍掉所有的小数位就是向下取整
+        // let num = 3.9;
+        // let value = Math.floor(num);
+        // console.log(value);
+        // Math.ceil()     向上取整
+        // 只要有小数位就会给整数位+1, 然后砍掉所有小数位
+        // let num = 3.9;
+        // let value = Math.ceil(num);
+        // console.log(value);
+        // Math.round()    四舍五入
+        // 和小学数学一样, 如果小数位满5就会进1
+        // let num = 3.5;
+        // let value = Math.round(num);
+        // console.log(value);
+        // Math.abs()      绝对值
+        // 和小学数学一样, 统一变为正数
+        // let num = -3;
+        // let value = Math.abs(num);
+        // console.log(value);
+        */
+
+        // 会生成一个0~1的随机数, 但是不包括1
+        // let value = Math.random();
+        // console.log(value);
+
+        // 需求: 要求生成一个1~10的随机数
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+        }
+        let value = getRandomIntInclusive(1, 10);
+        console.log(value);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

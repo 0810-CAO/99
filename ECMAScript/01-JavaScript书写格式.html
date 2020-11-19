@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-JavaScript书写格式</title>
+
+    <!--
+    1.CSS书写格式
+    1.行内样式: 写在标签内部
+    2.内嵌样式(内联样式) : 写在一对head标签中
+    3.外链样式: 写在一个单独的.css文件中, 再导入进来
+
+    2.JavaScript书写格式
+    1.行内样式: 写在标签内部
+    2.内嵌样式(内联样式) : 写在一对head标签中
+    3.外链样式: 写在一个单独的.js文件中, 再导入进来
+
+    3.JavaScript书写格式注意点
+    1.不推荐直接将JavaScript代码书写到标签内部
+    2.默认情况下浏览器会从上至下的解析网页, 所以如果将JavaScript写到一对head标签中, 并且需要通过JavaScript代码操作界面上的元素, 那么就不能直接书写JavaScript代码, 否则无效
+    2.1如果想将JavaScript写到一对head标签中, 并且需要在JavaScript代码中操作界面上的元素, 那么必须加上window.onload = function(){操作界面元素的JavaScript}
+    2.2window.onload的含义: 等到界面上所有的内容都加载完毕再执行{}中的代码
+    2.3由于默认情况下浏览器会从上至下的解析网页, 所以如果想通过JavaScript操作界面上的元素只需要等到元素被加载解析之后操作就可以了, 所以我们还可以将JavaScript代码写到body结束标签的前面
+    3.如果通过外链式导入.js文件, 并且需要在.js文件中操作界面上的元素, 那么如果是在head标签中导入的, 必须在.js文件中加上window.onload. 如果是在body结束标签前面导入的, 那么就不用添加window.onload
+    4.如果需要在一对script标签中编写JavaScript代码, 那么就不能同时通过script标签再导入其它的.js文件, 否则书写的JavaScript代码无效
+    -->
+    <!--
+    <script>
+        alert('lnj777');
+    </script>
+    -->
+    <!--<script src="01-javascript书写格式.js"></script>-->
+    <script>
+        /*
+        var oDiv = document.querySelector("div");
+        var text = oDiv.innerText;
+        alert(text);
+        */
+        /*
+        window.onload = function () {
+            var oDiv = document.querySelector("div");
+            var text = oDiv.innerText;
+            alert(text);
+        }
+        */
+    </script>
+
+    <!--<script src="01-javascript书写格式.js"></script>-->
+
+
+    <script src="01-javascript书写格式.js">
+        alert("外链式script标签中编写的JavaScript代码")
+    </script>
+</head>
+<body>
+<!--<div onclick="alert('lnj666')">我是div</div>-->
+
+<div>知播渔教育</div>
+
+
+<!--
+<script>
+    var oDiv = document.querySelector("div");
+    var text = oDiv.innerText;
+    alert(text);
+</script>
+-->
+
+<!--<script src="01-javascript书写格式.js"></script>-->
+</body>
+</html>

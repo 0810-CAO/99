@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>112-JavaScript-继承方式二</title>
+    <script>
+        function Person(myName, myAge) {
+            // let per = new Object();
+            // let this = per;
+            // this = stu;
+            this.name = myName; // stu.name = myName;
+            this.age = myAge; // stu.age = myAge;
+            this.say = function () { // stu.say = function () {}
+                console.log(this.name, this.age);
+            }
+            // return this;
+        }
+        function Student(myName, myAge, myScore) {
+            // let stu = new Object();
+            // let this = stu;
+            Person.call(this, myName, myAge); //  Person.call(stu);
+            this.score = myScore;
+            this.study = function () {
+                console.log("day day up");
+            }
+            // return this;
+        }
+        let stu = new Student("ww", 19, 99);
+        // stu.name = "zs";
+        // stu.age = 18;
+        // stu.score = 99;
+        console.log(stu.score);
+        stu.say();
+        stu.study();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

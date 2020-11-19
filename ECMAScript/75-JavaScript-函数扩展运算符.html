@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>75-JavaScript-函数扩展运算符</title>
+    <script>
+        /*
+        1.扩展运算符在等号左边, 将剩余的数据打包到一个新的数组中
+        注意点: 只能写在最后
+        let [a, ...b] = [1, 3, 5]; a = 1; b = [3, 5];
+
+        2.扩展运算符在等号右边, 将数组中的数据解开
+        let arr1 = [1, 3, 5];
+        let arr2 = [2, 4, 6];
+        let arr = [...arr1, ...arr2]; let arr = [1, 3, 5, 2, 4, 6];
+
+        3.扩展运算符在函数的形参列表中的作用
+        将传递给函数的所有实参打包到一个数组中
+        注意点: 和在等号左边一样, 也只能写在形参列表的最后
+        */
+        /*
+        function getSum(...values) {
+            // console.log(values);
+            let sum = 0;
+            for (let i = 0; i < values.length; i++){
+                let num = values[i];
+                sum += num;
+            }
+            return sum;
+        }
+        let res = getSum(10, 20, 30, 40);
+        console.log(res);
+        */
+        // function getSum(a, ...values) {
+        function getSum(...values, a) {
+            console.log(a);
+            console.log(values);
+        }
+        getSum(10, 20 , 30);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

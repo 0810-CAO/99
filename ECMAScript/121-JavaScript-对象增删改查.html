@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>121-JavaScript-对象增删改查</title>
+    <script>
+        class Person{}
+        let p = new Person();
+        // 增加(C)
+        // p.name = "lnj";
+        p["name"] = "zs";
+        // p.say = function(){
+        //     console.log("hello world");
+        // }
+        p["say"] = function(){
+            console.log("hello world");
+        }
+        // console.log(p);
+
+        // 删除(R)
+        // delete p.name;
+        // delete p["name"];
+        // delete p.say;
+        // delete p["say"];
+        // console.log(p);
+
+        // 修改(U)
+        // p.name = "lnj";
+        // p["name"] = "ww";
+        // console.log(p.name);
+        // p.say = function(){
+        //     console.log("hi");
+        // }
+        // p["say"] = function(){
+        //     console.log("hi");
+        // }
+        // p.say();
+
+        // 查询(D)
+        // console.log(p.name);
+        // console.log(p["name"]);
+        p.say();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

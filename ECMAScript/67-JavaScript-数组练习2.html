@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>66-JavaScript-数组练习1</title>
+    <script>
+        /*2.要求用户输入3个0~9的数, 输出0~9中哪些用户没有输入过
+        * 输入的格式x,y,z
+        * */
+        let str = prompt("请输入三个整数, 用逗号隔开");
+        // console.log(str); // 1,3,5
+        // 字符串的split方法可以根据传入的参数切割字符串, 转换成一个数组之后返回给我们
+        let arr = str.split(",");
+        // console.log(arr);
+        /*
+        for(let i = 0; i < 10; i++){
+            if(arr[0] == i || arr[1] == i || arr[2] == i){
+                continue;
+            }
+            console.log(i);
+        }
+        */
+
+        //      0          1          2          3          4          5          6
+        // [undefined,    666,    undefined,    666,     undefined,   666, undefined, undefined, undefined, undefined]
+        let res = new Array(10);
+        for(let i = 0; i < arr.length; i++){
+            let str = arr[i];
+            // console.log(str);
+            res[str] = 666;
+        }
+        // console.log(res);
+        for(let i = 0; i < res.length; i++){
+            if(res[i] === 666){
+                continue;
+            }
+            console.log(i);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

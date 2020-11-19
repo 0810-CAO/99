@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>118-JavaScript-instanceof关键字</title>
+    <script>
+        /*
+        1.什么是instanceof关键字?
+        instanceof用于判断 "对象" 是否是指定构造函数的 "实例"
+        */
+        /*
+        2.instanceof注意点
+        只要 构造函数的原型对象出现在实例对象的原型链中都会返回true
+        */
+
+        /*
+        class Person{
+            name = "lnj";
+        }
+        let p = new Person();
+        console.log(p instanceof Person); // true
+
+        class Cat{
+            name = "mm";
+        }
+        let c = new Cat();
+        console.log(c instanceof Person); // false
+        */
+
+        function Person(myName) {
+            this.name = myName;
+        }
+        function Student(myName, myScore) {
+            Person.call(this, myName);
+            this.score = myScore;
+        }
+        Student.prototype = new Person();
+        Student.prototype.constructor = Student;
+
+        let stu = new Student();
+        console.log(stu instanceof Person); // true
+    </script>
+</head>
+<body>
+
+</body>
+</html>

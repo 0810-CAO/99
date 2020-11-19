@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>74-JavaScript-函数arguments</title>
+    <script>
+        /*
+        1.因为console.log();也是通过()来调用的, 所以log也是一个函数
+        2.log函数的特点
+            可以接收1个或多个参数
+        3.为什么log函数可以接收1个或多个参数
+            内部的实现原理就用到了arguments
+        4.arguments的作用
+            保存所有传递给函数的实参
+        */
+        /*
+        // console.log();
+        function say() {
+            console.log("hello world");
+        }
+        window.say();
+        */
+        /*
+        console.log(1);
+        console.log(1, 2);
+        console.log(1, 2, 3);
+        */
+        function getSum() {
+            // 注意点: 每个函数中都有一个叫做arguments的东东
+            // arguments其实是一个伪数组
+            // console.log(arguments);
+            // console.log(arguments[0]);
+            // console.log(arguments[1]);
+            // console.log(arguments[2]);
+
+            let sum = 0;
+            for (let i = 0; i < arguments.length; i++){
+                let num = arguments[i];
+                // console.log(num); // 10 20 30
+                // sum = 0 + 10; sum = 10;
+                // sum = 10 + 20; sum = 30;
+                // sum = 30 + 30; sum = 60;
+                sum += num; // sum = sum + num;
+            }
+            return sum;
+        }
+        let res = getSum(10, 20, 30, 40);
+        console.log(res);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

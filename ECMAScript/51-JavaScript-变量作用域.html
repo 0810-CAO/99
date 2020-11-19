@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>51-JavaScript-变量作用域</title>
+    <script>
+        /*
+        1.在JavaScript中定义变量有两种方式
+        ES6之前: var 变量名称;
+        ES6开始: let 变量名称;
+
+        2.两种定义变量方式的区别
+        如果通过var定义变量, 可以重复定义同名的变量, 并且不会报错, 并且后定义的会覆盖先定义的
+        如果通过var定义变量, 可以先使用后定义(预解析)
+        如果通过let定义变量, 不可以重复定义同名的变量
+        如果通过let定义变量, 不可以先使用再定义, 因为浏览器不会对let定义的变量进行预解析
+
+        3.什么是全局变量
+        全局变量就是定义在{}外面的变量, 我们就称之为全局变量
+
+        4.什么是局部变量
+        局部变量就是定义在{}里面的变量, 我们就称之为局部变量
+
+        5.全局变量和局部变量的区别
+        如果是全局变量, 那么有效范围是从定义变量的那一行开始直到文件的末尾都可以使用
+        如果是局部变量, 那么有效范围是从定义变量的那一行开始直到大括号结束为止(只有在大括号中才能使用)
+        */
+        /*
+        // var num = 123;
+        // var num = 456;
+        // console.log(num);
+
+        // console.log(num);
+        // var num = 123;
+        */
+
+        /*
+         var num;
+         console.log(num);
+         num = 123;
+        */
+
+        /*
+        // let num = 123;
+        // let num = 456;
+
+        // console.log(num);
+        // let num = 123;
+        */
+
+        // 无论是通过var还是通过let定义的全局变量, 都是从定义的那一行到文件末尾都可以使用
+        // var num = 123; // 全局变量
+        // let num = 123; // 全局变量
+
+        {
+            // 如果是通过var定义的局部变量, 和全局变量一样, 后续都可以被使用
+            // 如果是通过let定义的局部变量, 那么这个变量只能在当前定义变量的{}中使用
+            // var num = 666; // 局部变量
+            let num = 666; // 局部变量
+            console.log(num);
+        }
+        console.log(num);
+        if(true){
+            console.log(num);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    console.log(num);
+</script>

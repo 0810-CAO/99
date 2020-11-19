@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>85-JavaScript-预解析</title>
+    <script>
+        /*
+        1.什么是预解析?
+        浏览器在执行JS代码的时候会分成两部分操作：预解析以及逐行执行代码
+        也就是说浏览器不会直接执行代码, 而是加工处理之后再执行,
+        这个加工处理的过程, 我们就称之为预解析
+
+        2.预解析规则
+        2.1将变量声明和函数声明提升到当前作用域最前面
+        2.2将剩余代码按照书写顺序依次放到后面
+
+        3.注意点
+        通过let定义的变量不会被提升(不会被预解析)
+        */
+        /*
+        // 预解析之前
+        console.log(num); //undefined
+        var num = 123;
+        // 预解析之后
+        var num;
+        console.log(num);
+        num = 123;
+        */
+        /*
+        // 不会预解析之前
+        console.log(num); // 报错
+        let num = 456;
+        */
+
+        // ES6之前定义函数的格式
+        /*
+        console.log(say);
+        say();
+        // ES6之前的这种定义函数的格式, 是会被预解析的, 所以可以提前调用
+        function say() {
+            console.log("hello it666");
+        }
+        */
+        /*
+        // 预解析之后的代码
+        function say() {
+            console.log("hello it666");
+        }
+        say();
+        */
+
+        /*
+        console.log(say);
+        say(); // say is not a function
+        // 如果将函数赋值给一个var定义的变量, 那么函数不会被预解析, 只有变量会被预解析
+        var say = function() {
+            console.log("hello itzb");
+        }
+        */
+        /*
+        var say; //undefined
+        say();
+        say = function() {
+            console.log("hello itzb");
+        }
+        */
+
+        // ES6定义函数的格式
+        say(); // say is not defined
+        let say = () => {
+            console.log("hello itzb");
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>101-JavaScript-Function函数</title>
+    <script>
+        /*
+        1.JavaScript中函数是引用类型(对象类型), 既然是对象,
+          所以也是通过构造函数创建出来的,"所有函数"都是通过Function构造函数创建出来的对象
+        2.JavaScript中只要是"函数"就有prototype属性
+         "Function函数"的prototype属性指向"Function原型对象"
+        3.JavaScript中只要"原型对象"就有constructor属性
+          "Function原型对象"的constructor指向它对应的构造函数
+        4.Person构造函数是Function构造函数的实例对象, 所以也有__proto__属性
+          Person构造函数的__proto__属性指向"Function原型对象"
+       */
+
+        function Person(myName, myAge) {
+            this.name = myName;
+            this.age = myAge;
+        }
+        let obj1 = new Person("lnj", 34);
+
+        // console.log(Function);
+        // console.log(Function.prototype);
+        // console.log(Function.prototype.constructor);
+        // console.log(Function === Function.prototype.constructor); // true
+
+        // console.log(Person.__proto__);
+        console.log(Person.__proto__ === Function.prototype); // true
+    </script>
+</head>
+<body>
+
+</body>
+</html>

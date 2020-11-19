@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>125-JavaScript-深拷贝和浅拷贝</title>
+    <script>
+        /*
+        1.什么是深拷贝什么是浅拷贝?
+        1.1深拷贝
+        修改新变量的值不会影响原有变量的值
+        默认情况下基本数据类型都是深拷贝
+
+        1.1浅拷贝
+        修改新变量的值会影响原有的变量的值
+        默认情况下引用类型都是浅拷贝
+        */
+        // 深拷贝
+        /*
+        let num1 = 123;
+        let num2 = num1;
+        num2 = 666; // 修改形变量的值
+        console.log(num1);
+        console.log(num2);
+        */
+
+        // 浅拷贝
+        class Person{
+            name = "lnj";
+            age = 34;
+        }
+        let p1 = new Person();
+        let p2 = p1;
+        p2.name = "zs"; // 修改变量的值
+        console.log(p1.name);
+        console.log(p2.name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

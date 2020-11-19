@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-JavaScript变量补充</title>
+    <script>
+        /*
+        // 1.定义一个变量
+        var num;
+        // 2.往变量中存储数据
+        num = 123;
+        // 3.从变量中取出存储的数据
+        console.log(num);
+
+        // 1.如何修改变量中存储的数据
+        // 在JavaScript中想要修改变量中存储的数据, 只需要再次给变量直接赋值即可
+        num = 666;
+        console.log(num);
+        */
+
+        /*
+        // 2.在JavaScript中第一次给变量赋值, 我们称之为"变量的初始化"
+        var num;
+        num = 321; // "变量的初始化"
+        num = 888; // 不是"变量的初始化"
+        */
+
+        /*
+        // 3.如果一个变量没有进行初始化, 那么变量中存储的是什么呢?
+        // 在JavaScript中如果定义了一个变量,但是没有进行初始化, 那么变量中存储的是undefined
+        var num;
+        console.log(num);
+        */
+
+        /*
+        // 4.给变量初始化有很多种形式
+        // 4.1先定义变量, 再对变量进行初始化
+        var num;
+        num = 321; // 先定义再初始化
+
+        // 4.2可以在定义变量的同时对变量进行初始化
+        var value = 666; // 定义的同时初始化
+        */
+
+        /*
+        // 5.定义变量的其它格式
+        // 同时定义多个变量的格式
+        // 格式: var 变量名称1, 变量名称2, .... ;
+        // var num;
+        // var value;
+        var num, value; // 同时定义两个变量
+        var num, value, value2, value3; // 同时定义四个变量
+        */
+
+        /*
+        // 6.初始化变量的其它格式
+        // 如果在企业开发中对多个变量初始化的值都是一样的, 那么我们可以通过
+        // 变量名称1 = 变量名称2 = 变量名称... = 初始化值;
+        var num;
+        var value;
+        // num = 123;
+        // value = 123;
+        num = value = 123; // 同时对num和value进行初始化, num和value中存储的数据都是123
+        console.log(num);
+        console.log(value);
+        */
+
+        // 7.定义多个变量的同时给多个变量分别初始化
+        // var num, value;
+        // num = 123;
+        // value = 666;
+        var num = 123, value = 666;
+        console.log(num);
+        console.log(value);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

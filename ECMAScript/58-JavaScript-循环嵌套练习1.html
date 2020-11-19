@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>58-JavaScript-循环嵌套练习1</title>
+    <script>
+        /*
+        需求: 在界面中输出如下图形
+        *****
+        ****
+        ***
+        **
+        *
+
+        */
+
+        // 规律: 如果尖尖朝下, 那么只需要修改内循环的初始化表达式为外循环初始化表达式的变量即可
+        for(let i = 0; i < 5; i++){
+            console.log(i);
+            for(let j = i; j < 5; j++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

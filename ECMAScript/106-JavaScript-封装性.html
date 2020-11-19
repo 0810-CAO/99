@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>106-JavaScript-封装性</title>
+    <script>
+        /*
+        1.局部变量和局部函数
+        无论是ES6之前还是ES6, 只要定义一个函数就会开启一个新的作用域
+        只要在这个新的作用域中, 通过let/var定义的变量就是局部变量
+        只要在这个新的作用域中, 定义的函数就是局部函数
+
+        2.什么是对象的私有变量和函数
+        默认情况下对象中的属性和方法都是公有的, 只要拿到对象就能操作对象的属性和方法
+        外界不能直接访问的变量和函数就是私有变量和是有函数
+        构造函数的本质也是一个函数, 所以也会开启一个新的作用域, 所以在构造函数中定义的变量和函数就是私有和函数
+        */
+        /*
+        3.什么是封装?
+        封装性就是隐藏实现细节，仅对外公开接口
+
+        4.为什么要封装?
+        4.1不封装的缺点：当一个类把自己的成员变量暴露给外部的时候,那么该类就失去对属性的管理权，别人可以任意的修改你的属性
+        4.2封装就是将数据隐藏起来,只能用此类的方法才可以读取或者设置数据,不可被外部任意修改. 封装是面向对象设计本质(将变化隔离)。这样降低了数据被误用的可能 (提高安全性和灵活性)
+        */
+
+        /*
+        function demo() {
+            var num = 123;
+            let value = 456;
+            function test() {
+                console.log("test");
+            }
+
+            // console.log(num);
+            // console.log(value);
+            // test();
+        }
+        demo();
+        console.log(num);
+        console.log(value);
+        test();
+        */
+
+        function Person() {
+            this.name = "lnj";
+            // this.age = 34;
+            let age = 34;
+            this.setAge = function (myAge) {
+                if(myAge >= 0){
+                    age = myAge;
+                }
+            }
+            this.getAge = function () {
+                return age;
+            }
+            this.say = function () {
+                console.log("hello world");
+            }
+            /*
+            // 由于构造函数也是一个函数, 所以也会开启一个新的作用域
+            // 所以在构造函数中通过var/let定义的变量也是局部变量
+            // 所以在构造函数中定义的函数也是局部函数
+            var num = 123;
+            let value = 456;
+            function test() {
+                console.log("test");
+            }
+            */
+        }
+        let obj = new Person();
+        // 结论: 默认情况下对象的属性和方法都是公开的, 只要拿到对象就可以操作对象的属性和方法
+        // console.log(obj.name);
+        // obj.age = -3;
+        // console.log(obj.age);
+        // obj.say();
+
+        // console.log(age);
+        obj.setAge(-3);
+        console.log(obj.getAge());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

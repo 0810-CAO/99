@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>108-JavaScript-属性方法分类</title>
+    <script>
+        /*
+        1.在JavaScript中属性和方法分类两类
+        1.1实例属性/实例方法
+        在企业开发中通过实例对象访问的属性, 我们就称之为实例属性
+        在企业开发中通过实例对象调用的方法, 我们就称之为实例方法
+        1.2静态属性/静态方法
+        在企业开发中通过构造函数访问的属性, 我们就称之为静态属性
+        在企业开发中通过构造函数调用的方法, 我们就称之为静态方法
+        */
+        function Person() {
+            this.name = "lnj";
+            this.say = function () {
+                console.log("hello world");
+            }
+        }
+        /*
+        // 通过构造函数创建的对象, 我们称之为"实例对象"
+        let obj = new Person();
+        console.log(obj.name);
+        obj.say();
+
+        obj.age = 34;
+        console.log(obj.age);
+        obj.eat = function () {
+            console.log("eat");
+        }
+        obj.eat();
+        */
+
+        // 构造函数也是一个"对象", 所以我们也可以给构造函数动态添加属性和方法
+        Person.num = 666;
+        Person.run = function () {
+            console.log("run");
+        }
+        console.log(Person.num);
+        Person.run();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

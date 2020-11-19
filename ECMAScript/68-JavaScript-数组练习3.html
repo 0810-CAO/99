@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>66-JavaScript-数组练习1</title>
+    <script>
+        /*2.从接盘接收5个0~9的数字, 排序后输出
+        * 输入的格式x,y,z,...
+        *  2, 6, 3, 8, 1
+        *  2, 6, 3, 8, 3  --> 2,3,3,6,8
+        * */
+        //  0  1  2  3  4  5  6  7  8  9
+        // [u, 6, 6, 6, u, u, 6, u, 6, u]
+        // [u, u, 1, 2, u, u, 1, u, 1, u]
+        // [0, 0, 1, 2, 0, 0, 1, 0, 1, 0]
+        let str = prompt("请输入五个整数, 用逗号隔开");
+        let arr = str.split(",");
+        let res = new Array(10);
+        // 数组的fill方法的作用: 设置数组中所有元素的值为指定的数据
+        res.fill(0);
+        // [2, 6, 3, 8, 3]
+        for(let i = 0; i < arr.length; i++){
+            let str = arr[i]; // 2 6 3 8 3
+            // res[str] = 6;
+            res[str] = res[str] + 1;
+        }
+        for(let i = 0; i < res.length; i++){
+            // if(res[i] === 6){
+            //     console.log(i);
+            // }
+            for(let j = 0; j < res[i]; j++){
+                // console.log(i);
+                document.write(i);
+                document.write("<br>");
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

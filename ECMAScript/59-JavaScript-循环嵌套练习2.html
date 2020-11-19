@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>59-JavaScript-循环嵌套练习2</title>
+    <script>
+        /*
+        需求: 在界面中输出如下图形
+        *
+        **
+        ***
+        ****
+        *****
+
+        1
+        12
+        123
+
+        1
+        22
+        333
+
+        输出九九乘法表
+
+        -******
+        --***
+        ---*
+        */
+        // 规律: 如果尖尖朝上, 那么只需要修改内循环的条件表达式为外循环初始化表达式的变量即可
+        for(let i = 0; i < 5; i++){
+            console.log(i);
+            for(let j = 0; j <= i; j++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

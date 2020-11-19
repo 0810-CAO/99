@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06-JavaScript变量注意点</title>
+    <script>
+        /*
+        1.注意点
+        1.在JavaScript中变量之间是可以相互赋值的
+        2.在JavaScript中如果定义了同名的变量, 那么后定义的变量会覆盖先定义的变量
+        3.在老版本的标准的(ES6之前)JavaScript中可以先使用变量, 再定义变量, 并不会报错
+        由于JavaScript是一门解释型的语言, 会边解析边执行, 浏览器在解析JavaScript代码之前还会进行一个操作"预解析(预处理)"
+        预解析(预处理)步骤:
+        将当前JavaScript代码中所有变量的定义和函数的定义放到所有代码的最前面
+        */
+        /*
+        var num;
+        var value;
+        num = 123;
+        value = num; // 将Num中的值拷贝一份给value
+        console.log(num);
+        console.log(value);
+        */
+
+        /*
+        var num = 666;
+        // num = 888; // 如果num前面没有var, 那么就是修改变量中存储的值
+        var num = 888;// 如果num前面有var, 那么就不是修改变量中存储的值, 而是重新定义一个新的变量
+        console.log(num);
+        */
+
+        console.log(num);
+        var num = 123;
+        /*
+        预处理之后的代码
+        var num;
+        console.log(num); // undefined
+        num = 123;
+        */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

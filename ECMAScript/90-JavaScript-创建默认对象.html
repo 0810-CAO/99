@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>90-JavaScript-创建默认对象</title>
+    <script>
+        /*
+        1.JavaScript中提供了一个默认的类Object, 我们可以通过这个类来创建对象
+        2.由于我们是使用系统默认的类创建的对象, 所以系统不知道我们想要什么属性和行为, 所以我们必须手动的添加我们想要的属性和行为
+        3.如何给一个对象添加属性
+        对象名称.属性名称 = 值;
+        4.如何给一个对象添加行为
+        对象名称.行为名称 = 函数;
+        */
+        // 创建对象的第一种方式
+        /*
+        let obj = new Object();
+        obj.name = "lnj";
+        obj.age = 33;
+        obj.say = function () {
+            console.log("hello world");
+        }
+        console.log(obj.name);
+        console.log(obj.age);
+        obj.say();
+        */
+
+        // 创建对象的第二种方式
+        /*
+        let obj = {}; // let obj = new Object();
+        obj.name = "lnj";
+        obj.age = 33;
+        obj.say = function () {
+            console.log("hello world");
+        }
+        console.log(obj.name);
+        console.log(obj.age);
+        obj.say();
+        */
+
+        // 创建对象的第三种方式
+        // 注意点: 属性名称和取值之间用冒号隔开, 属性和属性之间用逗号隔开
+        let obj = {
+            name: "lnj",
+            age: 33,
+            say: function () {
+                console.log("hello world");
+            }
+        };
+        console.log(obj.name);
+        console.log(obj.age);
+        obj.say();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

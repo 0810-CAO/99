@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>96-JavaScript-构造函数优化上</title>
+    <script>
+        function mySay() {
+            console.log("hello world");
+        }
+        function Person(myName, myAge) {
+            // let obj = new Object();  // 系统自动添加的
+            // let this = obj; // 系统自动添加的
+            this.name = myName;
+            this.age = myAge;
+            this.say = mySay;
+            // return this; // 系统自动添加的
+        }
+        let obj1 = new Person("lnj", 34);
+        let obj2 = new Person("zs", 44);
+        console.log(obj1.say === obj2.say); // true
+
+        /*
+        1.当前这种方式解决之后存在的弊端
+        1.1阅读性降低了
+        1.2污染了全局的命名空间
+        */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

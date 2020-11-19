@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>61-JavaScript-数组注意点</title>
+    <script>
+        // 1.和其它编程语言不同, 如果数组对应的索引中没有存储数据, 默认存储的就是undefined
+        // 其它编程语言中默认保存的是垃圾数据或者0
+        /*
+        let arr = new Array(3);
+        console.log(arr[0]);
+        console.log(arr[1]);
+        console.log(arr[2]);
+        */
+
+        // 2.和其它编程语言不同, JavaScript中访问了数组中不存在的索引不会报错, 会返回undefined
+        // 其它编程语言一旦超出索引范围就会报错或者返回脏数据
+        /*
+        let arr = new Array(3); // 0 1 2
+        console.log(arr[666]);
+        */
+
+        // 3.和其它编程语言不同, 当JavaScript中数组的存储空间不够时数组会自动扩容
+        // 其它编程语言中数组的大小是固定的
+        /*
+        let arr = new Array(3);
+        arr[0] = "lnj";
+        arr[1] = "zs";
+        arr[2] = "ls";
+        arr[3] = "it666";
+        console.log(arr);
+        */
+
+        // 4.和其它编程语言不同, JavaScript的数组可以存储不同类型数据
+        // 在其它编程语言中数组只能存储相同类型数据(要么全部都是字符串, 要么全部都是数值等)
+        /*
+        let arr = new Array(4);
+        arr[0] = 123;
+        arr[1] = "123";
+        arr[2] = true;
+        arr[3] = null;
+        console.log(arr);
+        */
+
+        // 5.和其它编程语言不同, JavaScript中数组分配的存储空间不一定是连续的
+        // 其它语言数组分配的存储空间都是连续的, JavaScript数组是采用"哈希映射"方式分配存储空间
+        // 什么是哈希映射? 好比字典可以通过偏旁部首找到对应汉字, 我们可以通过索引找到对应空间
+
+        // 在浏览器中各大浏览器也对数组分配存储空间进行了优化
+        // 如果存储的都是相同类型的数据, 那么会尽量分配连续的存储空间
+        // 如果存储的不是相同的数据类型, 那么就不会分配连续的存储空间
+
+        // 6.创建数组的其它方式
+        // 3.1通过构造函数创建数组
+        // let 变量名称 = new Array(size); 创建一个指定大小数组
+        // let 变量名称 = new Array();     创建一个空数组
+        // let 变量名称 = new Array(data1, data2, ...);     创建一个带数据的数组
+        // 3.2通过字面量创建数组
+        // let 变量名称 = [];  创建一个空数组
+        // let 变量名称 = [data1, data2, ...];  创建一个空数组
+
+        /*
+        // let arr = new Array(3);
+        // let arr = new Array();
+        // arr[0] = "lnj";
+        // arr[1] = "zs";
+        // arr[2] = "ls";
+        // arr[3] = "ww";
+        // console.log(arr);
+
+        let arr = new Array("lnj", "zs", "ls", "ww");
+        console.log(arr);
+        */
+
+        // let arr = [];
+        // arr[0] = "lnj";
+        // arr[1] = "zs";
+        // arr[2] = "ls";
+        // arr[3] = "ww";
+        // console.log(arr);
+
+        let arr = ["lnj", "zs", "ls", "ww"];
+        console.log(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

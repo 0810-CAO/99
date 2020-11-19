@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>135-JavaScript-基本数据类型和基本包装类型</title>
+    <script>
+        /*
+        1.有哪些基本数据类型?
+        字符串类型 / 数值类型 / 布尔类型 / 空类型 / 未定义类型
+
+        2.通过字面量创建的基本数据类型的数据都是常量
+
+        3.常量的特点和注意点
+        常量是不能被修改的
+        每次修改或者拼接都是生成一个新的
+        */
+        /*
+        4.基本类型特点
+        没有属性和方法
+
+        5.对象类型的特点
+        有属性和方法
+
+        6.以前之所以能够访问基本数据类型的属性和方法, 是因为
+        在运行的时候系统自动将基本数据类型包装成了对象类型
+        String() / Number() / Boolean()
+        */
+        /*
+        let str = "abc";
+        // str[1] = "m";
+        let newStr = str.replace("b", "m");
+        console.log(str); // abc
+        console.log(newStr); // amc
+        */
+        /*
+        let str1 = "www";
+        let str2 = "it666";
+        let str3 = str1 + str2;
+        console.log(str1);
+        console.log(str2);
+        console.log(str3);
+        */
+
+        /*
+        let str = "lnj";
+        str.age = 34;
+        str.say = function () {
+            console.log("hello");
+        }
+        console.log(str.age); // undefined
+        str.say(); // str.say is not a function
+        */
+        let str = "www.it666.com";
+        // let str = new String(str);
+        console.log(str.length);
+        str.split(".");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

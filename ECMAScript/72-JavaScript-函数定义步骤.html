@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>72-JavaScript-函数定义步骤</title>
+    <script>
+        /*
+        1.函数定义步骤
+        1.1书写函数的固定格式
+        1.2给函数起一个有意义的名称
+            1.为了提升代码的阅读性
+            2.函数名称也是标识符的一种, 所以也需要遵守标识符的命名规则和规范
+        1.3确定函数的形参列表
+            看看使用函数的时候是否需要传入一些辅助的数据
+        1.4将需要封装的代码拷贝到{}中
+        1.5确定函数的返回值
+            可以通过return 数据; 的格式, 将函数中的计算结果返回给函数的调用者
+        */
+        function getSum(a, b){ // a = num1, b = num2;
+            let res = a + b; // let res = 10 + 20; let res = 30;
+            // 将res返回给函数的调用者
+            return res;
+        }
+        /*
+        // 需求: 要求计算两个变量的和
+        let num1 = 10;
+        let num2 = 20;
+        let res = num1 + num2;
+        console.log(res);
+
+        let value1 = 30;
+        let value2 = 20;
+        let res2 = value1 +value2;
+        console.log(res2);
+        */
+        let num1 = 10;
+        let num2 = 20;
+        let result = getSum(num1, num2); // let result = res; let result = 30;
+        console.log(result);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

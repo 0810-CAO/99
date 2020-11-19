@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>117-JavaScript-获取对象类型</title>
+    <script>
+        /*
+        let obj = new Object();  --> object
+        let arr = new Array(); --> Array
+        let p = new Person(); --> Person
+        */
+        let obj = new Object();
+        console.log(typeof obj); // object
+
+        let arr = new Array();
+        // console.log(typeof arr); // object
+        console.log(arr.constructor.name); // Array
+
+
+        function Person() {
+            // let obj = new Object();
+            // let this = obj;
+            this.name = "lnj";
+            this.age = 34;
+            this.say = function () {
+                console.log(this.name, this.age);
+            }
+            // return this;
+        }
+        let p = new Person();
+        // console.log(typeof p); // object
+        console.log(p.constructor.name); // Person
+    </script>
+</head>
+<body>
+
+</body>
+</html>

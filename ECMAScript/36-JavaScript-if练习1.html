@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>36-JavaScript-if练习1</title>
+    <script>
+        /*需求: 接收用户输入的整数, 判断是否是偶数, 偶数输出YES, 奇数输出NO*/
+       let num = prompt("请输入一个整数");
+       // num % 2 === 0 ? alert("YES") : alert("NO");
+       // num % 2 === 0 ? alert("YES") num = 666 : alert("NO") num = 123;
+        if(num % 2 === 0){
+            alert("YES");
+            num = 666;
+        }else{
+            alert("NO");
+            num = 123;
+        }
+
+        console.log(num);
+        /*
+        在企业开发中, 如果条件满足之后只有一句代码需要执行, 那么就使用三目运算符
+        在企业开发中, 如果条件满足之后有多句代码需要执行, 那么就使用选择结构
+        */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

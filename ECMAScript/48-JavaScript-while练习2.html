@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>48-JavaScript-while练习2</title>
+    <script>
+        /*提示用户输入一个正整数n， 计算1 + 2 + 3 + ...n的和
+        规律:
+        1.每次都是使用上一次的和加上当前的一个数
+        2.每次加上的这个数都是一个递增的数据
+        1 + 2 + 3 + 4;
+    0 + 1
+        1 + 2
+            3 + 3
+                6 + 4
+        */
+        // 1.定义一个变量保存上一次相加的和
+        let sum = 0;
+        // 2.定义一个变量保存每次递增的那个数
+        let num = 1;
+        // 3.利用上一次的和加上递增的数
+        /*
+        sum = sum + num; // sum = 0 + 1;
+        num++; // 2
+
+        sum = sum + num; // sum = 1 + 2
+        num++; // 3
+
+        sum = sum + num; // sum = 3 + 3
+        num++; // 4
+
+        sum = sum + num; // sum = 6 + 4
+        */
+        while (num <= 5){
+            sum = sum + num; // sum = 1 + 2
+            num++; // 3
+        }
+        console.log(sum);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

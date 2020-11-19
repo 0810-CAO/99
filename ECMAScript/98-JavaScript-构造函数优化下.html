@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>98-JavaScript-构造函数优化下</title>
+    <script>
+        // let fns = {
+        //     mySay: function () {
+        //         console.log("hello world");
+        //     }
+        // }
+        function Person(myName, myAge) {
+            // let obj = new Object();  // 系统自动添加的
+            // let this = obj; // 系统自动添加的
+            this.name = myName;
+            this.age = myAge;
+            // this.say = fns.mySay;
+            // return this; // 系统自动添加的
+        }
+        Person.prototype = {
+            say: function () {
+                console.log("hello world");
+            }
+        }
+        let obj1 = new Person("lnj", 34);
+        obj1.say();
+        let obj2 = new Person("zs", 44);
+        obj2.say();
+        console.log(obj1.say === obj2.say); // true
+        // console.log(Person.prototype);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

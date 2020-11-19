@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16-JavaScript算数运算符注意点</title>
+    <script>
+        /*
+        1.加法运算的注意点
+        1.1任何非数值类型的数据在参与加法运算之前, 都会被自动的转换成数值类型之后, 再参与运算
+        1.2任何数据和NaN进行运算, 结果都是NaN
+        1.3任何数据和字符串相加, 都会被先转换成字符串之后再运算
+
+        2.减法运算的注意点
+        1.1任何非数值类型的数据在参与加法运算之前, 都会被自动的转换成数值类型之后, 再参与运算
+        1.2任何数据和NaN进行运算, 结果都是NaN
+        1.3任何数据和字符串相减, 都会先把字符串转换成数值类型之后再运算
+
+        3.乘法和除法运算的注意点
+        和减法运算的注意点一模一样
+
+        4.取模(取余)运算注意点
+        格式: m%n = 余数
+        4.1如果m>n的, 那么就正常取余
+        4.2如果m<n的, 那么结果就是m
+        4.3如果n是0, 那么结果就是NaN
+        4.4取余运算结果的正负性, 取决于m而不是n
+        */
+        /*
+        // let res = 1 + true; // let res = 1 + 1;
+        // let res = 1 + null; // let res = 1 + 0;
+        // let res = 1 + NaN;
+        let res = 1 + "123"; // let res = "1" + "123";  字符串相加的本质就是字符串拼接 "1123"
+        console.log(res);
+        */
+
+        /*
+        // let res = 1 - true; // let res = 1 - 1;
+        // let res = 1 - NaN;
+        let res = 1 - "123";  // let res = 1 - 123;   -122
+        console.log(res);
+        */
+
+        // let res = 10 % 3;
+        // let res = 3 % 10;
+        // let res = 3 % 0;
+        // let res = 10 % -3; // 1
+        let res = -10 % 3;   // -1
+        console.log(res);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

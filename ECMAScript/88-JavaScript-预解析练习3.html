@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>88-JavaScript-预解析练习3</title>
+    <script>
+        // 1.下列程序的执行结果是什么?
+        // 在ES6之前没有块级作用域, 并且没有将这两个函数定义到其它的函数中,
+        // 所以这两个函数应该属于全局作用域
+        // 注意点:
+        // 1.在高级浏览器中, 不会对{}中定义的函数进行提升
+        // 2.只有在低级浏览器中, 才会按照正常的方式解析
+        if(true){
+            function demo() {
+                console.log("hello demo1111111111");
+            }
+        }else{
+            function demo() {
+                console.log("hello demo2222222222");
+            }
+        }
+        demo();
+        /*
+        function demo() {
+            console.log("hello demo1111111111");
+        }
+        function demo() {
+            console.log("hello demo2222222222");
+        }
+        if(true){}else{}
+        demo();
+        */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

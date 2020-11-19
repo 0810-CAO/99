@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>35-JavaScript-if注意点</title>
+    <script>
+        // 1.对于非布尔类型的数据, 会先转换成布尔类型再判断
+        /*
+        // if(null){
+        if(1){
+            console.log("语句A");
+        }
+        console.log("语句B");
+        */
+
+        // 2.对于==/===判断, 将常量写在前面
+        /*
+        let num = 10;
+        // if(num = 5){
+        if(5 == num){
+            console.log("语句A");
+        }
+        console.log("语句B");
+        */
+
+        // 3.if/else if/else后面的大括号都可以省略, 但是省略之后只有紧随其后的语句受到控制
+        /*
+        if(false)
+            console.log("语句A");
+            console.log("语句B");
+       */
+
+        // 4.在JavaScript中分号(;)也是一条语句(空语句)
+        /*
+        if(false);
+        {
+            console.log("语句A");
+            console.log("语句B");
+        }
+        */
+
+        // 5.if选择结构可以嵌套使用
+        /*
+        if(true){
+            if(false){
+                console.log("语句A1");
+            }else{
+                console.log("语句B1");
+            }
+        }else{
+            if(false){
+                console.log("语句A2");
+            }else{
+                console.log("语句B2");
+            }
+        }
+        */
+
+        // 6.当if选择结构省略大括号时, else if/else会自动和距离最近没有被使用的if匹配
+        if(0)
+            if(1)
+                console.log("A");
+            else
+                console.log("B");
+        else
+            if (1)
+                console.log("C");
+            else
+                console.log("D");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>89-JavaScript-预解析练习4</title>
+    <script>
+        // 1.下列程序的执行结果是什么?
+        // 注意点: 如果变量名称和函数名称同名, 那么函数的优先级高于变量
+        // 一定要记住, 在企业开发中千万不要让变量名称和函数名称重名
+        console.log(value); // 会输出函数的定义
+        var value = 123;
+        function value() {
+            console.log("fn value");
+        }
+        console.log(value); // 会输出123
+        /*
+        function value() {
+            console.log("fn value");
+        }
+        console.log(value);
+        var value;
+        value = 123;
+        console.log(value);
+        */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>87-JavaScript-预解析练习2</title>
+    <script>
+        // 1.下列程序的执行结果是什么?
+        var a = 666;
+        test();
+        function test() {
+            var b = 777;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            var a = 888;
+            let c = 999;
+        }
+        /*
+        var a;
+        function test() {
+           var b;
+           var a;
+           b = 777;
+            console.log(a); // undefined
+            console.log(b); // 777
+            console.log(c); // 报错
+            a = 888;
+            let c = 999;
+        }
+        a = 666;
+        test();
+        */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

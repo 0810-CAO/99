@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-转换为字符串类型</title>
+    <script>
+        /*
+        1.将Number类型转换为字符串类型
+        2.将Boolean类型转换为字符串类型
+        3.将undefined类型转换为字符串类型
+        4.将null类型转换为字符串类型
+
+        在JavaScript中如果想将以上的四种基本数据类型转换为字符串类型, 常用的方法有三种
+        1.对于Number类型和Boolean类型来说, 可以通过 变量名称.toString()的方式来转换
+        2.可以通过String(常量or变量);转换为字符串
+        3.还可以通过 变量or常量 + "" / 变量or常量 + ''转换为字符串
+        */
+        /*
+        let value = 123;
+        console.log(value); // 在谷歌浏览器的控制台中如果是Number类型是蓝色的
+        console.log(typeof value);
+        // 以下代码的含义: 将value变量中存储的数据拷贝一份, 然后将拷贝的数据转换为字符串之后返回
+        let str = value.toString();
+        console.log(str); // 在谷歌浏览器的控制台中如果是String类型是灰色的
+        console.log(typeof str);
+        // 注意点: 变量名称.toString是对拷贝的数据进行转换, 所以不会影响到原有的数据
+        console.log(value);
+        console.log(typeof value);
+        // 注意点: 不能使用常量直接调用toString方法, 因为常量是不能改变的
+        let str2 = 123.toString();
+        */
+        /*
+        let value = true;
+        console.log(value);
+        console.log(typeof value);
+        let str = value.toString();
+        console.log(str);
+        console.log(typeof str);
+        */
+        /*
+        // let value1 = undefined;
+        // let str1 = value1.toString();
+        let value2 = null;
+        let str2 = value2.toString();
+        */
+
+        /*------------------华丽的分割线------------------*/
+        /*
+        let value = undefined;
+        console.log(value);
+        console.log(typeof value);
+        // 以下代码的含义: 根据传入的数据重新生成一个新的字符串
+        let str = String(value);
+        console.log(str);
+        console.log(typeof str);
+        */
+        /*
+        let value = null;
+        console.log(value);
+        console.log(typeof value);
+        let str = String(value);
+        console.log(str);
+        console.log(typeof str);
+        */
+        /*
+        let value = 123;
+        console.log(value);
+        console.log(typeof value);
+        let str = String(value);
+        console.log(str);
+        console.log(typeof str);
+        */
+        /*
+        // 注意点: 变量名称.toString()的方式前面不能是常量, 因为常量不能被改变
+        //          String(常量or变量), 因为是根据传入的值重新生成一个新的值, 并不是修改原有的值
+        let str = String(123);
+        console.log(str);
+        console.log(typeof str);
+        */
+        /*
+        let value = true;
+        console.log(value);
+        console.log(typeof value);
+        let str = String(value);
+        console.log(str);
+        console.log(typeof str);
+        */
+
+        /*------------------华丽的分割线------------------*/
+        /*
+        let value = 123;
+        // let str = value + '';
+        let str = value + "";
+        console.log(str);
+        console.log(typeof str);
+        */
+        let str = 123 + ''; // +''或者+""底层的本质其实就是调用String()函数
+        console.log(str);
+        console.log(typeof str);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

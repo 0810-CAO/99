@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>47-JavaScript-while练习1</title>
+    <script>
+        /*打印1～100之间 7的倍数，并统计个数*/
+        // console.log(1);
+        // console.log(2);
+        // console.log(3);
+        // console.log(4);
+
+        /*
+        书写循环结构代码的规则
+        1.不管三七二一先写上循环结构的代码
+        2.将需要重复执行的代码拷贝到{}中
+        3.在()中指定循环结束的条件
+        */
+        let num = 1;
+        let count = 0;
+        while(num <= 21){
+            // console.log(num);
+            if(num % 7 === 0){
+                console.log(num);
+                count++;
+            }
+            num++;
+        }
+        console.log(count);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>23-JavaScript逻辑运算符2</title>
+    <script>
+        /*
+        1.逻辑运算符的优先级和结合性
+        逻辑运算符的结合性是左结合性(从左至右的运算)
+        在逻辑运算中&&的优先级高于||
+
+        2.逻辑运算符的注意点
+        2.1在逻辑运算中如果不是布尔类型, 那么会先转换成布尔类型, 再参与其它的运算
+        2.2在逻辑与运算中, 如果参与运算的不是布尔类型, 返回值有一个特点
+        格式: 条件A && 条件B
+        如果条件A不成立, 那么就返回条件A
+        如果条件A成立, 无论条件B是否成立, 都会返回条件B
+        2.3在逻辑或运算中, 如果参与运算的不是布尔类型, 返回值有一个特点
+        格式: 条件A || 条件B
+        如果条件A成立, 那么就返回条件A
+        如果条件A不成立, 无论条件B是否成立, 都会返回条件B
+
+        2.4在逻辑与运算中,有一个逻辑短路现象
+        格式: 条件A && 条件B
+        由于逻辑与运算的规则是一假则假, 所以只要条件A是假, 那么条件B就不会运算
+        2.5在逻辑或运算中,有一个逻辑短路现象
+        格式: 条件A || 条件B
+        由于逻辑或运算的规则是一真则真, 所以只要条件A是真, 那么条件B就不会运算
+        */
+        /*
+        // let res = true  && false;
+        // let res = false;
+
+        // let res = true || false;
+        // let res = true;
+        let res = true || false && false;
+        console.log(res);
+        */
+
+        /*
+        // let res = !0; // let res = !false;
+        let res = !1; // let res = !true;
+        console.log(res);
+        */
+
+        /*
+        // 如果条件A不成立, 那么就返回条件A
+        // let res = 0 && 123;
+        // let res = null && 123;
+
+        // 如果条件A成立, 无论条件B是否成立, 都会返回条件B
+        // let res = 1 && 123;
+        let res = 1 && null;
+        console.log(res);
+        */
+
+        /*
+        // 如果条件A成立, 那么就返回条件A
+        // let res = 666 || 0;
+        // 如果条件A不成立, 无论条件B是否成立, 都会返回条件B
+        // let res = 0 || 123;
+        let res = 0 || null;
+        console.log(res);
+        */
+
+        let num = 1;
+        //          false
+        // let res = (10 > 20) && (++num > 0);
+        //          true
+        let res = (10 < 20) || (++num > 0);
+        console.log(num);
+        console.log(res);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

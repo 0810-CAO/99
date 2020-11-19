@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>86-JavaScript-预解析练习1</title>
+    <script>
+        // 1.下列程序的执行结果是什么?
+        var num = 123;
+        fun();
+        function fun() {
+            console.log(num);
+            var num = 666;
+        }
+        /*
+        var num;
+        function fun() {
+           var num;
+           console.log(num); // undefined
+           num = 666;
+        }
+        num = 123;
+        fun();
+        */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

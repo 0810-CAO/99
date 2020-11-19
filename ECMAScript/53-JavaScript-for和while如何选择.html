@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>53-JavaScript-for和while如何选择</title>
+    <script>
+        /*
+        // 1.初始化表达式
+        let num = 1;
+        // 2. 条件表达式
+        while (num <= 10){
+            console.log("发射子弹" + num);
+            // 3.循环后增量表达式
+            num++;
+        }
+        // 如果是while循环, 在循环结束之后还可以使用用于控制循环结束的变量
+        console.log(num);
+        */
+        // 1.初始化表达式
+        let num = 1;
+        // 2. 条件表达式
+        for(;num <= 10;num++){
+            console.log("发射子弹" + num);
+            // 3.循环后增量表达式
+            // num++;
+        }
+        // 如果是for循环, 在循环结束之后可以让外界使用, 也可以不让外界使用
+        console.log(num);
+        // 在企业开发中由于for循环比while循环要灵活, 所以能用for循环就用for循环
+    </script>
+</head>
+<body>
+
+</body>
+</html>

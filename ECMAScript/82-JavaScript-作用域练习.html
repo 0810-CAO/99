@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>82-JavaScript-作用域练习</title>
+    <script>
+        // 1.找出下列哪些是全局变量,哪些是局部变量
+        /*
+        var num1 = 123; // 全局变量
+        function test() {
+            var num2 = 456; // 局部变量
+        }
+        {
+            var num3 = 789; // 全局变量
+        }
+        function test() {
+            num4 = 666; // 全局变量
+        }
+        */
+
+        // 2.找出下列哪些是全局变量,哪些是局部变量
+        /*
+        let num1 = 123; // 全局变量
+        function test() {
+            let num2 = 456; // 局部变量
+        }
+        {
+            let num3 = 789; // 局部变量
+        }
+        function test() {
+            num4 = 666; // 全局变量
+        }
+        */
+
+        // 3.下列代码运行是否会报错
+        /*
+        var num = 123;
+        var num = 456; // 不会报错
+        */
+        /*
+        {
+           var num = 123;
+            {
+                var num = 456; // 不会报错
+            }
+        }
+        */
+        /*
+        console.log(num); // 不会报错
+        var num = 123;
+        */
+
+        // 4.下列代码运行是否会报错
+        /*
+        let num = 123;
+        let num = 456; // 会报错
+        */
+        /*
+        {
+           let num = 123;
+            {
+            // 注意点: 在不同的作用域范围内, 是可以出现同名的变量的
+                let num = 456; // 不会报错
+            }
+        }
+        */
+        /*
+        console.log(num); // 会报错
+        let num = 123;
+        */
+
+        // 5.下列代码运行是否会报错
+        /*
+        // 注意点: 只要出现了let, 在相同的作用域内, 就不能出现同名的变量
+        let num = 123;
+        var num = 456; // 会报错
+        */
+        /*
+        var num = 123;
+        let num = 456; // 会报错
+        */
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

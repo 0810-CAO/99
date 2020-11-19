@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19-JavaScript自增自减运算符注意点</title>
+    <script>
+        /*
+        1.自增自减运算符只能出现在变量的前面或者后面, 不能出现在常量或者表达式的前面或者后面
+        2.什么是表达式?
+        表达式就是用运算符连接在一起有意义有结果的语句, 我们就称之为表达式
+        1 + 1;  表达式
+        a * 5;  表达式
+
+        3.在企业开发中自增自减运算符最好单独出现, 不要出现在表达式中
+        */
+        // let num = 1;
+        // ++num;
+        // num--;
+
+        // --666; 错误的写法
+        // 666++;
+
+        // (1 + 1)++; 错误的写法
+        // --(1 + 1);
+
+        let a, b;
+        a = 10;
+        b = 5;
+        // 不推荐的写法
+        // let res = a++ + b; //  let res = a + b; a++;
+        let res = a + b;
+        a++;
+        console.log(res);
+        console.log(a);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

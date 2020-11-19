@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>114-JavaScript-多态</title>
+    <script>
+        /*
+        1.什么是强类型语言, 什么是是弱类型语言
+        1.1什么是强类型语言:
+        一般编译型语言都是强类型语言,
+        强类型语言，要求变量的使用要严格符合定义
+        例如定义 int num; 那么num中将来就只能够存储整型数据
+        1.2什么是弱类型语言:
+        一般解释型语言都是弱类型语言,
+        弱类型语言, 不会要求变量的使用要严格符合定义
+        例如定义 let num; num中既可以存储整型, 也可以存储布尔类型等
+        1.3由于js语言是弱类型的语言, 所以我们不用关注多态
+
+        2.什么是多态?
+        多态是指事物的多种状态
+        例如:
+        按下 F1 键这个动作，
+        如果当前在 webstorm 界面下弹出的就是 webstorm 的帮助文档；
+        如果当前在 Word 下弹出的就是 Word 帮助；
+        同一个事件发生在不同的对象上会产生不同的结果。
+
+        3.多态在编程语言中的体现
+        父类型变量保存子类型对象, 父类型变量当前保存的对象不同, 产生的结果也不同
+        */
+
+        // function Animal(myName) {
+        //     this.name = myName;
+        //     this.eat = function () {
+        //         console.log(this.name + " 动物吃东西");
+        //     }
+        // }
+        function Dog() {
+            // Animal.call(this, myName);
+            this.eat = function () {
+                console.log(" 狗吃东西");
+            }
+        }
+        // Dog.prototype = new Animal();
+        // Dog.prototype.constructor = Dog;
+
+        function Cat() {
+            // Animal.call(this, myName);
+            this.eat = function () {
+                console.log(" 猫吃东西");
+            }
+        }
+        // Cat.prototype = new Animal();
+        // Cat.prototype.constructor = Cat;
+
+        // function feed(Dog animal) {
+        //     animal.eat(); // 狗吃东西
+        // }
+        // function feed(Cat animal) {
+        //     animal.eat(); // 猫吃东西
+        // }
+        // function feed(Animal animal) {
+        //     animal.eat(); // 狗吃东西
+        // }
+        function feed(animal){
+            animal.eat();
+        }
+        let dog = new Dog();
+        feed(dog);
+
+        let cat = new Cat();
+        feed(cat);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

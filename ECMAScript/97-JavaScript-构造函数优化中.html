@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>97-JavaScript-构造函数优化中</title>
+    <script>
+        // function mySay() {
+        //     console.log("hello world");
+        // }
+        let fns = {
+            mySay: function () {
+                console.log("hello world");
+            }
+        }
+        function Person(myName, myAge) {
+            // let obj = new Object();  // 系统自动添加的
+            // let this = obj; // 系统自动添加的
+            this.name = myName;
+            this.age = myAge;
+            this.say = fns.mySay;
+            // return this; // 系统自动添加的
+        }
+        let obj1 = new Person("lnj", 34);
+        let obj2 = new Person("zs", 44);
+        console.log(obj1.say === obj2.say); // true
+        /*
+        let fns = {
+            test: function () {
+                console.log("test");
+            }
+        }
+        // 由于test函数都是属于同一个对象, 所以返回true
+        console.log(fns.test === fns.test); // true
+        */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

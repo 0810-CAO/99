@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>122-JavaScript-对象遍历</title>
+    <script>
+        /*
+        1.在JavaScript中对象和数组一样是可以遍历的
+
+        2.什么是对象的遍历?
+        对象的遍历就是依次取出对象中所有的属性和方法
+
+        3.如何遍历一个对象?
+        在JS中可以通过高级for循环来遍历对象
+        以下代码的含义: 将指定对象中所有的属性和方法的名称取出来了依次的赋值给key这个变量
+        for(let key in obj){}
+        */
+        /*
+        class Person{
+            constructor(myName, myAge){
+                this.name = myName;
+                this.age = myAge;
+            }
+            // 注意点: ES6定义类的格式, 会将方法默认放到原型对象中
+            say(){
+                console.log(this.name, this.age);
+            }
+        }
+        */
+
+        function Person(myName, myAge){
+            this.name = myName;
+            this.age = myAge;
+            this.say = function(){
+                console.log(this.name, this.age);
+            }
+        }
+        let p = new Person("LNJ", 34);
+        console.log(p);
+        for(let key in p){
+            if(p[key] instanceof Function){
+                continue;
+            }
+            // console.log(key); // name / age / say
+            // 注意点: 以下代码的含义取出p对象中名称叫做当前遍历到的名称的属性或者方法的取值
+            console.log(p[key]); // p["name"] / p["age"] / p["say"]
+            // 注意点: 以下代码的含义取出p对象中名称叫做key的属性的取值
+            // console.log(p.key); // undefined
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

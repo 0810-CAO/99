@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>131-JavaScript-删除数组元素注意点</title>
+    <script>
+        let arr = [1, 2, 3, 4, 5];
+        // 需求: 遍历的同时删除数组中所有元素
+        // arr.splice(2, 1);
+        // delete arr[2];
+        console.log(arr);
+        /*
+        //       0     0 < 5
+        //       1     1 < 4
+        //       2     2 < 3
+        //       3     3 < 2
+        // for(let i = 0; i < arr.length; i++){
+        let len = arr.length;
+        // for(let i = 0; i < len; i++){
+        for(let i = len - 1; i >= 0; i--){
+            // console.log(arr.length); // 5, 4, 3
+            // console.log(len);
+            arr.splice(i, 1);
+        }
+        */
+        for(let i = 0; i < arr.length; i++){
+            console.log(arr.length);
+            // 注意点: 通过delete来删除数组中的元素, 数组的length属性不会发生变化
+            delete arr[i];
+        }
+        console.log(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

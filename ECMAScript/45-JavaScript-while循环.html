@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>45-JavaScript-while循环</title>
+    <script>
+        /*
+        1.if的格式
+        if(条件表达式){
+            条件满足执行的语句;
+        }
+        if的特点: 只有条件表达式为真才会执行后面{}中的代码
+                  大括号中的代码只会被执行一次
+
+        2.while的格式
+        while(条件表达式){
+            条件满足执行的语句;
+        }
+        while的特点: 只有条件表达式为真才会执行后面{}中的代码
+                     大括号中的代码有可能会被执行多次
+
+        3.while的执行流程
+        3.1首先会判断条件表达式是否为真, 如果为真就执行后面{}中的代码
+        3.2执行完后面{}中的代码, 会再次判断条件表达式是否还为真
+        3.3如果条件表达式还为真, 那么会再次执行后面{}中的代码
+        3.4重复3.1~3.3, 直到条件表达式不为真为止
+        */
+        /*
+        console.log("发射子弹1");
+        console.log("发射子弹2");
+        console.log("发射子弹3");
+        console.log("发射子弹4");
+        console.log("发射子弹5");
+        console.log("发射子弹6");
+        console.log("发射子弹7");
+        console.log("发射子弹8");
+        console.log("发射子弹9");
+        console.log("发射子弹10");
+        */
+
+        /*
+        书写循环结构的规则
+        1.不管三七二十一先写上循环结构的代码
+        2.将需要重复执行的代码拷贝到{}中
+        3.再()中指定循环的结束条件
+        */
+        let num = 1;
+        while(num <= 10){
+            console.log("发射子弹" + num);
+            num++;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

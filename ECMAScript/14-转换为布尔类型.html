@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14-转换为布尔类型</title>
+    <script>
+        /*
+        1.将String类型转换为布尔类型
+        只要字符串中有内容都会转换为true, 只有字符串中没有内容才会转换为false
+
+        2.将Number类型转换为布尔类型
+        只有数值是0才会转换为false, 其它的都会转换为true
+        如果是NaN也会转换为false
+
+        3.将undefined类型转换为布尔类型
+        undefined会转换为false
+
+        4.将null类型转换为布尔类型
+         null会转换为false
+
+
+        空字符串/0/NaN/undefined/null 会转换成false, 其它的都是true
+
+        在JavaScript中如果想将基本数据类型转换为布尔类型, 那么只需要调用Boolean(常量or变量)
+        */
+        /*
+        // let str = "abc"; // true
+        // let str = "     "; // true
+        let str = ""; // false
+        let flag = Boolean(str);
+        console.log(flag);
+        console.log(typeof flag);
+        */
+        /*
+        // let num = 999; // true
+        // let num = -123; // true
+        // let num = -0; // false
+        let num = 0; // false
+        let flag = Boolean(num);
+        console.log(flag);
+        console.log(typeof flag);
+        */
+        /*
+        // 注意点: 在JavaScript中NaN属于Number类型
+        let num = NaN;
+        // console.log(typeof num);
+        let flag = Boolean(num);
+        console.log(flag);
+        console.log(typeof flag);
+        */
+
+        // let value = undefined; // false
+        let value = null; // false
+        let flag = Boolean(value);
+        console.log(flag);
+        console.log(typeof flag);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
