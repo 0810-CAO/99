@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>幽灵打字</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            background: url("images/bg.jpg") center center no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+        img{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .specter{
+            width: 300px;
+            height: 300px;
+            background: url("images/yy.png") no-repeat;
+            position: absolute;
+            top: 1000px;
+        }
+        .specter>span{
+            position: absolute;
+            left: 70px;
+            top: 200px;
+            font-size: 60px;
+            font-weight: bold;
+            text-shadow: 5px 5px 5px #3e437a;
+        }
+    </style>
+</head>
+<body>
+<img src="images/play.png" alt="">
+<!--
+注意点:
+在谷歌浏览器中默认情况下不允许自动播放音乐, 只有用户和网页交互之后才可以播放音乐
+解决方案一:
+修改谷歌浏览器的配置
+1.在地址栏输入: chrome://flags/
+2.在搜索框输入: autoplay
+3.修改autoplay的选项为 no user xxx
+解决方案二:
+让用户和网页交互之后再播放
+-->
+<audio src="media/bg.ogg" loop></audio>
+<div class="specter"><span>m</span></div>
+<script>
+    let oImg = document.querySelector("img");
+    let oAudio = document.querySelector("audio");
+    let list = []; // 定义数组保存所有创建出来的鬼魂对象
+    oImg.onclick = function () {
+        // 1.移出开始游戏按钮
+        oImg.parentNode.removeChild(oImg);
+        oAudio.play();
+        // 2.创建幽灵
+        setInterval(function () {
+            let s =  new Specter();
+            s.fly();
+            list.push(s);
+            // list=new Set(list.push(s));
+        }, 1000);
+    };
+    class Specter{
+        constructor(){
+            // 1.创建div并设置样式
+            let oDiv = document.createElement("div");
+            oDiv.style.top = "1000px";
+            oDiv.style.left = Math.random() * 1440 + "px";
+            // 2.创建span并设置内容
+            let oSpan = document.createElement("span");
+            // 添加随机字母
+            let key = this.generateKey();
+            oSpan.innerText = key;
+            // 便于消除幽灵
+            oDiv.className = "specter " + key;
+            // 3.将span添加到div中
+            oDiv.appendChild(oSpan);
+            // 4.将div添加到body中
+            document.body.appendChild(oDiv);
+            // 保存当前的盒子
+            this.oDiv = oDiv;
+        }
+        bomb(){
+            // 1.删除当前的幽灵
+            document.body.removeChild(this.oDiv);
+            // 2.删除当前幽灵对应的定时器
+            clearInterval(this.timer);
+        }
+        fly(){
+            // 1.获取幽灵当前的top值
+            let offset = parseInt(this.oDiv.style.top);
+            /*
+            let self = this;
+            // 2.开启定时器不断修改幽灵位置 注意this调用的对象
+            this.timer = window.setInterval(function () {
+                // console.log(this);
+                // console.log(self);
+                offset -= 20;
+                if(offset <= -300){
+                    self.bomb();
+                }
+                self.oDiv.style.top = offset + "px";
+            }, 200);
+            */
+          //  此时的this是fly函数中的
+            this.timer = window.setInterval(()=>{
+                offset -= 20;
+                // 一个幽灵完全移除屏幕
+                if(offset <= -300){
+                    this.bomb();
+                }
+                this.oDiv.style.top = offset + "px";
+            }, 200);
+        }
+        generateKey(){
+            let num = Math.floor(Math.random() * (90 - 65 + 1)) + 65;
+            return String.fromCharCode(num);//数值转换为字母
+        }
+    }
+    document.body.onkeydown = function (event) {
+        // console.log(event.keyCode);
+        // console.log(event.key);
+        let key = event.key.toUpperCase();
+        // console.log(key);
+        let oDiv = document.querySelector("." + key);
+        // console.log(oDiv);
+        // document.body.removeChild(oDiv);
+        // 1.根据div找到这个div对应的鬼魂对象在数组中的位置
+        let currentIndex = list.findIndex(function (currentValue) {
+            return currentValue.oDiv === oDiv;
+        });
+        if(currentIndex === -1) return;
+        // 2.根据位置取出对应的鬼魂对象
+        let currentSpecter = list[currentIndex];
+        // 3.将鬼魂对应的div从body中删除
+        currentSpecter.bomb();
+        list.splice(currentIndex, 1);
+    }
+</script>
+</body>
+</html>
