@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>55-JavaScript-offsetParent</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .grand-father{
+            width: 300px;
+            height: 300px;
+            margin-top: 100px;
+            margin-left: 100px;
+            background: deeppink;
+            overflow: hidden;
+            position: relative;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            margin-top: 100px;
+            margin-left: 100px;
+            background: blue;
+            overflow: hidden;
+            position: relative;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            margin-top: 100px;
+            margin-left: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="grand-father">
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</div>
+<script>
+    /*
+    1.offsetParent作用
+    获取元素的第一个定位祖先元素
+    如果没有祖先元素是定位的, 那么就是获取到的就是body
+    */
+    let oSDiv = document.querySelector(".son");
+    oSDiv.onclick = function () {
+        console.log(oSDiv.offsetParent);
+    }
+</script>
+</body>
+</html>

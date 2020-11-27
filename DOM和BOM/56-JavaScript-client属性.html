@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>56-JavaScript-client属性</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            padding: 50px;
+            border: 50px solid #000;
+            background: red;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    /*
+    1.offsetWidth = 宽度 + 内边距 + 边框
+     offsetHeight = 高度 + 内边距 + 边框
+    2.clientWidth = 宽度 + 内边距
+     clientHeight = 高度 + 内边距
+    */
+    let oDiv = document.querySelector("div");
+    // console.log(oDiv.clientWidth);
+    // console.log(oDiv.clientHeight);
+
+    /*
+    1.offsetLeft/offsetTop: 距离第一个定位祖先元素偏移位 || body
+    2.clientLeft/clientTop: 左边框 和 顶部边框
+    */
+    console.log(oDiv.clientLeft);
+    console.log(oDiv.clientTop);
+    oDiv.scrollWidth
+</script>
+</body>
+</html>

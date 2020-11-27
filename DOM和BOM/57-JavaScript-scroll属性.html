@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>57-JavaScript-scroll属性</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            padding: 50px;
+            border: 50px solid #000;
+            background: red;
+            background-clip: content-box;
+            color: deepskyblue;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    我是内容<br/>
+    我是内容<br/>
+    我是内容<br/>
+    我是内容<br/>
+    我是内容<br/>
+    我是内容<br/>
+    我是内容<br/>
+    我是内容<br/>
+    我是内容<br/>
+    我是内容<br/>
+    我是内容<br/>
+    我是内容<br/>
+    我是内容<br/>
+    我是内容<br/>
+</div>
+<script>
+    /*
+    1.内容没有超出元素范围时
+    scrollWidth: = 元素宽度 + 内边距宽度 == clientWidth
+    scrollHeight: = 元素高度 + 内边距的高度 == clientHeight
+    */
+    let oDiv = document.querySelector("div");
+    // console.log(oDiv.scrollWidth);
+    // console.log(oDiv.scrollHeight);
+    /*
+    2.内容超出元素范围时
+    scrollWidth: = 元素宽度 + 内边距宽度 + 超出的宽度
+    scrollHeight: = 元素高度 + 内边距的高度 + 超出的高度
+    */
+
+    /*
+    3.scrollTop / scrollLeft
+    scrollTop: 超出元素内边距顶部的距离
+    scrollLeft: 超出元素内边距左边的距离
+    */
+    // console.log(oDiv.scrollTop);
+    oDiv.onscroll = function () {
+        console.log(oDiv.scrollTop);
+    }
+</script>
+</body>
+</html>

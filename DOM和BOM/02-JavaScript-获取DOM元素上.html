@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-JavaScript-获取DOM元素上</title>
+</head>
+<body>
+<!--
+1.在JavaScript中HTML标签也称之为DOM元素
+2.使用document的时候前面不用加window
+var num = 666;
+window.num;
+num;
+同理可证
+window.document;
+document;
+-->
+<div class="father">
+    <form>
+        <input type="text" name="test">
+        <input type="password" name="test">
+    </form>
+</div>
+<div class="father" id="box">我是div</div>
+
+<script>
+    /*
+    1.通过id获取指定元素
+    由于id不可以重复, 所以找到了就会将找到的标签包装成一个对象返回给我们, 找不到就返回Null
+    注意点: DOM操作返回的是一个对象, 这个对象是宿主类型对象(浏览器提供的对象)
+    */
+    /*
+    let oDiv = document.getElementById("box");
+    console.log(oDiv);
+    console.log(typeof oDiv);
+    */
+
+    /*
+    2.通过class名称获取
+    由于class可以重复, 所以找到了就返回一个存储了标签对象的数组, 找不到就返回一个空数组
+    */
+    /*
+    let oDivs = document.getElementsByClassName("father");
+    console.log(oDivs);
+    */
+
+    /*
+    3.通过name名称获取
+    由于name可以重复, 所以找到了就返回一个存储了标签对象的数组, 找不到就返回一个空数组
+    注意点:
+    getElementsByName  在不同的浏览器其中工作方式不同。在IE和Opera中， getElementsByName()  方法还会返回那些 id 为指定值的元素。
+    */
+    /*
+    let oDivs = document.getElementsByName("test");
+    console.log(oDivs);
+    */
+
+    /*
+    4.通过标签名称获取
+    由于标签名称可以重复, 所以找到了就返回一个存储了标签对象的数组, 找不到就返回一个空数组
+    */
+    /*
+    let oDivs =  document.getElementsByTagName("div");
+    console.log(oDivs);
+    */
+
+    /*
+    5.通过选择器获取
+    querySelector只会返回根据指定选择器找到的第一个元素
+    */
+    /*
+    // let oDiv = document.querySelector("#box");
+    // let oDiv = document.querySelector(".father");
+    let oDiv = document.querySelector("div>form");
+    console.log(oDiv);
+    */
+
+    /*
+    6.通过选择器获取
+    querySelectorAll会返回指定选择器找到的所有元素
+    */
+    let oDivs = document.querySelectorAll(".father");
+    console.log(oDivs);
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-JavaScript-元素增删改查</title>
+</head>
+<body>
+<div>
+    <h1>我是标题</h1>
+    <p>我是段落</p>
+</div>
+<script>
+    // 1.创建节点
+    // let oSpan = document.createElement("span");
+    // console.log(oSpan);
+    // console.log(typeof oSpan);
+
+    // 2.添加节点
+    // 注意点: appendChild方法会将指定的元素添加到最后
+    // let oDiv = document.querySelector("div");
+    // oDiv.appendChild(oSpan)
+    // let oA = document.createElement("a");
+    // oDiv.appendChild(oA);
+
+    // 3.插入节点
+    // let oSpan = document.createElement("span");
+    // let oDiv = document.querySelector("div");
+    // let oH1 = document.querySelector("h1");
+    // let oP = document.querySelector("p");
+    // // oDiv.insertBefore(oSpan, oH1);
+    // oDiv.insertBefore(oSpan, oP);
+
+    // 5.删除节点
+    // 注意点: 在js中如果想要删除某一个元素, 只能通过对应的父元素来删除
+    //         元素是不能够自杀的
+    // console.log(oSpan.parentNode);
+    // oSpan.parentNode.removeChild(oSpan);
+    // oDiv.parentNode.removeChild(oDiv);
+
+    // 5.克隆节点
+    // 注意点: cloneNode方法默认不会克隆子元素, 如果想克隆子元素需要传递一个true
+    let oDiv = document.querySelector("div");
+    // let newDiv =  oDiv.cloneNode();
+    let newDiv =  oDiv.cloneNode(true);
+    console.log(newDiv);
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>30-JavaScript-京东秒杀</title>
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 190px;
+            height: 270px;
+            color: #fff;
+            margin: 100px auto;
+            background: #d00;
+            text-align: center;
+            padding-top: 40px;
+            box-sizing: border-box;
+        }
+        .box>h3{
+            font-size: 26px;
+        }
+        .box>p:nth-of-type(1){
+            margin-top: 5px;
+            color: rgba(255,255,255,0.5);
+        }
+        .box>.icon{
+            display: inline-block;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            /* font-size: 40px; */
+        }
+        .box>.time{
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .time>div{
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            background: #333;
+            position: relative;
+        }
+        .time>.minute{
+            margin: 0 10px;
+        }
+        .time>div::before{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #d00;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h3>京东秒杀</h3>
+    <p>FLASH DEALS</p>
+    <svg t="1606114299864" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1713" width="48" height="48"><path d="M424.296155 1023.998c-2.827318 0-4.955805-0.751819-6.369463-2.129486-9.912609-2.872307-13.445757-8.490952-10.619439-16.988902l65.83612-388.614262h-286.690847c-7.075293 0-12.033097-2.836316-14.869414-8.49795-4.240977-5.618645-3.534148-11.987109 2.129487-19.110391l441.709454-577.620671c5.662634-8.49795 12.032098-9.86762 19.109391-4.249975 7.075293 1.412659 10.619438 7.120283 10.619439 16.988902L579.313763 412.398525h252.713043c7.075293 0 12.032098 2.873307 14.868414 8.489952 1.413659 5.663634 1.413659 12.033097 0 19.118389l-407.730651 577.620671c-4.248975 4.240977-9.207779 6.370463-14.869414 6.370463z" fill="#13227a" p-id="1714"></path></svg>
+    <!-- <i class="iconfont icon-lightningbshandian"></i> -->
+    <p>本场距离结束还剩</p>
+    <div class="time">
+        <div class="hour">00</div>
+        <div class="minute">00</div>
+        <div class="second">00</div>
+    </div>
+</div>
+<script>
+    // 1.获取到需要操作的元素
+    let oHour = document.querySelector(".hour");
+    let oMinute = document.querySelector(".minute");
+    let oSecond = document.querySelector(".second");
+
+    // 2.获取时间的差值
+    let remDate = new Date("2020-11-23 16:00:00");
+    setTime(remDate);
+
+    // 3.将差值设置给元素
+    setInterval(function () {
+        setTime(remDate);
+    }, 1000);
+
+    function setTime(remDate) {
+        let obj = getDifferTime(remDate);
+        // console.log(obj);
+        oHour.innerText = obj.hour;
+        oMinute.innerText = obj.minute;
+        oSecond.innerText = obj.second;
+    }
+    function getDifferTime(remDate, curDate = new Date()) {
+        // 1.得到两个时间之间的差值(毫秒)
+        let differTime = remDate - curDate;
+        // let differTime = remDate.valueOf() - curDate.valueOf();
+        // 2.得到两个时间之间的差值(秒)
+        let differSecond = differTime / 1000;
+        // 3.利用相差的总秒数 / 每一天的秒数 = 相差的天数
+        let day = Math.floor(differSecond / (60 * 60 * 24));
+        day = day >= 10 ? day : "0" + day;
+        // 4.利用相差的总秒数 / 小时 % 24;
+        let hour = Math.floor(differSecond / (60 * 60) % 24);
+        hour = hour >= 10 ? hour : "0" + hour;
+        // 5.利用相差的总秒数 / 分钟 % 60;
+        let minute = Math.floor(differSecond / 60 % 60);
+        minute = minute >= 10 ? minute : "0" + minute;
+        // 6.利用相差的总秒数 % 秒数
+        let second = Math.floor(differSecond % 60);
+        second = second >= 10 ? second : "0" + second;
+        return {
+            day: day,
+            hour: hour,
+            minute: minute,
+            second: second,
+        }
+    }
+</script>
+</body>
+</html>

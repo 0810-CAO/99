@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>51-JavaScript-Location</title>
+</head>
+<body>
+<button id="btn1">获取</button>
+<button id="btn2">设置</button>
+<button id="btn3">刷新</button>
+<button id="btn4">强制刷新</button>
+<script>
+    // Location:  代表浏览器地址栏的信息, 通过Location我们就能设置或者获取当前地址信息
+    let oBtn1 = document.querySelector("#btn1");
+    let oBtn2 = document.querySelector("#btn2");
+    let oBtn3 = document.querySelector("#btn3");
+    let oBtn4 = document.querySelector("#btn4");
+    // 获取当前地址栏的地址
+    oBtn1.onclick = function(){
+        console.log(window.location.href);
+    }
+    // 设置当前地址栏的地址
+    oBtn2.onclick = function(){
+        window.location.href = "http://www.it666.com";
+    }
+    // 重新加载界面
+    oBtn3.onclick = function(){
+        window.location.reload();
+    }
+    oBtn4.onclick = function(){
+        window.location.reload(true);
+    }
+</script>
+</body>
+</html>

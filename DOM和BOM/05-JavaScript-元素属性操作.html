@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-JavaScript-元素属性操作</title>
+</head>
+<body>
+<img src="images/1.jpg" alt="我是alt222" title="我是title" nj="666">
+<script>
+    /*
+    无论是通过document创建还是查询出来的标签,系统都会将元素包装成一个对象返回给我们,
+    系统在包装这个对象的时候会自动将元素的属性都包装到这个对象中,
+    所以只要拿到这个对象就可以拿到标签属性,操作标签属性
+    */
+    /*
+    1.如何获取元素属性
+    2.如何修改元素属性
+    3.如何新增元素属性
+    4.如何删除元素属性
+    */
+    /*
+    // let oImg = document.querySelector("img");
+    // let oImg = document.createElement("img");
+    console.dir(oImg);
+    */
+
+    // 1.如何获取元素属性
+    /*
+    let oImg = document.querySelector("img");
+    // console.log(oImg.alt);
+    // console.log(oImg.getAttribute("alt"));
+    // 注意点: 通过对象.属性名称的方式无法获取到自定义属性的取值
+    //         通过getAttribute方法可以获取到自定义属性的取值
+    console.log(oImg.nj);
+    console.log(oImg.getAttribute("nj"));
+    */
+
+    // 2.如何修改元素属性
+    /*
+    let oImg = document.querySelector("img");
+    // oImg.title = "新的title";
+    // oImg.setAttribute("title", "新的title222");
+    // 注意点和获取元素属性一样
+    // oImg.nj = "123";
+    oImg.setAttribute("nj", "123");
+    */
+
+    // 3.如何新增元素属性
+    /*
+    let oImg = document.querySelector("img");
+    // oImg.it666 = "itzb";
+    // 注意点: setAttribute方法如果属性不存在就是新增, 如果属性存在就是修改
+    oImg.setAttribute("it666", "itzb");
+    */
+
+    // 4.如何删除元素属性
+    let oImg = document.querySelector("img");
+    // oImg.alt = "";
+    // oImg.removeAttribute("alt");
+    // 注意点和获取元素属性一样
+    // oImg.nj = "";
+    oImg.removeAttribute("nj");
+</script>
+</body>
+</html>

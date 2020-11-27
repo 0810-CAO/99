@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>70-JavaScript-函数防抖封装</title>
+</head>
+<body>
+<input type="text">
+<script src="js/tools.js"></script>
+<script>
+    let oInput = document.querySelector("input");
+    /*
+    let timerId = null;
+    oInput.oninput = function (event) {
+        timerId && clearTimeout(timerId);
+        timerId = setTimeout(function () {
+            console.log("发送网络请求");
+        }, 1000);
+    }
+     */
+    /*
+    function debounce(fn, delay) { // fn = test
+        let timerId = null;
+        return function () {
+            let self = this;
+            let args = arguments;
+            timerId && clearTimeout(timerId);
+            timerId = setTimeout(function () {
+                // console.log("发送网络请求");
+               // fn();
+                fn.apply(self, args);
+            }, delay || 1000);
+        }
+    }
+    function test(event){
+        // console.log("123456");
+        // console.log("发送网络请求");
+        // console.log("abcdefg");
+        // console.log(this);
+        console.log(event);
+    }
+    // oInput.oninput = debounce(test, 5000);
+    oInput.oninput = debounce(test);
+     */
+
+    oInput.oninput = debounce(function (event) {
+        console.log("发送网络请求");
+        console.log(this);
+        console.log(event);
+    }, 5000);
+</script>
+</body>
+</html>

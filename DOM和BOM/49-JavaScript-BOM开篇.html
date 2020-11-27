@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>49-JavaScript-BOM开篇</title>
+</head>
+<body>
+<script>
+    /*
+    1.什么是BOM?
+    DOM就是一套操作HTML标签的API(接口/方法/属性)
+    BOM就是一套操作浏览器的API(接口/方法/属性)
+
+    2.BOM中常见的对象
+    window: 代表整个浏览器窗口
+    注意: window是BOM中的一个对象, 并且是一个顶级的对象(全局)
+    Navigator: 代表当前浏览器的信息, 通过Navigator我们就能判断用户当前是什么浏览器
+    Location:  代表浏览器地址栏的信息, 通过Location我们就能设置或者获取当前地址信息
+    History:   代表浏览器的历史信息, 通过History来实现刷新/上一步/下一步
+    注意点: 出于隐私考虑, 我们并不能拿到用户所有的历史记录, 只能拿到当前的历史记录
+    Screen:   代表用户的屏幕信息
+     */
+    console.log(window.screen);
+</script>
+</body>
+</html>

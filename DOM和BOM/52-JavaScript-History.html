@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>52-JavaScript-History</title>
+</head>
+<body>
+<h1>我是第一个界面</h1>
+<button id="btn1">前进</button>
+<button id="btn2">刷新</button>
+<a href="52-JavaScript-History2.html">新的界面222</a>
+<script>
+    // History:   代表浏览器的历史信息, 通过History来实现刷新/前进/后退
+    // 注意点: 出于隐私考虑, 我们并不能拿到用户所有的历史记录, 只能拿到当前的历史记录
+    let oBtn1 = document.querySelector("#btn1");
+    let oBtn2 = document.querySelector("#btn2");
+    // 前进
+    /*
+    注意点:
+    只有当前访问过其它的界面, 才能通过forward/go方法前进
+    如果给go方法传递1, 就代表前进1个界面, 传递2就代表进行2个界面
+    */
+    oBtn1.onclick = function () {
+        // window.history.forward();
+        window.history.go(1);
+    }
+    // 刷新
+    // 如果给go方法传递0, 就代表刷新
+    oBtn2.onclick = function () {
+        window.history.go(0);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>39-JavaScript-添加事件三种方式</title>
+</head>
+<body>
+<button id="btn">我是按钮</button>
+<script>
+    var oBtn = document.getElementById("btn");
+    /*
+    方式一:
+    1.通过onxxx的方式来添加
+    注意点: 由于是给属性赋值, 所以后赋值的会覆盖先赋值
+    */
+    /*
+    oBtn.onclick = function () {
+        alert("666");
+    }
+    oBtn.onclick = function () {
+        alert("777");
+    }
+    let obj = {};
+    obj.say = function () {
+        console.log("123");
+    }
+    obj.say = function () {
+        console.log("456");
+    }
+    obj.say();
+    */
+
+    /*
+    方式二:
+    2.通过addEventListener方法添加
+    注意点:
+    1.事件名称不需要添加on
+    2.后添加的不会覆盖先添加的
+    3.只支持最新的浏览器IE9
+    */
+    /*
+    oBtn.addEventListener("click", function () {
+        alert("666");
+    });
+    oBtn.addEventListener("click", function () {
+        alert("777");
+    });
+    */
+
+    /*
+    方式三
+    3.通过attachEvent方法添加
+    注意点:
+    1.事件名称必须加上on
+    2.后添加的不会覆盖先添加的
+    3.只支持低版本的浏览器
+    */
+    /*
+    oBtn.attachEvent("onclick", function () {
+        alert("666");
+    });
+    oBtn.attachEvent("onclick", function () {
+        alert("777");
+    });
+    */
+
+    addEvent(oBtn, "click", function () {
+        alert("666");
+    })
+    addEvent(oBtn, "click", function () {
+        alert("777");
+    })
+    function addEvent(ele, name, fn) {
+        if(ele.attachEvent){
+            ele.attachEvent("on"+name, fn);
+        }else{
+            ele.addEventListener(name, fn);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07-JavaScript-操作元素样式</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script>
+    // 1.设置元素样式
+    /*
+    let oDiv = document.querySelector("div");
+    // 第一种方式
+    // 注意点: 由于class在JS中是一个关键字, 所以叫做className
+    // oDiv.className = "box";
+    // 第二种方式
+    // 注意点: 过去CSS中通过-连接的样式, 在JS中都是驼峰命名
+    // 注意点: 通过JS添加的样式都是行内样式, 会覆盖掉同名的CSS样式
+    oDiv.style.width = "300px";
+    oDiv.style.height = "300px";
+    oDiv.style.backgroundColor = "blue";
+    */
+
+    // 2.获取元素样式
+    let oDiv = document.querySelector("div");
+    // oDiv.style.width = "300px";
+    // 注意点: 通过style属性只能获取到行内样式的属性值, 获取不到CSS设置的属性值
+    // console.log(oDiv.style.width);
+    // 注意点: 如果想获取到CSS设置的属性值, 必须通过getComputedStyle方法来获取
+    // getComputedStyle方法接收一个参数, 这个参数就是要获取的元素对象
+    // getComputedStyle方法返回一个对象, 这个对象中就保存了CSS设置的样式和属性值
+    let style = window.getComputedStyle(oDiv);
+    console.log(style.width);
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-JavaScript-定时器</title>
+</head>
+<body>
+<button id="start">开始</button>
+<button id="close">结束</button>
+<script>
+    /*
+    在JavaScript中有两种定时器, 一种是重复执行的定时器, 一种是只执行一次的定时器
+    */
+    // 1.重复执行的定时器
+    /*
+    // setInterval(function () {
+    //     console.log("随便写点");
+    // }, 1000);
+    let startBtn = document.querySelector("#start");
+    let id = null;
+    startBtn.onclick = function () {
+        id = setInterval(function () {
+            console.log("随便写点");
+        }, 1000);
+    }
+    let closeBtn = document.querySelector("#close");
+    closeBtn.onclick = function () {
+        clearInterval(id);
+    }
+    */
+
+    // 2.只执行一次的定时器
+    // window.setTimeout(function () {
+    //     console.log("随便写点");
+    // }, 5000);
+    let startBtn = document.querySelector("#start");
+    let closeBtn = document.querySelector("#close");
+    let id = null;
+    startBtn.onclick = function () {
+        id = window.setTimeout(function () {
+            console.log("随便写点");
+        }, 5000);
+    }
+    closeBtn.onclick = function () {
+        clearTimeout(id);
+    }
+</script>
+</body>
+</html>

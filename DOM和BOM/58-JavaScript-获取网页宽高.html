@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>58-JavaScript-获取网页宽高</title>
+</head>
+<body>
+<script>
+    /*
+    // 注意点: innerWidth/innerHeight只能在IE9以及IE9以上的浏览器中才能获取
+    // console.log(window.innerWidth);
+    // console.log(window.innerHeight);
+
+    // 注意点: documentElement.clientWidth/documentElement.clientHeight
+    // 可以用于在IE9以下的浏览器的标准模式中获取
+    // 浏览器在渲染网页的时候有两种模式"标准模式"/"混杂模式/怪异模式"
+    // 默认情况下都是以标准模式来进行渲染的(CSS1Compat)
+    // 如果网页没有书写文档声明, 那么就会按照"混杂模式/怪异模式"来进行渲染的(BackCompat)
+    // documentElement  --> HTML  --> 整个网页
+    // console.log(document.documentElement);
+    // console.log(document.documentElement.clientWidth);
+    // console.log(document.documentElement.clientHeight);
+
+    // 注意点: 在混杂模式中利用如下的方式获取可视区域的宽高
+    // console.log(document.compatMode);// CSS1Compat
+    // console.log(document.body.clientWidth);
+    // console.log(document.body.clientHeight);
+    */
+
+    let {width, height} = getScreen();
+    console.log(width);
+    console.log(height);
+
+    function getScreen() {
+        let width, height;
+        if(window.innerWidth){
+            width = window.innerWidth;
+            height = window.innerHeight;
+        }else if(document.compatMode === "BackCompat"){
+            width = document.body.clientWidth;
+            height = document.body.clientHeight;
+        }else{
+            width = document.documentElement.clientWidth;
+            height = document.documentElement.clientHeight;
+        }
+        return {
+            width: width,
+            height: height
+        }
+    }
+</script>
+</body>
+</html>

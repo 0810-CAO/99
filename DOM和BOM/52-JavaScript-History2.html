@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>52-JavaScript-History</title>
+</head>
+<body>
+<h2>我是第2222个界面</h2>
+<button id="btn1">后退</button>
+<script>
+    // History:   代表浏览器的历史信息, 通过History来实现刷新/上一步/下一步
+    let oBtn1 = document.querySelector("#btn1");
+
+    // 后退
+    /*
+   注意点:
+   只有当前访问过其它的界面, back/go方法后退
+   如果给go方法传递-1, 就代表后退1个界面, 传递-2就代表后退2个界面
+   */
+    oBtn1.onclick = function () {
+        // window.history.back();
+        window.history.go(-1);
+    }
+</script>
+</body>
+</html>

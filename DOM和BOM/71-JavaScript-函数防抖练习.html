@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>71-JavaScript-函数防抖练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script src="js/tools.js"></script>
+<script>
+    /*需求: 让div的宽高永远是可视区域宽高的一半*/
+    let oDiv = document.querySelector("div");
+    function resetSize(){
+        let {width, height} = getScreen();
+        oDiv.style.width = width / 2 + "px";
+        oDiv.style.height = height / 2 + "px";
+    }
+    resetSize();
+    // 监听可视区域尺寸的变化
+    /*
+    window.onresize = function () {
+        resetSize();
+        console.log("尺寸的变化");
+    }
+     */
+    window.onresize = debounce(function () {
+        resetSize();
+        console.log("尺寸的变化");
+    }, 1000);
+</script>
+</body>
+</html>

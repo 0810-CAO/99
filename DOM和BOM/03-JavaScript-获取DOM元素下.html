@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-JavaScript-获取DOM元素下</title>
+</head>
+<body>
+<div>
+    <h1>1</h1>
+    <h2>2</h2>
+    <p class="item">3</p>
+    <p>4</p>
+    <span>5</span>
+</div>
+<script>
+  let oDiv = document.querySelector("div");
+    // 1.获取指定元素所有的子元素
+    /*
+    let oDiv = document.querySelector("div");
+    // children属性获取到的是指定元素中所有的子元素
+    // console.log(oDiv.children);
+    // childNodes属性获取到的是指定元素中所有的节点
+    // console.log(oDiv.childNodes);
+    for(let node of oDiv.childNodes){
+        // console.log(node.nodeType);
+        // if(node.nodeType === 1){
+        if(node.nodeType === Node.ELEMENT_NODE){
+            console.log(node);
+        }
+    }
+    */
+
+    /*
+    2.什么是节点?
+    DOM对象(document), 这个对象以树的形式保存了界面上所有的内容
+    HTML页面每一部分都是由节点(标签(元素),文本,属性)
+    */
+
+    // 3.获取指定节点中的第一个子节点
+    // let oDiv = document.querySelector("div");
+    // console.log(oDiv.firstChild);
+    //   获取指定元素中的第一个子元素
+    // console.log(oDiv.firstElementChild);
+
+    // 4.获取指定节点中最后一个子节点
+    console.log(oDiv.lastChild);
+    // 4.获取指定元素中最后一个子元素
+    console.log(oDiv.lastElementChild);
+
+    // 5.通过子元素获取父元素/父节点
+    let item = document.querySelector(".item");
+    console.log(item.parentElement);
+    console.log(item.parentNode);
+    // let parentEle = item.parentElement || item.parentNode;
+    // console.log(parentEle);
+
+    // 6.获取相邻上一个节点
+    console.log(item.previousSibling);
+    //   获取相邻上一个元素
+    console.log(item.previousElementSibling);
+
+    // 7.获取相邻下一个节点
+    // console.log(item.nextSibling);
+    //   获取相邻下一个元素
+    // console.log(item.nextElementSibling);
+</script>
+</body>
+</html>

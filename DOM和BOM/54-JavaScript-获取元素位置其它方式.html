@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>54-JavaScript-获取元素位置其它方式</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            margin-top: 100px;
+            margin-left: 100px;
+            background: blue;
+            overflow: hidden;
+            position: relative;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            margin-top: 100px;
+            margin-left: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<script>
+    /*
+    1.offsetLeft和offsetTop作用
+    获取元素到第一个定位祖先元素之间的偏移位
+    如果没有祖先元素是定位的, 那么就是获取到body的偏移位
+    */
+    let oSDiv = document.querySelector(".son");
+    oSDiv.onclick = function () {
+        console.log(oSDiv.offsetLeft);
+        console.log(oSDiv.offsetTop);
+    }
+
+    /*
+    2.课后练习
+    按照offsetWidth和offsetHeight讲解思路, 自己整理offsetLeft/marginLeft/left异同
+    */
+</script>
+</body>
+</html>
