@@ -1,0 +1,28 @@
+{
+  "name": "RootNode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "bin": {
+    "RootNode": "www.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=dev nodemon ./bin/www.js",
+    "build": "cross-env NODE_ENV=pro nodemon ./bin/www.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  },
+  "dependencies": {
+    "ajv": "^7.0.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "readline": "^1.3.0",
+    "redis": "^3.0.2",
+    "sequelize": "^6.4.0"
+  }
+}
