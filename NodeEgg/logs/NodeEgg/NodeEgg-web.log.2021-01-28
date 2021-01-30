@@ -1,0 +1,205 @@
+2021-01-28 16:21:01,147 WARN 42284 [-/127.0.0.1/-/50ms POST /login] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2021-01-28 16:21:01,150 WARN 42284 [-/127.0.0.1/-/53ms POST /login] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/app/extend/context.js:162:32)
+    at csrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/lib/middlewares/csrf.js:33:9)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 42284
+hostname: appledeMacBook-Air.local
+
+2021-01-28 16:28:14,553 WARN 42380 [-/127.0.0.1/-/41ms POST /login] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2021-01-28 16:28:14,558 WARN 42380 [-/127.0.0.1/-/45ms POST /login] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/app/extend/context.js:162:32)
+    at csrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/lib/middlewares/csrf.js:33:9)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 42380
+hostname: appledeMacBook-Air.local
+
+2021-01-28 16:28:52,246 WARN 42380 [-/127.0.0.1/-/2ms POST /login] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2021-01-28 16:28:52,247 WARN 42380 [-/127.0.0.1/-/2ms POST /login] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/app/extend/context.js:162:32)
+    at csrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/lib/middlewares/csrf.js:33:9)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 42380
+hostname: appledeMacBook-Air.local
+
+2021-01-28 16:29:12,312 WARN 42380 [-/127.0.0.1/-/1ms POST /login] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2021-01-28 16:29:12,312 WARN 42380 [-/127.0.0.1/-/1ms POST /login] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/app/extend/context.js:162:32)
+    at csrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/lib/middlewares/csrf.js:33:9)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 42380
+hostname: appledeMacBook-Air.local
+
+2021-01-28 16:29:13,363 WARN 42380 [-/127.0.0.1/-/1ms POST /login] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2021-01-28 16:29:13,363 WARN 42380 [-/127.0.0.1/-/2ms POST /login] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/app/extend/context.js:162:32)
+    at csrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/lib/middlewares/csrf.js:33:9)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 42380
+hostname: appledeMacBook-Air.local
+
+2021-01-28 16:29:13,539 WARN 42380 [-/127.0.0.1/-/1ms POST /login] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2021-01-28 16:29:13,539 WARN 42380 [-/127.0.0.1/-/1ms POST /login] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/app/extend/context.js:162:32)
+    at csrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/lib/middlewares/csrf.js:33:9)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 42380
+hostname: appledeMacBook-Air.local
+
+2021-01-28 16:31:42,095 WARN 42380 [-/127.0.0.1/-/5ms POST /login] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2021-01-28 16:31:42,096 WARN 42380 [-/127.0.0.1/-/6ms POST /login] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/app/extend/context.js:162:32)
+    at csrf (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/lib/middlewares/csrf.js:33:9)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 42380
+hostname: appledeMacBook-Air.local
+
+2021-01-28 17:24:33,400 ERROR 42945 [-/127.0.0.1/-/441ms GET /getNews] nodejs.SyntaxError: Unexpected token < in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at HomeService.findNews (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/app/service/home.js:19:21)
+    at processTicksAndRejections (internal/process/task_queues.js:94:5)
+    at async HomeController.getNews (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/app/controller/home.js:33:16)
+    at async /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:50
+    at async xframe (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/lib/middlewares/xframe.js:7:5)
+    at async xssProtection (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at async nosniff (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at async noopen (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-security/lib/middlewares/noopen.js:8:5)
+    at async session (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-session/index.js:41:7)
+
+pid: 42945
+hostname: appledeMacBook-Air.local
+
+2021-01-28 20:30:17,374 ERROR 43400 [-/127.0.0.1/-/5ms GET /getCookie] nodejs.TypeError: this.ctx.cookies is not a function
+    at HomeController.getCookie (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/app/controller/home.js:48:27)
+    at Object.callFn (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-compose/index.js:45:18)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-compose/index.js:44:32)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-compose/index.js:36:12
+
+pid: 43400
+hostname: appledeMacBook-Air.local
+
+2021-01-28 20:31:15,572 ERROR 43400 [-/127.0.0.1/-/1ms GET /getCookie] nodejs.TypeError: this.ctx.cookies is not a function
+    at HomeController.getCookie (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/app/controller/home.js:48:27)
+    at Object.callFn (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-compose/index.js:45:18)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-compose/index.js:44:32)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/koa-compose/index.js:36:12
+
+pid: 43400
+hostname: appledeMacBook-Air.local
+
+2021-01-28 22:23:39,446 INFO 43817 [-/127.0.0.1/-/7ms GET /test] info日志
+2021-01-28 22:23:39,447 WARN 43817 [-/127.0.0.1/-/8ms GET /test] warn日志
+2021-01-28 22:23:39,448 ERROR 43817 [-/127.0.0.1/-/8ms GET /test] error日志
+2021-01-28 22:25:36,076 INFO 43833 [-/127.0.0.1/-/10ms GET /test] info日志
+2021-01-28 22:25:36,077 WARN 43833 [-/127.0.0.1/-/11ms GET /test] warn日志
+2021-01-28 22:25:36,077 ERROR 43833 [-/127.0.0.1/-/11ms GET /test] error日志
+2021-01-28 22:25:45,298 INFO 43844 [-/127.0.0.1/-/8ms GET /test] info日志
+2021-01-28 22:25:45,301 WARN 43844 [-/127.0.0.1/-/10ms GET /test] warn日志
+2021-01-28 22:25:45,310 ERROR 43844 [-/127.0.0.1/-/11ms GET /test] error日志
+2021-01-28 22:28:54,268 INFO 43877 [-/127.0.0.1/-/8ms GET /test] info日志
+2021-01-28 22:28:54,268 WARN 43877 [-/127.0.0.1/-/8ms GET /test] warn日志
+2021-01-28 22:28:54,268 ERROR 43877 [-/127.0.0.1/-/8ms GET /test] error日志
+2021-01-28 23:05:30,735 ERROR 44276 [-/127.0.0.1/-/0ms GET /] nodejs.RequestError: getaddrinfo ENOTFOUND www.api.com, GET http://www.api.com/cache -1 (connected: false, keepalive socket: false, agent status: {"createSocketCount":1,"createSocketErrorCount":0,"closeSocketCount":0,"errorSocketCount":1,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"www.api.com:80:":1},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+errno: "ENOTFOUND"
+code: "ENOTFOUND"
+syscall: "getaddrinfo"
+hostname: "www.api.com"
+name: "RequestError"
+data: undefined
+path: "/cache"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":882,"keepAliveSocket":false,"requestUrls":["http://www.api.com/cache"],"timing":null,"remoteAddress":"","remotePort":"","socketHandledRequests":1,"socketHandledResponses":0}
+pid: 44276
+hostname: appledeMacBook-Air.local
+
+2021-01-28 23:09:53,900 ERROR 44346 [-/127.0.0.1/-/1ms GET /] nodejs.Error: [egg-schedule] Cannot find schedule updateMessage
+    at Application.app.runSchedule (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-schedule/app.js:92:15)
+    at AppBootHook.serverDidReady (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/app.js:9:20)
+    at Object.callFn (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-core/lib/utils/index.js:44:21)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-core/lib/lifecycle.js:207:23
+    at processTicksAndRejections (internal/process/task_queues.js:94:5)
+
+pid: 44346
+hostname: appledeMacBook-Air.local
+
+2021-01-28 23:10:34,199 ERROR 44364 [-/127.0.0.1/-/0ms GET /] nodejs.Error: [egg-schedule] Cannot find schedule updateMessage
+    at Application.app.runSchedule (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-schedule/app.js:92:15)
+    at AppBootHook.serverDidReady (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/app.js:9:20)
+    at Object.callFn (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-core/lib/utils/index.js:44:21)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/egg-core/lib/lifecycle.js:207:23
+    at processTicksAndRejections (internal/process/task_queues.js:94:5)
+
+pid: 44364
+hostname: appledeMacBook-Air.local
+

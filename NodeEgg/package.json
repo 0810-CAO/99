@@ -1,0 +1,26 @@
+{
+  "name": "NodeEgg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env EGG_SERVER_ENV=dev egg-bin dev",
+    "pro": "cross-env EGG_SERVER_ENV=pro egg-scripts start --daemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "egg": "^2.29.1",
+    "egg-mysql": "^3.0.0",
+    "egg-scripts": "^2.13.0",
+    "egg-sequelize": "^6.0.0",
+    "egg-view-ejs": "^2.0.1",
+    "mysql2": "^2.2.5"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.15.0"
+  }
+}

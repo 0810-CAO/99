@@ -1,0 +1,222 @@
+2021-01-29 00:42:16,714 ERROR 45355 [-/127.0.0.1/-/0ms GET /] nodejs.PROTOCOL_SEQUENCE_TIMEOUTError: Handshake inactivity timeout
+    at Handshake.<anonymous> (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:160:17)
+    at Handshake.emit (events.js:223:5)
+    at Handshake._onTimeout (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/sequences/Sequence.js:124:8)
+    at Timer._onTimeout (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Timer.js:32:23)
+    at listOnTimeout (internal/timers.js:531:17)
+    at processTimers (internal/timers.js:475:7)
+    --------------------
+    at Protocol._enqueue (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as getConnection] (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at Pool.query (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Pool.js:202:8)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    sql: select now() as currentTime;
+code: "PROTOCOL_SEQUENCE_TIMEOUT"
+fatal: true
+timeout: 10000
+name: "PROTOCOL_SEQUENCE_TIMEOUTError"
+pid: 45355
+hostname: appledeMacBook-Air.local
+
+2021-01-29 00:42:26,751 ERROR 45361 [-/127.0.0.1/-/0ms GET /] nodejs.ENOTFOUNDError: getaddrinfo ENOTFOUND 8.131.77.
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+    --------------------
+    at Protocol._enqueue (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as getConnection] (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at Pool.query (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Pool.js:202:8)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    sql: select now() as currentTime;
+errno: "ENOTFOUND"
+code: "ENOTFOUND"
+syscall: "getaddrinfo"
+hostname: "8.131.77."
+fatal: true
+name: "ENOTFOUNDError"
+pid: 45361
+hostname: appledeMacBook-Air.local
+
+2021-01-29 00:42:26,755 ERROR 45362 [-/127.0.0.1/-/0ms GET /] nodejs.ENOTFOUNDError: getaddrinfo ENOTFOUND 8.131.77.
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+    --------------------
+    at Protocol._enqueue (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as getConnection] (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at Pool.query (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Pool.js:202:8)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    sql: select now() as currentTime;
+errno: "ENOTFOUND"
+code: "ENOTFOUND"
+syscall: "getaddrinfo"
+hostname: "8.131.77."
+fatal: true
+name: "ENOTFOUNDError"
+pid: 45362
+hostname: appledeMacBook-Air.local
+
+2021-01-29 00:42:28,886 ERROR 45366 [-/127.0.0.1/-/0ms GET /] nodejs.ER_ACCESS_DENIED_ERRORError: ER_ACCESS_DENIED_ERROR: Access denied for user 'test_user'@'182.123.228.161' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (events.js:223:5)
+    at addChunk (_stream_readable.js:309:12)
+    --------------------
+    at Protocol._enqueue (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as getConnection] (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at Pool.query (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Pool.js:202:8)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    sql: select now() as currentTime;
+code: "ER_ACCESS_DENIED_ERROR"
+errno: 1045
+sqlMessage: "Access denied for user 'test_user'@'182.123.228.161' (using password: YES)"
+sqlState: "28000"
+fatal: true
+name: "ER_ACCESS_DENIED_ERRORError"
+pid: 45366
+hostname: appledeMacBook-Air.local
+
+2021-01-29 00:42:32,238 ERROR 45367 [-/127.0.0.1/-/0ms GET /] nodejs.ER_ACCESS_DENIED_ERRORError: ER_ACCESS_DENIED_ERROR: Access denied for user 'demo'@'182.123.228.161' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (events.js:223:5)
+    at addChunk (_stream_readable.js:309:12)
+    --------------------
+    at Protocol._enqueue (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as getConnection] (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at Pool.query (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Pool.js:202:8)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    sql: select now() as currentTime;
+code: "ER_ACCESS_DENIED_ERROR"
+errno: 1045
+sqlMessage: "Access denied for user 'demo'@'182.123.228.161' (using password: YES)"
+sqlState: "28000"
+fatal: true
+name: "ER_ACCESS_DENIED_ERRORError"
+pid: 45367
+hostname: appledeMacBook-Air.local
+
+2021-01-29 00:43:18,134 ERROR 45379 [-/127.0.0.1/-/0ms GET /] nodejs.ER_DBACCESS_DENIED_ERRORError: ER_DBACCESS_DENIED_ERROR: Access denied for user 'demo'@'%' to database 'test'
+    at Handshake.Sequence._packetToError (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (events.js:223:5)
+    at addChunk (_stream_readable.js:309:12)
+    --------------------
+    at Protocol._enqueue (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as getConnection] (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at Pool.query (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/mysql/lib/Pool.js:202:8)
+    at /Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    sql: select now() as currentTime;
+code: "ER_DBACCESS_DENIED_ERROR"
+errno: 1044
+sqlMessage: "Access denied for user 'demo'@'%' to database 'test'"
+sqlState: "42000"
+fatal: true
+name: "ER_DBACCESS_DENIED_ERRORError"
+pid: 45379
+hostname: appledeMacBook-Air.local
+
+2021-01-29 17:04:41,863 ERROR 46044 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'182.123.228.161' (using password: YES)
+    at ConnectionManager.connect (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (internal/process/task_queues.js:94:5)
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'182.123.228.161' (using password: YES)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'182.123.228.161' (using password: YES)"}
+pid: 46044
+hostname: appledeMacBook-Air.local
+
+2021-01-29 17:08:50,984 ERROR 46083 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'182.123.228.161' (using password: YES)
+    at ConnectionManager.connect (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (internal/process/task_queues.js:94:5)
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'182.123.228.161' (using password: YES)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'182.123.228.161' (using password: YES)"}
+pid: 46083
+hostname: appledeMacBook-Air.local
+
+2021-01-29 17:12:52,436 ERROR 46175 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'182.123.228.161' (using password: YES)
+    at ConnectionManager.connect (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (internal/process/task_queues.js:94:5)
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'182.123.228.161' (using password: YES)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'182.123.228.161' (using password: YES)"}
+pid: 46175
+hostname: appledeMacBook-Air.local
+
+2021-01-29 17:14:18,911 ERROR 46195 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'182.123.228.161' (using password: YES)
+    at ConnectionManager.connect (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (internal/process/task_queues.js:94:5)
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'182.123.228.161' (using password: YES)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'182.123.228.161' (using password: YES)"}
+pid: 46195
+hostname: appledeMacBook-Air.local
+
+2021-01-29 17:16:53,973 ERROR 46219 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'182.123.228.161' (using password: YES)
+    at ConnectionManager.connect (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (internal/process/task_queues.js:94:5)
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'182.123.228.161' (using password: YES)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'182.123.228.161' (using password: YES)"}
+pid: 46219
+hostname: appledeMacBook-Air.local
+
+2021-01-29 17:18:53,186 ERROR 46242 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'182.123.228.161' (using password: YES)
+    at ConnectionManager.connect (/Users/caochengxiang/Downloads/Node Express KOA/RootNode/NodeEgg/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (internal/process/task_queues.js:94:5)
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'182.123.228.161' (using password: YES)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'182.123.228.161' (using password: YES)"}
+pid: 46242
+hostname: appledeMacBook-Air.local
+

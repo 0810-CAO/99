@@ -1,0 +1,220 @@
+2021-01-30 21:40:36,132 INFO 52578 [egg:logger] init all loggers with options: {"dir":"/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2021-01-30 21:40:37,423 INFO 52578 [egg:core] dump config after load, 11ms
+2021-01-30 21:40:37,666 INFO 52578 [egg-watcher] Start watching: ["/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/config","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks_proxy","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app.js"]
+2021-01-30 21:40:37,666 INFO 52578 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app"
+2021-01-30 21:40:37,666 INFO 52578 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/config"
+2021-01-30 21:40:37,666 INFO 52578 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks"
+2021-01-30 21:40:37,667 INFO 52578 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks_proxy"
+2021-01-30 21:40:37,667 INFO 52578 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app.js"
+2021-01-30 21:40:37,682 INFO 52578 [egg-watcher:agent] watcher start success
+2021-01-30 21:40:37,731 WARN 52578 Sequelize Error: connect ECONNREFUSED 8.131.77.175:3306, sleep 1 seconds to retry...
+2021-01-30 21:40:38,779 WARN 52578 Sequelize Error: connect ECONNREFUSED 8.131.77.175:3306, sleep 1 seconds to retry...
+2021-01-30 21:40:39,825 WARN 52578 Sequelize Error: connect ECONNREFUSED 8.131.77.175:3306, sleep 1 seconds to retry...
+2021-01-30 21:40:40,860 ERROR 52578 nodejs.SequelizeConnectionRefusedError: connect ECONNREFUSED 8.131.77.175:3306
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:123:19
+From previous event:
+    at ConnectionManager.connect (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:50
+    at processImmediate (internal/timers.js:439:21)
+From previous event:
+    at ConnectionManager._connect (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:8)
+    at ConnectionManager.getConnection (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:254:46)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:650:36
+From previous event:
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:641:53
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/retry-as-promised/index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/retry-as-promised/index.js:60:10)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:641:30
+From previous event:
+    at Sequelize.query (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:590:23)
+    at Sequelize.authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:902:17)
+    at authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:134:22)
+    at authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:13)
+    at async authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:7)
+    at async authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:7)
+    at async Promise.all (index 0)
+    at async /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:40:5
+name: "SequelizeConnectionRefusedError"
+parent: {"errno":"ECONNREFUSED","code":"ECONNREFUSED","syscall":"connect","address":"8.131.77.175","port":3306,"fatal":true}
+original: {"errno":"ECONNREFUSED","code":"ECONNREFUSED","syscall":"connect","address":"8.131.77.175","port":3306,"fatal":true}
+pid: 52578
+hostname: appledeMacBook-Air.local
+
+2021-01-30 21:40:40,917 INFO 52578 [egg:core] dump config after ready, 9ms
+2021-01-30 23:56:57,832 INFO 54990 [egg:logger] init all loggers with options: {"dir":"/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2021-01-30 23:56:59,439 INFO 54990 [egg:core] dump config after load, 21ms
+2021-01-30 23:56:59,578 INFO 54990 [egg-watcher] Start watching: ["/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/config","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks_proxy","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app.js"]
+2021-01-30 23:56:59,578 INFO 54990 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app"
+2021-01-30 23:56:59,580 INFO 54990 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/config"
+2021-01-30 23:56:59,581 INFO 54990 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks"
+2021-01-30 23:56:59,581 INFO 54990 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks_proxy"
+2021-01-30 23:56:59,582 INFO 54990 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app.js"
+2021-01-30 23:56:59,583 INFO 54990 [egg-watcher:agent] watcher start success
+2021-01-30 23:56:59,895 WARN 54990 Sequelize Error: Access denied for user 'root'@'222.140.142.166' (using password: YES), sleep 1 seconds to retry...
+2021-01-30 23:57:01,492 WARN 54990 Sequelize Error: Access denied for user 'root'@'222.140.142.166' (using password: YES), sleep 1 seconds to retry...
+2021-01-30 23:57:02,656 WARN 54990 Sequelize Error: Access denied for user 'root'@'222.140.142.166' (using password: YES), sleep 1 seconds to retry...
+2021-01-30 23:57:03,842 ERROR 54990 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'222.140.142.166' (using password: YES)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:125:19
+From previous event:
+    at ConnectionManager.connect (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:50
+    at processImmediate (internal/timers.js:439:21)
+From previous event:
+    at ConnectionManager._connect (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:8)
+    at ConnectionManager.getConnection (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:254:46)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:650:36
+From previous event:
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:641:53
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/retry-as-promised/index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/retry-as-promised/index.js:60:10)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:641:30
+From previous event:
+    at Sequelize.query (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:590:23)
+    at Sequelize.authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:902:17)
+    at authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:134:22)
+    at authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:13)
+    at async authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:7)
+    at async authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:7)
+    at async Promise.all (index 0)
+    at async /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:40:5
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'222.140.142.166' (using password: YES)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'222.140.142.166' (using password: YES)"}
+pid: 54990
+hostname: appledeMacBook-Air.local
+
+2021-01-30 23:57:03,890 INFO 54990 [egg:core] dump config after ready, 11ms
+2021-01-31 00:00:07,939 INFO 55041 [egg:logger] init all loggers with options: {"dir":"/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2021-01-31 00:00:08,930 INFO 55041 [egg:core] dump config after load, 26ms
+2021-01-31 00:00:09,122 INFO 55041 [egg-watcher] Start watching: ["/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/config","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks_proxy","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app.js"]
+2021-01-31 00:00:09,122 INFO 55041 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app"
+2021-01-31 00:00:09,123 INFO 55041 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/config"
+2021-01-31 00:00:09,123 INFO 55041 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks"
+2021-01-31 00:00:09,123 INFO 55041 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks_proxy"
+2021-01-31 00:00:09,123 INFO 55041 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app.js"
+2021-01-31 00:00:09,124 INFO 55041 [egg-watcher:agent] watcher start success
+2021-01-31 00:00:09,260 WARN 55041 Sequelize Error: Access denied for user 'root'@'222.140.142.166' (using password: YES), sleep 1 seconds to retry...
+2021-01-31 00:00:10,348 WARN 55041 Sequelize Error: Access denied for user 'root'@'222.140.142.166' (using password: YES), sleep 1 seconds to retry...
+2021-01-31 00:00:11,434 WARN 55041 Sequelize Error: Access denied for user 'root'@'222.140.142.166' (using password: YES), sleep 1 seconds to retry...
+2021-01-31 00:00:12,524 ERROR 55041 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'222.140.142.166' (using password: YES)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:125:19
+From previous event:
+    at ConnectionManager.connect (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:50
+    at processImmediate (internal/timers.js:439:21)
+From previous event:
+    at ConnectionManager._connect (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:8)
+    at ConnectionManager.getConnection (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:254:46)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:650:36
+From previous event:
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:641:53
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/retry-as-promised/index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/retry-as-promised/index.js:60:10)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:641:30
+From previous event:
+    at Sequelize.query (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:590:23)
+    at Sequelize.authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:902:17)
+    at authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:134:22)
+    at authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:13)
+    at async authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:7)
+    at async authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:7)
+    at async Promise.all (index 0)
+    at async /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:40:5
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'222.140.142.166' (using password: YES)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'222.140.142.166' (using password: YES)"}
+pid: 55041
+hostname: appledeMacBook-Air.local
+
+2021-01-31 00:00:12,555 INFO 55041 [egg:core] dump config after ready, 9ms
+2021-01-31 00:01:54,571 INFO 55084 [egg:logger] init all loggers with options: {"dir":"/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2021-01-31 00:01:55,849 INFO 55084 [egg:core] dump config after load, 15ms
+2021-01-31 00:01:55,975 INFO 55084 [egg-watcher] Start watching: ["/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/config","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks_proxy","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app.js"]
+2021-01-31 00:01:55,975 INFO 55084 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app"
+2021-01-31 00:01:55,976 INFO 55084 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/config"
+2021-01-31 00:01:55,976 INFO 55084 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks"
+2021-01-31 00:01:55,976 INFO 55084 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks_proxy"
+2021-01-31 00:01:55,976 INFO 55084 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app.js"
+2021-01-31 00:01:55,977 INFO 55084 [egg-watcher:agent] watcher start success
+2021-01-31 00:01:56,153 WARN 55084 Sequelize Error: Access denied for user 'root'@'222.140.142.166' (using password: YES), sleep 1 seconds to retry...
+2021-01-31 00:01:57,240 WARN 55084 Sequelize Error: Access denied for user 'root'@'222.140.142.166' (using password: YES), sleep 1 seconds to retry...
+2021-01-31 00:01:58,323 WARN 55084 Sequelize Error: Access denied for user 'root'@'222.140.142.166' (using password: YES), sleep 1 seconds to retry...
+2021-01-31 00:01:59,686 ERROR 55084 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'222.140.142.166' (using password: YES)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:125:19
+From previous event:
+    at ConnectionManager.connect (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:50
+    at processImmediate (internal/timers.js:439:21)
+From previous event:
+    at ConnectionManager._connect (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:8)
+    at ConnectionManager.getConnection (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:254:46)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:650:36
+From previous event:
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:641:53
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/retry-as-promised/index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/retry-as-promised/index.js:60:10)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:641:30
+From previous event:
+    at Sequelize.query (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:590:23)
+    at Sequelize.authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:902:17)
+    at authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:134:22)
+    at authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:13)
+    at async authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:7)
+    at async authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:7)
+    at async Promise.all (index 0)
+    at async /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:40:5
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'222.140.142.166' (using password: YES)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'222.140.142.166' (using password: YES)"}
+pid: 55084
+hostname: appledeMacBook-Air.local
+
+2021-01-31 00:01:59,737 INFO 55084 [egg:core] dump config after ready, 6ms
+2021-01-31 00:02:28,492 INFO 55100 [egg:logger] init all loggers with options: {"dir":"/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2021-01-31 00:02:30,012 INFO 55100 [egg:core] dump config after load, 10ms
+2021-01-31 00:02:30,145 INFO 55100 [egg-watcher] Start watching: ["/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/config","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks_proxy","/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app.js"]
+2021-01-31 00:02:30,146 INFO 55100 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app"
+2021-01-31 00:02:30,147 INFO 55100 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/config"
+2021-01-31 00:02:30,147 INFO 55100 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks"
+2021-01-31 00:02:30,148 INFO 55100 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/mocks_proxy"
+2021-01-31 00:02:30,148 INFO 55100 [egg-watcher] Start watching: "/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/app.js"
+2021-01-31 00:02:30,149 INFO 55100 [egg-watcher:agent] watcher start success
+2021-01-31 00:02:30,485 WARN 55100 Sequelize Error: Access denied for user 'root'@'222.140.142.166' (using password: YES), sleep 1 seconds to retry...
+2021-01-31 00:02:31,586 WARN 55100 Sequelize Error: Access denied for user 'root'@'222.140.142.166' (using password: YES), sleep 1 seconds to retry...
+2021-01-31 00:02:32,724 WARN 55100 Sequelize Error: Access denied for user 'root'@'222.140.142.166' (using password: YES), sleep 1 seconds to retry...
+2021-01-31 00:02:34,110 ERROR 55100 nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'222.140.142.166' (using password: YES)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:125:19
+From previous event:
+    at ConnectionManager.connect (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:50
+    at processImmediate (internal/timers.js:439:21)
+From previous event:
+    at ConnectionManager._connect (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:8)
+    at ConnectionManager.getConnection (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:254:46)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:650:36
+From previous event:
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:641:53
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/retry-as-promised/index.js:70:21
+    at new Promise (<anonymous>)
+    at retryAsPromised (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/retry-as-promised/index.js:60:10)
+    at /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:641:30
+From previous event:
+    at Sequelize.query (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:590:23)
+    at Sequelize.authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/sequelize/lib/sequelize.js:902:17)
+    at authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:134:22)
+    at authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:13)
+    at async authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:7)
+    at async authenticate (/Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:142:7)
+    at async Promise.all (index 0)
+    at async /Users/caochengxiang/Downloads/Node Express KOA/EggJS搭建服务器框架/node_modules/egg-sequelize/lib/loader.js:40:5
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'222.140.142.166' (using password: YES)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'222.140.142.166' (using password: YES)"}
+pid: 55100
+hostname: appledeMacBook-Air.local
+
+2021-01-31 00:02:34,486 INFO 55100 [egg:core] dump config after ready, 7ms
